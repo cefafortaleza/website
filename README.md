@@ -19,6 +19,8 @@ Pulldown a local copy of the Github repository Netlify created for you, with the
 $ git clone git@github.com:cefafortaleza/website.git
 $ cd website
 $ yarn
+$ npm install -g netlify-cli
+$ bpm install
 $ npm run build
 $ netlify dev # or ntl dev
 ```
