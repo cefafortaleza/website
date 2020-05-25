@@ -14,9 +14,9 @@ It follows the [JAMstack architecture](https://jamstack.org) by using Git as a s
 
 ### Running it locally
 
-Pulldown a local copy of the Github repository Netlify created for you, with the name you specified in the previous step
+Clone this repository, with the name you specified in the previous step
 ```
-$ git clone git@github.com:cefafortaleza/website.git
+$ git clone git@github.com:cefafortaleza/website.git website
 $ cd website
 $ yarn
 $ npm install -g netlify-cli
