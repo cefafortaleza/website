@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IndexPageTemplate } from '../../templates/index-page';
+import { HorariosPageTemplate } from '../../templates/horarios';
 
-const IndexPagePreview = ({ entry, getAsset }) => {
+const HorariosPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS();
 
   if (data) {
-    return <IndexPageTemplate title={data.title} />;
+    return <HorariosPageTemplate title={data.title} />;
   } else {
     return <div>Loading...</div>;
   }
 };
 
-IndexPagePreview.propTypes = {
+HorariosPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
 };
 
-export default IndexPagePreview;
+export default HorariosPagePreview;

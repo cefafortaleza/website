@@ -6,27 +6,27 @@ import Layout from '../components/Layout';
 import Features from '../components/Features';
 import BlogRoll from '../components/BlogRoll';
 
-export const IndexPageTemplate = ({ title }) => (
+export const HorariosPageTemplate = ({ title }) => (
   <div>
     <h1>{title}</h1>
   </div>
 );
 
-IndexPageTemplate.propTypes = {
+HorariosPageTemplate.propTypes = {
   title: PropTypes.string,
 };
 
-const IndexPage = ({ data }) => {
+const HorariosPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
-      <IndexPageTemplate title={frontmatter.title} />
+      <HorariosPageTemplate title={frontmatter.title} />
     </Layout>
   );
 };
 
-IndexPage.propTypes = {
+HorariosPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -34,11 +34,11 @@ IndexPage.propTypes = {
   }),
 };
 
-export default IndexPage;
+export default HorariosPage;
 
 export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+  query HorariosPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "horarios" } }) {
       frontmatter {
         title
       }

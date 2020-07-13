@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IndexPageTemplate } from '../../templates/index-page';
+import { AtividadesPageTemplate } from '../../templates/atividades';
 
-const IndexPagePreview = ({ entry, getAsset }) => {
+const AtividadesPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS();
 
   if (data) {
-    return <IndexPageTemplate title={data.title} />;
+    return <AtividadesPageTemplate title={data.title} />;
   } else {
     return <div>Loading...</div>;
   }
 };
 
-IndexPagePreview.propTypes = {
+AtividadesPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
 };
 
-export default IndexPagePreview;
+export default AtividadesPagePreview;

@@ -6,27 +6,27 @@ import Layout from '../components/Layout';
 import Features from '../components/Features';
 import BlogRoll from '../components/BlogRoll';
 
-export const IndexPageTemplate = ({ title }) => (
+export const SobrePageTemplate = ({ title }) => (
   <div>
     <h1>{title}</h1>
   </div>
 );
 
-IndexPageTemplate.propTypes = {
+SobrePageTemplate.propTypes = {
   title: PropTypes.string,
 };
 
-const IndexPage = ({ data }) => {
+const SobrePage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
-      <IndexPageTemplate title={frontmatter.title} />
+      <SobrePageTemplate title={frontmatter.title} />
     </Layout>
   );
 };
 
-IndexPage.propTypes = {
+SobrePage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -34,11 +34,11 @@ IndexPage.propTypes = {
   }),
 };
 
-export default IndexPage;
+export default SobrePage;
 
 export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+  query SobrePageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "sobre" } }) {
       frontmatter {
         title
       }
