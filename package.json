@@ -11,7 +11,10 @@
     "gatsby-plugin-netlify-cms": "^4.2.5",
     "gatsby-plugin-purgecss": "^5.0.0",
     "gatsby-plugin-react-helmet": "^3.2.5",
+<<<<<<< HEAD
     "gatsby-plugin-react-svg": "^3.0.0",
+=======
+>>>>>>> 4b3f0fb915d123f4aa775ff9f2bfe2e55e91ca28
     "gatsby-plugin-sass": "^2.2.4",
     "gatsby-plugin-sharp": "^2.5.7",
     "gatsby-remark-copy-linked-files": "^2.2.4",
