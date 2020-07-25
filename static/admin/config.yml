@@ -224,10 +224,6 @@ collections:
                   },
                 ],
             }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
       - file: 'src/pages/espiritismo/index.md'
         label: 'Sobre o espiritismo'
         name: 'espiritismo'
@@ -272,8 +268,4 @@ collections:
             }
           - { label: sectionFiveTitle, name: sectionFiveTitle, widget: string }
           - { label: phoneNumber, name: phoneNumber, widget: string }
-<<<<<<< Updated upstream
           - { label: email, name: email, widget: string }
-=======
-          - { label: email, name: email, widget: string }
->>>>>>> Stashed changes
