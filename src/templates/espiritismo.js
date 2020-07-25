@@ -3,17 +3,21 @@ import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import Features from '../components/Features';
-import BlogRoll from '../components/BlogRoll';
+import Container from '../components/Container';
+import SectionTitle from '../components/SectionTitle';
 
-export const EspiritismoPageTemplate = ({ title }) => (
-  <div>
-    <h1>{title}</h1>
-  </div>
+export const EspiritismoPageTemplate = ({ title, content }) => (
+  <section id="espiritismo">
+    <Container className="teste classe">
+      <SectionTitle>{title}</SectionTitle>
+      <p>{content}</p>
+    </Container>
+  </section>
 );
 
 EspiritismoPageTemplate.propTypes = {
   title: PropTypes.string,
+  content: PropTypes.string,
 };
 
 const EspiritismoPage = ({ data }) => {
@@ -21,7 +25,10 @@ const EspiritismoPage = ({ data }) => {
 
   return (
     <Layout>
-      <EspiritismoPageTemplate title={frontmatter.title} />
+      <EspiritismoPageTemplate
+        title={frontmatter.title}
+        content={frontmatter.content}
+      />
     </Layout>
   );
 };
@@ -41,6 +48,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "espiritismo" } }) {
       frontmatter {
         title
+        content
       }
     }
   }

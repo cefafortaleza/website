@@ -224,3 +224,36 @@ collections:
                   },
                 ],
             }
+    - file: 'src/pages/espiritismo/index.md'
+        label: 'Sobre o espiritismo'
+        name: 'espiritismo'
+        fields: 
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'about-page',
+            }
+          - { label: Title, name: title, widget: string },
+          - { label: Content, name: content, widget: text },
+    - file: 'src/pages/sobre/index.md'
+          label: 'Sobre o CEFA'
+          name: 'sobre'
+          fields: 
+            - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'about-page',
+            }
+            - { label: pageTitle, name: pageTitle, widget: string },
+            - { label: sectionOneTitle, name: sectionOneTitle, widget: string },
+            - { label: sectionOneContent, name: sectionOneContent, widget: string },
+            - { label: sectionTwoTitle, name: sectionTwoTitle, widget: string },
+            - { label: sectionThreeTitle, name: sectionThreeTitle, widget: string },
+            - { label: bylaws, name: bylaws, widget: string },
+            - { label: sectionFourTitle, name: sectionFourTitle, widget: string },
+            - { label: internalPolicyLink, name: internalPolicyLink, widget: string },
+            - { label: sectionFiveTitle, name: sectionFiveTitle, widget: string },
+            - { label: phoneNumber, name: phoneNumber, widget: string },
+            - { label: email, name: email, widget: string },
