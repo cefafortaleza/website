@@ -1,4 +1,30 @@
 ---
 templateKey: palestras
-title: Palestras Page
+pageTitle: Palestras
+current:
+  - palestra: Palestra 1
+    palestrante: Palestrante 1
+    data: 01/01/2020
+    horario: 17`:`10
+  - palestra: Palestra 2
+    palestrante: Palestrante 2
+    data: 01/01/2020
+    horario: 17`:`10
+  - palestra: Palestra 3
+    palestrante: Palestrante 3
+    data: 01/01/2020
+    horario: 17`:`10
+past:
+  - palestra: Palestra 1
+    palestrante: Palestrante 1
+    data: 01/01/2020
+    horario: 17`:`10
+  - palestra: Palestra 2
+    palestrante: Palestrante 2
+    data: 01/01/2020
+    horario: 17`:`10
+  - palestra: Palestra 3
+    palestrante: Palestrante 3
+    data: 01/01/2020
+    horario: 17`:`10
 ---

@@ -1,27 +1,84 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
+import Container from '../components/Container';
+import SectionTitle from '../components/SectionTitle';
+import PalestraWrapper from '../components/PalestraWrapper';
+import Palestra from '../components/Palestra';
 
 import Layout from '../components/Layout';
-import Features from '../components/Features';
-import BlogRoll from '../components/BlogRoll';
 
-export const PalestrasPageTemplate = ({ title }) => (
-  <div>
-    <h1>{title}</h1>
-  </div>
+export const PalestrasPageTemplate = ({ pageTitle, current, past }) => (
+  <>
+    <Container>
+      <SectionTitle>{pageTitle}</SectionTitle>
+      <section>
+        <SectionTitle>Palestras do mês</SectionTitle>
+        <PalestraWrapper>
+          {current.map((palestra, index) => {
+            return (
+              <Palestra
+                title={palestra.palestra}
+                speaker={palestra.palestrante}
+                date={palestra.data}
+                time={palestra.horario}
+                key={index}
+              />
+            );
+          })}
+        </PalestraWrapper>
+      </section>
+      <section>
+        <SectionTitle>Palestras Passadas</SectionTitle>
+        <PalestraWrapper>
+          {past.map((palestra, index) => {
+            return (
+              <Palestra
+                title={palestra.palestra}
+                speaker={palestra.palestrante}
+                date={palestra.data}
+                time={palestra.horario}
+                key={index}
+              />
+            );
+          })}
+        </PalestraWrapper>
+      </section>
+    </Container>
+  </>
 );
 
 PalestrasPageTemplate.propTypes = {
-  title: PropTypes.string,
+  pageTitle: PropTypes.string,
+  current: PropTypes.shape([
+    {
+      palestra: PropTypes.string,
+      palestrante: PropTypes.string,
+      data: PropTypes.string,
+      horario: PropTypes.string,
+    },
+  ]),
+  past: PropTypes.shape([
+    {
+      palestra: PropTypes.string,
+      palestrante: PropTypes.string,
+      data: PropTypes.string,
+      horario: PropTypes.string,
+    },
+  ]),
 };
 
 const PalestrasPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
+  console.log(frontmatter);
 
   return (
     <Layout>
-      <PalestrasPageTemplate title={frontmatter.title} />
+      <PalestrasPageTemplate
+        pageTitle={frontmatter.pageTitle}
+        current={frontmatter.current}
+        past={frontmatter.past}
+      />
     </Layout>
   );
 };
@@ -40,7 +97,19 @@ export const pageQuery = graphql`
   query PalestrasPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "palestras" } }) {
       frontmatter {
-        title
+        pageTitle
+        current {
+          palestra
+          palestrante
+          data
+          horario
+        }
+        past {
+          palestra
+          palestrante
+          data
+          horario
+        }
       }
     }
   }
