@@ -1,43 +1,71 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
+import PalestraWrapper from '../components/PalestraWrapper';
+import Palestra from '../components/Palestra';
 
 import Layout from '../components/Layout';
-import Features from '../components/Features';
-import BlogRoll from '../components/BlogRoll';
 
 export const PalestrasPageTemplate = ({ pageTitle, current, past }) => (
   <>
     <Container>
       <SectionTitle>{pageTitle}</SectionTitle>
+      <section>
+        <SectionTitle>Palestras do mês</SectionTitle>
+        <PalestraWrapper>
+          {current.map((palestra, index) => {
+            return (
+              <Palestra
+                title={palestra.palestra}
+                speaker={palestra.palestrante}
+                date={palestra.data}
+                time={palestra.horario}
+                key={index}
+              />
+            );
+          })}
+        </PalestraWrapper>
+      </section>
+      <section>
+        <SectionTitle>Palestras Passadas</SectionTitle>
+        <PalestraWrapper>
+          {past.map((palestra, index) => {
+            return (
+              <Palestra
+                title={palestra.palestra}
+                speaker={palestra.palestrante}
+                date={palestra.data}
+                time={palestra.horario}
+                key={index}
+              />
+            );
+          })}
+        </PalestraWrapper>
+      </section>
     </Container>
-    <p>{current.palestra}</p>
-    <p>{current.palestrante}</p>
-    <p>{current.data}</p>
-    <p>{current.horario}</p>
-    <p>{past.palestra}</p>
-    <p>{past.palestrante}</p>
-    <p>{past.data}</p>
-    <p>{past.horario}</p>
   </>
 );
 
 PalestrasPageTemplate.propTypes = {
   pageTitle: PropTypes.string,
-  current: PropTypes.shape({
-    palestra: PropTypes.string,
-    palestrante: PropTypes.string,
-    data: PropTypes.string,
-    horario: PropTypes.string,
-  }),
-  past: PropTypes.shape({
-    palestra: PropTypes.string,
-    palestrante: PropTypes.string,
-    data: PropTypes.string,
-    horario: PropTypes.string,
-  }),
+  current: PropTypes.shape([
+    {
+      palestra: PropTypes.string,
+      palestrante: PropTypes.string,
+      data: PropTypes.string,
+      horario: PropTypes.string,
+    },
+  ]),
+  past: PropTypes.shape([
+    {
+      palestra: PropTypes.string,
+      palestrante: PropTypes.string,
+      data: PropTypes.string,
+      horario: PropTypes.string,
+    },
+  ]),
 };
 
 const PalestrasPage = ({ data }) => {
