@@ -34,7 +34,8 @@ export const IndexPageTemplate = ({ title }) => {
       <section>
         <Container>
           <SectionTitle>Mais do Cefa</SectionTitle>
-          <h3>Doações Voluntárias</h3>
+          <SectionTitle small>Doações voluntárias</SectionTitle>
+
           <p>
             O CEFA trabalha diversas atividades na Ação Social, voltadas ao
             atendimento de pessoas em condição de vulnerabilidade. São
