@@ -27,6 +27,8 @@ export const IndexPageTemplate = ({ title }) => {
           title="Conheça o grupo musical francisco de assis"
           buttonText="Clique Aqui"
           buttonLink="/"
+          id="grupo-musical"
+          black
         />
       </section>
       <section>
@@ -54,14 +56,18 @@ export const IndexPageTemplate = ({ title }) => {
           <p>Variação: 51</p>
         </Container>
       </section>
-      <SectionHeader
-        title="Acesse nosso boletim"
-        buttonText="Clique Aqui"
-        buttonLink="/"
-      />
+      <section>
+        <SectionHeader
+          title="Acesse nosso boletim"
+          buttonText="Clique Aqui"
+          buttonLink="/"
+          id="boletim"
+        />
+      </section>
       <section>
         <Container>
-          <h3>Livraria</h3>
+          <SectionTitle small>Livraria</SectionTitle>
+
           <p>
             A Livraria Bezerra de Menezes, do Centro Espirita Francisco de Assis
             (CEFA), tem como principal objetivo a divulgação da Doutrina
@@ -75,11 +81,14 @@ export const IndexPageTemplate = ({ title }) => {
           </p>
         </Container>
       </section>
-      <SectionHeader
-        title="Gostaria de alugar um livro?"
-        buttonText="Conheça nossa biblioteca"
-        buttonLink="/"
-      />
+      <section>
+        <SectionHeader
+          title="Gostaria de alugar um livro?"
+          buttonText="Conheça nossa biblioteca"
+          buttonLink="/"
+          id="biblioteca"
+        />
+      </section>
       <div>
         <h1>{title}</h1>
       </div>

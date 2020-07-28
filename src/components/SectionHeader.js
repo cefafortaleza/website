@@ -1,13 +1,13 @@
 import React from 'react';
+import Button from './Button';
 
 const SectionHeader = (props) => {
-  const { title, buttonText, buttonLink } = props;
+  const { title, buttonText, buttonLink, id, black } = props;
 
   return (
-    <div className="section-header-wrapper">
+    <div className={`section-header-wrapper ${black ? 'black' : ''}`} id={id}>
       <h1>{title}</h1>
-      <p>{buttonText}</p>
-      <p>{buttonLink}</p>
+      <Button href={buttonLink}>{buttonText}</Button>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Button from './Button';
 import {
   FlickingEvent,
   SelectEvent,
@@ -49,23 +49,23 @@ const MainSlides = (props) => {
       moveType={{ type: 'snap', count: 1 }}
       collectStatistics={true}
     >
-      <div className="main-slide-item">
+      <div className="main-slide-item item-1">
         <p className="subtitle">Palestra da semana</p>
         <h1 className="title">No Mundo Maior</h1>
         <p className="subtitle">com Angela Linhares | Dia 31/07 às 19:30</p>
-        <span>Botão</span>
+        <Button href="/">Slide 1</Button>
       </div>
-      <div className="main-slide-item">
+      <div className="main-slide-item item-2">
         <p className="subtitle">Subtitle Top 2</p>
         <h1 className="title">Title 2</h1>
         <p className="subtitle">Subtitle Bottom 2</p>
-        <span>Button 2</span>
+        <Button href="/">Slide 2</Button>
       </div>
-      <div className="main-slide-item">
+      <div className="main-slide-item item-3">
         <p className="subtitle">Subtitle Top 3</p>
         <h1 className="title">Title 3</h1>
         <p className="subtitle">Subtitle Bottom 3</p>
-        <span>Button 3</span>
+        <Button href="/">Slide 3</Button>
       </div>
     </Flicking>
   );

@@ -15,7 +15,7 @@ const Palestra = (props) => {
     <>
       <li className="palestra">
         <button onClick={() => handleClick()}>
-          <SectionTitle>{title}</SectionTitle>
+          <SectionTitle small>{title}</SectionTitle>
           <p>Com {speaker}</p>
           <p>
             Dia {date} às {time}

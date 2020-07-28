@@ -11,7 +11,7 @@ import Layout from '../components/Layout';
 export const PalestrasPageTemplate = ({ pageTitle, current, past }) => (
   <>
     <Container>
-      <SectionTitle>{pageTitle}</SectionTitle>
+      <SectionTitle big>{pageTitle}</SectionTitle>
       <section>
         <SectionTitle>Palestras do mês</SectionTitle>
         <PalestraWrapper>
