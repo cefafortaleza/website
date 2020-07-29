@@ -21,45 +21,47 @@ export const SobrePageTemplate = ({
   phoneNumber,
   email,
 }) => (
-  <Container>
-    <SectionTitle big>{pageTitle}</SectionTitle>
-    <div>
-      <p>ÍNDICE</p>
-    </div>
-    <section>
-      <SectionTitle>{sectionOneTitle}</SectionTitle>
-      <p>{sectionOneContent}</p>
-    </section>
-    <section>
-      <SectionTitle>{sectionTwoTitle}</SectionTitle>
+  <section>
+    <Container>
+      <SectionTitle big>{pageTitle}</SectionTitle>
       <div>
-        <p>TABS!!!</p>
+        <p>ÍNDICE</p>
       </div>
-    </section>
-    <section>
-      <SectionTitle>{sectionThreeTitle}</SectionTitle>
-      <p>{bylaws}</p>
-    </section>
-    <section>
-      <SectionTitle>{sectionFourTitle}</SectionTitle>
-      <p>{internalPolicyLink}</p>
-    </section>
-    <section>
-      <SectionTitle>{sectionFiveTitle}</SectionTitle>
-      <p>Telefone: {phoneNumber}</p>
-      <p>Email: {email}</p>
-      <p>SOCIA MEDIA BLACK</p>
-    </section>
-    <section>
-      <div>
-        <p>MAP</p>
-      </div>
-      <div>
-        <p>CEFA</p>
-        <p>Endereço</p>
-      </div>
-    </section>
-  </Container>
+      <section>
+        <SectionTitle>{sectionOneTitle}</SectionTitle>
+        <p>{sectionOneContent}</p>
+      </section>
+      <section>
+        <SectionTitle>{sectionTwoTitle}</SectionTitle>
+        <div>
+          <p>TABS!!!</p>
+        </div>
+      </section>
+      <section>
+        <SectionTitle>{sectionThreeTitle}</SectionTitle>
+        <p>{bylaws}</p>
+      </section>
+      <section>
+        <SectionTitle>{sectionFourTitle}</SectionTitle>
+        <p>{internalPolicyLink}</p>
+      </section>
+      <section>
+        <SectionTitle>{sectionFiveTitle}</SectionTitle>
+        <p>Telefone: {phoneNumber}</p>
+        <p>Email: {email}</p>
+        <p>SOCIA MEDIA BLACK</p>
+      </section>
+      <section>
+        <div>
+          <p>MAP</p>
+        </div>
+        <div>
+          <p>CEFA</p>
+          <p>Endereço</p>
+        </div>
+      </section>
+    </Container>
+  </section>
 );
 
 SobrePageTemplate.propTypes = {
