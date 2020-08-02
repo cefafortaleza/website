@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import BlogRoll from '../components/BlogRoll';
+import PostList from '../components/PostList';
 import SectionTitle from '../components/SectionTitle';
 import SectionHeader from '../components/SectionHeader';
 import MainSlides from '../components/MainSlides';
@@ -21,7 +21,7 @@ export const IndexPageTemplate = ({ title }) => {
       </section>
       <section>
         <Container>
-          <BlogRoll />
+          <PostList />
         </Container>
         <SectionHeader
           title="Conheça o grupo musical francisco de assis"
