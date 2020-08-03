@@ -117,3 +117,39 @@ $menu-label-color: $white-ter
   justify-content: center
   align-items: center
   flex-direction: column
+
+// PAGE HORARIOS
+
+.schedule-tabs-wrapper
+  display: flex
+  flex-direction: column
+
+  .schedule-tabs
+    flex: 1
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin: 20px 0
+
+    .schedule-tab
+      flex: 1
+      width: 100%
+      display: block
+
+  .schedule-content
+    flex: 1
+    width: 100%
+    display: flex
+    justify-content: left
+    align-items: left
+    margin: 20px 0
+    .schedule-tab
+      background: #aaddcc
+      display: none
+      font-size: 1.5rem
+      width: 100%
+      padding: 30px
+
+    .active-tab
+      display: block
