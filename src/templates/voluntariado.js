@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import Features from '../components/Features';
-import BlogRoll from '../components/BlogRoll';
+import PostList from '../components/PostList';
 
 export const VoluntariadoPageTemplate = ({ title }) => (
   <div>
