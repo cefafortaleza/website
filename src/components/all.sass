@@ -6,12 +6,15 @@
 
 @import "./container.sass"
 @import "./button.sass"
+@import "./postsList.sass"
+@import "./post.sass"
 @import "./mainSlides.sass"
 @import "./sectionTitle.sass"
 @import "./sectionHeader.sass"
 @import "./navbar.sass"
 @import "./palestra.sass"
 @import "./palestraWrapper.sass"
+@import "./schedule.sass"
 @import "./footer.sass"
 
 *
@@ -115,3 +118,41 @@ $menu-label-color: $white-ter
   justify-content: center
   align-items: center
   flex-direction: column
+
+// PAGE HORARIOS
+
+.schedule-tabs-wrapper
+  display: flex
+  flex-direction: column
+
+  .schedule-tabs
+    flex: 1
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin: 20px 0
+
+    .schedule-tab
+      flex: 1
+      width: 100%
+      display: block
+
+  .schedule-content
+    flex: 1
+    width: 100%
+    display: flex
+    justify-content: left
+    align-items: left
+    margin: 20px 0
+    .schedule-tab
+      background: #aaddcc
+      display: none
+      font-size: 1.5rem
+      width: 100%
+      padding: 30px
+
+    .active-tab
+      display: flex
+      align-items: flex-start
+      justify-content: space-between
