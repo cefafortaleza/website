@@ -5,12 +5,14 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
+import RichText from '../components/RichText';
 
 export const EspiritismoPageTemplate = ({ title, content }) => (
   <section id="espiritismo">
     <Container className="teste classe">
       <SectionTitle>{title}</SectionTitle>
       <p>{content}</p>
+      <RichText>{content}</RichText>
     </Container>
   </section>
 );
