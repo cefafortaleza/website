@@ -90,9 +90,6 @@ export const IndexPageTemplate = ({ title }) => {
           id="biblioteca"
         />
       </section>
-      <div>
-        <h1>{title}</h1>
-      </div>
     </>
   );
 };

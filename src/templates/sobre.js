@@ -8,6 +8,11 @@ import PostList from '../components/PostList';
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
 
+
+import Instagram from '../assets/img/icon-instagram.svg';
+import Facebook from '../assets/img/icon-facebook.svg';
+import Youtube from '../assets/img/icon-youtube.svg';
+
 export const SobrePageTemplate = ({
   pageTitle,
   sectionOneTitle,
@@ -21,37 +26,58 @@ export const SobrePageTemplate = ({
   phoneNumber,
   email,
 }) => (
-  <section>
+  <section id="cefa-about">
     <Container>
       <SectionTitle big>{pageTitle}</SectionTitle>
       <div>
+        <div className="index">
+          <h3>Índice</h3>
+          <Link to="#apresentacao">Apresentação</Link>
+          <Link to="#board">
+            Diretoria, conselho consultivo e coordenadorias
+          </Link>
+          <Link to="#estatuto">Estatuto</Link>
+          <Link to="#regime-interno">Regimento Interno</Link>
+          <Link to="#localizacao">Localização</Link>
+        </div>
         <p>ÍNDICE</p>
       </div>
-      <section>
+      <div id="apresentacao">
         <SectionTitle>{sectionOneTitle}</SectionTitle>
         <p>{sectionOneContent}</p>
-      </section>
-      <section>
+      </div>
+      <div id="board">
         <SectionTitle>{sectionTwoTitle}</SectionTitle>
         <div>
           <p>TABS!!!</p>
         </div>
-      </section>
-      <section>
+      </div>
+      <div id="estatuto">
         <SectionTitle>{sectionThreeTitle}</SectionTitle>
-        <p>{bylaws}</p>
-      </section>
-      <section>
+        <a href={`${bylaws}`} download>
+          Download!
+        </a>
+      </div>
+      <div id="regime-interno">
         <SectionTitle>{sectionFourTitle}</SectionTitle>
-        <p>{internalPolicyLink}</p>
-      </section>
-      <section>
+        <a href={`${internalPolicyLink}`} download>
+          Download!
+        </a>
+      </div>
+      <div id="localizacao">
         <SectionTitle>{sectionFiveTitle}</SectionTitle>
-        <p>Telefone: {phoneNumber}</p>
-        <p>Email: {email}</p>
+        <p>
+          Telefone: <Link to={`tel:+${phoneNumber}`}>{phoneNumber}</Link>
+        </p>
+        <p>
+          Email: <Link to={`mailto:${email}`}>{email}</Link>
+        </p>
+        <div className="social-media-wrapper">
+          <Link to='/'></Link>
+        </div>
         <p>SOCIA MEDIA BLACK</p>
-      </section>
-      <section>
+      </div>
+      <div>
         <div>
           <p>MAP</p>
         </div>
@@ -59,7 +85,7 @@ export const SobrePageTemplate = ({
           <p>CEFA</p>
           <p>Endereço</p>
         </div>
-      </section>
+      </div>
     </Container>
   </section>
 );

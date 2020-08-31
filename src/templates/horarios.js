@@ -48,40 +48,327 @@ export const HorariosPageTemplate = ({ title }) => {
           </ul>
           <div className="schedule-content">
             <div className="schedule-tab active-tab" id="mon">
-              <p>1</p>
+              <div className="schedule morning">
+                <ul className="schedule-list">
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="schedule afternoon">
+                <ul className="schedule-list">
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="schedule evening">
+                <ul className="schedule-list">
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div className="schedule-tab" id="tue">
-              <p>2</p>
+              <div className="schedule morning">
+                <ul className="schedule-list">
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="schedule afternoon">
+                <ul className="schedule-list">
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="schedule evening"></div>
             </div>
             <div className="schedule-tab" id="wed">
-              <p>3</p>
+              <div className="schedule morning">
+                <ul className="schedule-list">
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="schedule afternoon">
+                <ul className="schedule-list">
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="schedule evening"></div>
             </div>
             <div className="schedule-tab" id="thr">
-              <p>4</p>
+              <div className="schedule morning">
+                <ul className="schedule-list">
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="schedule afternoon">
+                <ul className="schedule-list">
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="schedule evening"></div>
             </div>
             <div className="schedule-tab" id="fri">
-              <p>5</p>
+              <div className="schedule morning">
+                <ul className="schedule-list">
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="schedule afternoon">
+                <ul className="schedule-list">
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="schedule evening"></div>
             </div>
             <div className="schedule-tab" id="sat">
-              <p>6</p>
+              <div className="schedule morning">
+                <ul className="schedule-list">
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="schedule afternoon">
+                <ul className="schedule-list">
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="schedule evening"></div>
             </div>
             <div className="schedule-tab" id="sun">
-              <p>7</p>
+              <div className="schedule morning">
+                <ul className="schedule-list">
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="schedule afternoon">
+                <ul className="schedule-list">
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>--:-- - </span>Activity
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="schedule evening"></div>
             </div>
           </div>
         </div>
       </section>
       <section>
-        <SectionTitle>Section 2</SectionTitle>
+        <SectionTitle>Atividades</SectionTitle>
       </section>
       <section>
-        <SectionTitle>Section 3</SectionTitle>
+        <SectionTitle>Livraria</SectionTitle>
       </section>
       <section>
-        <SectionTitle>Section 4</SectionTitle>
+        <SectionTitle>Biblioteca</SectionTitle>
       </section>
       <section>
-        <SectionTitle>Section 5</SectionTitle>
+        <SectionTitle>Palestras</SectionTitle>
+      </section>
+      <section>
+        <SectionTitle>Eventos</SectionTitle>
       </section>
     </>
   );

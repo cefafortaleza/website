@@ -112,7 +112,7 @@ collections:
               default: 'sobre-page',
             }
           - { label: Title, name: title, widget: string }
-          - { label: Content, name: content, widget: text }
+          - { label: Content, name: content, widget: markdown }
       - file: 'src/pages/sobre/index.md'
         label: 'Sobre o CEFA'
         name: 'sobre'
@@ -136,12 +136,13 @@ collections:
               name: sectionThreeTitle,
               widget: string,
             }
-          - { label: bylaws, name: bylaws, widget: string }
+          - { label: bylaws, name: bylaws, widget: file, default: 'static/ESTATUTO.pdf' }
           - { label: sectionFourTitle, name: sectionFourTitle, widget: string }
           - {
               label: internalPolicyLink,
               name: internalPolicyLink,
-              widget: string,
+              widget: file,
+              default: 'static/REGIMENTO.docx',
             }
           - { label: sectionFiveTitle, name: sectionFiveTitle, widget: string }
           - { label: phoneNumber, name: phoneNumber, widget: string }
