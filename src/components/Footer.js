@@ -12,17 +12,29 @@ const Footer = class extends React.Component {
           <h3 className="footer-title">Siga-nos nas redes sociais</h3>
           <ul className="footer-sm-icons">
             <li>
-              <a href="" target="_blank">
+              <a
+                href="https://www.instagram.com/cefafortaleza/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Instagram />
               </a>
             </li>
             <li>
-              <a href="" target="_blank">
+              <a
+                href="https://www.facebook.com/CefaFortaleza"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Facebook />
               </a>
             </li>
             <li>
-              <a href="" target="_blank">
+              <a
+                href="https://www.youtube.com/user/CEFA1941"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Youtube />
               </a>
             </li>
