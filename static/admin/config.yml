@@ -169,6 +169,7 @@ collections:
                   { label: Palestrante, name: palestrante, widget: string },
                   { label: Data, name: data, widget: string },
                   { label: Horário, name: horario, widget: string },
+                  { label: Descrição, name: description, widget: string },
                 ],
             }
           - {

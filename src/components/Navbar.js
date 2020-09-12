@@ -51,7 +51,6 @@ const Navbar = class extends React.Component {
           </div>
 
           <button
-            role="button"
             className="navbar-burger burger"
             aria-label="menu"
             aria-expanded="false"
@@ -85,7 +84,7 @@ const Navbar = class extends React.Component {
             </Link>
 
             <div className="navbar-item has-dropdown is-hoverable">
-              <Link className="navbar-link">Mais</Link>
+              <Link className="navbar-link" to="#">Mais</Link>
 
               <div className="navbar-dropdown">
                 <Link className="navbar-item" to="/horarios">
