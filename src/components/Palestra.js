@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SectionTitle from './SectionTitle';
 
 const Palestra = (props) => {
-  const { title, speaker, date, time } = props;
+  const { id, title, speaker, date, time, description } = props;
 
   const [showDetails, setShowDetails] = useState(false);
 
@@ -13,7 +13,7 @@ const Palestra = (props) => {
 
   return (
     <>
-      <li className="palestra">
+      <li className="palestra" id={id}>
         <button onClick={() => handleClick()}>
           <SectionTitle small>{title}</SectionTitle>
           <p>Com {speaker}</p>
@@ -22,7 +22,24 @@ const Palestra = (props) => {
           </p>
         </button>
       </li>
-      {showDetails ? <p>Details</p> : null}
+      {showDetails ? (
+        <div className="palestra-details">
+          <div className="palestra">
+            <div className="logo">
+              <p>Logo</p>
+            </div>
+            <div className="sobre">
+              <SectionTitle>{title}</SectionTitle>
+              <p>Com {speaker}</p>
+              <p>
+                Dia {date} às {time}
+              </p>
+              <p>{description}</p>
+            </div>
+          </div>
+          <div className="localizacao"></div>
+        </div>
+      ) : null}
     </>
   );
 };

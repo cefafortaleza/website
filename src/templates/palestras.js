@@ -22,7 +22,8 @@ export const PalestrasPageTemplate = ({ pageTitle, current, past }) => (
                 speaker={palestra.palestrante}
                 date={palestra.data}
                 time={palestra.horario}
-                key={index}
+                id={`${index}-${palestra.palestra}`}
+                key={`${index}-${palestra.palestra}`}
               />
             );
           })}
