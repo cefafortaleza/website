@@ -9,7 +9,19 @@ import SectionHeader from '../components/SectionHeader';
 import MainSlides from '../components/MainSlides';
 import Container from '../components/Container';
 
-export const IndexPageTemplate = ({ title }) => {
+import unified from 'unified';
+import parse from 'remark-parse';
+import remark2react from 'remark-react';
+import breaks from 'remark-breaks';
+
+export const IndexPageTemplate = ({
+  sectionOneTitle,
+  sectionOneSubtitle,
+  sectionOneContent,
+  sectionTwoTitle,
+  sectionTwoSubtitle,
+  sectionTwoContent,
+}) => {
   return (
     <>
       <MainSlides />
@@ -33,28 +45,18 @@ export const IndexPageTemplate = ({ title }) => {
       </section>
       <section>
         <Container>
-          <SectionTitle>Mais do Cefa</SectionTitle>
-          <SectionTitle small>Doações voluntárias</SectionTitle>
+          <SectionTitle>{sectionOneTitle}</SectionTitle>
+          <SectionTitle small>{sectionOneSubtitle}</SectionTitle>
 
-          <p>
-            O CEFA trabalha diversas atividades na Ação Social, voltadas ao
-            atendimento de pessoas em condição de vulnerabilidade. São
-            desenvolvidos quatro programas sociais: Coração Fraterno, Arte
-            Feliz, Renascer e Mão Amiga. Para que essas atividades possam
-            acontecer, a sua contribuição é muito importante. Preferencialmente,
-            são bem-vindas doações de alimentos não perecíveis; materiais de
-            higiene e limpeza; brinquedos; roupas; acessórios e utensílios em
-            bom estado de conservação, que possam ser colocados em bazares ou
-            para doação direta, além de roupas; utensílios de enxovais e
-            mobiliários para atender às gestantes. Na impossibilidade desse tipo
-            de contribuição, também é possível a realização de doações
-            financeiras, por meio de depósito na seguinte Conta Poupança:
-          </p>
-          <span>Centro Espírita Francisco de Assis</span>
-          <p>CNPJ: 07.130.297/001-59</p>
-          <p>Banco do Brasil (001)</p>
-          <p>Conta: 4520-9</p>
-          <p>Variação: 51</p>
+          <div className="richText">
+            {
+              unified()
+                .use(parse)
+                .use(breaks)
+                .use(remark2react)
+                .processSync(sectionOneContent).result
+            }
+          </div>
         </Container>
       </section>
       <section>
@@ -67,19 +69,17 @@ export const IndexPageTemplate = ({ title }) => {
       </section>
       <section>
         <Container>
-          <SectionTitle small>Livraria</SectionTitle>
+          <SectionTitle small>{sectionTwoSubtitle}</SectionTitle>
 
-          <p>
-            A Livraria Bezerra de Menezes, do Centro Espirita Francisco de Assis
-            (CEFA), tem como principal objetivo a divulgação da Doutrina
-            Espírita. Na Livraria do CEFA podem ser encontrados à venda diversos
-            títulos da Literatura Espírita, voltados desde o público
-            infantojuvenil até o público adulto. As vendas podem ser feitas
-            tanto em dinheiro como no cartão (débito ou crédito), com
-            parcelamento a partir de R$ 100,00. A livraria funciona diariamente,
-            nos seguintes horários: Clique aqui para ver os horários de
-            funcionamento.
-          </p>
+          <div className="richText">
+            {
+              unified()
+                .use(parse)
+                .use(breaks)
+                .use(remark2react)
+                .processSync(sectionTwoContent).result
+            }
+          </div>
         </Container>
       </section>
       <section>
@@ -95,7 +95,12 @@ export const IndexPageTemplate = ({ title }) => {
 };
 
 IndexPageTemplate.propTypes = {
-  title: PropTypes.string,
+  sectionOneTitle: PropTypes.string,
+  sectionOneSubtitle: PropTypes.string,
+  sectionOneContent: PropTypes.string,
+  sectionTwoTitle: PropTypes.string,
+  sectionTwoSubtitle: PropTypes.string,
+  sectionTwoContent: PropTypes.string,
 };
 
 const IndexPage = ({ data }) => {
@@ -103,7 +108,14 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <IndexPageTemplate title={frontmatter.title} />
+      <IndexPageTemplate
+        sectionOneTitle={frontmatter.sectionOneTitle}
+        sectionOneSubtitle={frontmatter.sectionOneSubtitle}
+        sectionOneContent={frontmatter.sectionOneContent}
+        sectionTwoTitle={frontmatter.sectionTwoTitle}
+        sectionTwoSubtitle={frontmatter.sectionTwoSubtitle}
+        sectionTwoContent={frontmatter.sectionTwoContent}
+      />
     </Layout>
   );
 };
@@ -122,7 +134,12 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
+        sectionOneTitle
+        sectionOneSubtitle
+        sectionOneContent
+        sectionTwoTitle
+        sectionTwoSubtitle
+        sectionTwoContent
       }
     }
   }

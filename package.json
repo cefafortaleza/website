@@ -21,7 +21,7 @@
     "gatsby-remark-images": "^3.2.6",
     "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-source-filesystem": "^2.2.5",
-    "gatsby-transformer-remark": "^2.7.5",
+    "gatsby-transformer-remark": "^2.8.34",
     "gatsby-transformer-sharp": "^2.4.7",
     "google-map-react": "^1.1.7",
     "lodash": "^4.17.15",
@@ -35,6 +35,12 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^6.0.0",
+    "rehype-stringify": "^8.0.0",
+    "remark-breaks": "^2.0.0",
+    "remark-parse": "^8.0.3",
+    "remark-react": "^7.0.1",
+    "remark-rehype": "^7.0.0",
+    "unified": "^9.2.0",
     "uuid": "^7.0.0"
   },
   "keywords": [
