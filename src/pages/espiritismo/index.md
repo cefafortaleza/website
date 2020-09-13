@@ -10,20 +10,14 @@ content: >-
 
 
 
-
-
-
-
   Foi fundado por Olívio Silva, Francisco Inácio da Ponte, Guiomar Pires, Aníbal Justa, Francisco Emídio e Mafina Feitosa, em 02 de dezembro de 1941, com o nome de Centro Espírita União e Caridade Francisco de Assis (CEUCFA). 
 
 
 
 
-
-
-
-
   Suas primeiras atividades aconteceram em um prédio alugado no Centro de Fortaleza (CE), localizado na Rua Barão do Rio Branco, 1741. Seu primeiro Estatuto foi publicado no Diário Oficial em novembro de 1942 e registrado em cartório em 02 de dezembro de 1942, conferindo ao Centro Espírita personalidade jurídica e descrevendo sua primeira Diretoria, composta por
+
+
 
 
   **Presidente: Joaquim Maia de Oliveira;** 
@@ -53,5 +47,10 @@ content: >-
   **Procuradores Gerais: Pedro Carlos Braga e Joventino Gomes Barbosa.** 
 
 
-  A sua legalização constitui fato de suma importância, tendo em vista que as atividades filosóficas e religiosas na senda espírita sofriam perseguições na época tanto do Clero Romano como do Governo.   Hoje, o CEFA possui uma sede própria, localizada na Rua Senador Catunda, 117, no Bairro Benfica, cuja escritura de compra do terreno data de 18 de março de 1948. Foram 7 anos de trabalho até a sua inauguração, em 23 de julho de 1955. Ainda em obras, o prédio foi visitado em 24 de novembro de 1950 por Leopoldo Machado - uma das figuras mais expressivas do Espiritismo no Brasil -, em sua Caravana da Fraternidade, movimento que percorreu os estados do Norte e Nordeste com o objetivo de promover uma maior aproximação entre os espíritas e divulgar a Doutrina Espírita. Nas palavras do confrade, conforme consta no livro “A Caravana da Fraternidade”, de sua autoria e publicado pela Federação Espírita Brasileira (FEB), “Fomos visitar a sede do Francisco de Assis, ainda em construção. Sede enorme. Um mundo de casa, talvez, para abrigar toda Fortaleza espiritista”.Com quase 80 anos de atividades, o CEFA tem influenciado o surgimento de vários Centros Espíritas no Ceará, constituindo um modelo de referência para o Movimento Espírita cearense.
+
+
+  A sua legalização constitui fato de suma importância, tendo em vista que as atividades filosóficas e religiosas na senda espírita sofriam perseguições na época tanto do Clero Romano como do Governo.   
+
+
+  Hoje, o CEFA possui uma sede própria, localizada na Rua Senador Catunda, 117, no Bairro Benfica, cuja escritura de compra do terreno data de 18 de março de 1948. Foram 7 anos de trabalho até a sua inauguração, em 23 de julho de 1955. Ainda em obras, o prédio foi visitado em 24 de novembro de 1950 por Leopoldo Machado - uma das figuras mais expressivas do Espiritismo no Brasil -, em sua Caravana da Fraternidade, movimento que percorreu os estados do Norte e Nordeste com o objetivo de promover uma maior aproximação entre os espíritas e divulgar a Doutrina Espírita. Nas palavras do confrade, conforme consta no livro “A Caravana da Fraternidade”, de sua autoria e publicado pela Federação Espírita Brasileira (FEB), “Fomos visitar a sede do Francisco de Assis, ainda em construção. Sede enorme. Um mundo de casa, talvez, para abrigar toda Fortaleza espiritista”.Com quase 80 anos de atividades, o CEFA tem influenciado o surgimento de vários Centros Espíritas no Ceará, constituindo um modelo de referência para o Movimento Espírita cearense.
 ---
