@@ -7,6 +7,7 @@ import Features from '../components/Features';
 import PostList from '../components/PostList';
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
+import RichText from 'react-markdown';
 
 import Instagram from '../assets/img/icon-instagram-black.svg';
 import Facebook from '../assets/img/icon-facebook-black.svg';
@@ -51,7 +52,7 @@ export const SobrePageTemplate = ({
       </div>
       <div id="apresentacao">
         <SectionTitle>{sectionOneTitle}</SectionTitle>
-        <p>{sectionOneContent}</p>
+        <RichText>{sectionOneContent}</RichText>
       </div>
       <div id="board">
         <SectionTitle>{sectionTwoTitle}</SectionTitle>

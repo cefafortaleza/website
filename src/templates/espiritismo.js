@@ -5,13 +5,12 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
-import RichText from '../components/RichText';
+import RichText from 'react-markdown';
 
 export const EspiritismoPageTemplate = ({ title, content }) => (
   <section id="espiritismo">
     <Container className="teste classe">
       <SectionTitle>{title}</SectionTitle>
-      <p>{content}</p>
       <RichText>{content}</RichText>
     </Container>
   </section>
@@ -23,7 +22,7 @@ EspiritismoPageTemplate.propTypes = {
 };
 
 const EspiritismoPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+  const { frontmatter, html } = data.markdownRemark;
 
   return (
     <Layout>
@@ -31,6 +30,7 @@ const EspiritismoPage = ({ data }) => {
         title={frontmatter.title}
         content={frontmatter.content}
       />
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );
 };
