@@ -5,10 +5,22 @@ content: >-
   O **Centro Espírita Francisco de Assis (CEFA)** é uma instituição religiosa
   espírita de caráter cultural e filantrópico, que tem como objetivos o estudo,
   a prática e a divulgação do Evangelho de Jesus Cristo e da Doutrina Espírita,
-  codificada por Allan Kardec (1804-1869). 
+  codificada por Allan Kardec (1804-1869).
+
+
+
+
+
+
 
 
   Foi fundado por Olívio Silva, Francisco Inácio da Ponte, Guiomar Pires, Aníbal Justa, Francisco Emídio e Mafina Feitosa, em 02 de dezembro de 1941, com o nome de Centro Espírita União e Caridade Francisco de Assis (CEUCFA). 
+
+
+
+
+
+
 
 
   Suas primeiras atividades aconteceram em um prédio alugado no Centro de Fortaleza (CE), localizado na Rua Barão do Rio Branco, 1741. Seu primeiro Estatuto foi publicado no Diário Oficial em novembro de 1942 e registrado em cartório em 02 de dezembro de 1942, conferindo ao Centro Espírita personalidade jurídica e descrevendo sua primeira Diretoria, composta por
