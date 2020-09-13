@@ -7,11 +7,16 @@ import Features from '../components/Features';
 import PostList from '../components/PostList';
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
-import RichText from 'react-markdown';
+
+import unified from 'unified'
+import parse from 'remark-parse'
+import remark2react from 'remark-react'
+import breaks from 'remark-breaks'
 
 import Instagram from '../assets/img/icon-instagram-black.svg';
 import Facebook from '../assets/img/icon-facebook-black.svg';
 import Youtube from '../assets/img/icon-youtube-black.svg';
+
 
 function getCEFAMap() {
   if (typeof window === 'undefined') return
@@ -52,7 +57,15 @@ export const SobrePageTemplate = ({
       </div>
       <div id="apresentacao">
         <SectionTitle>{sectionOneTitle}</SectionTitle>
-        <RichText>{sectionOneContent}</RichText>
+        <div className="richText">
+      {
+            unified()
+            .use(parse)
+            .use(breaks)
+            .use(remark2react)
+              .processSync(sectionOneContent).result
+          }
+      </div>
       </div>
       <div id="board">
         <SectionTitle>{sectionTwoTitle}</SectionTitle>
