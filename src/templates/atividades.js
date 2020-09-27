@@ -21,7 +21,7 @@ export const AtividadesPageTemplate = ({
   sectionFour,
 }) => (
   <>
-    {console.log(sectionOne)};
+    {console.log('Section one: ', sectionOne)};
     <section id="atividades-index">
       <Container>
         <div className="index">
@@ -60,9 +60,9 @@ export const AtividadesPageTemplate = ({
         </div>
       </Container>
     </section>
-    <section id="section_one">
+    {/* <section id="section_one">
       {Object.keys(sectionOne).map((subsection) => {
-        console.log(subsection)
+        console.log("Section 1, subsection: ", subsection)
         return (
           <>
             <div className="subsection">
@@ -147,6 +147,7 @@ export const AtividadesPageTemplate = ({
         </div>
       </div>
     </section>
+    */}
   </>
 );
 
