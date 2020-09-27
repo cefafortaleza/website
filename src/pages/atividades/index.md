@@ -2,8 +2,8 @@
 templateKey: atividades
 title: Atividades Page
 ede:
-  - epe:
-      - schedule:
+    epe:
+        schedule:
           - day: Segunda
             time: 19:30 às 21:00
         content: >-
@@ -19,7 +19,7 @@ ede:
 
           Por se tratar de um estudo sistematizado, deve-se iniciar estudando como surgiram os fenômenos que deram origem à codificação, para no decorrer do curso estudarem questões mais aprofundadas da Doutrina dos Espíritos.
     esde:
-      - schedule:
+        schedule:
           - day: Segunda
             time: 19:30 às 21:00
           - day: "Sábado "
@@ -37,7 +37,7 @@ ede:
 
           O conteúdo programático do ESDE está elaborado em três livros, pelos quais se estuda a Doutrina dos Espíritos de maneira regular, metódica e sistemática, durante três anos e meio. As aulas acontecem nas segundas-feiras, das 19h30min às 21h, e aos sábados, das 17h30min às 19h.
     eade:
-      - schedule:
+        schedule:
           - day: Segunda
             time: 19:30 às 21:00
           - day: Sábado
@@ -64,14 +64,14 @@ ede:
 
           **Requisitos de admissão**: os participantes inscritos devem ter concluído cursos básicos e regulares da Doutrina Espírita, como o Estudo Sistematizado da Doutrina Espírita (ESDE) ou ter conhecimento das obras codificadas por Allan Kardec.
     eobc:
-      - schedule:
+        schedule:
           - day: Segunda
             time: 19:30 às 21:00
           - day: Sábado
             time: 17:30 às 19:00
         content: Estudo de obras Espíritas que complementam o conhecimento Doutrinário.
     papu:
-      - schedule:
+        schedule:
           - day: Quarta
             time: 19:30 às 21:00
           - day: Sexta
@@ -80,7 +80,7 @@ ede:
           sextas-feiras, sempre às 19h30min. A programação mensal das palestras
           públicas pode ser vista aqui
     hodp:
-      - schedule:
+        schedule:
           - day: Quarta
             time: 19:30 às 21:00
         content: >-
@@ -94,8 +94,8 @@ ede:
 
           O encontro conta com a presença do Grupo Musical Francisco de Assis, que harmoniza o ambiente com canções edificantes. Ao final, é oferecido passe espírita aos frequentadores que o desejarem receber.
 ateesp:
-  - orifra:
-      - schedule:
+    orifra:
+        schedule:
           - day: Segunda
             time: 19:30 às 21:00
           - day: Sábado
@@ -104,7 +104,7 @@ ateesp:
           orientador do CEFA, na qual o assistido pode expor as questões que o
           afligem.
     assesp:
-      - schedule:
+        schedule:
           - day: Domingo
             time: 16:30 às 19:00
           - day: Terça
@@ -129,7 +129,7 @@ ateesp:
 
           A Orientação Fraterna acontece todos os dias. Já a Assistência Espiritual funciona aos domingos, às 16h30min, nas terças, às 16h30 ou às 19h30min, e nas quintas-feiras, às 19h30min.
     passee:
-      - schedule:
+        schedule:
           - day: Domingo
             time: 16:30 às 19:00
           - day: Terça
@@ -177,7 +177,7 @@ ateesp:
 
           Fonte: Estudo sobre o passe: Passe na reunião Mediúnica, Marta Antunes Moura/FEB, 2004
     mediun:
-      - schedule:
+        schedule:
           - day: Domingo
             time: 16:30 às 19:00
           - day: Terça
@@ -201,8 +201,8 @@ ateesp:
 
           Para as pessoas que possuem a mediunidade patente, sobre a qual ainda não tem controle e, por isso, encontram-se em desequilíbrio, o CEFA oferece o S.O.S Mediúnico, um grupo de estudos e orientação aos médiuns, enquanto não são formadas novas turmas de EPM.
 evainf:
-  - grufam:
-      - schedule:
+    grufam:
+        schedule:
           - day: Segunda
             time: 19:30 às 21:00
           - day: Sábado
@@ -213,7 +213,7 @@ evainf:
           de temas referentes à relação familiar, visando ao equilíbrio e à
           harmonia na família.
     gmfias:
-      - schedule:
+        schedule:
           - day: Segunda
             time: 19:30 às 21:00
           - day: Sábado
@@ -224,7 +224,7 @@ evainf:
           ensaios acontecem antes da Evangelização, preparando o grupo para
           harmonizar a Hora da Prece no quinto domingo do mês.
     evecam:
-      - schedule:
+        schedule:
           - day: Segunda
             time: 19:30 às 21:00
           - day: Sábado
@@ -254,9 +254,9 @@ evainf:
           \
 
           **\- Projeto “Ouça a voz do coração”**: Nesta atividade, os participantes do Grupo Musical Filhos de Assis, juntamente com a turma da juventude e os pais, visitam instituições beneficentes levando doações, música e suas melhores vibrações.
-acasoc:
-  - procof:
-      - schedule:
+acasoc:          
+    procof:
+        schedule:
           - day: Segunda
             time: 19:30 às 21:00
           - day: Sábado
@@ -275,7 +275,7 @@ acasoc:
 
           Além de lanches, os 94 idosos cadastrados recebem, mensalmente, uma cesta básica, composta a partir de doações de voluntários e frequentadores do CEFA.
     proart:
-      - schedule:
+        schedule:
           - day: Segunda
             time: 19:30 às 21:00
           - day: Sábado
@@ -289,20 +289,21 @@ acasoc:
 
           As atividades são desenvolvidas em salas de leitura, oficinas de crochê, tapeçaria, bordado, pintura, reciclagem e música.
     proren:
-      - schedule:
+        schedule:
           - day: Segunda
             time: 19:30 às 21:00
           - day: Sábado
             time: 17:30 às 19:00
         content: Programa voltado ao acolhimento e à orientação de gestantes.
     promao:
-      - content: Programa voltado ao desenvolvimento de atividades relacionadas a
-          visitas a creches, casas de acolhimento de idoso, casas de
-          recuperação. Nas visitas, são doados materiais de higiene pessoal e de
-          limpeza, além de alimentos não perecíveis e roupas.
         schedule:
           - day: Segunda
             time: 19:30 às 21:00
           - day: Sábado
             time: 17:30 às 19:00
+        content: >- 
+          Programa voltado ao desenvolvimento de atividades relacionadas a
+          visitas a creches, casas de acolhimento de idoso, casas de
+          recuperação. Nas visitas, são doados materiais de higiene pessoal e de
+          limpeza, além de alimentos não perecíveis e roupas.
 ---

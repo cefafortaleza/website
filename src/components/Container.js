@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Container = (props) => {
-  const { children, className } = props;
-  return <div className={`container ${className}`}>{children}</div>;
+  const { children, className, id } = props;
+  return <div id={id} className={`container ${className ? className : ''}`}>{children}</div>;
 };
 
 export default Container;
