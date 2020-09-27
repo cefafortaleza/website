@@ -2,137 +2,136 @@
 templateKey: horarios
 schedule: 
   - sunday:
-    - morning: 
+    - morning: 'Morning' 
       time: '08:00'
       description: 'Something cool'
-    - morning:
+    - morning: 'Morning'
       time: '09:00'
       description: 'Something else'
-    - afternoon: 
+    - afternoon: 'Afternoon' 
       time: '14:00'
       description: 'Something cool'
-    - afternoon:
+    - afternoon: 'Afternoon'
       time: '15:00'
       description: 'Something else'
-    - evening: 
+    - evening: 'Evening' 
       time: '19:00'
       description: 'Something cool'
-    - evening:
+    - evening: 'Evening'
       time: '20:00'
       description: 'Something else'
   - monday:
-    - morning: 
+    - morning: 'Morning' 
       time: '08:00'
       description: 'Something cool'
-    - morning:
+    - morning: 'Morning'
       time: '09:00'
       description: 'Something else'
-    - afternoon: 
+    - afternoon: 'Afternoon' 
       time: '14:00'
       description: 'Something cool'
-    - afternoon:
+    - afternoon: 'Afternoon'
       time: '15:00'
       description: 'Something else'
-    - evening: 
+    - evening: 'Evening' 
       time: '19:00'
       description: 'Something cool'
-    - evening:
+    - evening: 'Evening'
       time: '20:00'
       description: 'Something else'
   - tuesday:
-    - morning: 
+    - morning: 'Morning' 
       time: '08:00'
       description: 'Something cool'
-    - morning:
+    - morning: 'Morning'
       time: '09:00'
       description: 'Something else'
-    - afternoon: 
+    - afternoon: 'Afternoon' 
       time: '14:00'
       description: 'Something cool'
-    - afternoon:
+    - afternoon: 'Afternoon'
       time: '15:00'
       description: 'Something else'
-    - evening: 
+    - evening: 'Evening' 
       time: '19:00'
       description: 'Something cool'
-    - evening:
+    - evening: 'Evening'
       time: '20:00'
       description: 'Something else'
   - wednesday:
-    - morning: 
+    - morning: 'Morning' 
       time: '08:00'
       description: 'Something cool'
-    - morning:
+    - morning: 'Morning'
       time: '09:00'
       description: 'Something else'
-    - afternoon: 
+    - afternoon: 'Afternoon' 
       time: '14:00'
       description: 'Something cool'
-    - afternoon:
+    - afternoon: 'Afternoon'
       time: '15:00'
       description: 'Something else'
-    - evening: 
+    - evening: 'Evening' 
       time: '19:00'
       description: 'Something cool'
-    - evening:
+    - evening: 'Evening'
       time: '20:00'
       description: 'Something else'
   - thursday:
-    - morning: 
+    - morning: 'Morning' 
       time: '08:00'
       description: 'Something cool'
-    - morning:
+    - morning: 'Morning'
       time: '09:00'
       description: 'Something else'
-    - afternoon: 
+    - afternoon: 'Afternoon' 
       time: '14:00'
       description: 'Something cool'
-    - afternoon:
+    - afternoon: 'Afternoon'
       time: '15:00'
       description: 'Something else'
-    - evening: 
+    - evening: 'Evening' 
       time: '19:00'
       description: 'Something cool'
-    - evening:
+    - evening: 'Evening'
       time: '20:00'
       description: 'Something else'
   - friday:
-    - morning: 
+    - morning: 'Morning' 
       time: '08:00'
       description: 'Something cool'
-    - morning:
+    - morning: 'Morning'
       time: '09:00'
       description: 'Something else'
-    - afternoon: 
+    - afternoon: 'Afternoon' 
       time: '14:00'
       description: 'Something cool'
-    - afternoon:
+    - afternoon: 'Afternoon'
       time: '15:00'
       description: 'Something else'
-    - evening: 
+    - evening: 'Evening' 
       time: '19:00'
       description: 'Something cool'
-    - evening:
+    - evening: 'Evening'
       time: '20:00'
       description: 'Something else'
   - saturday:
-    - morning: 
+    - morning: 'Morning' 
       time: '08:00'
       description: 'Something cool'
-    - morning:
+    - morning: 'Morning'
       time: '09:00'
       description: 'Something else'
-    - afternoon: 
+    - afternoon: 'Afternoon' 
       time: '14:00'
       description: 'Something cool'
-    - afternoon:
+    - afternoon: 'Afternoon'
       time: '15:00'
       description: 'Something else'
-    - evening: 
+    - evening: 'Evening' 
       time: '19:00'
       description: 'Something cool'
-    - evening:
+    - evening: 'Evening'
       time: '20:00'
       description: 'Something else'
-
 ---
