@@ -29,15 +29,13 @@ collections:
           - {
               label: 'Estudo da Doutrina Espírita',
               name: 'ede',
-              widget: 'list',
-              create: true,
+              widget: 'object',
               fields:
                 [
                   {
                     label: 'Estudo Preparatório do Espiritismo (EPE)',
                     name: 'epe',
-                    widget: 'list',
-                    create: false,
+                    widget: 'object',
                     fields:
                       [
                         {
@@ -65,15 +63,13 @@ collections:
                   {
                     label: 'Estudo Sistematizado da Doutrina Espírita (ESDE)',
                     name: 'esde',
-                    widget: 'list',
-                    create: false,
+                    widget: 'object',
                     fields:
                       [
                         {
                           label: 'Horários',
                           name: 'schedule',
-                          widget: 'list',
-                          create: true,
+                          widget: 'object',
                           fields:
                             [
                               { label: 'Dia', name: 'day', widget: 'string' },
@@ -94,8 +90,7 @@ collections:
                   {
                     label: 'Estudo Aprofundado (EADE)',
                     name: 'eade',
-                    widget: 'list',
-                    create: false,
+                    widget: 'object',
                     fields:
                       [
                         {
@@ -123,8 +118,7 @@ collections:
                   {
                     label: 'Estudo de Obras Básicas e Complementares',
                     name: 'eobc',
-                    widget: 'list',
-                    create: false,
+                    widget: 'object',
                     fields:
                       [
                         {
@@ -152,8 +146,7 @@ collections:
                   {
                     label: 'Palestras Públicas',
                     name: 'papu',
-                    widget: 'list',
-                    create: false,
+                    widget: 'object',
                     fields:
                       [
                         {
@@ -181,8 +174,7 @@ collections:
                   {
                     label: 'Hora da Prece',
                     name: 'hodp',
-                    widget: 'list',
-                    create: false,
+                    widget: 'object',
                     fields:
                       [
                         {
@@ -955,8 +947,7 @@ collections:
           - {
               label: 'Estudo da Doutrina Espirita',
               name: 'esdoesp',
-              widget: 'list',
-              create: true,
+              widget: 'object',
               fields:
                 [
                   {
@@ -975,7 +966,11 @@ collections:
                           fields:
                             [
                               { label: 'Dia', name: 'day', widget: 'string' },
-                              { label: 'Horários', name: 'time', widget: 'string' },
+                              {
+                                label: 'Horários',
+                                name: 'time',
+                                widget: 'string',
+                              },
                             ],
                         },
                       ],
@@ -985,8 +980,7 @@ collections:
           - {
               label: 'Atendimento Espiritual',
               name: 'ateespi',
-              widget: 'list',
-              create: true,
+              widget: 'object',
               fields:
                 [
                   {
@@ -1005,7 +999,11 @@ collections:
                           fields:
                             [
                               { label: 'Dia', name: 'day', widget: 'string' },
-                              { label: 'Horários', name: 'time', widget: 'string' },
+                              {
+                                label: 'Horários',
+                                name: 'time',
+                                widget: 'string',
+                              },
                             ],
                         },
                       ],
@@ -1015,8 +1013,7 @@ collections:
           - {
               label: 'Evangelização Infantojuvenil',
               name: 'evainfa',
-              widget: 'list',
-              create: true,
+              widget: 'object',
               fields:
                 [
                   {
@@ -1035,7 +1032,11 @@ collections:
                           fields:
                             [
                               { label: 'Dia', name: 'day', widget: 'string' },
-                              { label: 'Horários', name: 'time', widget: 'string' },
+                              {
+                                label: 'Horários',
+                                name: 'time',
+                                widget: 'string',
+                              },
                             ],
                         },
                       ],
@@ -1045,8 +1046,7 @@ collections:
           - {
               label: 'Ação Social',
               name: 'acasoci',
-              widget: 'list',
-              create: true,
+              widget: 'object',
               fields:
                 [
                   {
@@ -1065,7 +1065,11 @@ collections:
                           fields:
                             [
                               { label: 'Dia', name: 'day', widget: 'string' },
-                              { label: 'Horários', name: 'time', widget: 'string' },
+                              {
+                                label: 'Horários',
+                                name: 'time',
+                                widget: 'string',
+                              },
                             ],
                         },
                       ],
@@ -1073,21 +1077,19 @@ collections:
                 ],
             }
           - {
-              label: Livraria,
-              name: schedule,
-              widget: list,
-              create: true,
+              label: 'Livraria',
+              name: 'schedule',
+              widget: 'object',
               fields:
                 [
-                  { label: Dias, name: days, widget: string },
-                  { label: Horários, name: time, widget: string },
+                  { label: 'Dias', name: 'days', widget: 'string' },
+                  { label: 'Horários', name: 'time', widget: 'string' },
                 ],
             }
           - {
               label: 'Biblioteca',
               name: 'library',
-              widget: 'list',
-              create: true,
+              widget: 'object',
               fields:
                 [
                   { label: 'Dias', name: 'days', widget: 'string' },
