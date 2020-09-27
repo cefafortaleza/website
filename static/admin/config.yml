@@ -1,7 +1,7 @@
 backend:
-  name: git-gateway
-  branch: master
-  repo: cefafortaleza/website
+  name: 'git-gateway'
+  branch: 'master'
+  repo: 'cefafortaleza/website'
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
@@ -9,8 +9,8 @@ backend:
     uploadMedia: '[skip ci] Upload “{{path}}”'
     deleteMedia: '[skip ci] Delete “{{path}}”'
 
-media_folder: static/img
-public_folder: /img
+media_folder: 'static/img'
+public_folder: '/img'
 
 collections:
   - name: 'pages'
@@ -575,13 +575,13 @@ collections:
         fields:
           - {
               label: 'Template Key',
-              name: 'templatekey',
+              name: 'templateKey',
               widget: 'hidden',
-              default: 'horarios-page',
+              default: 'horarios',
             }
           - {
               label: 'Horários',
-              name: 'schedule',
+              name: 'schedules',
               widget: 'list',
               create: true,
               fields:
@@ -953,29 +953,29 @@ collections:
                 ],
             }
           - {
-              label: Estudo da Doutrina Espirita,
-              name: esdoes,
-              widget: list,
+              label: 'Estudo da Doutrina Espirita',
+              name: 'esdoesp',
+              widget: 'list',
               create: true,
               fields:
                 [
                   {
-                    label: Atividade,
-                    name: activity,
-                    widget: list,
+                    label: 'Atividade',
+                    name: 'activity',
+                    widget: 'list',
                     create: true,
                     fields:
                       [
-                        { label: Título, name: title, widget: string },
+                        { label: 'Título', name: 'title', widget: 'string' },
                         {
-                          label: Horários,
-                          name: schedule,
-                          widget: list,
+                          label: 'Horários',
+                          name: 'schedule',
+                          widget: 'list',
                           create: true,
                           fields:
                             [
-                              { label: Dia, name: day, widget: string },
-                              { label: Horários, name: time, widget: string },
+                              { label: 'Dia', name: 'day', widget: 'string' },
+                              { label: 'Horários', name: 'time', widget: 'string' },
                             ],
                         },
                       ],
@@ -983,29 +983,29 @@ collections:
                 ],
             }
           - {
-              label: Atendimento Espiritual,
-              name: ateesp,
-              widget: list,
+              label: 'Atendimento Espiritual',
+              name: 'ateespi',
+              widget: 'list',
               create: true,
               fields:
                 [
                   {
-                    label: Atividade,
-                    name: activity,
-                    widget: list,
+                    label: 'Atividade',
+                    name: 'activity',
+                    widget: 'list',
                     create: true,
                     fields:
                       [
-                        { label: Título, name: title, widget: string },
+                        { label: 'Título', name: 'title', widget: 'string' },
                         {
-                          label: Horários,
-                          name: schedule,
-                          widget: list,
+                          label: 'Horários',
+                          name: 'schedule',
+                          widget: 'list',
                           create: true,
                           fields:
                             [
-                              { label: Dia, name: day, widget: string },
-                              { label: Horários, name: time, widget: string },
+                              { label: 'Dia', name: 'day', widget: 'string' },
+                              { label: 'Horários', name: 'time', widget: 'string' },
                             ],
                         },
                       ],
@@ -1013,29 +1013,29 @@ collections:
                 ],
             }
           - {
-              label: Evangelização Infantojuvenil,
-              name: evainf,
-              widget: list,
+              label: 'Evangelização Infantojuvenil',
+              name: 'evainfa',
+              widget: 'list',
               create: true,
               fields:
                 [
                   {
-                    label: Atividade,
-                    name: activity,
-                    widget: list,
+                    label: 'Atividade',
+                    name: 'activity',
+                    widget: 'list',
                     create: true,
                     fields:
                       [
-                        { label: Título, name: title, widget: string },
+                        { label: 'Título', name: 'title', widget: 'string' },
                         {
-                          label: Horários,
-                          name: schedule,
-                          widget: list,
+                          label: 'Horários',
+                          name: 'schedule',
+                          widget: 'list',
                           create: true,
                           fields:
                             [
-                              { label: Dia, name: day, widget: string },
-                              { label: Horários, name: time, widget: string },
+                              { label: 'Dia', name: 'day', widget: 'string' },
+                              { label: 'Horários', name: 'time', widget: 'string' },
                             ],
                         },
                       ],
@@ -1043,29 +1043,29 @@ collections:
                 ],
             }
           - {
-              label: Ação Social,
-              name: acasoc,
-              widget: list,
+              label: 'Ação Social',
+              name: 'acasoci',
+              widget: 'list',
               create: true,
               fields:
                 [
                   {
-                    label: Atividade,
-                    name: activity,
-                    widget: list,
+                    label: 'Atividade',
+                    name: 'activity',
+                    widget: 'list',
                     create: true,
                     fields:
                       [
-                        { label: Título, name: title, widget: string },
+                        { label: 'Título', name: 'title', widget: 'string' },
                         {
-                          label: Horários,
-                          name: schedule,
-                          widget: list,
+                          label: 'Horários',
+                          name: 'schedule',
+                          widget: 'list',
                           create: true,
                           fields:
                             [
-                              { label: Dia, name: day, widget: string },
-                              { label: Horários, name: time, widget: string },
+                              { label: 'Dia', name: 'day', widget: 'string' },
+                              { label: 'Horários', name: 'time', widget: 'string' },
                             ],
                         },
                       ],
@@ -1084,14 +1084,14 @@ collections:
                 ],
             }
           - {
-              label: Biblioteca,
-              name: schedule,
-              widget: list,
+              label: 'Biblioteca',
+              name: 'library',
+              widget: 'list',
               create: true,
               fields:
                 [
-                  { label: Dias, name: days, widget: string },
-                  { label: Horários, name: time, widget: string },
+                  { label: 'Dias', name: 'days', widget: 'string' },
+                  { label: 'Horários', name: 'time', widget: 'string' },
                 ],
             }
 
@@ -1105,77 +1105,77 @@ collections:
               widget: 'hidden',
               default: 'index-page',
             }
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Image', name: 'image', widget: 'image' }
+          - { label: 'Heading', name: 'heading', widget: 'string' }
+          - { label: 'Subheading', name: 'subheading', widget: 'string' }
           - {
-              label: Mainpitch,
-              name: mainpitch,
-              widget: object,
+              label: 'Mainpitch',
+              name: 'mainpitch',
+              widget: 'object',
               fields:
                 [
-                  { label: Title, name: title, widget: string },
-                  { label: Description, name: description, widget: text },
+                  { label: 'Title', name: 'title', widget: 'string' },
+                  { label: 'Description', name: 'description', widget: 'text' },
                 ],
             }
-          - { label: Description, name: description, widget: string }
+          - { label: 'Description', name: 'description', widget: 'string' }
           - {
-              label: Intro,
-              name: intro,
-              widget: object,
+              label: 'Intro',
+              name: 'intro',
+              widget: 'object',
               fields:
                 [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
+                  { label: 'Heading', name: 'heading', widget: 'string' },
+                  { label: 'Description', name: 'description', widget: 'text' },
                   {
-                    label: Blurbs,
-                    name: blurbs,
-                    widget: list,
+                    label: 'Blurbs',
+                    name: 'blurbs',
+                    widget: 'list',
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
+                        { label: 'Image', name: 'image', widget: 'image' },
+                        { label: 'Text', name: 'text', widget: 'text' },
                       ],
                   },
                 ],
             }
           - {
-              label: Main,
-              name: main,
-              widget: object,
+              label: 'Main',
+              name: 'main',
+              widget: 'object',
               fields:
                 [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
+                  { label: 'Heading', name: 'heading', widget: 'string' },
+                  { label: 'Description', name: 'description', widget: 'text' },
                   {
-                    label: Image1,
-                    name: image1,
-                    widget: object,
+                    label: 'Image1',
+                    name: 'image1',
+                    widget: 'object',
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
+                        { label: 'Image', name: 'image', widget: 'image' },
+                        { label: 'Alt', name: 'alt', widget: 'string' },
                       ],
                   },
                   {
-                    label: Image2,
-                    name: image2,
-                    widget: object,
+                    label: 'Image2',
+                    name: 'image2',
+                    widget: 'object',
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
+                        { label: 'Image', name: 'image', widget: 'image' },
+                        { label: 'Alt', name: 'alt', widget: 'string' },
                       ],
                   },
                   {
-                    label: Image3,
-                    name: image3,
-                    widget: object,
+                    label: 'Image3',
+                    name: 'image3',
+                    widget: 'object',
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
+                        { label: 'Image', name: 'image', widget: 'image' },
+                        { label: 'Alt', name: 'alt', widget: 'string' },
                       ],
                   },
                 ],
