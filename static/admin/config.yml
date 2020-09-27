@@ -1331,7 +1331,7 @@ collections:
           - {
               label: 'sectionOneContent',
               name: 'sectionOneContent',
-              widget: 'string',
+              widget: 'markdown',
             }
           - {
               label: 'sectionTwoTitle',
