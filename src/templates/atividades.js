@@ -21,7 +21,6 @@ export const AtividadesPageTemplate = ({
   sectionFour,
 }) => (
   <>
-    {console.log('Section one: ', sectionOne)};
     <section id="atividades-index">
       <Container>
         <div className="index">
@@ -60,94 +59,156 @@ export const AtividadesPageTemplate = ({
         </div>
       </Container>
     </section>
-    {/* <section id="section_one">
-      {Object.keys(sectionOne).map((subsection) => {
-        console.log("Section 1, subsection: ", subsection)
+    <Container id="atividades-content">
+      {Object.keys(sectionOne).map((subsection, index) => {
+        console.log(
+          `Section ${index + 1}, subsection: `,
+          sectionOne[subsection]
+        );
         return (
           <>
-            <div className="subsection">
-              {(subsection.schedule).map((horarios) => {
-                return (
-                  <div className="schedule-item">
-                    <p>{horarios.day}</p>
-                    <p>-</p>
-                    <p>{horarios.time}</p>
+            <section id={`section_${subsection}`}>
+              <div className="subsectionWrapper">
+                <h3>{subsection}</h3>
+                <div className="subsection">
+                  {sectionOne[subsection].schedule.map((horarios) => {
+                    return (
+                      <div className="schedule-item">
+                        <p>{horarios.day}</p>
+                        <p>-</p>
+                        <p>{horarios.time}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="contentWrapper">
+                  <div className="richText">
+                    {
+                      unified()
+                        .use(parse)
+                        .use(breaks)
+                        .use(remark2react)
+                        .processSync(sectionOne[subsection].content).result
+                    }
                   </div>
-                );
-              })}
-            </div>
-            <div className="contentWrapper">
-              <div className="richText">
-                {
-                  unified()
-                    .use(parse)
-                    .use(breaks)
-                    .use(remark2react)
-                    .processSync(subsection.content).result
-                }
+                </div>
               </div>
-            </div>
+            </section>
           </>
         );
       })}
-    </section>
-    <section id="section_two">
-      {(sectionTwo).map((subsection) => {
+      {Object.keys(sectionTwo).map((subsection, index) => {
+        console.log(
+          `Section ${index + 1}, subsection: `,
+          sectionTwo[subsection]
+        );
         return (
           <>
-            <div className="subsection">
-              {(subsection.schedule).map((horarios) => {
-                return (
-                  <div className="schedule-item">
-                    <p>{horarios.day}</p>
-                    <p>-</p>
-                    <p>{horarios.time}</p>
+            <section id={`section_${subsection}`}>
+              <div className="subsectionWrapper">
+                <h3>{subsection}</h3>
+                <div className="subsection">
+                  {sectionTwo[subsection].schedule.map((horarios) => {
+                    return (
+                      <div className="schedule-item">
+                        <p>{horarios.day}</p>
+                        <p>-</p>
+                        <p>{horarios.time}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="contentWrapper">
+                  <div className="richText">
+                    {
+                      unified()
+                        .use(parse)
+                        .use(breaks)
+                        .use(remark2react)
+                        .processSync(sectionTwo[subsection].content).result
+                    }
                   </div>
-                );
-              })}
-            </div>
-            <div className="contentWrapper">
-              <div className="richText">
-                {
-                  unified()
-                    .use(parse)
-                    .use(breaks)
-                    .use(remark2react)
-                    .processSync(subsection.content).result
-                }
+                </div>
               </div>
-            </div>
+            </section>
           </>
         );
       })}
-    </section>
-    <section id="section_example">
-      <SectionTitle>Title</SectionTitle>
-      <div className="scheduleWrapper">
-        <h3>Horários:</h3>
-        {sectionOne[0]['epe'][0].schedule.map((horarios) => {
-          return (
-            <div className="schedule-item">
-              <p>{horarios.day}</p>
-              <p>-</p>
-              <p>{horarios.time}</p>
-            </div>
-          );
-        })}
-      </div>
-      <div className="contentWrapper">
-        <div className="richText">
-          {
-            unified()
-              .use(parse)
-              .use(breaks)
-              .use(remark2react)
-              .processSync(sectionOne[0]['epe'][0].content).result
-          }
-        </div>
-      </div>
-    </section>
-    */}
+      {Object.keys(sectionThree).map((subsection, index) => {
+        console.log(
+          `Section ${index + 1}, subsection: `,
+          sectionThree[subsection]
+        );
+        return (
+          <>
+            <section id={`section_${subsection}`}>
+              <div className="subsectionWrapper">
+                <h3>{subsection}</h3>
+                <div className="subsection">
+                  {sectionThree[subsection].schedule.map((horarios) => {
+                    return (
+                      <div className="schedule-item">
+                        <p>{horarios.day}</p>
+                        <p>-</p>
+                        <p>{horarios.time}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="contentWrapper">
+                  <div className="richText">
+                    {
+                      unified()
+                        .use(parse)
+                        .use(breaks)
+                        .use(remark2react)
+                        .processSync(sectionThree[subsection].content).result
+                    }
+                  </div>
+                </div>
+              </div>
+            </section>
+          </>
+        );
+      })}
+      {Object.keys(sectionFour).map((subsection, index) => {
+        console.log(
+          `Section ${index + 1}, subsection: `,
+          sectionFour[subsection]
+        );
+        return (
+          <>
+            <section id={`section_${subsection}`}>
+              <div className="subsectionWrapper">
+                <h3>{subsection}</h3>
+                <div className="subsection">
+                  {sectionFour[subsection].schedule.map((horarios) => {
+                    return (
+                      <div className="schedule-item">
+                        <p>{horarios.day}</p>
+                        <p>-</p>
+                        <p>{horarios.time}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="contentWrapper">
+                  <div className="richText">
+                    {
+                      unified()
+                        .use(parse)
+                        .use(breaks)
+                        .use(remark2react)
+                        .processSync(sectionFour[subsection].content).result
+                    }
+                  </div>
+                </div>
+              </div>
+            </section>
+          </>
+        );
+      })}
+    </Container>
   </>
 );
 
