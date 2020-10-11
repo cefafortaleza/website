@@ -137,6 +137,7 @@ $menu-label-color: $white-ter
       flex: 1
       width: 100%
       display: block
+      border: thin solid black
 
   .schedule-content
     flex: 1
@@ -151,6 +152,7 @@ $menu-label-color: $white-ter
       font-size: 1.5rem
       width: 100%
       padding: 30px
+      
 
     .active-tab
       display: flex
@@ -202,13 +204,38 @@ $menu-label-color: $white-ter
 
   // PAGE ATIVIDADES
 
-    #atividades-index 
-      display: flex
-      flex-direction: column
-    
-    #atividades-content
-      section 
-        border: thin solid #000
-      
+#atividades-index 
+  display: flex
+  flex-direction: column
+  .index
+    display: flex
+    flex-direction: column
+    border: 3px solid #000
+    > * 
+      display: block
+      flex-grow: 1
+      white-space: nowrap
+      margin: 5px 0
+
+#atividades-content
+  section 
+    margin: 30px auto
+    width: 100%
+
+    .subsectionWrapper
+
+      .subsection
+        display: flex
+        flex-shrink: 1
+        flex-direction: column
+        margin-right: auto
+        padding: 20px 30px
+        
+        .schedule-item
+          display: flex
+          margin: 10px 0
+      .contentWrapper
+        margin: 10px 0 20px
+        
 
 

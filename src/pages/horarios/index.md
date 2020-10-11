@@ -13,7 +13,7 @@ schedules:
     evening:
       - time: 18:00
         description: Domingo Noite
-  morning:
+  monday:
     morning:
       - time: 08:00
         description: Segunda Manhã

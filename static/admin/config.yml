@@ -644,7 +644,7 @@ collections:
                   },
                   {
                     label: 'Segunda',
-                    name: 'morning',
+                    name: 'monday',
                     widget: 'object',
                     fields:
                       [
@@ -863,32 +863,32 @@ collections:
                             ],
                         },
                         {
-                          label: Tarde,
-                          name: afternoon,
-                          widget: list,
+                          label: 'Tarde',
+                          name: 'afternoon',
+                          widget: 'list',
                           create: true,
                           fields:
                             [
-                              { label: Horário, name: time, widget: string },
+                              { label: 'Horário', name: 'time', widget: 'string' },
                               {
-                                label: Descrição,
-                                name: description,
-                                widget: string,
+                                label: 'Descrição',
+                                name: 'description',
+                                widget: 'string',
                               },
                             ],
                         },
                         {
-                          label: Noite,
-                          name: evening,
-                          widget: list,
+                          label: 'Noite',
+                          name: 'evening',
+                          widget: 'list',
                           create: true,
                           fields:
                             [
-                              { label: Horário, name: time, widget: string },
+                              { label: 'Horário', name: 'time', widget: 'string' },
                               {
-                                label: Descrição,
-                                name: description,
-                                widget: string,
+                                label: 'Descrição',
+                                name: 'description',
+                                widget: 'string',
                               },
                             ],
                         },
