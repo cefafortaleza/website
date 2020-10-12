@@ -869,7 +869,11 @@ collections:
                           create: true,
                           fields:
                             [
-                              { label: 'Horário', name: 'time', widget: 'string' },
+                              {
+                                label: 'Horário',
+                                name: 'time',
+                                widget: 'string',
+                              },
                               {
                                 label: 'Descrição',
                                 name: 'description',
@@ -884,7 +888,11 @@ collections:
                           create: true,
                           fields:
                             [
-                              { label: 'Horário', name: 'time', widget: 'string' },
+                              {
+                                label: 'Horário',
+                                name: 'time',
+                                widget: 'string',
+                              },
                               {
                                 label: 'Descrição',
                                 name: 'description',
@@ -1372,10 +1380,14 @@ collections:
 
   - name: 'blog'
     label: 'Blog'
-    folder: 'blog'
+    folder: 'src/pages/blog'
     create: true
     fields:
+      - { name: 'templatekey', label: 'Template Key', widget: 'hidden', default: 'blog-post',}
       - { name: 'path', label: 'Path' }
-      - { name: 'date', label: 'Date', widget: 'datetime' }
       - { name: 'title', label: 'Title' }
+      - { name: 'description', label: 'Description' }
+      - { name: 'date', label: 'Date', widget: 'datetime' }
+      - { name: 'featuredpost', label: 'Featured Post', widget: 'boolean' }
+      - { name: 'featuredimage', label: 'Image', widget: 'img' }
       - { name: 'body', label: 'Body', widget: 'markdown' }
