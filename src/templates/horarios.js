@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 
+import Container from '../components/Container';
 import Layout from '../components/Layout';
 import SectionTitle from '../components/SectionTitle';
 
@@ -13,87 +14,100 @@ export const HorariosPageTemplate = ({ title, schedules }) => {
     console.log('active before change: ', activeTab);
 
     document.getElementById(activeTab).classList.remove('active-tab');
+    document
+      .getElementById(`button-${activeTab}`)
+      .classList.remove('active-button');
     setActiveTab(tab);
     document.getElementById(tab).classList.add('active-tab');
+    document.getElementById(`button-${tab}`).classList.add('active-button');
     console.log('active changed: ', activeTab);
   };
 
   return (
     <>
-      <section>
-        <SectionTitle>Horários</SectionTitle>
-        <div className="schedule-tabs-wrapper">
-          <ul className="schedule-tabs">
-            {Object.keys(schedules).map((daySchedule, index) => {
-              return (
-                <>
-                  <li className="schedule-tab" key={index}>
-                    <button onClick={toggleScheduleTab(daySchedule)}>
-                      {daySchedule}
-                    </button>
-                  </li>
-                </>
-              );
-            })}
-          </ul>
-          <div>
-            <h3>TAB CONTENT</h3>
+      <Container>
+        <section>
+          <SectionTitle>Horários</SectionTitle>
+          <div className="schedule-tabs-wrapper">
+            <ul className="schedule-tabs">
+              {Object.keys(schedules).map((daySchedule, index) => {
+                return (
+                  <>
+                    <li className="schedule-tab" key={index}>
+                      <button
+                        className={index === 0 ? 'active-button' : ''}
+                        id={`button-${daySchedule}`}
+                        onClick={toggleScheduleTab(daySchedule)}
+                      >
+                        {daySchedule}
+                      </button>
+                    </li>
+                  </>
+                );
+              })}
+            </ul>
+            <div className="schedule-content">
+              {Object.keys(schedules).map((daySchedule, index) => {
+                return (
+                  <>
+                    <div
+                      className={`schedule-tab ${
+                        index === 0 ? 'active-tab' : ''
+                      }`}
+                      id={[daySchedule]}
+                      key={[daySchedule]}
+                    >
+                      {Object.keys(schedules[daySchedule]).map((shift) => {
+                        return (
+                          <>
+                            <div
+                              className={`schedule ${[shift]}`}
+                              key={[shift]}
+                            >
+                              <ul className="schedule-list">
+                                <h3>{shift}</h3>
+                                {schedules[daySchedule][shift].map(
+                                  (activity, index) => {
+                                    return (
+                                      <>
+                                        <li key={index}>
+                                          <p>
+                                            <span>{activity.time} </span>
+                                            {activity.description}
+                                          </p>
+                                        </li>
+                                      </>
+                                    );
+                                  }
+                                )}
+                              </ul>
+                            </div>
+                          </>
+                        );
+                      })}
+                    </div>
+                  </>
+                );
+              })}
+            </div>
           </div>
-          <div className="schedule-content">
-            {Object.keys(schedules).map((daySchedule, index) => {
-              return (
-                <>
-                  <div
-                    className={`schedule-tab ${
-                      index === 0 ? 'active-tab' : ''
-                    }`}
-                    id={[daySchedule]}
-                    key={[daySchedule]}
-                  >
-                    {Object.keys(schedules[daySchedule]).map((shift) => {
-                      return (
-                        <>
-                          <div className={`schedule ${[shift]}`} key={[shift]}>
-                            <ul className="schedule-list">
-                              {schedules[daySchedule][shift].map((activity, index) => {
-                                return (
-                                  <>
-                                    <li key={index}>
-                                      <p>
-                                        <span>{activity.time} </span>
-                                        {activity.description}
-                                      </p>
-                                    </li>
-                                  </>
-                                );
-                              })}
-                            </ul>
-                          </div>
-                        </>
-                      );
-                    })}
-                  </div>
-                </>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-      <section>
-        <SectionTitle>Atividades</SectionTitle>
-      </section>
-      <section>
-        <SectionTitle>Livraria</SectionTitle>
-      </section>
-      <section>
-        <SectionTitle>Biblioteca</SectionTitle>
-      </section>
-      <section>
-        <SectionTitle>Palestras</SectionTitle>
-      </section>
-      <section>
-        <SectionTitle>Eventos</SectionTitle>
-      </section>
+        </section>
+        <section>
+          <SectionTitle>Atividades</SectionTitle>
+        </section>
+        <section>
+          <SectionTitle>Livraria</SectionTitle>
+        </section>
+        <section>
+          <SectionTitle>Biblioteca</SectionTitle>
+        </section>
+        <section>
+          <SectionTitle>Palestras</SectionTitle>
+        </section>
+        <section>
+          <SectionTitle>Eventos</SectionTitle>
+        </section>
+      </Container>
     </>
   );
 };
