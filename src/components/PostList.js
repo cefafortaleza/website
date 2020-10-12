@@ -16,12 +16,12 @@ class PostList extends React.Component {
         <SectionTitle>Fique ligado</SectionTitle>
         {posts &&
           posts.map(({ node: post }) => (
+            <>
+            {console.log('POST: ', post)}
             <div className="post-wrapper" key={post.frontmatter.title}>
-              {console.log(post.frontmatter.featuredimage)}
-
               <div className="post-image-wrapper">
                 <Img
-                  alt=""
+                  alt="Imagem do Blog CEFA"
                   fluid={post.frontmatter.featuredimage.childImageSharp.fluid}
                 />
               </div>
@@ -29,9 +29,10 @@ class PostList extends React.Component {
               <div className="post-content-wrapper">
                 <SectionTitle small>{post.frontmatter.title}</SectionTitle>
                 <p>{post.excerpt}</p>
-                <Button to={post.fields.slug}>Saiba mais</Button>
+                <Button href={post.fields.slug}>Saiba mais</Button>
               </div>
             </div>
+            </>
           ))}
       </div>
     );
@@ -62,8 +63,10 @@ export default () => (
                 slug
               }
               frontmatter {
-                title
                 templateKey
+                path
+                title
+                description
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
                 featuredimage {

@@ -5,8 +5,8 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SectionTitle from '../components/SectionTitle';
 
-export const HorariosPageTemplate = ({ title }) => {
-  const [activeTab, setActiveTab] = useState('mon');
+export const HorariosPageTemplate = ({ title, schedules }) => {
+  const [activeTab, setActiveTab] = useState('sunday');
 
   const toggleScheduleTab = (tab) => () => {
     console.log('clicked');
@@ -24,334 +24,58 @@ export const HorariosPageTemplate = ({ title }) => {
         <SectionTitle>Horários</SectionTitle>
         <div className="schedule-tabs-wrapper">
           <ul className="schedule-tabs">
-            <li className="schedule-tab">
-              <button onClick={toggleScheduleTab('mon')}>Segunda</button>
-            </li>
-            <li className="schedule-tab">
-              <button onClick={toggleScheduleTab('tue')}>Terça</button>
-            </li>
-            <li className="schedule-tab">
-              <button onClick={toggleScheduleTab('wed')}>Quarta</button>
-            </li>
-            <li className="schedule-tab">
-              <button onClick={toggleScheduleTab('thr')}>Quinta</button>
-            </li>
-            <li className="schedule-tab">
-              <button onClick={toggleScheduleTab('fri')}>Sexta</button>
-            </li>
-            <li className="schedule-tab">
-              <button onClick={toggleScheduleTab('sat')}>Sábado</button>
-            </li>
-            <li className="schedule-tab">
-              <button onClick={toggleScheduleTab('sun')}>Domingo</button>
-            </li>
+            {Object.keys(schedules).map((daySchedule, index) => {
+              return (
+                <>
+                  <li className="schedule-tab" key={index}>
+                    <button onClick={toggleScheduleTab(daySchedule)}>
+                      {daySchedule}
+                    </button>
+                  </li>
+                </>
+              );
+            })}
           </ul>
+          <div>
+            <h3>TAB CONTENT</h3>
+          </div>
           <div className="schedule-content">
-            <div className="schedule-tab active-tab" id="mon">
-              <div className="schedule morning">
-                <ul className="schedule-list">
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="schedule afternoon">
-                <ul className="schedule-list">
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="schedule evening">
-                <ul className="schedule-list">
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="schedule-tab" id="tue">
-              <div className="schedule morning">
-                <ul className="schedule-list">
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="schedule afternoon">
-                <ul className="schedule-list">
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="schedule evening"></div>
-            </div>
-            <div className="schedule-tab" id="wed">
-              <div className="schedule morning">
-                <ul className="schedule-list">
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="schedule afternoon">
-                <ul className="schedule-list">
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="schedule evening"></div>
-            </div>
-            <div className="schedule-tab" id="thr">
-              <div className="schedule morning">
-                <ul className="schedule-list">
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="schedule afternoon">
-                <ul className="schedule-list">
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="schedule evening"></div>
-            </div>
-            <div className="schedule-tab" id="fri">
-              <div className="schedule morning">
-                <ul className="schedule-list">
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="schedule afternoon">
-                <ul className="schedule-list">
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="schedule evening"></div>
-            </div>
-            <div className="schedule-tab" id="sat">
-              <div className="schedule morning">
-                <ul className="schedule-list">
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="schedule afternoon">
-                <ul className="schedule-list">
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="schedule evening"></div>
-            </div>
-            <div className="schedule-tab" id="sun">
-              <div className="schedule morning">
-                <ul className="schedule-list">
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="schedule afternoon">
-                <ul className="schedule-list">
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>--:-- - </span>Activity
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="schedule evening"></div>
-            </div>
+            {Object.keys(schedules).map((daySchedule, index) => {
+              return (
+                <>
+                  <div
+                    className={`schedule-tab ${
+                      index === 0 ? 'active-tab' : ''
+                    }`}
+                    id={[daySchedule]}
+                    key={[daySchedule]}
+                  >
+                    {Object.keys(schedules[daySchedule]).map((shift) => {
+                      return (
+                        <>
+                          <div className={`schedule ${[shift]}`} key={[shift]}>
+                            <ul className="schedule-list">
+                              {schedules[daySchedule][shift].map((activity, index) => {
+                                return (
+                                  <>
+                                    <li key={index}>
+                                      <p>
+                                        <span>{activity.time} </span>
+                                        {activity.description}
+                                      </p>
+                                    </li>
+                                  </>
+                                );
+                              })}
+                            </ul>
+                          </div>
+                        </>
+                      );
+                    })}
+                  </div>
+                </>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -376,14 +100,17 @@ export const HorariosPageTemplate = ({ title }) => {
 
 HorariosPageTemplate.propTypes = {
   title: PropTypes.string,
+  schedules: PropTypes.object,
 };
 
 const HorariosPage = ({ data }) => {
+  console.log(data);
   const { frontmatter } = data.markdownRemark;
+  const { title, schedules } = frontmatter;
 
   return (
     <Layout>
-      <HorariosPageTemplate title={frontmatter.title} />
+      <HorariosPageTemplate title={title} schedules={schedules} />
     </Layout>
   );
 };
@@ -403,6 +130,106 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "horarios" } }) {
       frontmatter {
         title
+        schedules {
+          sunday {
+            morning {
+              time
+              description
+            }
+            afternoon {
+              time
+              description
+            }
+            evening {
+              time
+              description
+            }
+          }
+          monday {
+            morning {
+              time
+              description
+            }
+            afternoon {
+              time
+              description
+            }
+            evening {
+              time
+              description
+            }
+          }
+          tuesday {
+            morning {
+              time
+              description
+            }
+            afternoon {
+              time
+              description
+            }
+            evening {
+              time
+              description
+            }
+          }
+          wednesday {
+            morning {
+              time
+              description
+            }
+            afternoon {
+              time
+              description
+            }
+            evening {
+              time
+              description
+            }
+          }
+          thursday {
+            morning {
+              time
+              description
+            }
+            afternoon {
+              time
+              description
+            }
+            evening {
+              time
+              description
+            }
+          }
+          friday {
+            morning {
+              time
+              description
+            }
+            afternoon {
+              time
+              description
+            }
+            evening {
+              time
+              description
+            }
+          }
+          saturday {
+            morning {
+              time
+              description
+            }
+            afternoon {
+              time
+              description
+            }
+            evening {
+              time
+              description
+            }
+          }
+        }
       }
     }
   }

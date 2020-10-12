@@ -26,7 +26,7 @@ export const AtividadesPageTemplate = ({
         <div className="index">
           <h3>Índice</h3>
           <Link to="#section_one">
-            <h3 className="index_section">Estudo da doutrina espírita</h3>
+            <h3 className="index_section">- Estudo da doutrina espírita</h3>
           </Link>
           <Link to="#epe">1.1 Estudo preparatório (EPE)</Link>
           <Link to="#esde">1.2 Estudo sistematizado (ESDE)</Link>
@@ -35,21 +35,21 @@ export const AtividadesPageTemplate = ({
           <Link to="#papu">1.5 Palestras públicas</Link>
           <Link to="#horpre">1.6 Hora da Prece</Link>
           <Link to="#section_two">
-            <h3 className="index_section">Atendimento Espiritual</h3>
+            <h3 className="index_section">- Atendimento Espiritual</h3>
           </Link>
           <Link to="#epe">2.1 Orientação fraterna</Link>
           <Link to="#esde">2.2 Assistência espiritual</Link>
           <Link to="#eade">2.3 Passe</Link>
           <Link to="#edobec">2.4 Mediúnicas</Link>
           <Link to="#section_three">
-            <h3 className="index_section">Evangelização Infantojuvenil</h3>
+            <h3 className="index_section">- Evangelização Infantojuvenil</h3>
           </Link>
           <Link to="#epe">3.1 Grupo da família</Link>
           <Link to="#esde">3.2 Grupo musical Filhos de Assis</Link>
           <Link to="#eade">3.3 Eventos e campanhas</Link>
 
           <Link to="#section_four">
-            <h3 className="index_section">Ação Social</h3>
+            <h3 className="index_section">- Ação Social</h3>
           </Link>
 
           <Link to="#epe">4.1 Programa Coração Fraterno</Link>
@@ -69,7 +69,7 @@ export const AtividadesPageTemplate = ({
           <>
             <section id={`section_${subsection}`}>
               <div className="subsectionWrapper">
-                <h3>{subsection}</h3>
+                <SectionTitle>{subsection}</SectionTitle>
                 <div className="subsection">
                   {sectionOne[subsection].schedule.map((horarios) => {
                     return (
@@ -106,7 +106,7 @@ export const AtividadesPageTemplate = ({
           <>
             <section id={`section_${subsection}`}>
               <div className="subsectionWrapper">
-                <h3>{subsection}</h3>
+                <SectionTitle>{subsection}</SectionTitle>
                 <div className="subsection">
                   {sectionTwo[subsection].schedule.map((horarios) => {
                     return (
@@ -143,7 +143,7 @@ export const AtividadesPageTemplate = ({
           <>
             <section id={`section_${subsection}`}>
               <div className="subsectionWrapper">
-                <h3>{subsection}</h3>
+                <SectionTitle>{subsection}</SectionTitle>
                 <div className="subsection">
                   {sectionThree[subsection].schedule.map((horarios) => {
                     return (
@@ -180,7 +180,7 @@ export const AtividadesPageTemplate = ({
           <>
             <section id={`section_${subsection}`}>
               <div className="subsectionWrapper">
-                <h3>{subsection}</h3>
+                <SectionTitle>{subsection}</SectionTitle>
                 <div className="subsection">
                   {sectionFour[subsection].schedule.map((horarios) => {
                     return (
