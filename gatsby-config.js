@@ -83,6 +83,16 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `cefafortaleza`,
+        access_token: "d68c38ee4185afba58b39e4e4b0f198d",
+        instagram_id: "3217119194989947",
+        paginate: 100,
+        maxPosts: 1000,
+      },
+    },
     // must be after other CSS plugins
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],

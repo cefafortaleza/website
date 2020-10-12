@@ -137,7 +137,22 @@ $menu-label-color: $white-ter
       flex: 1
       width: 100%
       display: block
-      border: thin solid black
+      border: thin solid $black
+
+      button
+        padding: 12px 24px
+        width: 100%
+        border: thin solid $black
+        background: white
+        text-transform: capitalize
+        font-weight: $bold
+
+        &:focus
+          outline: none
+
+      .active-button
+        background: $green
+        color: white
 
   .schedule-content
     flex: 1
@@ -146,79 +161,123 @@ $menu-label-color: $white-ter
     justify-content: left
     align-items: left
     margin: 20px 0
+    display: flex
+    align-items: stretch
+
     .schedule-tab
-      background: #aaddcc
       display: none
       font-size: 1.5rem
       width: 100%
       padding: 30px
-      
+
+      .schedule
+        border: thin solid $black
+        flex-grow: 1
+        width: 100%
+        margin: 0 20px
+        padding: 20px 30px
+
+        .schedule-list
+          display: flex
+          flex-direction: column
+
+          h3
+            text-transform: capitalize
+            font-weight: $bold
+            margin-bottom: 20px
+            font-size: 1.2rem !important
+
+          li
+            margin-bottom: 20px
+            p
+              font-size: 1rem !important
+              span
+                font-weight: $bold
 
     .active-tab
       display: flex
-      align-items: flex-start
+      align-items: stretch
       justify-content: space-between
 
+  +mobile
+    max-width: 300px
+    margin: 0 auto
+    overflow: hidden
+
+    .schedule-tabs
+      flex-direction: column
+
+    .schedule-tab
+      flex-direction: column
+      margin: 10px auto !important
+      padding: 0 !important
+
+      .schedule
+        margin: 10px auto !important
+
+        .schedule-list
+          margin: 10px auto !important
 
 .richText
   white-space: pre-wrap
 
-
 // PAGE SOBRE
 
 #cefa-about
-  .container 
+  .container
     > *
       margin: 10px 0
 
     .index
       display: flex
       flex-direction: column
-      border: 1px solid black
+      border: 1px solid $black
       padding: 20px
       max-width: 350px
       margin: 20px 0
       > *
         margin-bottom: 10px
         font-size: 1rem
-    
+
     #estatuto
       margin-top: 30px
-      
+
     #regime-interno
       margin-top: 30px
 
     #localizacao
       margin-top: 30px
-      > * 
+      > *
         margin-bottom: 20px
-      
+
       .social-media-wrapper
         display: flex
         justify-content: flex-start
         align-items: center
 
-        > * 
+        > *
           padding: 10px
 
+// PAGE ATIVIDADES
 
-  // PAGE ATIVIDADES
-
-#atividades-index 
+#atividades-index
   display: flex
   flex-direction: column
   .index
     display: flex
     flex-direction: column
-    border: 3px solid #000
-    > * 
+
+    > *
       display: block
       flex-grow: 1
       white-space: nowrap
       margin: 5px 0
 
+    h3
+      font-weight: $bold
+
 #atividades-content
-  section 
+  section
     margin: 30px auto
     width: 100%
 
@@ -230,12 +289,14 @@ $menu-label-color: $white-ter
         flex-direction: column
         margin-right: auto
         padding: 20px 30px
-        
+
         .schedule-item
           display: flex
           margin: 10px 0
+
+          p
+            margin-right: 10px
+            &:first-child
+              font-weight: $bold
       .contentWrapper
         margin: 10px 0 20px
-        
-
-
