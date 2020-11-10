@@ -1352,7 +1352,7 @@ collections:
               widget: 'string',
             }
           - {
-              label: 'bylaws',
+              label: 'Arquivo de Estatuto',
               name: 'bylaws',
               widget: 'file',
               default: 'static/ESTATUTO.pdf',
@@ -1363,7 +1363,7 @@ collections:
               widget: 'string',
             }
           - {
-              label: 'internalPolicyLink',
+              label: 'Arquivo de Política Interna',
               name: 'internalPolicyLink',
               widget: 'file',
               default: 'static/REGIMENTO.docx',
