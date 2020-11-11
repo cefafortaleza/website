@@ -1,13 +1,14 @@
 import React from 'react';
 import Button from './Button';
-import {
-  FlickingEvent,
-  SelectEvent,
-  ChangeEvent,
-  NeedPanelEvent,
-} from '@egjs/flicking';
 import Flicking from '@egjs/react-flicking';
-import { Parallax, Fade, AutoPlay } from '@egjs/flicking-plugins';
+
+// import { Parallax, Fade, AutoPlay } from '@egjs/flicking-plugins';
+// import {
+//   FlickingEvent,
+//   SelectEvent,
+//   ChangeEvent,
+//   NeedPanelEvent,
+// } from '@egjs/flicking';
 
 const MainSlides = (props) => {
   return (

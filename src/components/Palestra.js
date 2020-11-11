@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import SectionTitle from './SectionTitle';
 
 const Palestra = (props) => {
-  const { id, title, speaker, date, time, description, displayDetail } = props;
+  const { id, title, speaker, date, time, displayDetail } = props;
 
   const handleClick = () => {
     displayDetail(id);
@@ -13,9 +13,9 @@ const Palestra = (props) => {
       <li className="palestra" id={id}>
         <button onClick={handleClick}>
           <SectionTitle small>{title}</SectionTitle>
-          <p>Com {speaker}</p>
+          <p>Com <strong>{speaker}</strong></p>
           <p>
-            Dia {date} às {time}
+            Dia <strong>{date}</strong> às <strong>{time}</strong>
           </p>
         </button>
       </li>

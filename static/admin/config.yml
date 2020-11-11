@@ -49,7 +49,8 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
+                                time_format: 'HH:mm'
                               },
                             ],
                         },
@@ -76,7 +77,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -104,7 +105,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -132,7 +133,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -160,7 +161,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -188,7 +189,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -226,7 +227,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -255,7 +256,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -284,7 +285,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -313,7 +314,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -351,7 +352,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -380,7 +381,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -409,7 +410,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -447,7 +448,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -476,7 +477,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -505,7 +506,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -534,7 +535,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -593,7 +594,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -612,7 +613,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -631,7 +632,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -658,7 +659,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -677,7 +678,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -696,7 +697,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -723,7 +724,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -742,7 +743,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -761,7 +762,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -788,7 +789,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -807,7 +808,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -826,7 +827,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -853,7 +854,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -872,7 +873,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -891,7 +892,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -918,7 +919,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -937,7 +938,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -956,7 +957,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -983,7 +984,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -1002,7 +1003,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -1021,7 +1022,7 @@ collections:
                               {
                                 label: 'Horário',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                               {
                                 label: 'Descrição',
@@ -1059,7 +1060,7 @@ collections:
                               {
                                 label: 'Horários',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -1092,7 +1093,7 @@ collections:
                               {
                                 label: 'Horários',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -1125,7 +1126,7 @@ collections:
                               {
                                 label: 'Horários',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -1158,7 +1159,7 @@ collections:
                               {
                                 label: 'Horários',
                                 name: 'time',
-                                widget: 'string',
+                                widget: 'datetime',
                               },
                             ],
                         },
@@ -1297,9 +1298,12 @@ collections:
                     name: 'palestrante',
                     widget: 'string',
                   },
-                  { label: 'Data', name: 'data', widget: 'string' },
-                  { label: 'Horário', name: 'horario', widget: 'string' },
                   { label: 'Descrição', name: 'description', widget: 'string' },
+                  { label: 'Imagem da Palestra', name: 'featuredimage', widget: 'img' },
+                  { label: 'Data', name: 'data', widget: 'datetime', date_format: 'DD/MM/YYY' },
+                  { label: 'Horário', name: 'horario', widget: 'datetime', time_format: 'HH:mm' },
+                  { label: 'Endereço Completo', name: 'full_address', widget: 'string' },
+                  { label: 'Telefone', name: 'telefone', widget: 'string' }
                 ],
             }
           - {
@@ -1315,8 +1319,12 @@ collections:
                     name: 'palestrante',
                     widget: 'string',
                   },
-                  { label: 'Data', name: 'data', widget: 'string' },
-                  { label: 'Horário', name: 'horario', widget: 'string' },
+                  { label: 'Descrição', name: 'description', widget: 'string' },
+                  { label: 'Imagem da Palestra', name: 'featuredimage', widget: 'img' },
+                  { label: 'Data', name: 'data', widget: 'datetime', date_format: 'DD/MM/YYY' },
+                  { label: 'Horário', name: 'horario', widget: 'datetime', time_format: 'HH:mm' },
+                  { label: 'Endereço Completo', name: 'full_address', widget: 'string' },
+                  { label: 'Telefone', name: 'telefone', widget: 'string' }
                 ],
             }
 

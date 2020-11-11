@@ -47,7 +47,7 @@ export const PalestrasPageTemplate = ({ pageTitle, current, past }) => {
             })}
           </PalestraWrapper>
           {palestraDetails  && current.filter(palestra => `${palestraDetails.palestra.replace(" ", "")}-${palestraDetails.data}-${palestraDetails.horario}` === `${palestra.palestra.replace(" ", "")}-${palestra.data}-${palestra.horario}`).length > 0 ? (
-            <PalestraDetails palestra={palestraDetails.palestra} />
+            <PalestraDetails palestra={palestraDetails} />
           ) : null}
         </section>
         <section>
@@ -68,7 +68,7 @@ export const PalestrasPageTemplate = ({ pageTitle, current, past }) => {
             })}
           </PalestraWrapper>
           {palestraDetails  && past.filter(palestra => `${palestraDetails.palestra.replace(" ", "")}-${palestraDetails.data}-${palestraDetails.horario}` === `${palestra.palestra.replace(" ", "")}-${palestra.data}-${palestra.horario}`).length > 0   ? (
-            <PalestraDetails palestra={palestraDetails.palestra} />
+            <PalestraDetails palestra={palestraDetails} />
           ) : null}
         </section>
       </Container>
@@ -82,16 +82,22 @@ PalestrasPageTemplate.propTypes = {
     {
       palestra: PropTypes.string,
       palestrante: PropTypes.string,
+      descricao: PropTypes.string,
       data: PropTypes.string,
       horario: PropTypes.string,
+      full_address: PropTypes.string,
+      telefoone: PropTypes.string,
     },
   ]),
   past: PropTypes.shape([
     {
       palestra: PropTypes.string,
       palestrante: PropTypes.string,
+      descricao: PropTypes.string,
       data: PropTypes.string,
       horario: PropTypes.string,
+      full_address: PropTypes.string,
+      telefone: PropTypes.string,
     },
   ]),
 };
@@ -128,14 +134,18 @@ export const pageQuery = graphql`
         current {
           palestra
           palestrante
+          descricao
           data
           horario
+          telefone
         }
         past {
           palestra
           palestrante
+          descricao
           data
           horario
+          telefone
         }
       }
     }
