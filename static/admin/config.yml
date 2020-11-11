@@ -27,195 +27,21 @@ collections:
               default: 'atividades',
             }
           - {
-              label: 'Estudo da Doutrina Espírita',
-              name: 'ede',
-              widget: 'object',
-              fields:
-                [
-                  {
-                    label: 'Estudo Preparatório do Espiritismo (EPE)',
-                    name: 'epe',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                                time_format: 'HH:mm'
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Estudo Sistematizado da Doutrina Espírita (ESDE)',
-                    name: 'esde',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'object',
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Estudo Aprofundado (EADE)',
-                    name: 'eade',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Estudo de Obras Básicas e Complementares',
-                    name: 'eobc',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Palestras Públicas',
-                    name: 'papu',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Hora da Prece',
-                    name: 'hodp',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: 'Atendimento Espiritual',
-              name: 'ateesp',
+              label: 'Grupo de Atividades',
+              name: 'activitygroup',
               widget: 'list',
               create: true,
               fields:
                 [
+                  { label: 'Subgrupo', name: 'sectiontitle', widget: 'string' },
                   {
-                    label: 'Orientação Fraternal',
-                    name: 'orifra',
+                    label: 'Atividade',
+                    name: 'activity',
                     widget: 'list',
-                    create: false,
+                    create: true,
                     fields:
-                      [
+                      [ 
+                        { label: 'Título da Atividade', name: 'sectiontitle', widget: 'string' },
                         {
                           label: 'Horários',
                           name: 'schedule',
@@ -228,314 +54,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Assistência Espiritual',
-                    name: 'assesp',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Passe',
-                    name: 'passee',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Mediúnicas',
-                    name: 'mediun',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: 'Evangelização Infantojuvenil',
-              name: 'evainf',
-              widget: 'list',
-              create: true,
-              fields:
-                [
-                  {
-                    label: 'Grupo da Família',
-                    name: 'grufam',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Grupo Musical Filhos de Assis',
-                    name: 'gmfias',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Eventos e Campanhas',
-                    name: 'evecam',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: 'Ação Social',
-              name: 'acasoc',
-              widget: 'list',
-              create: true,
-              fields:
-                [
-                  {
-                    label: 'Programa Coração Fraterno',
-                    name: 'procof',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Programa Arte Feliz',
-                    name: 'proart',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Programa Renascer',
-                    name: 'proren',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Programa Mão Amiga',
-                    name: 'promao',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                             ],
                         },
@@ -595,6 +115,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -614,6 +136,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -633,6 +157,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -660,6 +186,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -679,6 +207,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -698,6 +228,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -725,6 +257,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -744,6 +278,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -763,6 +299,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -790,6 +328,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -809,6 +349,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -828,6 +370,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -855,6 +399,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -874,6 +420,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -893,6 +441,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -920,6 +470,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -939,6 +491,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -958,6 +512,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -985,6 +541,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -1004,6 +562,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -1023,6 +583,8 @@ collections:
                                 label: 'Horário',
                                 name: 'time',
                                 widget: 'datetime',
+                                time_format: 'HH:mm',
+                                format: 'LT'
                               },
                               {
                                 label: 'Descrição',
@@ -1300,8 +862,8 @@ collections:
                   },
                   { label: 'Descrição', name: 'description', widget: 'string' },
                   { label: 'Imagem da Palestra', name: 'featuredimage', widget: 'img' },
-                  { label: 'Data', name: 'data', widget: 'datetime', date_format: 'DD/MM/YYY' },
-                  { label: 'Horário', name: 'horario', widget: 'datetime', time_format: 'HH:mm' },
+                  { label: 'Data', name: 'data', widget: 'datetime', date_format: 'DD/MM/YYY', format: 'L' },
+                  { label: 'Horário', name: 'horario', widget: 'datetime', time_format: 'HH:mm', format: 'LT' },
                   { label: 'Endereço Completo', name: 'full_address', widget: 'string' },
                   { label: 'Telefone', name: 'telefone', widget: 'string' }
                 ],
@@ -1321,8 +883,8 @@ collections:
                   },
                   { label: 'Descrição', name: 'description', widget: 'string' },
                   { label: 'Imagem da Palestra', name: 'featuredimage', widget: 'img' },
-                  { label: 'Data', name: 'data', widget: 'datetime', date_format: 'DD/MM/YYY' },
-                  { label: 'Horário', name: 'horario', widget: 'datetime', time_format: 'HH:mm' },
+                  { label: 'Data', name: 'data', widget: 'datetime', date_format: 'DD/MM/YYY', format: 'L' },
+                  { label: 'Horário', name: 'horario', widget: 'datetime', time_format: 'HH:mm', format: 'LT' },
                   { label: 'Endereço Completo', name: 'full_address', widget: 'string' },
                   { label: 'Telefone', name: 'telefone', widget: 'string' }
                 ],
