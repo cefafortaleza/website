@@ -72,28 +72,24 @@ const TemplateWrapper = ({ children }) => {
         <link
           type="image/png"
           rel="icon"
-          type="image/png"
           sizes="192x192"
           href={`${withPrefix('/')}img/android-icon-192x192.png`}
         />
         <link
           type="image/png"
           rel="icon"
-          type="image/png"
           sizes="32x32"
           href={`${withPrefix('/')}img/favicon-32x32.png`}
         />
         <link
           type="image/png"
           rel="icon"
-          type="image/png"
           sizes="96x96"
           href={`${withPrefix('/')}img/favicon-96x96.png`}
         />
-        <link
+      <link
           type="image/png"
           rel="icon"
-          type="image/png"
           sizes="16x16"
           href={`${withPrefix('/')}img/favicon-16x16.png`}
         />

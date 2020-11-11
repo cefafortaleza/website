@@ -3,25 +3,33 @@
   text-decoration: none
   background: white
   list-style: none
+  width: 100%
+  width: 320px
+
   button
     background: none
     display: flex
     flex-direction: column
-    padding: 10px 20px
+    padding: 20px 30px
     border: 1px solid #0001
     box-shadow: 1px 3px 10px #0003
-    width: 300px
+    width: 320px
+    margin: 0
     text-align: left
 
-  .palestra-details 
-    position: absolute
-    bottom: -30px
-    left: 0
-    right: 0
-    background: #444
-    color: white
-    display: flex
-    width: 100%
-    padding: 20px
+    p
+      white-space: nowrap
+      font-size: 1rem
+      margin-bottom: 10px
+
+      strong
+        font-size: 1rem
+  
+@media (max-width: 768px)
+  .palestra
+    button
+      margin: 20px auto
+
+  
 
 

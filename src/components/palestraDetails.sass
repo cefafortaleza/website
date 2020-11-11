@@ -1,0 +1,48 @@
+.palestra-detail-wrapper 
+  background-color: #444444
+  color: white
+  padding: 40px 20px
+  
+
+  
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  position: relative
+
+  > * 
+    width: 100%
+    flex-grow: 1
+  
+  
+  .details, .location
+    display: flex
+    flex-direction: column
+    align-items: stretch
+    justify-content: flex-start
+    .section-title
+      &::after
+        background: white
+
+  
+  .image
+    align-self: center
+    display: flex
+    justify-content: center
+    align-items: center
+    img
+      display: block
+  
+
+  &::after
+    content: ''
+    display: block
+    position: absolute
+    left: 42%
+    bottom: 100%
+    width: 0
+    height: 0
+    border-left: 20px solid transparent
+    border-right: 20px solid transparent
+    border-top: 20px solid $green
+    clear: both
