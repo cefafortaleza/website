@@ -31,7 +31,7 @@ section
   margin: 20px 0
 
 a
-  color: $green !important
+  color: $green
   &:hover
     text-decoration: underline
 
@@ -48,10 +48,10 @@ $menu-list-border-left: 1px solid $kaldi-red-invert
 $menu-label-color: $white-ter
 
 .menu-label
-  font-size: 1em !important
+  font-size: 1em 
   text-align: left
 .menu-list
-  list-style: none !important
+  list-style: none 
   text-align: left
 .social
   padding: 2em
@@ -229,6 +229,7 @@ $menu-label-color: $white-ter
 // PAGE SOBRE
 
 #cefa-about
+  
   .container
     > *
       margin: 10px 0
@@ -243,6 +244,8 @@ $menu-label-color: $white-ter
       > *
         margin-bottom: 10px
         font-size: 1rem
+
+      
 
     #estatuto
       margin-top: 30px
@@ -316,3 +319,11 @@ $menu-label-color: $white-ter
         border: thin solid $black
         .schedule-item
           font-size: 1rem !important
+
+
+a 
+  color: #000000
+  transition: all 0.2s ease-in-out
+
+  &:hover
+    color: $green
