@@ -1,1401 +1,1179 @@
 backend:
-  name: 'git-gateway'
-  branch: 'master'
-  repo: 'cefafortaleza/website'
+  name: "git-gateway"
+  branch: "master"
+  repo: "cefafortaleza/website"
   commit_messages:
-    create: 'Create {{collection}} “{{slug}}”'
-    update: 'Update {{collection}} “{{slug}}”'
-    delete: 'Delete {{collection}} “{{slug}}”'
-    uploadMedia: '[skip ci] Upload “{{path}}”'
-    deleteMedia: '[skip ci] Delete “{{path}}”'
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Upload “{{path}}”"
+    deleteMedia: "[skip ci] Delete “{{path}}”"
 
-media_folder: 'static/img'
-public_folder: '/img'
+media_folder: "static/img"
+public_folder: "/img"
 
 collections:
-  - name: 'pages'
-    label: 'Pages'
+  - name: "pages"
+    label: "Pages"
     files:
-      - file: 'src/pages/atividades/index.md'
-        label: 'Atividades'
-        name: 'atividades'
+      - file: "src/pages/atividades/index.md"
+        label: "Atividades"
+        name: "atividades"
         fields:
           - {
-              label: 'Template Key',
-              name: 'templatekey',
-              widget: 'hidden',
-              default: 'atividades',
+              label: "Template Key",
+              name: "templatekey",
+              widget: "hidden",
+              default: "atividades",
             }
           - {
-              label: 'Estudo da Doutrina Espírita',
-              name: 'ede',
-              widget: 'object',
-              fields:
-                [
-                  {
-                    label: 'Estudo Preparatório do Espiritismo (EPE)',
-                    name: 'epe',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                                time_format: 'HH:mm'
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Estudo Sistematizado da Doutrina Espírita (ESDE)',
-                    name: 'esde',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'object',
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Estudo Aprofundado (EADE)',
-                    name: 'eade',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Estudo de Obras Básicas e Complementares',
-                    name: 'eobc',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Palestras Públicas',
-                    name: 'papu',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Hora da Prece',
-                    name: 'hodp',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: 'Atendimento Espiritual',
-              name: 'ateesp',
-              widget: 'list',
+              label: "Grupo de Atividades",
+              name: "activitygroup",
+              widget: "list",
               create: true,
               fields:
                 [
+                  { label: "Subgrupo", name: "sectiontitle", widget: "string" },
                   {
-                    label: 'Orientação Fraternal',
-                    name: 'orifra',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Assistência Espiritual',
-                    name: 'assesp',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Passe',
-                    name: 'passee',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Mediúnicas',
-                    name: 'mediun',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: 'Evangelização Infantojuvenil',
-              name: 'evainf',
-              widget: 'list',
-              create: true,
-              fields:
-                [
-                  {
-                    label: 'Grupo da Família',
-                    name: 'grufam',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Grupo Musical Filhos de Assis',
-                    name: 'gmfias',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Eventos e Campanhas',
-                    name: 'evecam',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: 'Ação Social',
-              name: 'acasoc',
-              widget: 'list',
-              create: true,
-              fields:
-                [
-                  {
-                    label: 'Programa Coração Fraterno',
-                    name: 'procof',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Programa Arte Feliz',
-                    name: 'proart',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Programa Renascer',
-                    name: 'proren',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Programa Mão Amiga',
-                    name: 'promao',
-                    widget: 'list',
-                    create: false,
-                    fields:
-                      [
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Conteúdo',
-                          name: 'content',
-                          widget: 'markdown',
-                        },
-                      ],
-                  },
-                ],
-            }
-
-      - file: 'src/pages/espiritismo/index.md'
-        label: 'Sobre o espiritismo'
-        name: 'espiritismo'
-        fields:
-          - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'sobre-page',
-            }
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Content', name: 'content', widget: 'markdown' }
-
-      - file: 'src/pages/horarios/index.md'
-        label: 'Horários'
-        name: 'horarios'
-        fields:
-          - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'horarios',
-            }
-          - {
-              label: 'Horários',
-              name: 'schedules',
-              widget: 'object',
-              fields:
-                [
-                  {
-                    label: 'Domingo',
-                    name: 'sunday',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Manhã',
-                          name: 'morning',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Tarde',
-                          name: 'afternoon',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Noite',
-                          name: 'evening',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Segunda',
-                    name: 'monday',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Manhã',
-                          name: 'morning',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Tarde',
-                          name: 'afternoon',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Noite',
-                          name: 'evening',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Terça',
-                    name: 'tuesday',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Manhã',
-                          name: 'morning',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Tarde',
-                          name: 'afternoon',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Noite',
-                          name: 'evening',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Quarta',
-                    name: 'wednesday',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Manhã',
-                          name: 'morning',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Tarde',
-                          name: 'afternoon',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Noite',
-                          name: 'evening',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Quinta',
-                    name: 'thursday',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Manhã',
-                          name: 'morning',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Tarde',
-                          name: 'afternoon',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Noite',
-                          name: 'evening',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Sexta',
-                    name: 'friday',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Manhã',
-                          name: 'morning',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Tarde',
-                          name: 'afternoon',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Noite',
-                          name: 'evening',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                  {
-                    label: 'Sábado',
-                    name: 'saturday',
-                    widget: 'object',
-                    fields:
-                      [
-                        {
-                          label: 'Manhã',
-                          name: 'morning',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Tarde',
-                          name: 'afternoon',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                        {
-                          label: 'Noite',
-                          name: 'evening',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: 'Horário',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                              {
-                                label: 'Descrição',
-                                name: 'description',
-                                widget: 'string',
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: 'Estudo da Doutrina Espirita',
-              name: 'esdoesp',
-              widget: 'object',
-              fields:
-                [
-                  {
-                    label: 'Atividade',
-                    name: 'activity',
-                    widget: 'list',
+                    label: "Atividade",
+                    name: "activity",
+                    widget: "list",
                     create: true,
                     fields:
                       [
-                        { label: 'Título', name: 'title', widget: 'string' },
                         {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
+                          label: "Título da Atividade",
+                          name: "sectiontitle",
+                          widget: "string",
+                        },
+                        {
+                          label: "Horários",
+                          name: "schedule",
+                          widget: "list",
                           create: true,
                           fields:
                             [
-                              { label: 'Dia', name: 'day', widget: 'string' },
+                              { label: "Dia", name: "day", widget: "string" },
                               {
-                                label: 'Horários',
-                                name: 'time',
-                                widget: 'datetime',
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
                               },
                             ],
                         },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: 'Atendimento Espiritual',
-              name: 'ateespi',
-              widget: 'object',
-              fields:
-                [
-                  {
-                    label: 'Atividade',
-                    name: 'activity',
-                    widget: 'list',
-                    create: true,
-                    fields:
-                      [
-                        { label: 'Título', name: 'title', widget: 'string' },
                         {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horários',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
+                          label: "Conteúdo",
+                          name: "content",
+                          widget: "markdown",
                         },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: 'Evangelização Infantojuvenil',
-              name: 'evainfa',
-              widget: 'object',
-              fields:
-                [
-                  {
-                    label: 'Atividade',
-                    name: 'activity',
-                    widget: 'list',
-                    create: true,
-                    fields:
-                      [
-                        { label: 'Título', name: 'title', widget: 'string' },
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horários',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: 'Ação Social',
-              name: 'acasoci',
-              widget: 'object',
-              fields:
-                [
-                  {
-                    label: 'Atividade',
-                    name: 'activity',
-                    widget: 'list',
-                    create: true,
-                    fields:
-                      [
-                        { label: 'Título', name: 'title', widget: 'string' },
-                        {
-                          label: 'Horários',
-                          name: 'schedule',
-                          widget: 'list',
-                          create: true,
-                          fields:
-                            [
-                              { label: 'Dia', name: 'day', widget: 'string' },
-                              {
-                                label: 'Horários',
-                                name: 'time',
-                                widget: 'datetime',
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: 'Livraria',
-              name: 'schedule',
-              widget: 'object',
-              fields:
-                [
-                  { label: 'Dias', name: 'days', widget: 'string' },
-                  { label: 'Horários', name: 'time', widget: 'string' },
-                ],
-            }
-          - {
-              label: 'Biblioteca',
-              name: 'library',
-              widget: 'object',
-              fields:
-                [
-                  { label: 'Dias', name: 'days', widget: 'string' },
-                  { label: 'Horários', name: 'time', widget: 'string' },
-                ],
-            }
-
-      - file: 'src/pages/index.md'
-        label: 'Landing Page'
-        name: 'index'
-        fields:
-          - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'index-page',
-            }
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Image', name: 'image', widget: 'image' }
-          - { label: 'Heading', name: 'heading', widget: 'string' }
-          - { label: 'Subheading', name: 'subheading', widget: 'string' }
-          - {
-              label: 'Mainpitch',
-              name: 'mainpitch',
-              widget: 'object',
-              fields:
-                [
-                  { label: 'Title', name: 'title', widget: 'string' },
-                  { label: 'Description', name: 'description', widget: 'text' },
-                ],
-            }
-          - { label: 'Description', name: 'description', widget: 'string' }
-          - {
-              label: 'Intro',
-              name: 'intro',
-              widget: 'object',
-              fields:
-                [
-                  { label: 'Heading', name: 'heading', widget: 'string' },
-                  { label: 'Description', name: 'description', widget: 'text' },
-                  {
-                    label: 'Blurbs',
-                    name: 'blurbs',
-                    widget: 'list',
-                    fields:
-                      [
-                        { label: 'Image', name: 'image', widget: 'image' },
-                        { label: 'Text', name: 'text', widget: 'text' },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: 'Main',
-              name: 'main',
-              widget: 'object',
-              fields:
-                [
-                  { label: 'Heading', name: 'heading', widget: 'string' },
-                  { label: 'Description', name: 'description', widget: 'text' },
-                  {
-                    label: 'Image1',
-                    name: 'image1',
-                    widget: 'object',
-                    fields:
-                      [
-                        { label: 'Image', name: 'image', widget: 'image' },
-                        { label: 'Alt', name: 'alt', widget: 'string' },
-                      ],
-                  },
-                  {
-                    label: 'Image2',
-                    name: 'image2',
-                    widget: 'object',
-                    fields:
-                      [
-                        { label: 'Image', name: 'image', widget: 'image' },
-                        { label: 'Alt', name: 'alt', widget: 'string' },
-                      ],
-                  },
-                  {
-                    label: 'Image3',
-                    name: 'image3',
-                    widget: 'object',
-                    fields:
-                      [
-                        { label: 'Image', name: 'image', widget: 'image' },
-                        { label: 'Alt', name: 'alt', widget: 'string' },
                       ],
                   },
                 ],
             }
 
-      - file: 'src/pages/palestras/index.md'
-        label: 'Palestras'
-        name: 'palestras'
+      - file: "src/pages/bibilioteca/index.md"
+        label: "Biblioteca"
+        name: "Biblioteca"
         fields:
           - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'about-page',
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "biblioteca-page",
             }
-          - { label: 'pageTitle', name: 'pageTitle', widget: 'string' }
+          - { label: "Banner da Página", name: "banner", widget: "image" }
+          - { label: "Título da Página", name: "title", widget: "string" }
+          - { label: "Conteúdo Principal", name: "content", widget: "markdown" }
           - {
-              label: 'Palestras do mês',
-              name: 'current',
-              widget: 'list',
+              label: "Título da Subseção 1",
+              name: "section_one_title",
+              widget: "string",
+            }
+          - {
+              label: "Conteúdo da Subseção 1",
+              name: "section_one_content",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "Dias e Horários",
+                    name: "schedule",
+                    widget: "list",
+                    create: true,
+                    fields:
+                      [
+                        { label: "Dias", name: "days", wiget: "string" },
+                        { label: "Horários", name: "hours", wiget: "string" },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Título da Subseção 2",
+              name: "section_two_title",
+              widget: "string",
+            }
+          - {
+            label: "Conteúdo da Subseção 2",
+            name: "section_two_content",
+            widget: "markdown"
+          }
+          - {
+              label: "Título da Subseção 3",
+              name: "section_three_title",
+              widget: "string",
+            }
+          - {
+            label: "Conteúdo da Subseção 3",
+            name: "section_three_content",
+            widget: "markdown"
+          }
+
+      - file: "src/pages/espiritismo/index.md"
+        label: "Sobre o espiritismo"
+        name: "espiritismo"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "sobre-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "content", widget: "markdown" }
+
+      - file: "src/pages/horarios/index.md"
+        label: "Horários"
+        name: "horarios"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "horarios",
+            }
+          - {
+              label: "Horários",
+              name: "schedules",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "Domingo",
+                    name: "sunday",
+                    widget: "object",
+                    fields:
+                      [
+                        {
+                          label: "Manhã",
+                          name: "morning",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                        {
+                          label: "Tarde",
+                          name: "afternoon",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                        {
+                          label: "Noite",
+                          name: "evening",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                  {
+                    label: "Segunda",
+                    name: "monday",
+                    widget: "object",
+                    fields:
+                      [
+                        {
+                          label: "Manhã",
+                          name: "morning",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                        {
+                          label: "Tarde",
+                          name: "afternoon",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                        {
+                          label: "Noite",
+                          name: "evening",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                  {
+                    label: "Terça",
+                    name: "tuesday",
+                    widget: "object",
+                    fields:
+                      [
+                        {
+                          label: "Manhã",
+                          name: "morning",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                        {
+                          label: "Tarde",
+                          name: "afternoon",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                        {
+                          label: "Noite",
+                          name: "evening",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                  {
+                    label: "Quarta",
+                    name: "wednesday",
+                    widget: "object",
+                    fields:
+                      [
+                        {
+                          label: "Manhã",
+                          name: "morning",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                        {
+                          label: "Tarde",
+                          name: "afternoon",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                        {
+                          label: "Noite",
+                          name: "evening",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                  {
+                    label: "Quinta",
+                    name: "thursday",
+                    widget: "object",
+                    fields:
+                      [
+                        {
+                          label: "Manhã",
+                          name: "morning",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                        {
+                          label: "Tarde",
+                          name: "afternoon",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                        {
+                          label: "Noite",
+                          name: "evening",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                  {
+                    label: "Sexta",
+                    name: "friday",
+                    widget: "object",
+                    fields:
+                      [
+                        {
+                          label: "Manhã",
+                          name: "morning",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                        {
+                          label: "Tarde",
+                          name: "afternoon",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                        {
+                          label: "Noite",
+                          name: "evening",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                  {
+                    label: "Sábado",
+                    name: "saturday",
+                    widget: "object",
+                    fields:
+                      [
+                        {
+                          label: "Manhã",
+                          name: "morning",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                        {
+                          label: "Tarde",
+                          name: "afternoon",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                        {
+                          label: "Noite",
+                          name: "evening",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                              {
+                                label: "Descrição",
+                                name: "description",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Estudo da Doutrina Espirita",
+              name: "esdoesp",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "Atividade",
+                    name: "activity",
+                    widget: "list",
+                    create: true,
+                    fields:
+                      [
+                        { label: "Título", name: "title", widget: "string" },
+                        {
+                          label: "Horários",
+                          name: "schedule",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              { label: "Dia", name: "day", widget: "string" },
+                              {
+                                label: "Horários",
+                                name: "time",
+                                widget: "datetime",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Atendimento Espiritual",
+              name: "ateespi",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "Atividade",
+                    name: "activity",
+                    widget: "list",
+                    create: true,
+                    fields:
+                      [
+                        { label: "Título", name: "title", widget: "string" },
+                        {
+                          label: "Horários",
+                          name: "schedule",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              { label: "Dia", name: "day", widget: "string" },
+                              {
+                                label: "Horários",
+                                name: "time",
+                                widget: "datetime",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Evangelização Infantojuvenil",
+              name: "evainfa",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "Atividade",
+                    name: "activity",
+                    widget: "list",
+                    create: true,
+                    fields:
+                      [
+                        { label: "Título", name: "title", widget: "string" },
+                        {
+                          label: "Horários",
+                          name: "schedule",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              { label: "Dia", name: "day", widget: "string" },
+                              {
+                                label: "Horários",
+                                name: "time",
+                                widget: "datetime",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Ação Social",
+              name: "acasoci",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "Atividade",
+                    name: "activity",
+                    widget: "list",
+                    create: true,
+                    fields:
+                      [
+                        { label: "Título", name: "title", widget: "string" },
+                        {
+                          label: "Horários",
+                          name: "schedule",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              { label: "Dia", name: "day", widget: "string" },
+                              {
+                                label: "Horários",
+                                name: "time",
+                                widget: "datetime",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Livraria",
+              name: "schedule",
+              widget: "object",
+              fields:
+                [
+                  { label: "Dias", name: "days", widget: "string" },
+                  { label: "Horários", name: "time", widget: "string" },
+                ],
+            }
+          - {
+              label: "Biblioteca",
+              name: "library",
+              widget: "object",
+              fields:
+                [
+                  { label: "Dias", name: "days", widget: "string" },
+                  { label: "Horários", name: "time", widget: "string" },
+                ],
+            }
+
+      - file: "src/pages/index.md"
+        label: "Landing Page"
+        name: "index"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - {
+              label: "Slides",
+              name: "mainslides",
+              widget: "list",
               create: true,
               fields:
                 [
-                  { label: 'Palestra', name: 'palestra', widget: 'string' },
                   {
-                    label: 'Palestrante',
-                    name: 'palestrante',
-                    widget: 'string',
+                    label: "Slide",
+                    name: "slide",
+                    widget: "object",
+                    fields:
+                      [
+                        {
+                          label: "Pré-Título",
+                          name: "pretitle",
+                          widget: "string",
+                        },
+                        { label: "Título", name: "title", widget: "string" },
+                        {
+                          label: "Sub-Título",
+                          name: "subtitle",
+                          widget: "string",
+                        },
+                        {
+                          label: "Botão 1 Title",
+                          name: "button1title",
+                          widget: "string",
+                        },
+                        {
+                          label: "Botão 1 Link",
+                          name: "button1link",
+                          widget: "string",
+                        },
+                        {
+                          label: "Botão 2 Title",
+                          name: "button2title",
+                          widget: "string",
+                        },
+                        {
+                          label: "Botão 2 Link",
+                          name: "button2link",
+                          widget: "string",
+                        },
+                        {
+                          label: "Background",
+                          name: "background",
+                          widget: "image",
+                        },
+                      ],
                   },
-                  { label: 'Descrição', name: 'description', widget: 'string' },
-                  { label: 'Imagem da Palestra', name: 'featuredimage', widget: 'img' },
-                  { label: 'Data', name: 'data', widget: 'datetime', date_format: 'DD/MM/YYY' },
-                  { label: 'Horário', name: 'horario', widget: 'datetime', time_format: 'HH:mm' },
-                  { label: 'Endereço Completo', name: 'full_address', widget: 'string' },
-                  { label: 'Telefone', name: 'telefone', widget: 'string' }
                 ],
             }
           - {
-              label: 'Palestras Passadas',
-              name: 'past',
-              widget: 'list',
-              create: true,
+              label: "Primeiro Banner",
+              name: "fisrtbanner",
+              widget: "object",
               fields:
                 [
-                  { label: 'Palestra', name: 'palestra', widget: 'string' },
+                  { label: "Pré-Título", name: "pretitle", widget: "string" },
+                  { label: "Título", name: "title", widget: "string" },
+                  { label: "Sub-Título", name: "subtitle", widget: "string" },
                   {
-                    label: 'Palestrante',
-                    name: 'palestrante',
-                    widget: 'string',
+                    label: "Botão 1 Title",
+                    name: "button1title",
+                    widget: "string",
                   },
-                  { label: 'Descrição', name: 'description', widget: 'string' },
-                  { label: 'Imagem da Palestra', name: 'featuredimage', widget: 'img' },
-                  { label: 'Data', name: 'data', widget: 'datetime', date_format: 'DD/MM/YYY' },
-                  { label: 'Horário', name: 'horario', widget: 'datetime', time_format: 'HH:mm' },
-                  { label: 'Endereço Completo', name: 'full_address', widget: 'string' },
-                  { label: 'Telefone', name: 'telefone', widget: 'string' }
+                  {
+                    label: "Botão 1 Link",
+                    name: "button1link",
+                    widget: "string",
+                  },
+                  {
+                    label: "Botão 2 Title",
+                    name: "button2title",
+                    widget: "string",
+                  },
+                  {
+                    label: "Botão 2 Link",
+                    name: "button2link",
+                    widget: "string",
+                  },
+                ],
+            }
+          - {
+              label: "Primeira Seção",
+              name: "firstsection",
+              widget: "object",
+              fields:
+                [
+                  { label: "Título", name: "sectiontitle", widget: "string" },
+                  {
+                    label: "Sub-Título",
+                    name: "sectionsubtitle",
+                    widget: "string",
+                  },
+                  {
+                    label: "Content",
+                    name: "button1title",
+                    widget: "markdown",
+                  },
+                ],
+            }
+          - {
+              label: "Segundo Banner",
+              name: "secondbanner",
+              widget: "object",
+              fields:
+                [
+                  { label: "Pré-Título", name: "pretitle", widget: "string" },
+                  { label: "Título", name: "title", widget: "string" },
+                  { label: "Sub-Título", name: "subtitle", widget: "string" },
+                  {
+                    label: "Botão 1 Title",
+                    name: "button1title",
+                    widget: "string",
+                  },
+                  {
+                    label: "Botão 1 Link",
+                    name: "button1link",
+                    widget: "string",
+                  },
+                  {
+                    label: "Botão 2 Title",
+                    name: "button2title",
+                    widget: "string",
+                  },
+                  {
+                    label: "Botão 2 Link",
+                    name: "button2link",
+                    widget: "string",
+                  },
+                ],
+            }
+          - {
+              label: "Segunda Seção",
+              name: "secondsection",
+              widget: "object",
+              fields:
+                [
+                  { label: "Título", name: "sectiontitle", widget: "string" },
+                  {
+                    label: "Sub-Título",
+                    name: "sectionsubtitle",
+                    widget: "string",
+                  },
+                  {
+                    label: "Content",
+                    name: "button1title",
+                    widget: "markdown",
+                  },
+                ],
+            }
+          - {
+              label: "Terceiro Banner",
+              name: "thirdbanner",
+              widget: "object",
+              fields:
+                [
+                  { label: "Pré-Título", name: "pretitle", widget: "string" },
+                  { label: "Título", name: "title", widget: "string" },
+                  { label: "Sub-Título", name: "subtitle", widget: "string" },
+                  {
+                    label: "Botão 1 Title",
+                    name: "button1title",
+                    widget: "string",
+                  },
+                  {
+                    label: "Botão 1 Link",
+                    name: "button1link",
+                    widget: "string",
+                  },
+                  {
+                    label: "Botão 2 Title",
+                    name: "button2title",
+                    widget: "string",
+                  },
+                  {
+                    label: "Botão 2 Link",
+                    name: "button2link",
+                    widget: "string",
+                  },
                 ],
             }
 
-      - file: 'src/pages/sobre/index.md'
-        label: 'Sobre o CEFA'
-        name: 'sobre'
+      - file: "src/pages/palestras/index.md"
+        label: "Palestras"
+        name: "palestras"
         fields:
           - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'about-page',
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
             }
-          - { label: 'pageTitle', name: 'pageTitle', widget: 'string' }
+          - { label: "pageTitle", name: "pageTitle", widget: "string" }
           - {
-              label: 'sectionOneTitle',
-              name: 'sectionOneTitle',
-              widget: 'string',
+              label: "Palestras do mês",
+              name: "current",
+              widget: "list",
+              create: true,
+              fields:
+                [
+                  { label: "Palestra", name: "palestra", widget: "string" },
+                  {
+                    label: "Palestrante",
+                    name: "palestrante",
+                    widget: "string",
+                  },
+                  { label: "Descrição", name: "description", widget: "string" },
+                  {
+                    label: "Imagem da Palestra",
+                    name: "featuredimage",
+                    widget: "img",
+                  },
+                  {
+                    label: "Data",
+                    name: "data",
+                    widget: "datetime",
+                    date_format: "DD/MM/YYY",
+                    format: "L",
+                  },
+                  {
+                    label: "Horário",
+                    name: "horario",
+                    widget: "datetime",
+                    time_format: "HH:mm",
+                    format: "LT",
+                  },
+                  {
+                    label: "Endereço Completo",
+                    name: "full_address",
+                    widget: "string",
+                  },
+                  { label: "Telefone", name: "telefone", widget: "string" },
+                ],
             }
           - {
-              label: 'sectionOneContent',
-              name: 'sectionOneContent',
-              widget: 'markdown',
+              label: "Palestras Passadas",
+              name: "past",
+              widget: "list",
+              create: true,
+              fields:
+                [
+                  { label: "Palestra", name: "palestra", widget: "string" },
+                  {
+                    label: "Palestrante",
+                    name: "palestrante",
+                    widget: "string",
+                  },
+                  { label: "Descrição", name: "description", widget: "string" },
+                  {
+                    label: "Imagem da Palestra",
+                    name: "featuredimage",
+                    widget: "img",
+                  },
+                  {
+                    label: "Data",
+                    name: "data",
+                    widget: "datetime",
+                    date_format: "DD/MM/YYY",
+                    format: "L",
+                  },
+                  {
+                    label: "Horário",
+                    name: "horario",
+                    widget: "datetime",
+                    time_format: "HH:mm",
+                    format: "LT",
+                  },
+                  {
+                    label: "Endereço Completo",
+                    name: "full_address",
+                    widget: "string",
+                  },
+                  { label: "Telefone", name: "telefone", widget: "string" },
+                ],
+            }
+
+      - file: "src/pages/sobre/index.md"
+        label: "Sobre o CEFA"
+        name: "sobre"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - { label: "pageTitle", name: "pageTitle", widget: "string" }
+          - {
+              label: "sectionOneTitle",
+              name: "sectionOneTitle",
+              widget: "string",
             }
           - {
-              label: 'sectionTwoTitle',
-              name: 'sectionTwoTitle',
-              widget: 'string',
+              label: "sectionOneContent",
+              name: "sectionOneContent",
+              widget: "markdown",
             }
           - {
-              label: 'sectionThreeTitle',
-              name: 'sectionThreeTitle',
-              widget: 'string',
+              label: "sectionTwoTitle",
+              name: "sectionTwoTitle",
+              widget: "string",
             }
           - {
-              label: 'Arquivo de Estatuto',
-              name: 'bylaws',
-              widget: 'file',
-              default: 'static/ESTATUTO.pdf',
+              label: "sectionThreeTitle",
+              name: "sectionThreeTitle",
+              widget: "string",
             }
           - {
-              label: 'sectionFourTitle',
-              name: 'sectionFourTitle',
-              widget: 'string',
+              label: "Arquivo de Estatuto",
+              name: "bylaws",
+              widget: "file",
+              default: "static/ESTATUTO.pdf",
             }
           - {
-              label: 'Arquivo de Política Interna',
-              name: 'internalPolicyLink',
-              widget: 'file',
-              default: 'static/REGIMENTO.docx',
+              label: "sectionFourTitle",
+              name: "sectionFourTitle",
+              widget: "string",
             }
           - {
-              label: 'sectionFiveTitle',
-              name: 'sectionFiveTitle',
-              widget: 'string',
+              label: "Arquivo de Política Interna",
+              name: "internalPolicyLink",
+              widget: "file",
+              default: "static/REGIMENTO.docx",
             }
-          - { label: 'phoneNumber', name: 'phoneNumber', 'widget': 'string' }
-          - { label: 'email', name: 'email', widget: 'string' }
+          - {
+              label: "sectionFiveTitle",
+              name: "sectionFiveTitle",
+              widget: "string",
+            }
+          - { label: "phoneNumber", name: "phoneNumber", "widget": "string" }
+          - { label: "email", name: "email", widget: "string" }
 
       # - file: 'src/pages/voluntariado/index.md'
 
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'src/pages/blog'
+  - name: "blog"
+    label: "Blog"
+    folder: "src/pages/blog"
     create: true
     fields:
-      - { name: 'templatekey', label: 'Template Key', widget: 'hidden', default: 'blog-post',}
-      - { name: 'path', label: 'Path' }
-      - { name: 'title', label: 'Title' }
-      - { name: 'description', label: 'Description' }
-      - { name: 'date', label: 'Date', widget: 'datetime' }
-      - { name: 'featuredpost', label: 'Featured Post', widget: 'boolean' }
-      - { name: 'featuredimage', label: 'Image', widget: 'img' }
-      - { name: 'body', label: 'Body', widget: 'markdown' }
+      - {
+          name: "templatekey",
+          label: "Template Key",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { name: "path", label: "Path" }
+      - { name: "title", label: "Title" }
+      - { name: "description", label: "Description" }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "featuredpost", label: "Featured Post", widget: "boolean" }
+      - { name: "featuredimage", label: "Image", widget: "img" }
+      - { name: "body", label: "Body", widget: "markdown" }
