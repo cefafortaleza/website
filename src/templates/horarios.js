@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Container from '../components/Container';
 import Layout from '../components/Layout';
@@ -10,17 +10,13 @@ export const HorariosPageTemplate = ({ title, schedules }) => {
   const [activeTab, setActiveTab] = useState('sunday');
 
   const toggleScheduleTab = (tab) => () => {
-    console.log('clicked');
-    console.log('active before change: ', activeTab);
-
-    document.getElementById(activeTab).classList.remove('active-tab');
+    document.getElementById(activeTab).classList.toggle('active-tab');
     document
       .getElementById(`button-${activeTab}`)
-      .classList.remove('active-button');
+      .classList.toggle('active-button');
     setActiveTab(tab);
-    document.getElementById(tab).classList.add('active-tab');
-    document.getElementById(`button-${tab}`).classList.add('active-button');
-    console.log('active changed: ', activeTab);
+    document.getElementById(tab).classList.toggle('active-tab');
+    document.getElementById(`button-${tab}`).classList.toggle('active-button');
   };
 
   return (

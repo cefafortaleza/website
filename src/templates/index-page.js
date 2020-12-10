@@ -40,6 +40,7 @@ export const IndexPageTemplate = ({
           buttonText="Clique Aqui"
           buttonLink="/"
           id="grupo-musical"
+          background="../img/section-background-grupo-musical.png"
           black
         />
       </section>
@@ -64,6 +65,7 @@ export const IndexPageTemplate = ({
           title="Acesse nosso boletim"
           buttonText="Clique Aqui"
           buttonLink="/"
+          background="../img/section-background-boletim.png"
           id="boletim"
         />
       </section>
@@ -87,6 +89,7 @@ export const IndexPageTemplate = ({
           title="Gostaria de alugar um livro?"
           buttonText="Conheça nossa biblioteca"
           buttonLink="/"
+          background="../img/section-background-biblioteca.png"
           id="biblioteca"
         />
       </section>

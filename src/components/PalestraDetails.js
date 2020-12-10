@@ -4,7 +4,7 @@ import SectionTitle from '../components/SectionTitle';
 
 const PalestraDetails = ({ palestra }) => {
   return (
-    <div className="palestra-detail-wrapper">
+    <Container className="palestra-detail-wrapper">
       
         <div className="image">
           {palestra.data}
@@ -19,7 +19,7 @@ const PalestraDetails = ({ palestra }) => {
           <p>{palestra.full_address}</p>
           <p>Contato: {palestra.telefone}</p>
         </div>
-    </div>
+    </Container>
   );
 };
 
