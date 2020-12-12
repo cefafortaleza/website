@@ -11,13 +11,14 @@ class PostList extends React.Component {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
 
+    console.log(posts);
+    
     return (
       <div className="blog-posts">
         <SectionTitle>Fique ligado</SectionTitle>
         {posts &&
           posts.map(({ node: post }) => (
             <>
-            {console.log('POST: ', post)}
             <div className="post-wrapper" key={post.frontmatter.title}>
               <div className="post-image-wrapper">
                 <Img
