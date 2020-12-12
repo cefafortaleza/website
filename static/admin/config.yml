@@ -649,6 +649,31 @@ collections:
                 ],
             }
 
+      - file: "src/pages/sobre/index.md"
+        label: "Sobre o CEFA"
+        name: "sobre"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - {
+              label: "Arquivo de Estatuto",
+              name: "bylaws",
+              widget: "file",
+              default: "static/ESTATUTO.pdf",
+            }
+          - {
+              label: "Arquivo de Política Interna",
+              name: "internalPolicyLink",
+              widget: "file",
+              default: "static/REGIMENTO.docx",
+            }
+          - { label: "phoneNumber", name: "phoneNumber", "widget": "string" }
+          - { label: "email", name: "email", widget: "string" }
+
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
