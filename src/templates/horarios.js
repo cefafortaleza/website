@@ -114,7 +114,6 @@ HorariosPageTemplate.propTypes = {
 };
 
 const HorariosPage = ({ data }) => {
-  console.log(data);
   const { frontmatter } = data.markdownRemark;
   const { title, schedules } = frontmatter;
 

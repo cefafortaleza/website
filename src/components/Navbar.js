@@ -33,7 +33,6 @@ const Navbar = class extends React.Component {
     );
     document.querySelector('.navbar-burger').classList.toggle('is-active');
     document.querySelector('.navbar-menu').classList.toggle('is-active');
-    console.log('clicked');
   };
 
   render() {

@@ -16,13 +16,11 @@ export const PalestrasPageTemplate = ({ pageTitle, current, past }) => {
   const findPalestraByID = (palestraID) => [...current, ...past].filter(palestra => palestraID === `${palestra.palestra.replace(" ", "")}-${palestra.data}-${palestra.horario}`)[0]
 
   const handleDetail = (palestraID) => {
-    console.log('id clicked: ', palestraID);
     if (palestraDetails && palestraID === `${palestraDetails.palestra.replace(" ", "")}-${palestraDetails.data}-${palestraDetails.horario}`) return setPalestraDetails(null);
     return setPalestraDetails(findPalestraByID(palestraID));
   };
   
   useEffect(() => {
-    console.log('current state: ', palestraDetails);
   }, [palestraDetails]);
   
   return (

@@ -11,7 +11,6 @@ import Flicking from '@egjs/react-flicking';
 // } from '@egjs/flicking';
 
 const MainSlides = ({ slides }) => {
-  console.log(slides);
   return (
     <Flicking
       tag="div"
