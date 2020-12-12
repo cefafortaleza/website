@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import Features from '../components/Features';
-import PostList from '../components/PostList';
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
 
@@ -34,99 +32,158 @@ export const SobrePageTemplate = ({
   sectionOneContent,
   sectionTwoTitle,
   sectionThreeTitle,
+  board,
   bylaws,
   sectionFourTitle,
   internalPolicyLink,
   sectionFiveTitle,
   phoneNumber,
   email,
-}) => (
-  <section id="cefa-about">
-    <Container className="container">
-      <SectionTitle big>{pageTitle}</SectionTitle>
-      <div className="index">
-        <h3>Índice</h3>
-        <Link to="#apresentacao">1. Apresentação</Link>
-        <Link to="#board">
-          2. Diretoria, conselho consultivo e coordenadorias
-        </Link>
-        <Link to="#estatuto">3. Estatuto</Link>
-        <Link to="#regime-interno">4. Regimento Interno</Link>
-        <Link to="#localizacao">5. Localização</Link>
-      </div>
-      <div id="apresentacao">
-        <SectionTitle>{sectionOneTitle}</SectionTitle>
-        <div className="richText">
-          {
-            unified()
-              .use(parse)
-              .use(breaks)
-              .use(remark2react)
-              .processSync(sectionOneContent).result
-          }
-        </div>
-      </div>
-      <div id="board">
-        <SectionTitle>{sectionTwoTitle}</SectionTitle>
-        <div>
-          <p>TABS!!!</p>
-        </div>
-      </div>
-      <div id="estatuto">
-        <SectionTitle>{sectionThreeTitle}</SectionTitle>
-        <a href={`${bylaws}`} download>
-          Download!
-        </a>
-      </div>
-      <div id="regime-interno">
-        <SectionTitle>{sectionFourTitle}</SectionTitle>
-        <a href={`${internalPolicyLink}`} download>
-          Download!
-        </a>
-      </div>
-      <div id="localizacao">
-        <SectionTitle>{sectionFiveTitle}</SectionTitle>
-        <p>
-          Telefone: <Link to={`tel:+${phoneNumber}`}>{phoneNumber}</Link>
-        </p>
-        <p>
-          Email: <Link to={`mailto:${email}`}>{email}</Link>
-        </p>
-        <div className="social-media-wrapper">
-          <a
-            href="https://www.instagram.com/cefafortaleza/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Instagram />
-          </a>
+}) => {
+  const [activeTab, setActiveTab] = useState('diretoria');
 
-          <a
-            href="https://www.facebook.com/CefaFortaleza"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Facebook />
-          </a>
+  const toggleBoardTab = (tab) => () => {
+    document.getElementById(activeTab).classList.toggle('active-tab');
+    document.getElementById(`${activeTab}`).classList.toggle('active-button');
+    setActiveTab(tab);
+    document.getElementById(tab).classList.toggle('active-tab');
+    document.getElementById(`button-${tab}`).classList.toggle('active-button');
+  };
 
-          <a
-            href="https://www.youtube.com/user/CEFA1941"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Youtube />
+  console.log(board);
+
+  return (
+    <section id="cefa-about">
+      <Container className="container">
+        <SectionTitle big>{pageTitle}</SectionTitle>
+        <div className="index">
+          <h3>Índice</h3>
+          <Link to="#apresentacao">1. Apresentação</Link>
+          <Link to="#board">
+            2. Diretoria, conselho consultivo e coordenadorias
+          </Link>
+          <Link to="#estatuto">3. Estatuto</Link>
+          <Link to="#regime-interno">4. Regimento Interno</Link>
+          <Link to="#localizacao">5. Localização</Link>
+        </div>
+        <div id="apresentacao">
+          <SectionTitle>{sectionOneTitle}</SectionTitle>
+          <div className="richText">
+            {
+              unified()
+                .use(parse)
+                .use(breaks)
+                .use(remark2react)
+                .processSync(sectionOneContent).result
+            }
+          </div>
+        </div>
+        <div id="board">
+          <SectionTitle>{sectionTwoTitle}</SectionTitle>
+          <div className="board-tabs-wrapper">
+            <ul className="schedule-tabs">
+              <li className="schedule-tab">
+                <button
+                  className="active-button"
+                  id="diretoria"
+                  onClick={toggleBoardTab('diretoria')}
+                >
+                  Diretoria Executiva
+                </button>
+              </li>
+              <li className="schedule-tab">
+                <button
+                  id="conselho-consultivo-fiscal"
+                  onClick={toggleBoardTab('conselho-consultivo-fiscal')}
+                >
+                  Conselho Consultivo Fiscal
+                </button>
+              </li>
+              <li className="schedule-tab">
+                <button
+                  id="coordenadores"
+                  onClick={toggleBoardTab('coordenadores')}
+                >
+                  Coordenadores
+                </button>
+              </li>
+            </ul>
+            <div className="schedule-content">
+              {board.tab.map((tab, index) => {
+                return (
+                  <div className="tab">
+                    <h3 className="section-title">{tab.title}</h3>
+                    {tab.content.map((content) => {
+                      return (
+                        <div className="row">
+                          <p className="bold">{content.title}</p>
+                          <p>{content.name}</p>
+                          <p>{content.email}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+        <div id="estatuto">
+          <SectionTitle>{sectionThreeTitle}</SectionTitle>
+          <a href={`${bylaws}`} download>
+            Download!
           </a>
         </div>
-      </div>
-      <div>
-        <div dangerouslySetInnerHTML={getCEFAMap()} />
-        <div>
-          <p>Rua Senador Catunda, 117 - Benfica, Fortaleza - CE, 60015-320</p>
+        <div id="regime-interno">
+          <SectionTitle>{sectionFourTitle}</SectionTitle>
+          <a href={`${internalPolicyLink}`} download>
+            Download!
+          </a>
         </div>
-      </div>
-    </Container>
-  </section>
-);
+        <div id="localizacao">
+          <SectionTitle>{sectionFiveTitle}</SectionTitle>
+          <p>
+            Telefone: <Link to={`tel:+${phoneNumber}`}>{phoneNumber}</Link>
+          </p>
+          <p>
+            Email: <Link to={`mailto:${email}`}>{email}</Link>
+          </p>
+          <div className="social-media-wrapper">
+            <a
+              href="https://www.instagram.com/cefafortaleza/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Instagram />
+            </a>
+
+            <a
+              href="https://www.facebook.com/CefaFortaleza"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Facebook />
+            </a>
+
+            <a
+              href="https://www.youtube.com/user/CEFA1941"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Youtube />
+            </a>
+          </div>
+        </div>
+        <div>
+          <div dangerouslySetInnerHTML={getCEFAMap()} />
+          <div>
+            <p>Rua Senador Catunda, 117 - Benfica, Fortaleza - CE, 60015-320</p>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+};
 
 SobrePageTemplate.propTypes = {
   pageTitle: PropTypes.string,
@@ -134,6 +191,7 @@ SobrePageTemplate.propTypes = {
   sectionOneContent: PropTypes.string,
   sectionTwoTitle: PropTypes.string,
   sectionThreeTitle: PropTypes.string,
+  board: PropTypes.object,
   bylaws: PropTypes.string,
   sectionFourTitle: PropTypes.string,
   internalPolicyLink: PropTypes.string,
@@ -145,20 +203,35 @@ SobrePageTemplate.propTypes = {
 const SobrePage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
+  const {
+    pageTitle,
+    sectionOneTitle,
+    sectionOneContent,
+    sectionTwoTitle,
+    sectionThreeTitle,
+    board,
+    bylaws,
+    sectionFourTitle,
+    internalPolicyLink,
+    sectionFiveTitle,
+    phoneNumber,
+    email,
+  } = frontmatter;
   return (
     <Layout>
       <SobrePageTemplate
-        pageTitle={frontmatter.pageTitle}
-        sectionOneTitle={frontmatter.sectionOneTitle}
-        sectionOneContent={frontmatter.sectionOneContent}
-        sectionTwoTitle={frontmatter.sectionTwoTitle}
-        sectionThreeTitle={frontmatter.sectionThreeTitle}
-        bylaws={frontmatter.bylaws}
-        sectionFourTitle={frontmatter.sectionFourTitle}
-        internalPolicyLink={frontmatter.internalPolicyLink}
-        sectionFiveTitle={frontmatter.sectionFiveTitle}
-        phoneNumber={frontmatter.phoneNumber}
-        email={frontmatter.email}
+        pageTitle={pageTitle}
+        sectionOneTitle={sectionOneTitle}
+        sectionOneContent={sectionOneContent}
+        sectionTwoTitle={sectionTwoTitle}
+        sectionThreeTitle={sectionThreeTitle}
+        board={board}
+        bylaws={bylaws}
+        sectionFourTitle={sectionFourTitle}
+        internalPolicyLink={internalPolicyLink}
+        sectionFiveTitle={sectionFiveTitle}
+        phoneNumber={phoneNumber}
+        email={email}
       />
     </Layout>
   );
@@ -183,6 +256,16 @@ export const pageQuery = graphql`
         sectionOneContent
         sectionTwoTitle
         sectionThreeTitle
+        board {
+          tab {
+            title
+            content {
+              title
+              name
+              email
+            }
+          }
+        }
         bylaws
         sectionFourTitle
         internalPolicyLink

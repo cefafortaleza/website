@@ -1,0 +1,54 @@
+@import "./variables.sass"
+  
+#atividades-index
+  display: flex
+  flex-direction: column
+  .index
+    display: flex
+    flex-direction: column
+
+    > *
+      display: block
+      flex-grow: 1
+      white-space: nowrap
+      margin: 5px 0
+
+    h3
+      font-weight: $bold
+  +mobile
+    .index
+      > *
+        white-space: pre-wrap
+
+#atividades-content
+  section
+    margin: 30px auto
+    width: 100%
+
+    .subsectionWrapper
+
+      .subsection
+        display: flex
+        flex-shrink: 1
+        flex-direction: column
+        margin-right: auto
+        padding: 20px 30px
+
+        .schedule-item
+          display: flex
+          margin: 10px 0
+
+          p
+            margin-right: 10px
+            &:first-child
+              font-weight: $bold
+      .contentWrapper
+        margin: 10px 0 20px
+  +mobile
+    .subsectionWrapper
+      .subsection
+        padding: 10px !important
+        border: thin solid $black
+        .schedule-item
+          font-size: 1rem !important
+

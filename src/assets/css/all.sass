@@ -1,0 +1,130 @@
+@import "~bulma/sass/utilities/initial-variables"
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900')
+
+@import "./variables.sass"
+
+// FORMATO COMPONENTS
+@import "../../components/container.sass"
+@import "../../components/button.sass"
+@import "../../components/postsList.sass"
+@import "../../components/post.sass"
+@import "../../components/mainSlides.sass"
+@import "../../components/sectionTitle.sass"
+@import "../../components/sectionHeader.sass"
+@import "../../components/navbar.sass"
+@import "../../components/palestra.sass"
+@import "../../components/palestraWrapper.sass"
+@import "../../components/palestraDetails.sass"
+@import "../../components/schedule.sass"
+@import "../../components/footer.sass"
+// FORMATO ./
+@import "./page-atividades.sass"
+@import "./page-biblioteca.sass"
+@import "./page-contato.sass"
+@import "./page-espiritismo.sass"
+@import "./page-grupo-musical.sass"
+@import "./page-horarios.sass"
+@import "./page-palestras.sass"
+@import "./page-sobre.sass"
+@import "./page-voluntariado.sass"
+
+
+*
+  font-family: 'Montserrat', sans-serif
+  font-weight: 300
+  font-size: 20px
+  line-height: 29px
+
+html
+  scroll-behavior: smooth
+
+section
+  margin: 20px 0
+
+a
+  color: $green
+  &:hover
+    text-decoration: underline
+
+.navbar .navbar-item .navbar-link::after
+  border-color: $kaldi-red
+
+//Menu overrides
+$menu-item-color: $white-ter
+$menu-item-hover-color: $black !important
+$menu-item-hover-background-color: $black
+$menu-item-active-color: $kaldi-red-invert
+$menu-item-active-background-color:	$kaldi-red-invert
+$menu-list-border-left: 1px solid $kaldi-red-invert
+$menu-label-color: $white-ter
+
+.menu-label
+  font-size: 1em 
+  text-align: left
+.menu-list
+  list-style: none 
+  text-align: left
+.social
+  padding: 2em
+.social a
+  padding: .5em .5em .3em .5em
+  border-radius: 1em
+  background-color: $white-ter
+  margin: .5em
+  width: 1em
+  height: 1em
+  vertical-align: middle
+  display: inline
+
+// blog roll
+.blog-list-item.is-featured
+  background-color: #d6400033
+.blog-list-item header
+  display: flex
+  margin-bottom: 1em
+.blog-list-item .featured-thumbnail
+  flex-basis: 35%
+  margin: 0 1.5em 0 0
+
+@import "~bulma"
+
+#espiritismo
+  margin: 40px 0 60px
+
+
+// NEW CSS 
+.footer
+  background: #eee
+  display: flex
+  flex-direction: column
+
+.footer-social-media
+  flex: 1
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  font-size: 12px
+  line-height: 15px
+  text-align: center
+  .footer-sm-icons
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.footer-rights
+  flex: 1
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+
+
+
+a 
+  color: #000000
+  transition: all 0.2s ease-in-out
+
+  &:hover
+    color: $green

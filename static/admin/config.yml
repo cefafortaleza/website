@@ -1133,6 +1133,36 @@ collections:
               widget: "string",
             }
           - {
+              label: "Quadro da Diretoria",
+              name: "board",
+              widget: "object",
+              fields: [
+                { 
+                  label: "Tab",
+                  name: "tab",
+                  widget: "list",
+                  create: true,
+                  fields: [
+                    { 
+                      label: "Título",
+                      name: "title",
+                      widget: "string",
+                    },
+                    { 
+                      label: "Nome",
+                      name: "name",
+                      widget: "string",
+                    },
+                    { 
+                      label: "Email",
+                      name: "email",
+                      widget: "string",
+                    }
+                  ]
+                }
+              ]
+            }
+          - {
               label: "Arquivo de Estatuto",
               name: "bylaws",
               widget: "file",

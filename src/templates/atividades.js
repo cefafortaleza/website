@@ -5,8 +5,6 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
-import Features from '../components/Features';
-import PostList from '../components/PostList';
 
 import unified from 'unified';
 import parse from 'remark-parse';
