@@ -34,15 +34,15 @@ export const IndexPageTemplate = ({ slides }) => {
         />
       </section>
       <section>
-        <Container className="mais-do-cefa">
+        <Container>
           <SectionTitle big>Mais do CEFA</SectionTitle>
           <SectionTitle small>Doações Voluntárias</SectionTitle>
 
           <p>
-            O CEFA trabalha diversas atividades na <span class="green">Ação Social</span>, voltadas ao
+            O CEFA trabalha diversas atividades na Ação Social, voltadas ao
             atendimento de pessoas em condição de vulnerabilidade. São
-            desenvolvidos quatro programas sociais: <span class="green">Coração Fraterno</span>, <span class="green">Arte
-            Feliz</span>, <span class="green">Renascer</span> e <span class="green">Mão Amiga</span>.Para que essas atividades possam
+            desenvolvidos quatro programas sociais: Coração Fraterno, Arte
+            Feliz, Renascer e Mão Amiga. Para que essas atividades possam
             acontecer, a sua contribuição é muito importante.
           </p>
 
