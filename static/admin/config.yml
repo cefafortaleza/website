@@ -16,6 +16,63 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
+      - file: "src/pages/atividades/index.md"
+        label: "Atividades"
+        name: "atividades"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templatekey",
+              widget: "hidden",
+              default: "atividades",
+            }
+          - {
+              label: "Grupo de Atividades",
+              name: "activitygroup",
+              widget: "list",
+              create: true,
+              fields:
+                [
+                  { label: "Subgrupo", name: "sectiontitle", widget: "string" },
+                  {
+                    label: "Atividade",
+                    name: "activity",
+                    widget: "list",
+                    create: true,
+                    fields:
+                      [
+                        {
+                          label: "Título da Atividade",
+                          name: "sectiontitle",
+                          widget: "string",
+                        },
+                        {
+                          label: "Horários",
+                          name: "schedule",
+                          widget: "list",
+                          create: true,
+                          fields:
+                            [
+                              { label: "Dia", name: "day", widget: "string" },
+                              {
+                                label: "Horário",
+                                name: "time",
+                                widget: "datetime",
+                                time_format: "HH:mm",
+                                format: "LT",
+                              },
+                            ],
+                        },
+                        {
+                          label: "Conteúdo",
+                          name: "content",
+                          widget: "markdown",
+                        },
+                      ],
+                  },
+                ],
+            }
+
       - file: "src/pages/horarios/index.md"
         label: "Horários"
         name: "horarios"
@@ -556,34 +613,13 @@ collections:
                     fields:
                       [
                         {
-                          label: "Pré-Título",
-                          name: "pretitle",
-                          widget: "string",
-                        },
-                        { label: "Título", name: "title", widget: "string" },
-                        {
-                          label: "Sub-Título",
-                          name: "subtitle",
+                          label: "Frase",
+                          name: "frase",
                           widget: "string",
                         },
                         {
-                          label: "Botão 1 Title",
-                          name: "button1title",
-                          widget: "string",
-                        },
-                        {
-                          label: "Botão 1 Link",
-                          name: "button1link",
-                          widget: "string",
-                        },
-                        {
-                          label: "Botão 2 Title",
-                          name: "button2title",
-                          widget: "string",
-                        },
-                        {
-                          label: "Botão 2 Link",
-                          name: "button2link",
+                          label: "Autor",
+                          name: "autor",
                           widget: "string",
                         },
                         {
@@ -591,138 +627,24 @@ collections:
                           name: "background",
                           widget: "image",
                         },
+                        {
+                          label: "Alinhamento do Texto",
+                          name: "align",
+                          widget: "select",
+                          options: 
+                             { label: "À esquerda", value: "left" },
+                             { label: "Centralizado", value: "center" },
+                             { label: "À direita", value: "right" }
+                        },
+                        {
+                          label: "Cor do Texto",
+                          name: "color",
+                          widget: "select",
+                          options: 
+                             { label: "Branco", value: "white" },
+                             { label: "Preto", value: "black" },
+                        }
                       ],
-                  },
-                ],
-            }
-          - {
-              label: "Primeiro Banner",
-              name: "fisrtbanner",
-              widget: "object",
-              fields:
-                [
-                  { label: "Pré-Título", name: "pretitle", widget: "string" },
-                  { label: "Título", name: "title", widget: "string" },
-                  { label: "Sub-Título", name: "subtitle", widget: "string" },
-                  {
-                    label: "Botão 1 Title",
-                    name: "button1title",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 1 Link",
-                    name: "button1link",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 2 Title",
-                    name: "button2title",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 2 Link",
-                    name: "button2link",
-                    widget: "string",
-                  },
-                ],
-            }
-          - {
-              label: "Primeira Seção",
-              name: "firstsection",
-              widget: "object",
-              fields:
-                [
-                  { label: "Título", name: "sectiontitle", widget: "string" },
-                  {
-                    label: "Sub-Título",
-                    name: "sectionsubtitle",
-                    widget: "string",
-                  },
-                  {
-                    label: "Content",
-                    name: "button1title",
-                    widget: "markdown",
-                  },
-                ],
-            }
-          - {
-              label: "Segundo Banner",
-              name: "secondbanner",
-              widget: "object",
-              fields:
-                [
-                  { label: "Pré-Título", name: "pretitle", widget: "string" },
-                  { label: "Título", name: "title", widget: "string" },
-                  { label: "Sub-Título", name: "subtitle", widget: "string" },
-                  {
-                    label: "Botão 1 Title",
-                    name: "button1title",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 1 Link",
-                    name: "button1link",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 2 Title",
-                    name: "button2title",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 2 Link",
-                    name: "button2link",
-                    widget: "string",
-                  },
-                ],
-            }
-          - {
-              label: "Segunda Seção",
-              name: "secondsection",
-              widget: "object",
-              fields:
-                [
-                  { label: "Título", name: "sectiontitle", widget: "string" },
-                  {
-                    label: "Sub-Título",
-                    name: "sectionsubtitle",
-                    widget: "string",
-                  },
-                  {
-                    label: "Content",
-                    name: "button1title",
-                    widget: "markdown",
-                  },
-                ],
-            }
-          - {
-              label: "Terceiro Banner",
-              name: "thirdbanner",
-              widget: "object",
-              fields:
-                [
-                  { label: "Pré-Título", name: "pretitle", widget: "string" },
-                  { label: "Título", name: "title", widget: "string" },
-                  { label: "Sub-Título", name: "subtitle", widget: "string" },
-                  {
-                    label: "Botão 1 Title",
-                    name: "button1title",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 1 Link",
-                    name: "button1link",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 2 Title",
-                    name: "button2title",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 2 Link",
-                    name: "button2link",
-                    widget: "string",
                   },
                 ],
             }

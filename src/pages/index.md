@@ -1,37 +1,19 @@
 ---
 templateKey: index-page
-sectionOneTitle: Mais do CEFA
-sectionOneSubtitle: Doações Voluntárias
-sectionOneContent: >-
-  O CEFA trabalha diversas atividades na Ação Social, voltadas ao
-  atendimento de pessoas em condição de vulnerabilidade. São
-  desenvolvidos quatro programas sociais: Coração Fraterno, Arte
-  Feliz, Renascer e Mão Amiga. Para que essas atividades possam
-  acontecer, a sua contribuição é muito importante. 
-  
-  
-  
-  
-  Preferencialmente, são bem-vindas doações de alimentos não perecíveis; materiais de higiene e limpeza; brinquedos; roupas; acessórios e utensílios em bom estado de conservação, que possam ser colocados em bazares ou para doação direta, além de roupas; utensílios de enxovais e mobiliários para atender às gestantes. Na impossibilidade desse tipo de contribuição, também é possível a realização de doações financeiras, por meio de depósito na seguinte Conta Poupança:
-  
-  
-  
-  
-  **Centro Espírita Francisco de Assis**
-  CNPJ: 07.130.297/001-59
-  Banco do Brasil (001)
-  Conta: 4520-9
-  Variação: 51
-sectionTwoTitle: Anything
-sectionTwoSubtitle: Livraria
-sectionTwoContent: >-
-  A Livraria Bezerra de Menezes, do Centro Espirita Francisco de Assis (CEFA), tem como principal objetivo a divulgação da Doutrina
-  Espírita. Na Livraria do CEFA podem ser encontrados à venda diversos títulos da Literatura Espírita, voltados desde o público
-  infantojuvenil até o público adulto. As vendas podem ser feitas
-  tanto em dinheiro como no cartão (débito ou crédito), com
-  parcelamento a partir de R$ 100,00. A livraria funciona diariamente, nos seguintes horários: 
-  
-  
-  
-  Clique aqui para ver os horários de funcionamento.
+slides: 
+  - frase: '“A casa do Pai é o Universo. As diferentes moradas são os mundos que circulam no espaço infinito e oferecem, aos Espíritos que neles encarnam, moradas correspondentes ao adiantamento dos mesmos Espíritos.”'
+    autor: Evangelho Segundo o Espiritismo, Cap. II, item 2
+    background: 'Cefa-Banner-Principal-1.jpeg'
+    align: "left"
+    color: "white"
+  - frase: '“Amarás a Deus de toda a tua alma e a teu próximo como a ti mesmo; toda a lei e os profetas se acham contidos nesses dois mandamentos.” E, para que não haja equívoco sobre a interpretação do amor de Deus e do próximo, acrescenta: “E aqui está o segundo mandamento que é semelhante ao primeiro”, isto é, que não se pode verdadeiramente amar a Deus sem amar o próximo, nem amar o próximo sem amar a Deus.”'
+    autor: 'Evangelho Segundo o Espiritismo, Cap. XV, item 5'
+    background: 'Cefa-Banner-Principal-2.jpeg'
+    align: "center"
+    color: "white"
+  - frase: '“A caridade que consiste na esmola dada aos pobres é a mais fácil de todas. Outra há, porém, muito mais penosa e, conseguintemente, muito mais meritória: a de perdoarmos aos que Deus colocou em nosso caminho para serem instrumentos do nosso sofrer e para nos porem à prova a paciência.”'
+    autor: 'Evangelho Segundo o Espiritismo, Cap. IX, item 7'
+    background: 'Cefa-Banner-Principal-3.jpeg'
+    align: "left"
+    color: "black"
 ---
