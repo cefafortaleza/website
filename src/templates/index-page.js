@@ -34,15 +34,15 @@ export const IndexPageTemplate = ({ slides }) => {
         />
       </section>
       <section>
-        <Container>
+        <Container className="mais-do-cefa">
           <SectionTitle big>Mais do CEFA</SectionTitle>
           <SectionTitle small>Doações Voluntárias</SectionTitle>
 
           <p>
-            O CEFA trabalha diversas atividades na Ação Social, voltadas ao
+            O CEFA trabalha diversas atividades na <span class="green">Ação Social</span>, voltadas ao
             atendimento de pessoas em condição de vulnerabilidade. São
-            desenvolvidos quatro programas sociais: Coração Fraterno, Arte
-            Feliz, Renascer e Mão Amiga. Para que essas atividades possam
+            desenvolvidos quatro programas sociais: <span class="green">Coração Fraterno</span>, <span class="green">Arte
+            Feliz</span>, <span class="green">Renascer</span> e <span class="green">Mão Amiga</span>.Para que essas atividades possam
             acontecer, a sua contribuição é muito importante.
           </p>
 
@@ -74,13 +74,14 @@ export const IndexPageTemplate = ({ slides }) => {
           </span>
         </Container>
       </section>
+      
+      
       <section>
         <SectionHeader
-          title="Acesse nosso boletim"
-          buttonText="Clique Aqui"
+          title="Gostaria de alugar um livro?"
+          buttonText="Conheça nossa biblioteca"
           buttonLink="/"
-          background="../img/section-background-boletim.png"
-          id="boletim"
+          id="biblioteca"
         />
       </section>
       <section>
@@ -106,15 +107,6 @@ export const IndexPageTemplate = ({ slides }) => {
             Clique aqui para ver os horários de funcionamento
           </a>
         </Container>
-      </section>
-      <section>
-        <SectionHeader
-          title="Gostaria de alugar um livro?"
-          buttonText="Conheça nossa biblioteca"
-          buttonLink="/"
-          background="../img/section-background-biblioteca.png"
-          id="biblioteca"
-        />
       </section>
     </>
   );

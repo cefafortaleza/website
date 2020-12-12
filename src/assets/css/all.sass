@@ -4,31 +4,20 @@
 
 @import "./variables.sass"
 
-// FORMATO COMPONENTS
-@import "../../components/container.sass"
-@import "../../components/button.sass"
-@import "../../components/postsList.sass"
-@import "../../components/post.sass"
-@import "../../components/mainSlides.sass"
-@import "../../components/sectionTitle.sass"
-@import "../../components/sectionHeader.sass"
-@import "../../components/navbar.sass"
-@import "../../components/palestra.sass"
-@import "../../components/palestraWrapper.sass"
-@import "../../components/palestraDetails.sass"
-@import "../../components/schedule.sass"
-@import "../../components/footer.sass"
-// FORMATO ./
-@import "./page-atividades.sass"
-@import "./page-biblioteca.sass"
-@import "./page-contato.sass"
-@import "./page-espiritismo.sass"
-@import "./page-grupo-musical.sass"
-@import "./page-horarios.sass"
-@import "./page-palestras.sass"
-@import "./page-sobre.sass"
-@import "./page-voluntariado.sass"
-
+@import "./container.sass"
+@import "./button.sass"
+@import "./postsList.sass"
+@import "./post.sass"
+@import "./mainSlides.sass"
+@import "./sectionTitle.sass"
+@import "./sectionHeader.sass"
+@import "./navbar.sass"
+@import "./palestra.sass"
+@import "./palestraWrapper.sass"
+@import "./palestraDetails.sass"
+@import "./schedule.sass"
+@import "./footer.sass"
+@import "~bulma"
 
 *
   font-family: 'Montserrat', sans-serif
@@ -44,11 +33,12 @@ section
 
 a
   color: $green
+  transition: all 0.2s ease-in-out
+
   &:hover
+    color: #00BF00
     text-decoration: underline
 
-.navbar .navbar-item .navbar-link::after
-  border-color: $kaldi-red
 
 //Menu overrides
 $menu-item-color: $white-ter
@@ -87,11 +77,36 @@ $menu-label-color: $white-ter
   flex-basis: 35%
   margin: 0 1.5em 0 0
 
-@import "~bulma"
+
 
 #espiritismo
   margin: 40px 0 60px
 
+// responsiveness
++tablet-only
+  .blog-list-item .featured-thumbnail
+    flex-basis: 50%
+
++mobile
+  h1 
+    text-align: center
+    font-size: 1rem
+  
+  p
+    font-size: 0.8rem
+    line-height: 20px
+  
+  a 
+    font-size: 0.8rem
+    line-height: 20px
+    color: $green
+
+  .blog-list-item header
+    display: block
+  .blog-list-item .featured-thumbnail
+    text-align: center
+    max-width: 70%
+    margin: 0 0 1em
 
 // NEW CSS 
 .footer
@@ -120,11 +135,225 @@ $menu-label-color: $white-ter
   align-items: center
   flex-direction: column
 
+// Typography
 
+.bold
+  font-weight: $bold
 
-a 
-  color: #000000
-  transition: all 0.2s ease-in-out
+.green
+  color: $green
 
-  &:hover
-    color: $green
+// Page INDEX
+
+.mais-do-cefa
+  span
+    margin-top: 20px
+    line-height: 29px
+  
+  +mobile
+    p
+      font-size: 0.8rem
+      line-height: 20px
+    span
+      font-size: 0.8rem
+      line-height: 20px
+  
+
+// PAGE HORARIOS
+
+.schedule-tabs-wrapper
+  display: flex
+  flex-direction: column
+
+  .schedule-tabs
+    flex: 1
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin: 20px 0
+
+    .schedule-tab
+      flex: 1
+      width: 100%
+      display: block
+      border: thin solid $black
+
+      button
+        padding: 12px 24px
+        width: 100%
+        border: thin solid $black
+        background: white
+        text-transform: capitalize
+        font-weight: $bold
+
+        &:focus
+          outline: none
+
+      .active-button
+        background: $green
+        color: white
+
+  .schedule-content
+    flex: 1
+    width: 100%
+    display: flex
+    justify-content: left
+    align-items: left
+    margin: 20px 0
+    display: flex
+    align-items: stretch
+
+    .schedule-tab
+      display: none
+      font-size: 1.5rem
+      width: 100%
+      padding: 30px
+
+      .schedule
+        border: thin solid $black
+        flex-grow: 1
+        width: 100%
+        margin: 0 20px
+        padding: 20px 30px
+
+        .schedule-list
+          display: flex
+          flex-direction: column
+
+          h3
+            text-transform: capitalize
+            font-weight: $bold
+            margin-bottom: 20px
+            font-size: 1.2rem !important
+
+          li
+            margin-bottom: 20px
+            p
+              font-size: 1rem !important
+              span
+                font-weight: $bold
+                font-size: 1rem !important
+
+    .active-tab
+      display: flex
+      align-items: stretch
+      justify-content: space-between
+
+  +mobile
+    max-width: 300px
+    margin: 0 auto
+    overflow: hidden
+
+    .schedule-tabs
+      flex-direction: column
+
+    .schedule-tab
+      flex-direction: column
+      margin: 10px auto !important
+      padding: 0 !important
+
+      .schedule
+        margin: 10px auto !important
+
+        .schedule-list
+          margin: 10px auto !important
+
+.richText
+  white-space: pre-wrap
+
+// PAGE SOBRE
+
+#cefa-about
+  
+  .container
+    > *
+      margin: 10px 0
+
+    .index
+      display: flex
+      flex-direction: column
+      border: 1px solid $black
+      padding: 20px
+      max-width: 350px
+      margin: 20px 0
+      > *
+        margin-bottom: 10px
+        font-size: 1rem
+
+      
+
+    #estatuto
+      margin-top: 30px
+
+    #regime-interno
+      margin-top: 30px
+
+    #localizacao
+      margin-top: 30px
+      > *
+        margin-bottom: 20px
+
+      .social-media-wrapper
+        display: flex
+        justify-content: flex-start
+        align-items: center
+
+        > *
+          padding: 10px
+
+// PAGE ATIVIDADES
+
+#atividades-index
+  display: flex
+  flex-direction: column
+  .index
+    display: flex
+    flex-direction: column
+
+    > *
+      display: block
+      flex-grow: 1
+      white-space: nowrap
+      margin: 5px 0
+
+    h3
+      font-weight: $bold
+  +mobile
+    .index
+      > *
+        white-space: pre-wrap
+
+#atividades-content
+  section
+    margin: 30px auto
+    width: 100%
+
+    .subsectionWrapper
+
+      .subsection
+        display: flex
+        flex-shrink: 1
+        flex-direction: column
+        margin-right: auto
+        padding: 20px 30px
+
+        .schedule-item
+          display: flex
+          margin: 10px 0
+
+          p
+            margin-right: 10px
+            &:first-child
+              font-weight: $bold
+      .contentWrapper
+        margin: 10px 0 20px
+  +mobile
+    .subsectionWrapper
+      .subsection
+        padding: 10px !important
+        border: thin solid $black
+        .schedule-item
+          font-size: 1rem !important
+
+  
