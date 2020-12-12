@@ -1,127 +1,60 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
 
-import unified from 'unified';
-import parse from 'remark-parse';
-import remark2react from 'remark-react';
-import breaks from 'remark-breaks';
-
-export const BibliotecaPageTemplate = ({
-  title,
-  content,
-  section_one_title,
-  section_one_content,
-  section_two_title,
-  section_two_content,
-  section_three_title,
-  section_three_content,
-}) => (
-  <Container>
-    <SectionTitle big>{title}</SectionTitle>
-    <SectionTitle>{section_one_title}</SectionTitle>
-
-    <SectionTitle>{section_two_title}</SectionTitle>
-    <div className="contentWrapper">
-      <div className="richText">
-        {
-          unified()
-            .use(parse)
-            .use(breaks)
-            .use(remark2react)
-            .processSync(section_two_content).result
-        }
-      </div>
-    </div>
-    <SectionTitle>{section_three_title}</SectionTitle>
-    <div className="contentWrapper">
-      <div className="richText">
-        {
-          unified()
-            .use(parse)
-            .use(breaks)
-            .use(remark2react)
-            .processSync(section_three_content).result
-        }
-      </div>
-    </div>
-  </Container>
-);
-
-BibliotecaPageTemplate.propTypes = {
-  title: PropTypes.string,
-  content: PropTypes.object,
-  section_one_title: PropTypes.string,
-  section_one_content: PropTypes.object,
-  section_two_title: PropTypes.string,
-  section_two_content: PropTypes.object,
-  section_three_title: PropTypes.string,
-  section_three_content: PropTypes.object,
-};
-
-const BibliotecaPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
-
-  const {
-    title,
-    content,
-    section_one_title,
-    section_one_content,
-    section_two_title,
-    section_two_content,
-    section_three_title,
-    section_three_content,
-  } = frontmatter;
-
+const BibliotecaPage = () => {
   return (
     <Layout>
-      <BibliotecaPageTemplate
-        title={title}
-        content={content}
-        section_one_title={section_one_title}
-        section_one_content={section_one_content}
-        section_two_title={section_two_title}
-        section_two_content={section_two_content}
-        section_three_title={section_three_title}
-        section_three_content={section_three_content}
-      />
+      <Container>
+        <SectionTitle big>Biblioteca</SectionTitle>
+        
+        <p>
+          A Biblioteca Irmão Olívio possui um acervo de livros, revistas e
+          periódicos de cunho espírita para leitura e empréstimos aos
+          trabalhadores e alunos dos cursos regulares do Centro Espírita
+          Francisco de Assis (CEFA).
+        </p>
+        <SectionTitle>Horários de funcionamento</SectionTitle>
+        <div className="horarios-biblioteca">
+          <div className="horario">
+            <p className="bold">Sábados e Domingos</p>
+            <p>15h às 19:30</p>
+          </div>
+          <div className="horario">
+            <p className="bold">2as, 4as, 5as, 6as</p>
+            <p>19h às 20:30</p>
+          </div>
+          <div className="horario">
+            <p className="bold">Terças</p>
+            <p>15 às 20:30</p>
+          </div>
+        </div>
+        <SectionTitle>Empréstimos de Obras e Prazos</SectionTitle>
+        <p>Os usuários terão acesso ao acervo nas seguintes modalidades: </p>
+        <p>
+          - Consulta interna: Obras de referência: Anuários, Bíblia, Compêndios,
+          Revistas Encadernadas.
+        </p>
+        <p>
+          - Consulta externa: Uma vez cadastrados, os usuários adquirem o
+          direito de retirar como empréstimo até 02 (dois) livros, podendo com
+          eles permanecer pelo prazo de 15 (quinze) dias. É possível ainda
+          renovar os empréstimos por três vezes, desde que os livros não estejam
+          reservados para outra pessoa. Quanto aos periódicos, eles podem ser
+          emprestados apenas por 03 (três) dias. Vencido o prazo para a
+          devolução, é cobrada uma multa de R$ 0,25 por cada dia de atraso.
+        </p>
+        <SectionTitle>Como Reservar</SectionTitle>
+        <p>
+          A reserva deverá ser feita diretamente na Biblioteca. A obra reservada
+          ficará disponível para o usuário por até 48 horas.
+        </p>
+      </Container>
     </Layout>
   );
 };
 
-BibliotecaPage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
-};
-
 export default BibliotecaPage;
-
-export const pageQuery = graphql`
-  query BibliotecaPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "biblioteca" } }) {
-      frontmatter {
-        title
-        content
-        section_one_title
-        section_one_content {
-          schedule {
-            days
-            hours
-          }
-        }
-        section_two_title
-        section_two_content
-        section_three_title
-        section_three_content
-      }
-    }
-  }
-`;

@@ -1,39 +1,91 @@
 .main-slide-item
+  width: 100vw
   
   .slide-wrapper
-    width: 100vw
-    min-height: 300px
+    min-height: 400px
     display: flex
     flex-direction: column
     justify-content: center
     align-items: center
+    color: white
+    padding: 0 30px
+    
+    .slide-content 
+      max-width: 1100px
 
-    .subtitle
-      font-weight: 600
-      font-size: 1.2rem
-      color: #fff
+      &.left
+        margin-right: auto
+        margin-left: 30px
 
-    .bottom
-      padding-bottom: 20px
+        p 
+          text-align: left
+      
+      &.right
+        margin-left: auto
+        margin-right: 30px
 
-    .title
-      color: #fff
-      font-weight: 900
-      text-transform: uppercase
-      font-size: 2rem
-      padding: 10px 0
+        p 
+          text-align: right
+
+      &.center
+        margin: 0 auto
+
+        p 
+          text-align: center
+      
+      &.black
+        p
+          color: black
+
+      &.white
+        p
+          color: white
+
+      
+      .frase 
+        font-size: 1.2rem
+        font-style: italic
+      .autor
+        font-size: 1rem
+        font-weight: bold
+      
+
+       
+    
 
 @media (max-width: 768px)
   .main-slide-item
-    > *
-      max-width: 300px
-      margin: 0 auto
+    .slide-wrapper
+      height: 400px
+      max-height: 400px
+      opacity: 0.7
 
-    .title
-      font-size: 1.5rem
+      > *
+        max-width: 300px
+        margin: 0 auto
+      .slide-content
 
-    .subtitle
-      font-size: 0.8rem
+        &.left
+          margin: 0 auto
+          p 
+          text-align: center
+        &.right
+          margin: 0 auto
+          p 
+          text-align: center
+        &.center
+          margin: 0 auto
+          p 
+          text-align: center
+
+        .frase 
+          font-size: 0.8rem
+          line-height: 20px
+
+        .autor
+          font-size: 0.7rem
+          font-weight: bold
+          white-space: nowrap
 
 .eg-flick-viewport
   z-index: 10 !important

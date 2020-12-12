@@ -73,77 +73,6 @@ collections:
                 ],
             }
 
-      - file: "src/pages/bibilioteca/index.md"
-        label: "Biblioteca"
-        name: "Biblioteca"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "biblioteca-page",
-            }
-          - { label: "Banner da Página", name: "banner", widget: "image" }
-          - { label: "Título da Página", name: "title", widget: "string" }
-          - { label: "Conteúdo Principal", name: "content", widget: "markdown" }
-          - {
-              label: "Título da Subseção 1",
-              name: "section_one_title",
-              widget: "string",
-            }
-          - {
-              label: "Conteúdo da Subseção 1",
-              name: "section_one_content",
-              widget: "object",
-              fields:
-                [
-                  {
-                    label: "Dias e Horários",
-                    name: "schedule",
-                    widget: "list",
-                    create: true,
-                    fields:
-                      [
-                        { label: "Dias", name: "days", wiget: "string" },
-                        { label: "Horários", name: "hours", wiget: "string" },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: "Título da Subseção 2",
-              name: "section_two_title",
-              widget: "string",
-            }
-          - {
-            label: "Conteúdo da Subseção 2",
-            name: "section_two_content",
-            widget: "markdown"
-          }
-          - {
-              label: "Título da Subseção 3",
-              name: "section_three_title",
-              widget: "string",
-            }
-          - {
-            label: "Conteúdo da Subseção 3",
-            name: "section_three_content",
-            widget: "markdown"
-          }
-
-      - file: "src/pages/espiritismo/index.md"
-        label: "Sobre o espiritismo"
-        name: "espiritismo"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "sobre-page",
-            }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Content", name: "content", widget: "markdown" }
-
       - file: "src/pages/horarios/index.md"
         label: "Horários"
         name: "horarios"
@@ -659,158 +588,6 @@ collections:
                   },
                 ],
             }
-          - {
-              label: "Estudo da Doutrina Espirita",
-              name: "esdoesp",
-              widget: "object",
-              fields:
-                [
-                  {
-                    label: "Atividade",
-                    name: "activity",
-                    widget: "list",
-                    create: true,
-                    fields:
-                      [
-                        { label: "Título", name: "title", widget: "string" },
-                        {
-                          label: "Horários",
-                          name: "schedule",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              { label: "Dia", name: "day", widget: "string" },
-                              {
-                                label: "Horários",
-                                name: "time",
-                                widget: "datetime",
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: "Atendimento Espiritual",
-              name: "ateespi",
-              widget: "object",
-              fields:
-                [
-                  {
-                    label: "Atividade",
-                    name: "activity",
-                    widget: "list",
-                    create: true,
-                    fields:
-                      [
-                        { label: "Título", name: "title", widget: "string" },
-                        {
-                          label: "Horários",
-                          name: "schedule",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              { label: "Dia", name: "day", widget: "string" },
-                              {
-                                label: "Horários",
-                                name: "time",
-                                widget: "datetime",
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: "Evangelização Infantojuvenil",
-              name: "evainfa",
-              widget: "object",
-              fields:
-                [
-                  {
-                    label: "Atividade",
-                    name: "activity",
-                    widget: "list",
-                    create: true,
-                    fields:
-                      [
-                        { label: "Título", name: "title", widget: "string" },
-                        {
-                          label: "Horários",
-                          name: "schedule",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              { label: "Dia", name: "day", widget: "string" },
-                              {
-                                label: "Horários",
-                                name: "time",
-                                widget: "datetime",
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: "Ação Social",
-              name: "acasoci",
-              widget: "object",
-              fields:
-                [
-                  {
-                    label: "Atividade",
-                    name: "activity",
-                    widget: "list",
-                    create: true,
-                    fields:
-                      [
-                        { label: "Título", name: "title", widget: "string" },
-                        {
-                          label: "Horários",
-                          name: "schedule",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              { label: "Dia", name: "day", widget: "string" },
-                              {
-                                label: "Horários",
-                                name: "time",
-                                widget: "datetime",
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: "Livraria",
-              name: "schedule",
-              widget: "object",
-              fields:
-                [
-                  { label: "Dias", name: "days", widget: "string" },
-                  { label: "Horários", name: "time", widget: "string" },
-                ],
-            }
-          - {
-              label: "Biblioteca",
-              name: "library",
-              widget: "object",
-              fields:
-                [
-                  { label: "Dias", name: "days", widget: "string" },
-                  { label: "Horários", name: "time", widget: "string" },
-                ],
-            }
 
       - file: "src/pages/index.md"
         label: "Landing Page"
@@ -836,34 +613,13 @@ collections:
                     fields:
                       [
                         {
-                          label: "Pré-Título",
-                          name: "pretitle",
-                          widget: "string",
-                        },
-                        { label: "Título", name: "title", widget: "string" },
-                        {
-                          label: "Sub-Título",
-                          name: "subtitle",
+                          label: "Frase",
+                          name: "frase",
                           widget: "string",
                         },
                         {
-                          label: "Botão 1 Title",
-                          name: "button1title",
-                          widget: "string",
-                        },
-                        {
-                          label: "Botão 1 Link",
-                          name: "button1link",
-                          widget: "string",
-                        },
-                        {
-                          label: "Botão 2 Title",
-                          name: "button2title",
-                          widget: "string",
-                        },
-                        {
-                          label: "Botão 2 Link",
-                          name: "button2link",
+                          label: "Autor",
+                          name: "autor",
                           widget: "string",
                         },
                         {
@@ -871,233 +627,25 @@ collections:
                           name: "background",
                           widget: "image",
                         },
+                        {
+                          label: "Alinhamento do Texto",
+                          name: "align",
+                          widget: "select",
+                          options: 
+                             { label: "À esquerda", value: "left" },
+                             { label: "Centralizado", value: "center" },
+                             { label: "À direita", value: "right" }
+                        },
+                        {
+                          label: "Cor do Texto",
+                          name: "color",
+                          widget: "select",
+                          options: 
+                             { label: "Branco", value: "white" },
+                             { label: "Preto", value: "black" },
+                        }
                       ],
                   },
-                ],
-            }
-          - {
-              label: "Primeiro Banner",
-              name: "fisrtbanner",
-              widget: "object",
-              fields:
-                [
-                  { label: "Pré-Título", name: "pretitle", widget: "string" },
-                  { label: "Título", name: "title", widget: "string" },
-                  { label: "Sub-Título", name: "subtitle", widget: "string" },
-                  {
-                    label: "Botão 1 Title",
-                    name: "button1title",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 1 Link",
-                    name: "button1link",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 2 Title",
-                    name: "button2title",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 2 Link",
-                    name: "button2link",
-                    widget: "string",
-                  },
-                ],
-            }
-          - {
-              label: "Primeira Seção",
-              name: "firstsection",
-              widget: "object",
-              fields:
-                [
-                  { label: "Título", name: "sectiontitle", widget: "string" },
-                  {
-                    label: "Sub-Título",
-                    name: "sectionsubtitle",
-                    widget: "string",
-                  },
-                  {
-                    label: "Content",
-                    name: "button1title",
-                    widget: "markdown",
-                  },
-                ],
-            }
-          - {
-              label: "Segundo Banner",
-              name: "secondbanner",
-              widget: "object",
-              fields:
-                [
-                  { label: "Pré-Título", name: "pretitle", widget: "string" },
-                  { label: "Título", name: "title", widget: "string" },
-                  { label: "Sub-Título", name: "subtitle", widget: "string" },
-                  {
-                    label: "Botão 1 Title",
-                    name: "button1title",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 1 Link",
-                    name: "button1link",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 2 Title",
-                    name: "button2title",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 2 Link",
-                    name: "button2link",
-                    widget: "string",
-                  },
-                ],
-            }
-          - {
-              label: "Segunda Seção",
-              name: "secondsection",
-              widget: "object",
-              fields:
-                [
-                  { label: "Título", name: "sectiontitle", widget: "string" },
-                  {
-                    label: "Sub-Título",
-                    name: "sectionsubtitle",
-                    widget: "string",
-                  },
-                  {
-                    label: "Content",
-                    name: "button1title",
-                    widget: "markdown",
-                  },
-                ],
-            }
-          - {
-              label: "Terceiro Banner",
-              name: "thirdbanner",
-              widget: "object",
-              fields:
-                [
-                  { label: "Pré-Título", name: "pretitle", widget: "string" },
-                  { label: "Título", name: "title", widget: "string" },
-                  { label: "Sub-Título", name: "subtitle", widget: "string" },
-                  {
-                    label: "Botão 1 Title",
-                    name: "button1title",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 1 Link",
-                    name: "button1link",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 2 Title",
-                    name: "button2title",
-                    widget: "string",
-                  },
-                  {
-                    label: "Botão 2 Link",
-                    name: "button2link",
-                    widget: "string",
-                  },
-                ],
-            }
-
-      - file: "src/pages/palestras/index.md"
-        label: "Palestras"
-        name: "palestras"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "about-page",
-            }
-          - { label: "pageTitle", name: "pageTitle", widget: "string" }
-          - {
-              label: "Palestras do mês",
-              name: "current",
-              widget: "list",
-              create: true,
-              fields:
-                [
-                  { label: "Palestra", name: "palestra", widget: "string" },
-                  {
-                    label: "Palestrante",
-                    name: "palestrante",
-                    widget: "string",
-                  },
-                  { label: "Descrição", name: "description", widget: "string" },
-                  {
-                    label: "Imagem da Palestra",
-                    name: "featuredimage",
-                    widget: "img",
-                  },
-                  {
-                    label: "Data",
-                    name: "data",
-                    widget: "datetime",
-                    date_format: "DD/MM/YYY",
-                    format: "L",
-                  },
-                  {
-                    label: "Horário",
-                    name: "horario",
-                    widget: "datetime",
-                    time_format: "HH:mm",
-                    format: "LT",
-                  },
-                  {
-                    label: "Endereço Completo",
-                    name: "full_address",
-                    widget: "string",
-                  },
-                  { label: "Telefone", name: "telefone", widget: "string" },
-                ],
-            }
-          - {
-              label: "Palestras Passadas",
-              name: "past",
-              widget: "list",
-              create: true,
-              fields:
-                [
-                  { label: "Palestra", name: "palestra", widget: "string" },
-                  {
-                    label: "Palestrante",
-                    name: "palestrante",
-                    widget: "string",
-                  },
-                  { label: "Descrição", name: "description", widget: "string" },
-                  {
-                    label: "Imagem da Palestra",
-                    name: "featuredimage",
-                    widget: "img",
-                  },
-                  {
-                    label: "Data",
-                    name: "data",
-                    widget: "datetime",
-                    date_format: "DD/MM/YYY",
-                    format: "L",
-                  },
-                  {
-                    label: "Horário",
-                    name: "horario",
-                    widget: "datetime",
-                    time_format: "HH:mm",
-                    format: "LT",
-                  },
-                  {
-                    label: "Endereço Completo",
-                    name: "full_address",
-                    widget: "string",
-                  },
-                  { label: "Telefone", name: "telefone", widget: "string" },
                 ],
             }
 
@@ -1111,57 +659,6 @@ collections:
               widget: "hidden",
               default: "about-page",
             }
-          - { label: "pageTitle", name: "pageTitle", widget: "string" }
-          - {
-              label: "sectionOneTitle",
-              name: "sectionOneTitle",
-              widget: "string",
-            }
-          - {
-              label: "sectionOneContent",
-              name: "sectionOneContent",
-              widget: "markdown",
-            }
-          - {
-              label: "sectionTwoTitle",
-              name: "sectionTwoTitle",
-              widget: "string",
-            }
-          - {
-              label: "sectionThreeTitle",
-              name: "sectionThreeTitle",
-              widget: "string",
-            }
-          - {
-              label: "Quadro da Diretoria",
-              name: "board",
-              widget: "object",
-              fields: [
-                { 
-                  label: "Tab",
-                  name: "tab",
-                  widget: "list",
-                  create: true,
-                  fields: [
-                    { 
-                      label: "Título",
-                      name: "title",
-                      widget: "string",
-                    },
-                    { 
-                      label: "Nome",
-                      name: "name",
-                      widget: "string",
-                    },
-                    { 
-                      label: "Email",
-                      name: "email",
-                      widget: "string",
-                    }
-                  ]
-                }
-              ]
-            }
           - {
               label: "Arquivo de Estatuto",
               name: "bylaws",
@@ -1169,25 +666,13 @@ collections:
               default: "static/ESTATUTO.pdf",
             }
           - {
-              label: "sectionFourTitle",
-              name: "sectionFourTitle",
-              widget: "string",
-            }
-          - {
               label: "Arquivo de Política Interna",
               name: "internalPolicyLink",
               widget: "file",
               default: "static/REGIMENTO.docx",
             }
-          - {
-              label: "sectionFiveTitle",
-              name: "sectionFiveTitle",
-              widget: "string",
-            }
           - { label: "phoneNumber", name: "phoneNumber", "widget": "string" }
           - { label: "email", name: "email", widget: "string" }
-
-      # - file: 'src/pages/voluntariado/index.md'
 
   - name: "blog"
     label: "Blog"

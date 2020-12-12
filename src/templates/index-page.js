@@ -9,22 +9,11 @@ import SectionHeader from '../components/SectionHeader';
 import MainSlides from '../components/MainSlides';
 import Container from '../components/Container';
 
-import unified from 'unified';
-import parse from 'remark-parse';
-import remark2react from 'remark-react';
-import breaks from 'remark-breaks';
 
-export const IndexPageTemplate = ({
-  sectionOneTitle,
-  sectionOneSubtitle,
-  sectionOneContent,
-  sectionTwoTitle,
-  sectionTwoSubtitle,
-  sectionTwoContent,
-}) => {
+export const IndexPageTemplate = ({ slides }) => {
   return (
     <>
-      <MainSlides />
+      <MainSlides slides={slides} />
       <section>
         <Container>
           <SectionTitle>Redes Sociais</SectionTitle>
@@ -46,79 +35,93 @@ export const IndexPageTemplate = ({
       </section>
       <section>
         <Container>
-          <SectionTitle>{sectionOneTitle}</SectionTitle>
-          <SectionTitle small>{sectionOneSubtitle}</SectionTitle>
+          <SectionTitle big>Mais do CEFA</SectionTitle>
+          <SectionTitle small>Doações Voluntárias</SectionTitle>
 
-          <div className="richText">
-            {
-              unified()
-                .use(parse)
-                .use(breaks)
-                .use(remark2react)
-                .processSync(sectionOneContent).result
-            }
-          </div>
+          <p>
+            O CEFA trabalha diversas atividades na Ação Social, voltadas ao
+            atendimento de pessoas em condição de vulnerabilidade. São
+            desenvolvidos quatro programas sociais: Coração Fraterno, Arte
+            Feliz, Renascer e Mão Amiga. Para que essas atividades possam
+            acontecer, a sua contribuição é muito importante.
+          </p>
+
+          <p>
+            Preferencialmente, são bem-vindas doações de alimentos não
+            perecíveis; materiais de higiene e limpeza; brinquedos; roupas;
+            acessórios e utensílios em bom estado de conservação, que possam ser
+            colocados em bazares ou para doação direta, além de roupas;
+            utensílios de enxovais e mobiliários para atender às gestantes.{' '}
+          </p>
+
+          <p>
+            Na impossibilidade desse tipo de contribuição, também é possível a
+            realização de doações financeiras, por meio de depósito na seguinte
+            Conta Poupança:
+          </p>
+
+          <p className="bold">Centro Espírita Francisco de Assis</p>
+          <span>
+            CNPJ: 07.130.297/001-59
+            <br />
+            Banco do Brasil (001)
+            <br />
+            Agência: 8076-4
+            <br />
+            Conta: 4520-9
+            <br />
+            Variação: 51
+          </span>
         </Container>
       </section>
-      <section>
-        <SectionHeader
-          title="Acesse nosso boletim"
-          buttonText="Clique Aqui"
-          buttonLink="/"
-          background="../img/section-background-boletim.png"
-          id="boletim"
-        />
-      </section>
-      <section>
-        <Container>
-          <SectionTitle small>{sectionTwoSubtitle}</SectionTitle>
-
-          <div className="richText">
-            {
-              unified()
-                .use(parse)
-                .use(breaks)
-                .use(remark2react)
-                .processSync(sectionTwoContent).result
-            }
-          </div>
-        </Container>
-      </section>
+      
+      
       <section>
         <SectionHeader
           title="Gostaria de alugar um livro?"
           buttonText="Conheça nossa biblioteca"
           buttonLink="/"
-          background="../img/section-background-biblioteca.png"
           id="biblioteca"
         />
+      </section>
+      <section>
+        <Container>
+          <SectionTitle small>Livraria</SectionTitle>
+
+          <p>
+            A Livraria Bezerra de Menezes, do Centro Espirita Francisco de Assis
+            (CEFA), tem como principal objetivo a divulgação da Doutrina
+            Espírita.
+          </p>
+          <p>
+            Na Livraria do CEFA podem ser encontrados à venda diversos títulos
+            da Literatura Espírita, voltados desde o público infantojuvenil até
+            o público adulto.
+          </p>
+          <p>
+            As vendas podem ser feitas tanto em dinheiro como no cartão (débito
+            ou crédito), com parcelamento a partir de R$ 100,00. A livraria
+            funciona diariamente, nos seguintes horários:
+          </p>
+          <a href="/biblioteca">
+            Clique aqui para ver os horários de funcionamento
+          </a>
+        </Container>
       </section>
     </>
   );
 };
 
 IndexPageTemplate.propTypes = {
-  sectionOneTitle: PropTypes.string,
-  sectionOneSubtitle: PropTypes.string,
-  sectionOneContent: PropTypes.string,
-  sectionTwoTitle: PropTypes.string,
-  sectionTwoSubtitle: PropTypes.string,
-  sectionTwoContent: PropTypes.string,
+  slides: PropTypes.object,
 };
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-
+  const { slides } = frontmatter;
   return (
     <Layout>
-      <IndexPageTemplate
-        sectionOneTitle={frontmatter.sectionOneTitle}
-        sectionOneSubtitle={frontmatter.sectionOneSubtitle}
-        sectionOneContent={frontmatter.sectionOneContent}
-        sectionTwoTitle={frontmatter.sectionTwoTitle}
-        sectionTwoSubtitle={frontmatter.sectionTwoSubtitle}
-        sectionTwoContent={frontmatter.sectionTwoContent}
-      />
+      <IndexPageTemplate slides={slides} />
     </Layout>
   );
 };
@@ -137,12 +140,13 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        sectionOneTitle
-        sectionOneSubtitle
-        sectionOneContent
-        sectionTwoTitle
-        sectionTwoSubtitle
-        sectionTwoContent
+        slides {
+          frase
+          autor
+          background
+          align
+          color
+        }
       }
     }
   }
