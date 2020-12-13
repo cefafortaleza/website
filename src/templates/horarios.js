@@ -26,6 +26,7 @@ export const HorariosPageTemplate = ({ horarios, horariosPandemia }) => {
       <Container id="horarios-page">
         <section>
           <SectionTitle>Horários</SectionTitle>
+          
           <div className="schedule-tabs-wrapper">
             <ul className="schedule-tabs">
               {horariosPandemia.map((dia, index) => {
@@ -85,6 +86,7 @@ export const HorariosPageTemplate = ({ horarios, horariosPandemia }) => {
               })}
             </div>
           </div>
+          <p>* Os horários acima são os horários de funcionamento do CEFA durante o período de distanciamento social</p>
         </section>
         <section>
           <SectionTitle big>Atividades</SectionTitle>
