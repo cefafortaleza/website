@@ -1,151 +1,49 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import React from 'react';
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
-import PalestraWrapper from '../components/PalestraWrapper';
-import Palestra from '../components/Palestra';
-import PalestraDetails from '../components/PalestraDetails';
 
 import Layout from '../components/Layout';
 
-export const PalestrasPageTemplate = ({ pageTitle, current, past }) => {
-  
-  const [palestraDetails, setPalestraDetails] = useState(null);
-
-  const findPalestraByID = (palestraID) => [...current, ...past].filter(palestra => palestraID === `${palestra.palestra.replace(" ", "")}-${palestra.data}-${palestra.horario}`)[0]
-
-  const handleDetail = (palestraID) => {
-    if (palestraDetails && palestraID === `${palestraDetails.palestra.replace(" ", "")}-${palestraDetails.data}-${palestraDetails.horario}`) return setPalestraDetails(null);
-    return setPalestraDetails(findPalestraByID(palestraID));
-  };
-  
-  useEffect(() => {
-  }, [palestraDetails]);
-  
-  return (
-    <>
-      <Container>
-        <SectionTitle big>{pageTitle}</SectionTitle>
-        <section>
-          <SectionTitle>Palestras do mês</SectionTitle>
-          <PalestraWrapper>
-            {current.map((palestra, index) => {
-              return (
-                <Palestra
-                  title={palestra.palestra}
-                  speaker={palestra.palestrante}
-                  date={palestra.data}
-                  time={palestra.horario}
-                  id={`${palestra.palestra.replace(" ", "")}-${palestra.data}-${palestra.horario}`}
-                  key={`${palestra.palestra.replace(" ", "")}-${palestra.data}-${palestra.horario}`}
-                  displayDetail={handleDetail}
-                />
-              );
-            })}
-          </PalestraWrapper>
-          {palestraDetails  && current.filter(palestra => `${palestraDetails.palestra.replace(" ", "")}-${palestraDetails.data}-${palestraDetails.horario}` === `${palestra.palestra.replace(" ", "")}-${palestra.data}-${palestra.horario}`).length > 0 ? (
-            <PalestraDetails palestra={palestraDetails} />
-          ) : null}
-        </section>
-        <section>
-          <SectionTitle>Palestras Passadas</SectionTitle>
-          <PalestraWrapper>
-            {past.map((palestra, index) => {
-              return (
-                <Palestra
-                  title={palestra.palestra}
-                  speaker={palestra.palestrante}
-                  date={palestra.data}
-                  time={palestra.horario}
-                  id={`${palestra.palestra.replace(" ", "")}-${palestra.data}-${palestra.horario}`}
-                  key={`${palestra.palestra.replace(" ", "")}-${palestra.data}-${palestra.horario}`}
-                  displayDetail={handleDetail}
-                />
-              );
-            })}
-          </PalestraWrapper>
-          {palestraDetails  && past.filter(palestra => `${palestraDetails.palestra.replace(" ", "")}-${palestraDetails.data}-${palestraDetails.horario}` === `${palestra.palestra.replace(" ", "")}-${palestra.data}-${palestra.horario}`).length > 0   ? (
-            <PalestraDetails palestra={palestraDetails} />
-          ) : null}
-        </section>
-      </Container>
-    </>
-  );
-};
-
-PalestrasPageTemplate.propTypes = {
-  pageTitle: PropTypes.string,
-  current: PropTypes.shape([
-    {
-      palestra: PropTypes.string,
-      palestrante: PropTypes.string,
-      descricao: PropTypes.string,
-      data: PropTypes.string,
-      horario: PropTypes.string,
-      full_address: PropTypes.string,
-      telefoone: PropTypes.string,
-    },
-  ]),
-  past: PropTypes.shape([
-    {
-      palestra: PropTypes.string,
-      palestrante: PropTypes.string,
-      descricao: PropTypes.string,
-      data: PropTypes.string,
-      horario: PropTypes.string,
-      full_address: PropTypes.string,
-      telefone: PropTypes.string,
-    },
-  ]),
-};
-
-const PalestrasPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
-
+const PalestrasPage = () => {
   return (
     <Layout>
-      <PalestrasPageTemplate
-        pageTitle={frontmatter.pageTitle}
-        current={frontmatter.current}
-        past={frontmatter.past}
-      />
+      <>
+        <Container>
+          <SectionTitle big>Palestras</SectionTitle>
+          <div className="social-media-posts-wrapper">
+            <div className="post-wrapper">
+              <div className="post" style={{
+              background: `url(../img/palestra-1-thumbnail.jpg)`,
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              }} />
+            </div>
+            <div className="post-wrapper">
+              <div className="post" style={{
+              background: `url(../img/palestra-2-thumbnail.jpg)`,
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              }} />
+            </div>
+            <div className="post-wrapper">
+              <div className="post" style={{
+              background: `url(../img/palestra-3-thumbnail.jpg)`,
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              }} />
+            </div>
+            <div className="post-wrapper">
+              <div className="post" style={{
+              background: `url(../img/palestra-4-thumbnail.jpg)`,
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              }} />
+            </div>
+          </div>
+        </Container>
+      </>
     </Layout>
   );
 };
 
-PalestrasPage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
-};
-
 export default PalestrasPage;
-
-export const pageQuery = graphql`
-  query PalestrasPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "palestras" } }) {
-      frontmatter {
-        pageTitle
-        current {
-          palestra
-          palestrante
-          descricao
-          data
-          horario
-          telefone
-        }
-        past {
-          palestra
-          palestrante
-          descricao
-          data
-          horario
-          telefone
-        }
-      }
-    }
-  }
-`;
