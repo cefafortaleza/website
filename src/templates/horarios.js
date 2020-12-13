@@ -11,7 +11,8 @@ import { atividadesCEFA } from '../assets/js/atividades';
 import { horariosCEFA, horariosCEFACovid } from '../assets/js/horarios';
 
 export const HorariosPageTemplate = ({ horarios }) => {
-  const [activeTab, setActiveTab] = useState('sunday');
+  console.log('HORARIOS: ', horarios);
+  const [activeTab, setActiveTab] = useState('domingo');
 
   const toggleScheduleTab = (tab) => () => {
     document.getElementById(activeTab).classList.toggle('active-tab');
@@ -19,7 +20,7 @@ export const HorariosPageTemplate = ({ horarios }) => {
       .getElementById(`button-${activeTab}`)
       .classList.toggle('active-button');
     setActiveTab(tab);
-    document.getElementById(tab).classList.toggle('active-tab');
+    document.getElementById(`${tab}`).classList.toggle('active-tab');
     document.getElementById(`button-${tab}`).classList.toggle('active-button');
   };
 
@@ -41,7 +42,7 @@ export const HorariosPageTemplate = ({ horarios }) => {
                       <button
                         className={index === 0 ? 'active-button' : ''}
                         id={`button-${dia.dayname.toLowerCase()}`}
-                        onClick={toggleScheduleTab(dia.dayname.toLowerCase())}
+                        onClick={toggleScheduleTab(`${dia.dayname.toLowerCase()}`)}
                       >
                         {dia.dayname}
                       </button>
@@ -61,7 +62,17 @@ export const HorariosPageTemplate = ({ horarios }) => {
                       id={`${dia.dayname.toLowerCase()}`}
                       key={`${dia.dayname.toLowerCase()}-${index}`}
                     >
-                     <p>{dia.dayname}</p> 
+                      <div className="day-wrapper">
+                        {dia.turnos.map((turno, indexTurno) => (
+                          <div className="turno-wrapper">
+                            <h3>{turno.name}</h3>
+                            {turno.horarios.map((horarios, indexHorarios) => (<div className="horario-wrapper">
+                              {horarios.time}
+                              {horarios.description}
+                            </div>))}
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </>
                 );
@@ -85,28 +96,28 @@ export const HorariosPageTemplate = ({ horarios }) => {
                 </SectionTitle>
                 <div className="atividades">
                   {grupo.atividades.map((atividade, atividadeIndex) => (
-                  <div
-                    key={`${grupo.nomeDoGrupo}-${atividade.nomeDaAtividade}`}
-                    className="atividade"
-                    id={`${atividade.nomeDaAtividade
-                      .toLowerCase()
-                      .replace(/ /g, '-')}`}
-                  >
-                    <SectionTitle small>
-                      {grupoIndex + 1}.{atividadeIndex + 1} -{' '}
-                      {atividade.nomeDaAtividade}
-                    </SectionTitle>
-                    <div className="horarios">
-                      {atividade.horarios.map((horario, atividadeIndex) => (
-                        <div clasName="horario">
-                          <p>
-                            {horario.dia} - {horario.horarios}
-                          </p>
-                        </div>
-                      ))}
+                    <div
+                      key={`${grupo.nomeDoGrupo}-${atividade.nomeDaAtividade}`}
+                      className="atividade"
+                      id={`${atividade.nomeDaAtividade
+                        .toLowerCase()
+                        .replace(/ /g, '-')}`}
+                    >
+                      <SectionTitle small>
+                        {grupoIndex + 1}.{atividadeIndex + 1} -{' '}
+                        {atividade.nomeDaAtividade}
+                      </SectionTitle>
+                      <div className="horarios">
+                        {atividade.horarios.map((horario, atividadeIndex) => (
+                          <div clasName="horario">
+                            <p>
+                              {horario.dia} - {horario.horarios}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
                 </div>
               </div>
             ))}
@@ -144,7 +155,9 @@ export const HorariosPageTemplate = ({ horarios }) => {
         </section>
         <section>
           <SectionTitle big>Palestras</SectionTitle>
-          <a href="/palestras">Clique aqui para ver os horários das próximas palestras!</a>
+          <a href="/palestras">
+            Clique aqui para ver os horários das próximas palestras!
+          </a>
         </section>
       </Container>
     </>
@@ -182,21 +195,7 @@ export const pageQuery = graphql`
       frontmatter {
         horarios {
           dayname
-          morning {
-            name
-            horarios {
-              time
-              description
-            }
-          }
-          afternoon {
-            name
-            horarios {
-              time
-              description
-            }
-          }
-          evening {
+          turnos {
             name
             horarios {
               time
