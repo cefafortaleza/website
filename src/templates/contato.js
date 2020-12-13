@@ -26,7 +26,7 @@ const ContatoPage = () => {
           <h3>Entre em contato!</h3>
           <form onSubmit={handleSubmit} className="formulario">
             <div className="input-wrapper">
-              <label for="nome">Nome</label>
+              <label htmlFor="nome">Nome</label>
               <input
                 id="nome"
                 type="text"
@@ -35,7 +35,7 @@ const ContatoPage = () => {
               />
             </div>
             <div className="input-wrapper">
-              <label for="nome">Email</label>
+              <label htmlFor="nome">Email</label>
               <input
                 id="email"
                 type="text"
@@ -44,7 +44,7 @@ const ContatoPage = () => {
               />
             </div>
             <div className="input-wrapper">
-              <label for="nome">Mensagem</label>
+              <label htmlFor="nome">Mensagem</label>
               <textarea
                 id="mensagem"
                 value={contactForm.mensagem}

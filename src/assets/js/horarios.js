@@ -1,3 +1,3 @@
-export const horarios = {}
+export const horariosCEFA = {}
 
-export const horariosPandemia = {}
+export const horariosCEFACovid = {}

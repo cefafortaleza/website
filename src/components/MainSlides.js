@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from './Button';
 import Flicking from '@egjs/react-flicking';
 
 // import { Parallax, Fade, AutoPlay } from '@egjs/flicking-plugins';

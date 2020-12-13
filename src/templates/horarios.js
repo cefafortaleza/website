@@ -6,7 +6,11 @@ import Container from '../components/Container';
 import Layout from '../components/Layout';
 import SectionTitle from '../components/SectionTitle';
 
-export const HorariosPageTemplate = ({ title, schedules }) => {
+import { atividadesCEFA } from '../assets/js/atividades';
+
+import { horariosCEFA, horariosCEFACovid } from '../assets/js/horarios';
+
+export const HorariosPageTemplate = ({ horarios }) => {
   const [activeTab, setActiveTab] = useState('sunday');
 
   const toggleScheduleTab = (tab) => () => {
@@ -19,6 +23,7 @@ export const HorariosPageTemplate = ({ title, schedules }) => {
     document.getElementById(`button-${tab}`).classList.toggle('active-button');
   };
 
+  console.log(horarios);
   return (
     <>
       <Container>
@@ -26,16 +31,19 @@ export const HorariosPageTemplate = ({ title, schedules }) => {
           <SectionTitle>Horários</SectionTitle>
           <div className="schedule-tabs-wrapper">
             <ul className="schedule-tabs">
-              {Object.keys(schedules).map((daySchedule, index) => {
+              {horarios.map((dia, index) => {
                 return (
                   <>
-                    <li className="schedule-tab" key={index}>
+                    <li
+                      className="schedule-tab"
+                      key={`${dia.dayname.toLowerCase()}-${index}`}
+                    >
                       <button
                         className={index === 0 ? 'active-button' : ''}
-                        id={`button-${daySchedule}`}
-                        onClick={toggleScheduleTab(daySchedule)}
+                        id={`button-${dia.dayname.toLowerCase()}`}
+                        onClick={toggleScheduleTab(dia.dayname.toLowerCase())}
                       >
-                        {daySchedule}
+                        {dia.dayname}
                       </button>
                     </li>
                   </>
@@ -43,44 +51,17 @@ export const HorariosPageTemplate = ({ title, schedules }) => {
               })}
             </ul>
             <div className="schedule-content">
-              {Object.keys(schedules).map((daySchedule, index) => {
+              {horarios.map((dia, index) => {
                 return (
                   <>
                     <div
                       className={`schedule-tab ${
                         index === 0 ? 'active-tab' : ''
                       }`}
-                      id={[daySchedule]}
-                      key={[daySchedule]}
+                      id={`${dia.dayname.toLowerCase()}`}
+                      key={`${dia.dayname.toLowerCase()}-${index}`}
                     >
-                      {Object.keys(schedules[daySchedule]).map((shift) => {
-                        return (
-                          <>
-                            <div
-                              className={`schedule ${[shift]}`}
-                              key={[shift]}
-                            >
-                              <ul className="schedule-list">
-                                <h3>{shift}</h3>
-                                {schedules[daySchedule][shift].map(
-                                  (activity, index) => {
-                                    return (
-                                      <>
-                                        <li key={index}>
-                                          <p>
-                                            <span>{activity.time} </span>
-                                            {activity.description}
-                                          </p>
-                                        </li>
-                                      </>
-                                    );
-                                  }
-                                )}
-                              </ul>
-                            </div>
-                          </>
-                        );
-                      })}
+                     <p>{dia.dayname}</p> 
                     </div>
                   </>
                 );
@@ -89,19 +70,78 @@ export const HorariosPageTemplate = ({ title, schedules }) => {
           </div>
         </section>
         <section>
-          <SectionTitle>Atividades</SectionTitle>
+          <SectionTitle big>Atividades</SectionTitle>
+          <div className="atividades-content-wrapper">
+            {atividadesCEFA.map((grupo, grupoIndex) => (
+              <div
+                id={`section-${grupo.nomeDoGrupo
+                  .toLowerCase()
+                  .replace(/ /g, '-')}`}
+                className="grupo"
+                key={`grupo-${grupoIndex}`}
+              >
+                <SectionTitle>
+                  {grupoIndex + 1}.0 - {grupo.nomeDoGrupo}
+                </SectionTitle>
+
+                {grupo.atividades.map((atividade, atividadeIndex) => (
+                  <div
+                    key={`${grupo.nomeDoGrupo}-${atividade.nomeDaAtividade}`}
+                    className="atividade"
+                    id={`${atividade.nomeDaAtividade
+                      .toLowerCase()
+                      .replace(/ /g, '-')}`}
+                  >
+                    <SectionTitle small>
+                      {grupoIndex + 1}.{atividadeIndex + 1} -{' '}
+                      {atividade.nomeDaAtividade}
+                    </SectionTitle>
+                    {atividade.horarios.map((horario, atividadeIndex) => (
+                      <div clasName="horario">
+                        <p>
+                          {horario.dia} - {horario.horarios}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </section>
         <section>
-          <SectionTitle>Livraria</SectionTitle>
+          <SectionTitle big>Livraria</SectionTitle>
+          <div className="horario-item">
+            <p>Sábados e Domingos</p>
+            <span>15:00 às 19:30</span>
+          </div>
+          <div className="horario-item">
+            <p>2as, 4as, 5as, 6as</p>
+            <span>18:00 às 20:30</span>
+          </div>
+          <div className="horario-item">
+            <p>Terças</p>
+            <span>15:00 às 20:30</span>
+          </div>
         </section>
         <section>
-          <SectionTitle>Biblioteca</SectionTitle>
+          <SectionTitle big>Biblioteca</SectionTitle>
+          <div className="horario-item">
+            <p>Sábados e Domingos</p>
+            <span>15:00 às 19:30</span>
+          </div>
+          <div className="horario-item">
+            <p>2as, 4as, 5as, 6as</p>
+            <span>15:00 às 19:30</span>
+          </div>
+          <div className="horario-item">
+            <p>Terças</p>
+            <span>15:00 às 20:30</span>
+          </div>
         </section>
         <section>
-          <SectionTitle>Palestras</SectionTitle>
-        </section>
-        <section>
-          <SectionTitle>Eventos</SectionTitle>
+          <SectionTitle big>Palestras</SectionTitle>
+          <a href="/palestras">Clique aqui para ver os horários das próximas palestras!</a>
         </section>
       </Container>
     </>
@@ -109,17 +149,16 @@ export const HorariosPageTemplate = ({ title, schedules }) => {
 };
 
 HorariosPageTemplate.propTypes = {
-  title: PropTypes.string,
-  schedules: PropTypes.object,
+  horarios: PropTypes.object,
 };
 
 const HorariosPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  const { title, schedules } = frontmatter;
+  const { horarios } = frontmatter;
 
   return (
     <Layout>
-      <HorariosPageTemplate title={title} schedules={schedules} />
+      <HorariosPageTemplate horarios={horarios} />
     </Layout>
   );
 };
@@ -138,102 +177,25 @@ export const pageQuery = graphql`
   query HorariosPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "horarios" } }) {
       frontmatter {
-        title
-        schedules {
-          sunday {
-            morning {
-              time
-              description
-            }
-            afternoon {
-              time
-              description
-            }
-            evening {
+        horarios {
+          dayname
+          morning {
+            name
+            horarios {
               time
               description
             }
           }
-          monday {
-            morning {
-              time
-              description
-            }
-            afternoon {
-              time
-              description
-            }
-            evening {
+          afternoon {
+            name
+            horarios {
               time
               description
             }
           }
-          tuesday {
-            morning {
-              time
-              description
-            }
-            afternoon {
-              time
-              description
-            }
-            evening {
-              time
-              description
-            }
-          }
-          wednesday {
-            morning {
-              time
-              description
-            }
-            afternoon {
-              time
-              description
-            }
-            evening {
-              time
-              description
-            }
-          }
-          thursday {
-            morning {
-              time
-              description
-            }
-            afternoon {
-              time
-              description
-            }
-            evening {
-              time
-              description
-            }
-          }
-          friday {
-            morning {
-              time
-              description
-            }
-            afternoon {
-              time
-              description
-            }
-            evening {
-              time
-              description
-            }
-          }
-          saturday {
-            morning {
-              time
-              description
-            }
-            afternoon {
-              time
-              description
-            }
-            evening {
+          evening {
+            name
+            horarios {
               time
               description
             }
