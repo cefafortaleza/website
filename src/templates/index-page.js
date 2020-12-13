@@ -17,7 +17,36 @@ export const IndexPageTemplate = ({ slides }) => {
       <section>
         <Container>
           <SectionTitle>Redes Sociais</SectionTitle>
-          <p>Socia Media Posts</p>
+          <div className="social-media-posts-wrapper">
+            <div className="post-wrapper">
+              <div className="post" style={{
+              background: `url(../img/social-media-post-thumbnail-filler.png)`,
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              }} />
+            </div>
+            <div className="post-wrapper">
+              <div className="post" style={{
+              background: `url(../img/social-media-post-thumbnail-filler.png)`,
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              }} />
+            </div>
+            <div className="post-wrapper">
+              <div className="post" style={{
+              background: `url(../img/social-media-post-thumbnail-filler.png)`,
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              }} />
+            </div>
+            <div className="post-wrapper">
+              <div className="post" style={{
+              background: `url(../img/social-media-post-thumbnail-filler.png)`,
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              }} />
+            </div>
+          </div>
         </Container>
       </section>
       <section>

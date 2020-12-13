@@ -157,6 +157,28 @@ p
 
 // Page INDEX
 
+.social-media-posts-wrapper
+  display: flex
+  flex-wrap: wrap
+  max-width: 700px
+
+  .post-wrapper
+    width: 300px
+    height: 300px
+    margin: 20px
+    margin-left: 0
+    display: flex
+    justify-content: center
+    align-items: center
+
+    .post
+      width: 300px
+      height: 300px
+      display: block
+  
+  +mobile
+    flex-direction: column
+
 .mais-do-cefa
   span
     margin-top: 20px

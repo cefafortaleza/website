@@ -10,6 +10,7 @@ export const BlogPostTemplate = ({
   contentComponent,
   description,
   title,
+  featuredImage,
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
@@ -20,6 +21,7 @@ export const BlogPostTemplate = ({
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
+            <img src={featuredImage} />
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
@@ -38,6 +40,7 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
+  image: PropTypes.string,
   helmet: PropTypes.object,
 };
 
@@ -60,6 +63,7 @@ const BlogPost = ({ data }) => {
           </Helmet>
         }
         title={post.frontmatter.title}
+        featuredImage={post.featuredImage}
       />
     </Layout>
   );
@@ -84,13 +88,7 @@ export const pageQuery = graphql`
         description
         date(formatString: "MMMM DD, YYYY")
         featuredpost
-        featuredimage {
-          childImageSharp {
-            fluid(maxWidth: 200, maxHeight: 200) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+        featuredImage 
       }
     }
   }
