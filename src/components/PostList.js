@@ -19,9 +19,9 @@ class PostList extends React.Component {
             <>
             <div className="post-wrapper" key={post.frontmatter.title}>
               <div className="post-image-wrapper">
-                <Img
+                <img
                   alt="Imagem do Blog CEFA"
-                  fluid={post.frontmatter.featuredimage.childImageSharp.fluid}
+                  src={post.frontmatter.featuredImage}
                 />
               </div>
 
@@ -68,13 +68,7 @@ export default () => (
                 description
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
-                featuredimage {
-                  childImageSharp {
-                    fluid {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
+                featuredImage 
               }
             }
           }
