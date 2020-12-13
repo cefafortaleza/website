@@ -26,7 +26,7 @@ export const HorariosPageTemplate = ({ horarios }) => {
   console.log(horarios);
   return (
     <>
-      <Container>
+      <Container id="horarios-page">
         <section>
           <SectionTitle>Horários</SectionTitle>
           <div className="schedule-tabs-wrapper">
@@ -83,8 +83,8 @@ export const HorariosPageTemplate = ({ horarios }) => {
                 <SectionTitle>
                   {grupoIndex + 1}.0 - {grupo.nomeDoGrupo}
                 </SectionTitle>
-
-                {grupo.atividades.map((atividade, atividadeIndex) => (
+                <div className="atividades">
+                  {grupo.atividades.map((atividade, atividadeIndex) => (
                   <div
                     key={`${grupo.nomeDoGrupo}-${atividade.nomeDaAtividade}`}
                     className="atividade"
@@ -96,15 +96,18 @@ export const HorariosPageTemplate = ({ horarios }) => {
                       {grupoIndex + 1}.{atividadeIndex + 1} -{' '}
                       {atividade.nomeDaAtividade}
                     </SectionTitle>
-                    {atividade.horarios.map((horario, atividadeIndex) => (
-                      <div clasName="horario">
-                        <p>
-                          {horario.dia} - {horario.horarios}
-                        </p>
-                      </div>
-                    ))}
+                    <div className="horarios">
+                      {atividade.horarios.map((horario, atividadeIndex) => (
+                        <div clasName="horario">
+                          <p>
+                            {horario.dia} - {horario.horarios}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 ))}
+                </div>
               </div>
             ))}
           </div>
