@@ -21,31 +21,77 @@
         white-space: pre-wrap
 
 #atividades-content
-  section
-    margin: 30px auto
-    width: 100%
 
-    .grupo
+  .grupo
 
-      h3 
-        font-weight: $bold
+    h3 
+      font-weight: $bold
+    .descricao 
+      margin-bottom: 10px
 
-      .atividade
-        display: flex
-        flex-shrink: 1
-        flex-direction: column
-        margin-right: auto
-        padding: 20px 30px
+      span
+        color: #333
+        font-size: 0.8rem
+        font-weight: 400
 
-        .horario
-          display: flex
-          margin: 10px 0
-
-          p
-            margin-right: 10px
+     
+      table
+        margin-bottom: 20px
+        
+        thead
+          tr
+            padding: 10px 40px 10px 20px
+            border-bottom: 1px solid $black
             &:first-child
-              font-weight: $bold
-      .contentWrapper
-        margin: 10px 0 20px
-  
+              border-right: 1px solid $black
+            td
+              padding: 10px 40px 10px 20px
+              &:first-child
+              border-right: 1px solid $black
+        tbody
+          tr
+            &:first-child
+              border-right: 1px solid $black
+            td
+              padding: 10px 40px 10px 20px
+              border-right: 1px solid $black
+              border-bottom: 1px solid #cccc
+            
+            &:last-child
+              td
+                border-bottom: none
+      
+      ul
+        li
+          list-style: armenian
+          display: flex
+          flex-direction: column
+          font-weight: $bold
+          margin-bottom: 10px
+          
+          
+
+    .atividade
+      display: flex
+      flex-shrink: 1
+      flex-direction: column
+      margin-right: auto
+      padding: 20px 0
+
+      .horario
+        display: flex
+        margin: 10px 0
+
+        p
+          margin-right: 10px
+          &:first-child
+            font-weight: $bold
+      .descricao 
+        margin-top: 20px
+
+        table
+          border: thick solid red        
+    .contentWrapper
+      margin: 10px 0 20px
+
 

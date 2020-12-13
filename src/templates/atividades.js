@@ -22,7 +22,7 @@ const AtividadesPage = () => {
                   </h3>
                   {grupo.atividades.map((atividade, atividadeIndex) => (
                     <Link
-                      to={`#section-${grupo.nomeDoGrupo
+                      to={`#${atividade.nomeDaAtividade
                         .toLowerCase()
                         .replace(/ /g, '-')}`}
                     >
@@ -36,17 +36,24 @@ const AtividadesPage = () => {
           </Container>
         </section>
         <Container id="atividades-content">
-          {atividadesCEFA.map((grupo, index) => (
+          {atividadesCEFA.map((grupo, grupoIndex) => (
             <div
               id={`section-${grupo.nomeDoGrupo
                 .toLowerCase()
                 .replace(/ /g, '-')}`}
-              className="section grupo"
-              key={`grupo-${index}`}
+              className="grupo"
+              key={`grupo-${grupoIndex}`}
             >
-              <SectionTitle big>{grupo.nomeDoGrupo}</SectionTitle>
+              <SectionTitle big>{grupoIndex+1}.0 - {grupo.nomeDoGrupo}</SectionTitle>
 
-              {grupo.atividades.map((atividade, index) => (
+              <div
+                    className="descricao"
+                    dangerouslySetInnerHTML={{
+                      __html: `${grupo.descricao}`,
+                    }}
+                  ></div>
+
+              {grupo.atividades.map((atividade, atividadeIndex) => (
                 <div
                   key={`${grupo.nomeDoGrupo}-${atividade.nomeDaAtividade}`}
                   className="atividade"
@@ -54,9 +61,9 @@ const AtividadesPage = () => {
                     .toLowerCase()
                     .replace(/ /g, '-')}`}
                 >
-                  <SectionTitle>{atividade.nomeDaAtividade}</SectionTitle>
+                  <SectionTitle>{grupoIndex+1}.{atividadeIndex+1} - {atividade.nomeDaAtividade}</SectionTitle>
                   <h3>Horários</h3>
-                  {atividade.horarios.map((horario, index) => (
+                  {atividade.horarios.map((horario, atividadeIndex) => (
                     <div clasName="horario">
                       <p>
                         {horario.dia} - {horario.horarios}
@@ -71,7 +78,7 @@ const AtividadesPage = () => {
                   ></div>
                 </div>
               ))}
-              {grupo.descricao}
+              
             </div>
           ))}
         </Container>
