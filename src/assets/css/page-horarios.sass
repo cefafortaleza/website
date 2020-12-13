@@ -51,30 +51,36 @@
         width: 100%
         padding: 30px
 
-        .schedule
-          border: thin solid $black
+        .day-wrapper
+          display: flex
           flex-grow: 1
           width: 100%
-          margin: 0 20px
-          padding: 20px 30px
 
-          .schedule-list
+          .turno-wrapper
             display: flex
+            flex-grow: 1
             flex-direction: column
+            border: thin solid $black
+            margin: 20px
+            margin-left: 0
+            padding: 20px 30px
 
             h3
-              text-transform: capitalize
-              font-weight: $bold
-              margin-bottom: 20px
-              font-size: 1.2rem !important
+                text-transform: capitalize
+                font-weight: $bold
+                margin-bottom: 20px
+                font-size: 1.2rem !important
 
-            li
-              margin-bottom: 20px
+            .horario-wrapper
+              display: flex
+              flex-direction: column
+
               p
                 font-size: 1rem !important
                 span
                   font-weight: $bold
                   font-size: 1rem !important
+                  margin-left: 10px
 
       .active-tab
         display: flex
@@ -94,10 +100,12 @@
         margin: 10px auto !important
         padding: 0 !important
 
-        .schedule
+        .day-wrapper
+          flex-direction: column
           margin: 10px auto !important
 
-          .schedule-list
+          .turno-wrapper
+            width: 100%
             margin: 10px auto !important
 
   .richText

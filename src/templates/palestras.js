@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
-import PalestraWrapper from '../components/PalestraWrapper';
-import Palestra from '../components/Palestra';
-import PalestraDetails from '../components/PalestraDetails';
 
 import Layout from '../components/Layout';
 

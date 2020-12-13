@@ -8,10 +8,7 @@ import SectionTitle from '../components/SectionTitle';
 
 import { atividadesCEFA } from '../assets/js/atividades';
 
-import { horariosCEFA, horariosCEFACovid } from '../assets/js/horarios';
-
-export const HorariosPageTemplate = ({ horarios }) => {
-  console.log('HORARIOS: ', horarios);
+export const HorariosPageTemplate = ({ horarios, horariosPandemia }) => {
   const [activeTab, setActiveTab] = useState('domingo');
 
   const toggleScheduleTab = (tab) => () => {
@@ -24,7 +21,6 @@ export const HorariosPageTemplate = ({ horarios }) => {
     document.getElementById(`button-${tab}`).classList.toggle('active-button');
   };
 
-  console.log(horarios);
   return (
     <>
       <Container id="horarios-page">
@@ -32,7 +28,7 @@ export const HorariosPageTemplate = ({ horarios }) => {
           <SectionTitle>Horários</SectionTitle>
           <div className="schedule-tabs-wrapper">
             <ul className="schedule-tabs">
-              {horarios.map((dia, index) => {
+              {horariosPandemia.map((dia, index) => {
                 return (
                   <>
                     <li
@@ -42,7 +38,9 @@ export const HorariosPageTemplate = ({ horarios }) => {
                       <button
                         className={index === 0 ? 'active-button' : ''}
                         id={`button-${dia.dayname.toLowerCase()}`}
-                        onClick={toggleScheduleTab(`${dia.dayname.toLowerCase()}`)}
+                        onClick={toggleScheduleTab(
+                          `${dia.dayname.toLowerCase()}`
+                        )}
                       >
                         {dia.dayname}
                       </button>
@@ -52,7 +50,7 @@ export const HorariosPageTemplate = ({ horarios }) => {
               })}
             </ul>
             <div className="schedule-content">
-              {horarios.map((dia, index) => {
+              {horariosPandemia.map((dia, index) => {
                 return (
                   <>
                     <div
@@ -66,10 +64,18 @@ export const HorariosPageTemplate = ({ horarios }) => {
                         {dia.turnos.map((turno, indexTurno) => (
                           <div className="turno-wrapper">
                             <h3>{turno.name}</h3>
-                            {turno.horarios.map((horarios, indexHorarios) => (<div className="horario-wrapper">
-                              {horarios.time}
-                              {horarios.description}
-                            </div>))}
+                            {turno.horarios
+                              ? turno.horarios.map(
+                                  (horarios, indexHorarios) => (
+                                    <div className="horario-wrapper">
+                                      <p>
+                                        <span>{horarios.time}</span> -
+                                        {horarios.description}
+                                      </p>
+                                    </div>
+                                  )
+                                )
+                              : null}
                           </div>
                         ))}
                       </div>
@@ -166,15 +172,19 @@ export const HorariosPageTemplate = ({ horarios }) => {
 
 HorariosPageTemplate.propTypes = {
   horarios: PropTypes.object,
+  horariosPandemia: PropTypes.object,
 };
 
 const HorariosPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  const { horarios } = frontmatter;
+  const { horarios, horariosPandemia } = frontmatter;
 
   return (
     <Layout>
-      <HorariosPageTemplate horarios={horarios} />
+      <HorariosPageTemplate
+        horarios={horarios}
+        horariosPandemia={horariosPandemia}
+      />
     </Layout>
   );
 };
@@ -194,6 +204,16 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "horarios" } }) {
       frontmatter {
         horarios {
+          dayname
+          turnos {
+            name
+            horarios {
+              time
+              description
+            }
+          }
+        }
+        horariosPandemia {
           dayname
           turnos {
             name
