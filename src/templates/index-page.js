@@ -80,7 +80,8 @@ export const IndexPageTemplate = ({ slides }) => {
         <SectionHeader
           title="Gostaria de alugar um livro?"
           buttonText="Conheça nossa biblioteca"
-          buttonLink="/"
+          buttonLink="/biblioteca"
+          background="../img/section-background-biblioteca.png"
           id="biblioteca"
         />
       </section>

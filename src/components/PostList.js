@@ -10,7 +10,6 @@ class PostList extends React.Component {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
 
-    console.log(posts);
     
     return (
       <div className="blog-posts">

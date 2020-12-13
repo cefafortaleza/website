@@ -37,7 +37,6 @@ export const SobrePageTemplate = ({
       .getElementById(`button-${activeTab}`)
       .classList.toggle('active-button');
     setActiveTab(tab);
-    console.log(tab);
     document.getElementById(`${tab}`).classList.toggle('active-tab');
     document.getElementById(`button-${tab}`).classList.toggle('active-button');
   };
@@ -145,7 +144,6 @@ export const SobrePageTemplate = ({
               </li>
             </ul>
             <div className="board-content">
-              {console.log(boardDiretoria[1].boardName.toLowerCase().replace(/ /g, '-'))}
               {boardDiretoria.map((tab, index) => {
                 return (
                   <div

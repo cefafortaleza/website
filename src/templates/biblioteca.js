@@ -5,9 +5,12 @@ import Layout from '../components/Layout';
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
 
+import PageHeader from '../components/PageHeader';
+
 const BibliotecaPage = () => {
   return (
     <Layout>
+      <PageHeader id="page-header-biblioteca" background="../img/section-background-biblioteca.png" />
       <Container>
         <SectionTitle big>Biblioteca</SectionTitle>
         

@@ -16,63 +16,7 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/pages/atividades/index.md"
-        label: "Atividades"
-        name: "atividades"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templatekey",
-              widget: "hidden",
-              default: "atividades",
-            }
-          - {
-              label: "Grupo de Atividades",
-              name: "activitygroup",
-              widget: "list",
-              create: true,
-              fields:
-                [
-                  { label: "Subgrupo", name: "sectiontitle", widget: "string" },
-                  {
-                    label: "Atividade",
-                    name: "activity",
-                    widget: "list",
-                    create: true,
-                    fields:
-                      [
-                        {
-                          label: "Título da Atividade",
-                          name: "sectiontitle",
-                          widget: "string",
-                        },
-                        {
-                          label: "Horários",
-                          name: "schedule",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              { label: "Dia", name: "day", widget: "string" },
-                              {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
-                              },
-                            ],
-                        },
-                        {
-                          label: "Conteúdo",
-                          name: "content",
-                          widget: "markdown",
-                        },
-                      ],
-                  },
-                ],
-            }
-
+      
       - file: "src/pages/horarios/index.md"
         label: "Horários"
         name: "horarios"
@@ -85,16 +29,23 @@ collections:
             }
           - {
               label: "Horários",
-              name: "schedules",
-              widget: "object",
+              name: "horarios",
+              widget: "list",
+              create: true,
               fields:
                 [
                   {
-                    label: "Domingo",
-                    name: "sunday",
+                    label: "Dia",
+                    name: "day",
                     widget: "object",
                     fields:
                       [
+                        {
+                          label: "Dia da Semana",
+                          name: "dayname",
+                          widget: "hidden",
+                          default: "Domingo",
+                        },
                         {
                           label: "Manhã",
                           name: "morning",
@@ -102,6 +53,12 @@ collections:
                           create: true,
                           fields:
                             [
+                              {
+                                label: "Nome",
+                                name: "name",
+                                widget: "hidden",
+                                default: "Manhã",
+                              },
                               {
                                 label: "Horário",
                                 name: "time",
@@ -124,76 +81,11 @@ collections:
                           fields:
                             [
                               {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
+                                label: "Nome",
+                                name: "name",
+                                widget: "hidden",
+                                default: "Tarde",
                               },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                        {
-                          label: "Noite",
-                          name: "evening",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
-                              },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                  {
-                    label: "Segunda",
-                    name: "monday",
-                    widget: "object",
-                    fields:
-                      [
-                        {
-                          label: "Manhã",
-                          name: "morning",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
-                              },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                        {
-                          label: "Tarde",
-                          name: "afternoon",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
                               {
                                 label: "Horário",
                                 name: "time",
@@ -216,76 +108,11 @@ collections:
                           fields:
                             [
                               {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
+                                label: "Nome",
+                                name: "name",
+                                widget: "hidden",
+                                default: "Noite",
                               },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                  {
-                    label: "Terça",
-                    name: "tuesday",
-                    widget: "object",
-                    fields:
-                      [
-                        {
-                          label: "Manhã",
-                          name: "morning",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
-                              },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                        {
-                          label: "Tarde",
-                          name: "afternoon",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
-                              },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                        {
-                          label: "Noite",
-                          name: "evening",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
                               {
                                 label: "Horário",
                                 name: "time",
@@ -301,291 +128,8 @@ collections:
                             ],
                         },
                       ],
-                  },
-                  {
-                    label: "Quarta",
-                    name: "wednesday",
-                    widget: "object",
-                    fields:
-                      [
-                        {
-                          label: "Manhã",
-                          name: "morning",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
-                              },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                        {
-                          label: "Tarde",
-                          name: "afternoon",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
-                              },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                        {
-                          label: "Noite",
-                          name: "evening",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
-                              },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                  {
-                    label: "Quinta",
-                    name: "thursday",
-                    widget: "object",
-                    fields:
-                      [
-                        {
-                          label: "Manhã",
-                          name: "morning",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
-                              },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                        {
-                          label: "Tarde",
-                          name: "afternoon",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
-                              },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                        {
-                          label: "Noite",
-                          name: "evening",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
-                              },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                  {
-                    label: "Sexta",
-                    name: "friday",
-                    widget: "object",
-                    fields:
-                      [
-                        {
-                          label: "Manhã",
-                          name: "morning",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
-                              },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                        {
-                          label: "Tarde",
-                          name: "afternoon",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
-                              },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                        {
-                          label: "Noite",
-                          name: "evening",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
-                              },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                  {
-                    label: "Sábado",
-                    name: "saturday",
-                    widget: "object",
-                    fields:
-                      [
-                        {
-                          label: "Manhã",
-                          name: "morning",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
-                              },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                        {
-                          label: "Tarde",
-                          name: "afternoon",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
-                              },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                        {
-                          label: "Noite",
-                          name: "evening",
-                          widget: "list",
-                          create: true,
-                          fields:
-                            [
-                              {
-                                label: "Horário",
-                                name: "time",
-                                widget: "datetime",
-                                time_format: "HH:mm",
-                                format: "LT",
-                              },
-                              {
-                                label: "Descrição",
-                                name: "description",
-                                widget: "string",
-                              },
-                            ],
-                        },
-                      ],
-                  },
+                  }
+                  
                 ],
             }
 
