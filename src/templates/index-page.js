@@ -56,7 +56,7 @@ export const IndexPageTemplate = ({ slides }) => {
         <SectionHeader
           title="Conheça o grupo musical francisco de assis"
           buttonText="Clique Aqui"
-          buttonLink="/"
+          buttonLink="/grupo-musical"
           id="grupo-musical"
           background="../img/section-background-grupo-musical.png"
           black
