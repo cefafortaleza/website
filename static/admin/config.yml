@@ -176,18 +176,38 @@ collections:
                           name: "align",
                           widget: "select",
                           options: 
-                             { label: "À esquerda", value: "left" },
-                             { label: "Centralizado", value: "center" },
-                             { label: "À direita", value: "right" }
+                            { label: "À esquerda", value: "left" },
+                            { label: "Centralizado", value: "center" },
+                            { label: "À direita", value: "right" }
                         },
                         {
                           label: "Cor do Texto",
                           name: "color",
                           widget: "select",
                           options: 
-                             { label: "Branco", value: "white" },
-                             { label: "Preto", value: "black" },
-                        }
+                            { label: "Branco", value: "white" },
+                            { label: "Preto", value: "black" },
+                        },
+                        {
+                          label: "Botão 1 - Link",
+                          name: "primeiro_botao_link",
+                          widget: "string",
+                        },
+                        {
+                          label: "Botão 1 - Texto",
+                          name: "primeiro_botao_texto",
+                          widget: "string",
+                        },
+                        {
+                          label: "Botão 2 - Link",
+                          name: "segundo_botao_link",
+                          widget: "string",
+                        },
+                        {
+                          label: "Botão 2 - Texto",
+                          name: "segundo_botao_texto",
+                          widget: "string",
+                        },
                       ],
                   },
                 ],

@@ -9,7 +9,7 @@ export const boardDiretoria = [
       },
       {
         cargo: 'Vice-Presidente',
-        nome: 'Lúcia Helena Araújo Bezerra',
+        nome: 'Fernanda Maria Caetano Albuquerque',
         email: 'presidente@email.com',
       },
       {
@@ -19,18 +19,18 @@ export const boardDiretoria = [
       },
       {
         cargo: 'Tesoureiro Adjunto',
-        nome: 'Edilson Félix Pereira',
+        nome: 'Louis Pasteur Silveira Leite Esmeraldo',
         email: 'presidente@email.com',
       },
       {
         cargo: 'Secretário Geral',
-        nome: 'Fernanda Maria Caetano Albuquerque',
+        nome: 'Edilson Félix Pereira',
         email: 'presidente@email.com',
       },
       {
-        cargo: 'Adjunto',
-        nome: '(vago)',
-        email: '',
+        cargo: 'Secretário Geral Adjunto',
+        nome: 'Maria Lúcia Pereira Costa Queiroz',
+        email: 'presidente@email.com',
       },
     ],
   },
@@ -44,7 +44,7 @@ export const boardDiretoria = [
       },
       {
         cargo: 'Vice-Presidente',
-        nome: 'Leonila Silva Gurgel Nogueira',
+        nome: 'Lúcia Helena Araújo Bezerra',
         email: 'presidente@email.com',
       },
       {
@@ -54,7 +54,7 @@ export const boardDiretoria = [
       },
       {
         cargo: 'Suplente',
-        nome: 'Jarismar Cavalcante Duete',
+        nome: 'Leonila Silva Gurgel Nogueira',
         email: 'presidente@email.com',
       },
     ],

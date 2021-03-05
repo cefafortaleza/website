@@ -176,6 +176,10 @@ export const pageQuery = graphql`
           background
           align
           color
+          primeiro_botao_link
+          primeiro_botao_texto
+          segundo_botao_link
+          segundo_botao_texto
         }
       }
     }

@@ -1,15 +1,10 @@
 import React from 'react';
 import Flicking from '@egjs/react-flicking';
-
-// import { Parallax, Fade, AutoPlay } from '@egjs/flicking-plugins';
-// import {
-//   FlickingEvent,
-//   SelectEvent,
-//   ChangeEvent,
-//   NeedPanelEvent,
-// } from '@egjs/flicking';
+import Button from './Button';
 
 const MainSlides = ({ slides }) => {
+  console.log('SLIDES: ', slides);
+
   return (
     <Flicking
       tag="div"
@@ -34,7 +29,7 @@ const MainSlides = ({ slides }) => {
       threshold={40}
       duration={100}
       panelEffect={(x) => 1 - Math.pow(1 - x, 3)}
-      defaultIndex={0}
+      defaultIndex={3}
       inputType={['touch', 'mouse']}
       thresholdAngle={45}
       bounce={10}
@@ -63,10 +58,47 @@ const MainSlides = ({ slides }) => {
             <div className={`slide-content ${slide.align} ${slide.color}`}>
               <p className="frase">{slide.frase}</p>
               <p className="autor">{slide.autor}</p>
+              <div className="buttons-wrapper">
+                {slide.primeiro_botao_link !== '' && (
+                  <Button href={slide.primeiro_botao_link}>
+                    {slide.primeiro_botao_texto}
+                  </Button>
+                )}
+                {slide.segundo_botao_link !== '' && (
+                  <Button href={slide.segundo_botao_link}>
+                    {slide.segundo_botao_texto}
+                  </Button>
+                )}
+              </div>
             </div>
           </div>
         </div>
       ))}
+      <div className={`main-slide-item item-4`}>
+        <div
+          className="slide-wrapper"
+          style={{
+            background: `#f3f3f3`,
+            textAlign: `left`,
+          }}
+        >
+          <div className={`slide-content left black`}>
+            <p className="autor">
+              Atenção inscritos no ESDE-1 do CEFA!! <br /> Segue o link para as
+              salas virtuais:
+            </p>
+            <div className="buttons-wrapper">
+              <Button href="https://meet.google.com/ije-ydfj-kvu">
+                Sábados, 17h30min
+              </Button>
+
+              <Button href="https://meet.google.com/mtf-cerb-yyh">
+                Segundas, 19h30min
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
     </Flicking>
   );
 };

@@ -48,7 +48,10 @@
       .autor
         font-size: 1rem
         font-weight: bold
-      
+      .buttons-wrapper
+        a
+          &:not(:last-child)
+            margin-right: 20px
 
        
     
@@ -86,6 +89,12 @@
           font-size: 0.7rem
           font-weight: bold
           white-space: nowrap
+        
+        .buttons-wrapper
+          a 
+            margin: 0 auto !important
+            &:not(:last-child)
+              margin-bottom: 20px
 
 .eg-flick-viewport
   z-index: 10 !important
