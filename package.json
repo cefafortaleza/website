@@ -7,6 +7,7 @@
     "@egjs/flicking": "^3.4.7",
     "@egjs/flicking-plugins": "^3.2.0",
     "@egjs/react-flicking": "^3.2.2",
+    "axios": "^0.22.0",
     "bulma": "^0.8.0",
     "gatsby": "^2.20.35",
     "gatsby-image": "^2.3.5",

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
@@ -8,43 +8,74 @@ import SectionTitle from '../components/SectionTitle';
 import SectionHeader from '../components/SectionHeader';
 import MainSlides from '../components/MainSlides';
 import Container from '../components/Container';
-
+import axios from 'axios';
 
 export const IndexPageTemplate = ({ slides }) => {
+  const [posts, setPosts] = useState([]);
+
+  const getLatestPosts = async () => {
+    // 'https://www.instagram.com/explore/tags/cefasite/?__a=1'
+    const response = await axios.get(
+      'https://api.instagram.com/v1/tags/cefasite?access_token=IGQVJXeHhvSUQyQVROZAXVrQ21NdHpuMWpSaTVSUmV4QVZA1N1o4d3J2RU52RE9UcUozZAGw2dy1GRlZAmeEZAOVDBueS1Dc2h6cDRhbFhkdnI2X2NpVGlFd1lrSXU4c1drdjVqRnBWUW80dUR0elhtTm1tQwZDZD',
+      { mode: 'no-cors' }
+    );
+    const data = await response.json();
+    if (data) await setPosts(data);
+
+    return console.log(data, posts);
+  };
+
+  useEffect(() => {
+    getLatestPosts();
+  }, [getLatestPosts]);
   return (
     <>
-      <MainSlides slides={slides} />
+      <>
+        <MainSlides slides={slides} />
+      </>
       <section>
         <Container>
           <SectionTitle>Redes Sociais</SectionTitle>
           <div className="social-media-posts-wrapper">
             <div className="post-wrapper">
-              <div className="post" style={{
-              background: `url(../img/social-media-post-thumbnail-filler.png)`,
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              }} />
+              <div
+                className="post"
+                style={{
+                  background: `url(../img/social-media-post-thumbnail-filler.png)`,
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              />
             </div>
             <div className="post-wrapper">
-              <div className="post" style={{
-              background: `url(../img/social-media-post-thumbnail-filler.png)`,
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              }} />
+              <div
+                className="post"
+                style={{
+                  background: `url(../img/social-media-post-thumbnail-filler.png)`,
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              />
             </div>
             <div className="post-wrapper">
-              <div className="post" style={{
-              background: `url(../img/social-media-post-thumbnail-filler.png)`,
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              }} />
+              <div
+                className="post"
+                style={{
+                  background: `url(../img/social-media-post-thumbnail-filler.png)`,
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              />
             </div>
             <div className="post-wrapper">
-              <div className="post" style={{
-              background: `url(../img/social-media-post-thumbnail-filler.png)`,
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              }} />
+              <div
+                className="post"
+                style={{
+                  background: `url(../img/social-media-post-thumbnail-filler.png)`,
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              />
             </div>
           </div>
         </Container>
@@ -103,8 +134,7 @@ export const IndexPageTemplate = ({ slides }) => {
           </span>
         </Container>
       </section>
-      
-      
+
       <section>
         <SectionHeader
           title="Gostaria de alugar um livro?"

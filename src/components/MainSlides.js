@@ -3,7 +3,6 @@ import Flicking from '@egjs/react-flicking';
 import Button from './Button';
 
 const MainSlides = ({ slides }) => {
-  console.log('SLIDES: ', slides);
 
   return (
     <Flicking
@@ -45,7 +44,7 @@ const MainSlides = ({ slides }) => {
       collectStatistics={true}
     >
       {slides.map((slide, index) => (
-        <div className={`main-slide-item item-${index}`}>
+        <div className={`main-slide-item item-${index}`} key={index}>
           <div
             className="slide-wrapper"
             style={{
@@ -74,11 +73,12 @@ const MainSlides = ({ slides }) => {
           </div>
         </div>
       ))}
+      
       <div className={`main-slide-item item-4`}>
         <div
           className="slide-wrapper"
           style={{
-            background: `#f3f3f3`,
+            background: `#c3c3c3`,
             textAlign: `left`,
           }}
         >

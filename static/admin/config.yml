@@ -16,7 +16,6 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      
       - file: "src/pages/horarios/index.md"
         label: "Horários"
         name: "horarios"
@@ -128,8 +127,7 @@ collections:
                             ],
                         },
                       ],
-                  }
-                  
+                  },
                 ],
             }
 
@@ -156,16 +154,8 @@ collections:
                     widget: "object",
                     fields:
                       [
-                        {
-                          label: "Frase",
-                          name: "frase",
-                          widget: "string",
-                        },
-                        {
-                          label: "Autor",
-                          name: "autor",
-                          widget: "string",
-                        },
+                        { label: "Frase", name: "frase", widget: "string" },
+                        { label: "Autor", name: "autor", widget: "string" },
                         {
                           label: "Background",
                           name: "background",
@@ -175,18 +165,22 @@ collections:
                           label: "Alinhamento do Texto",
                           name: "align",
                           widget: "select",
-                          options: 
-                            { label: "À esquerda", value: "left" },
-                            { label: "Centralizado", value: "center" },
-                            { label: "À direita", value: "right" }
+                          options:
+                            [
+                              { label: "À esquerda", value: "left" },
+                              { label: "Centralizado", value: "center" },
+                              { label: "À direita", value: "right" },
+                            ],
                         },
                         {
                           label: "Cor do Texto",
                           name: "color",
                           widget: "select",
-                          options: 
-                            { label: "Branco", value: "white" },
-                            { label: "Preto", value: "black" },
+                          options:
+                            [
+                              { label: "Branco", value: "white" },
+                              { label: "Preto", value: "black" },
+                            ],
                         },
                         {
                           label: "Botão 1 - Link",

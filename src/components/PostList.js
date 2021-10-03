@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { graphql, StaticQuery } from 'gatsby';
 import SectionTitle from './SectionTitle';
 import Button from './Button';
-import Img from 'gatsby-image'; // to take image data and render it
 
 class PostList extends React.Component {
   render() {
@@ -15,9 +14,9 @@ class PostList extends React.Component {
       <div className="blog-posts">
         <SectionTitle>Fique ligado</SectionTitle>
         {posts &&
-          posts.map(({ node: post }) => (
+          posts.map(({ node: post }, index) => (
             <>
-            <div className="post-wrapper" key={post.frontmatter.title}>
+            <div className="post-wrapper" key={post.frontmatter.title} key={index}>
               <div className="post-image-wrapper">
                 <img
                   alt="Imagem do Blog CEFA"
