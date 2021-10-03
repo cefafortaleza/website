@@ -27,22 +27,22 @@ collections:
               default: "horarios",
             }
           - {
-              label: "Horários",
+              label: "Horários da Semana",
               name: "horarios",
-              widget: "list",
+              widget: "object",
               create: true,
               fields:
                 [
                   {
-                    label: "Dia",
+                    label: "Horários do Dia",
                     name: "day",
-                    widget: "object",
+                    widget: "list",
                     fields:
                       [
                         {
                           label: "Dia da Semana",
                           name: "dayname",
-                          widget: "hidden",
+                          widget: "text",
                           default: "Domingo",
                         },
                         {
