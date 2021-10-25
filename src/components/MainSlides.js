@@ -73,32 +73,6 @@ const MainSlides = ({ slides }) => {
           </div>
         </div>
       ))}
-      
-      <div className={`main-slide-item item-4`}>
-        <div
-          className="slide-wrapper"
-          style={{
-            background: `#c3c3c3`,
-            textAlign: `left`,
-          }}
-        >
-          <div className={`slide-content left black`}>
-            <p className="autor">
-              Atenção inscritos no ESDE-1 do CEFA!! <br /> Segue o link para as
-              salas virtuais:
-            </p>
-            <div className="buttons-wrapper">
-              <Button href="https://meet.google.com/ije-ydfj-kvu">
-                Sábados, 17h30min
-              </Button>
-
-              <Button href="https://meet.google.com/mtf-cerb-yyh">
-                Segundas, 19h30min
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
     </Flicking>
   );
 };
