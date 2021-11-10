@@ -86,12 +86,12 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-source-instagram-all`,
-      options: {
-        access_token: process.env.GATSBY_INSTAGRAM,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-instagram-all`,
+    //   options: {
+    //     access_token: process.env.GATSBY_INSTAGRAM,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-facebook-sdk`,
       options: {

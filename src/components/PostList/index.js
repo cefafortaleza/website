@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, StaticQuery } from 'gatsby';
-import SectionTitle from './SectionTitle';
-import Button from './Button';
+import SectionTitle from '../SectionTitle';
+import Button from '../Button';
 
 class PostList extends React.Component {
   render() {

@@ -8,6 +8,7 @@ import SectionTitle from '../components/SectionTitle';
 import SectionHeader from '../components/SectionHeader';
 import MainSlides from '../components/MainSlides';
 import Container from '../components/Container';
+import Instagram from '../components/InstagramFeed';
 import axios from 'axios';
 
 export const IndexPageTemplate = ({ slides }) => {
@@ -30,12 +31,12 @@ export const IndexPageTemplate = ({ slides }) => {
   }, [getLatestPosts]);
   return (
     <>
-      <>
-        <MainSlides slides={slides} />
-      </>
+      <MainSlides slides={slides} />
+
       <section>
         <Container>
           <SectionTitle>Redes Sociais</SectionTitle>
+          <Instagram />
           <div className="social-media-posts-wrapper">
             <div className="post-wrapper">
               <div

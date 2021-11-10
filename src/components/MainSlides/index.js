@@ -1,6 +1,6 @@
 import React from 'react';
 import Flicking from '@egjs/react-flicking';
-import Button from './Button';
+import Button from '../Button';
 
 const MainSlides = ({ slides }) => {
 
