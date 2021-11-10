@@ -1,3 +1,6 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 module.exports = {
   siteMetadata: {
     title: 'Centro Espírita Francisco de Assis',
@@ -84,13 +87,17 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-instagram`,
+      resolve: `gatsby-source-instagram-all`,
       options: {
-        username: `cefafortaleza`,
-        access_token: "d68c38ee4185afba58b39e4e4b0f198d",
-        instagram_id: "3217119194989947",
-        paginate: 100,
-        maxPosts: 1000,
+        access_token: process.env.GATSBY_INSTAGRAM,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-facebook-sdk`,
+      options: {
+        appId: '266111298862845',
+        xfbml: true,
+        version: 'v12.0',
       },
     },
     // must be after other CSS plugins

@@ -49,6 +49,7 @@ const Footer = class extends React.Component {
           </span>
         </div>
       </footer>
+      
     );
   }
 };
