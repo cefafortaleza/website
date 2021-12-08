@@ -9,26 +9,27 @@ import SectionHeader from '../components/SectionHeader';
 import MainSlides from '../components/MainSlides';
 import Container from '../components/Container';
 import Instagram from '../components/InstagramFeed';
-import axios from 'axios';
+import Img from 'gatsby-image';
 
 export const IndexPageTemplate = ({ slides }) => {
   const [posts, setPosts] = useState([]);
 
   const getLatestPosts = async () => {
-    // 'https://www.instagram.com/explore/tags/cefasite/?__a=1'
-    const response = await axios.get(
-      'https://api.instagram.com/v1/tags/cefasite?access_token=IGQVJXeHhvSUQyQVROZAXVrQ21NdHpuMWpSaTVSUmV4QVZA1N1o4d3J2RU52RE9UcUozZAGw2dy1GRlZAmeEZAOVDBueS1Dc2h6cDRhbFhkdnI2X2NpVGlFd1lrSXU4c1drdjVqRnBWUW80dUR0elhtTm1tQwZDZD',
-      { mode: 'no-cors' }
-    );
-    const data = await response.json();
-    if (data) await setPosts(data);
+    const response = await fetch(
+      'https://cefa-scrapper.herokuapp.com/cefaposts'
+    )
+      .then((results) => results.json())
+      .catch((e) => console.log(e));
+    const data = response;
+    if (Array.isArray(data?.mediaItems) && data?.mediaItems?.length > 0)
+      await setPosts(data?.mediaItems);
 
     return console.log(data, posts);
   };
 
   useEffect(() => {
     getLatestPosts();
-  }, [getLatestPosts]);
+  }, []);
   return (
     <>
       <MainSlides slides={slides} />
@@ -38,7 +39,7 @@ export const IndexPageTemplate = ({ slides }) => {
           <SectionTitle>Redes Sociais</SectionTitle>
           <Instagram />
           <div className="social-media-posts-wrapper">
-            <div className="post-wrapper">
+            {/* <div className="post-wrapper">
               <div
                 className="post"
                 style={{
@@ -67,7 +68,7 @@ export const IndexPageTemplate = ({ slides }) => {
                   backgroundRepeat: 'no-repeat',
                 }}
               />
-            </div>
+            </div> 
             <div className="post-wrapper">
               <div
                 className="post"
@@ -77,7 +78,34 @@ export const IndexPageTemplate = ({ slides }) => {
                   backgroundRepeat: 'no-repeat',
                 }}
               />
-            </div>
+            </div> */}
+            {posts.length > 0 &&
+              posts.map((post, index) => (
+                <div className="post-wrapper" key={index}>
+                  <div
+                    className="post"
+                    style={{
+                      background: `url(${post.node.display_url})`,
+                      backgroundSize: 'contain',
+                      backgroundRepeat: 'no-repeat',
+                    }}
+                  />
+                  {/* <div
+                    className="post"
+                    style={{
+                      background: `url(${post.node.thumbnail_src})`,
+                      backgroundSize: 'contain',
+                      backgroundRepeat: 'no-repeat',
+                    }}
+                  />
+                  <img
+                    src={post.node.display_url}
+                    className="post"
+                    width="300"
+                    height="300"
+                  /> */}
+                </div>
+              ))}
           </div>
         </Container>
       </section>
