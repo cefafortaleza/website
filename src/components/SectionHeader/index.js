@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './Button';
+import Button from '../Button';
 
 const SectionHeader = (props) => {
   const { title, buttonText, buttonLink, id, black, background } = props;

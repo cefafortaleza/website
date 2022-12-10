@@ -4,20 +4,19 @@
 
 @import "./variables.sass"
 
-@import "../../components/container.sass"
-@import "../../components/button.sass"
-@import "../../components/postsList.sass"
-@import "../../components/post.sass"
-@import "../../components/mainSlides.sass"
-@import "../../components/sectionTitle.sass"
-@import "../../components/sectionHeader.sass"
-@import "../../components/pageHeader.sass"
-@import "../../components/navbar.sass"
-@import "../../components/palestra.sass"
-@import "../../components/palestraWrapper.sass"
-@import "../../components/palestraDetails.sass"
-@import "../../components/schedule.sass"
-@import "../../components/footer.sass"
+@import "../../components/Container/container.sass"
+@import "../../components/Button/button.sass"
+@import "../../components/PostList/postsList.sass"
+@import "../../components/Post/post.sass"
+@import "../../components/MainSlides/mainSlides.sass"
+@import "../../components/SectionTitle/sectionTitle.sass"
+@import "../../components/SectionHeader/sectionHeader.sass"
+@import "../../components/PageHeader/pageHeader.sass"
+@import "../../components/Navbar/navbar.sass"
+@import "../../components/Palestra/palestra.sass"
+@import "../../components/PalestraWrapper/palestraWrapper.sass"
+@import "../../components/PalestraDetails/palestraDetails.sass"
+@import "../../components/Footer/footer.sass"
 @import "./page-atividades"
 @import "./page-biblioteca"
 @import "./page-contato"
@@ -157,6 +156,18 @@ p
 
 // Page INDEX
 
+.main-slides-wrapper 
+  width: 100%
+  height: 100%
+
+  > div 
+    height: 100%
+    min-height: 400px
+
+  .eg-flick-viewport
+    height: 100% !important
+    min-height: 400px
+    
 .social-media-posts-wrapper
   display: flex
   flex-wrap: wrap
@@ -389,5 +400,3 @@ p
         border: thin solid $black
         .schedule-item
           font-size: 1rem !important
-
-  

@@ -52,13 +52,14 @@
         padding: 30px
 
         .day-wrapper
-          display: flex
+          display: grid
           flex-grow: 1
           width: 100%
+          grid-template-columns: 1fr 1fr 1fr
+          grid-template-rows: 1fr
 
           .turno-wrapper
             display: flex
-            flex-grow: 1
             flex-direction: column
             border: thin solid $black
             margin: 20px
@@ -101,7 +102,8 @@
         padding: 0 !important
 
         .day-wrapper
-          flex-direction: column
+          grid-template-columns: 1fr
+          grid-template-rows: auto
           margin: 10px auto !important
 
           .turno-wrapper

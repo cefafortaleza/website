@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionTitle from './SectionTitle';
+import SectionTitle from '../SectionTitle';
 
 const Palestra = (props) => {
   const { id, title, speaker, date, time, displayDetail } = props;

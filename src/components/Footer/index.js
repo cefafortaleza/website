@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Instagram from '../assets/img/icon-instagram.svg';
-import Facebook from '../assets/img/icon-facebook.svg';
-import Youtube from '../assets/img/icon-youtube.svg';
+import Instagram from '../../assets/img/icon-instagram.svg';
+import Facebook from '../../assets/img/icon-facebook.svg';
+import Youtube from '../../assets/img/icon-youtube.svg';
 
 const Footer = class extends React.Component {
   render() {
@@ -49,6 +49,7 @@ const Footer = class extends React.Component {
           </span>
         </div>
       </footer>
+      
     );
   }
 };

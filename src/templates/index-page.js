@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-
 import Layout from "../components/Layout";
 import PostList from "../components/PostList";
 import SectionTitle from "../components/SectionTitle";
@@ -9,13 +8,34 @@ import SectionHeader from "../components/SectionHeader";
 import MainSlides from "../components/MainSlides";
 import Container from "../components/Container";
 
+
 export const IndexPageTemplate = ({ slides }) => {
+  const [posts, setPosts] = useState([]);
+
+  const getLatestPosts = async () => {
+    const response = await fetch(
+      'https://cefa-scrapper.herokuapp.com/cefaposts'
+    )
+      .then((results) => results.json())
+      .catch((e) => console.log(e));
+    const data = response;
+    if (Array.isArray(data?.mediaItems) && data?.mediaItems?.length > 0)
+      await setPosts(data?.mediaItems);
+
+    return console.log(data, posts);
+  };
+
+  useEffect(() => {
+    getLatestPosts();
+  }, []);
   return (
     <>
       <MainSlides slides={slides} />
+
       <section>
         <Container>
           <SectionTitle>Redes Sociais</SectionTitle>
+          <Instagram />
           <div className="social-media-posts-wrapper">
             <div className="post-wrapper">
               <div
