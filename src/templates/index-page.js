@@ -1,14 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
 
-import Layout from '../components/Layout';
-import PostList from '../components/PostList';
-import SectionTitle from '../components/SectionTitle';
-import SectionHeader from '../components/SectionHeader';
-import MainSlides from '../components/MainSlides';
-import Container from '../components/Container';
-
+import Layout from "../components/Layout";
+import PostList from "../components/PostList";
+import SectionTitle from "../components/SectionTitle";
+import SectionHeader from "../components/SectionHeader";
+import MainSlides from "../components/MainSlides";
+import Container from "../components/Container";
 
 export const IndexPageTemplate = ({ slides }) => {
   return (
@@ -19,32 +18,44 @@ export const IndexPageTemplate = ({ slides }) => {
           <SectionTitle>Redes Sociais</SectionTitle>
           <div className="social-media-posts-wrapper">
             <div className="post-wrapper">
-              <div className="post" style={{
-              background: `url(../img/social-media-post-thumbnail-filler.png)`,
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              }} />
+              <div
+                className="post"
+                style={{
+                  background: `url(../img/social-media-1.jpeg)`,
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                }}
+              />
             </div>
             <div className="post-wrapper">
-              <div className="post" style={{
-              background: `url(../img/social-media-post-thumbnail-filler.png)`,
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              }} />
+              <div
+                className="post"
+                style={{
+                  background: `url(../img/social-media-2.jpeg)`,
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                }}
+              />
             </div>
             <div className="post-wrapper">
-              <div className="post" style={{
-              background: `url(../img/social-media-post-thumbnail-filler.png)`,
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              }} />
+              <div
+                className="post"
+                style={{
+                  background: `url(../img/social-media-3.jpeg)`,
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                }}
+              />
             </div>
             <div className="post-wrapper">
-              <div className="post" style={{
-              background: `url(../img/social-media-post-thumbnail-filler.png)`,
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              }} />
+              <div
+                className="post"
+                style={{
+                  background: `url(../img/social-media-4.jpeg)`,
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                }}
+              />
             </div>
           </div>
         </Container>
@@ -80,7 +91,7 @@ export const IndexPageTemplate = ({ slides }) => {
             perecíveis; materiais de higiene e limpeza; brinquedos; roupas;
             acessórios e utensílios em bom estado de conservação, que possam ser
             colocados em bazares ou para doação direta, além de roupas;
-            utensílios de enxovais e mobiliários para atender às gestantes.{' '}
+            utensílios de enxovais e mobiliários para atender às gestantes.{" "}
           </p>
 
           <p>
@@ -103,8 +114,7 @@ export const IndexPageTemplate = ({ slides }) => {
           </span>
         </Container>
       </section>
-      
-      
+
       <section>
         <SectionHeader
           title="Gostaria de alugar um livro?"
