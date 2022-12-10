@@ -8,13 +8,12 @@ import SectionHeader from "../components/SectionHeader";
 import MainSlides from "../components/MainSlides";
 import Container from "../components/Container";
 
-
 export const IndexPageTemplate = ({ slides }) => {
   const [posts, setPosts] = useState([]);
 
   const getLatestPosts = async () => {
     const response = await fetch(
-      'https://cefa-scrapper.herokuapp.com/cefaposts'
+      "https://cefa-scrapper.herokuapp.com/cefaposts"
     )
       .then((results) => results.json())
       .catch((e) => console.log(e));
@@ -131,6 +130,8 @@ export const IndexPageTemplate = ({ slides }) => {
             Conta: 4520-9
             <br />
             Variação: 51
+            <br />
+            Chave PIX: cefapixp@gmail.com
           </span>
         </Container>
       </section>
