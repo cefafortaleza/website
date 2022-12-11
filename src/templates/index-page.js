@@ -16,7 +16,6 @@ export const IndexPageTemplate = ({ slides }) => {
       <section>
         <Container>
           <SectionTitle>Redes Sociais</SectionTitle>
-          <Instagram />
           <div className="social-media-posts-wrapper">
             <div className="post-wrapper">
               <div
