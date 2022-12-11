@@ -1,7 +1,7 @@
 ---
 templateKey: "blog-post"
 path: post-3
-title: Geral Ordinária 2022
+title: Aniversário de 81 anos do CEFA
 date: 2022-06-10T14:34:21.723Z
 featuredpost: true
 featuredImage: ./img/aniversario-cefa.jpeg
