@@ -1,35 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-
-import Layout from '../components/Layout';
-import PostList from '../components/PostList';
-import SectionTitle from '../components/SectionTitle';
-import SectionHeader from '../components/SectionHeader';
-import MainSlides from '../components/MainSlides';
-import Container from '../components/Container';
-import Instagram from '../components/InstagramFeed';
-import Img from 'gatsby-image';
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import PostList from "../components/PostList";
+import SectionTitle from "../components/SectionTitle";
+import SectionHeader from "../components/SectionHeader";
+import MainSlides from "../components/MainSlides";
+import Container from "../components/Container";
 
 export const IndexPageTemplate = ({ slides }) => {
-  const [posts, setPosts] = useState([]);
-
-  const getLatestPosts = async () => {
-    const response = await fetch(
-      'https://cefa-scrapper.herokuapp.com/cefaposts'
-    )
-      .then((results) => results.json())
-      .catch((e) => console.log(e));
-    const data = response;
-    if (Array.isArray(data?.mediaItems) && data?.mediaItems?.length > 0)
-      await setPosts(data?.mediaItems);
-
-    return console.log(data, posts);
-  };
-
-  useEffect(() => {
-    getLatestPosts();
-  }, []);
   return (
     <>
       <MainSlides slides={slides} />
@@ -37,15 +16,14 @@ export const IndexPageTemplate = ({ slides }) => {
       <section>
         <Container>
           <SectionTitle>Redes Sociais</SectionTitle>
-          <Instagram />
           <div className="social-media-posts-wrapper">
-            {/* <div className="post-wrapper">
+            <div className="post-wrapper">
               <div
                 className="post"
                 style={{
-                  background: `url(../img/social-media-post-thumbnail-filler.png)`,
-                  backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat',
+                  background: `url(../img/social-media-1.jpeg)`,
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
                 }}
               />
             </div>
@@ -53,9 +31,9 @@ export const IndexPageTemplate = ({ slides }) => {
               <div
                 className="post"
                 style={{
-                  background: `url(../img/social-media-post-thumbnail-filler.png)`,
-                  backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat',
+                  background: `url(../img/social-media-2.jpeg)`,
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
                 }}
               />
             </div>
@@ -63,49 +41,22 @@ export const IndexPageTemplate = ({ slides }) => {
               <div
                 className="post"
                 style={{
-                  background: `url(../img/social-media-post-thumbnail-filler.png)`,
-                  backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat',
+                  background: `url(../img/social-media-3.jpeg)`,
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
                 }}
               />
-            </div> 
+            </div>
             <div className="post-wrapper">
               <div
                 className="post"
                 style={{
-                  background: `url(../img/social-media-post-thumbnail-filler.png)`,
-                  backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat',
+                  background: `url(../img/social-media-4.jpeg)`,
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
                 }}
               />
-            </div> */}
-            {posts.length > 0 &&
-              posts.map((post, index) => (
-                <div className="post-wrapper" key={index}>
-                  <div
-                    className="post"
-                    style={{
-                      background: `url(${post.node.display_url})`,
-                      backgroundSize: 'contain',
-                      backgroundRepeat: 'no-repeat',
-                    }}
-                  />
-                  {/* <div
-                    className="post"
-                    style={{
-                      background: `url(${post.node.thumbnail_src})`,
-                      backgroundSize: 'contain',
-                      backgroundRepeat: 'no-repeat',
-                    }}
-                  />
-                  <img
-                    src={post.node.display_url}
-                    className="post"
-                    width="300"
-                    height="300"
-                  /> */}
-                </div>
-              ))}
+            </div>
           </div>
         </Container>
       </section>
@@ -140,7 +91,7 @@ export const IndexPageTemplate = ({ slides }) => {
             perecíveis; materiais de higiene e limpeza; brinquedos; roupas;
             acessórios e utensílios em bom estado de conservação, que possam ser
             colocados em bazares ou para doação direta, além de roupas;
-            utensílios de enxovais e mobiliários para atender às gestantes.{' '}
+            utensílios de enxovais e mobiliários para atender às gestantes.{" "}
           </p>
 
           <p>
@@ -160,6 +111,8 @@ export const IndexPageTemplate = ({ slides }) => {
             Conta: 4520-9
             <br />
             Variação: 51
+            <br />
+            Chave PIX: cefapixp@gmail.com
           </span>
         </Container>
       </section>
