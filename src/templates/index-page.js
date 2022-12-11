@@ -9,7 +9,6 @@ import MainSlides from "../components/MainSlides";
 import Container from "../components/Container";
 
 export const IndexPageTemplate = ({ slides }) => {
-  const [posts, setPosts] = useState([]);
   return (
     <>
       <MainSlides slides={slides} />
