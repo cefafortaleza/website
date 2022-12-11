@@ -1,10 +1,10 @@
 ---
 templateKey: "blog-post"
-path: post-1
-title: Assembléia Geral Ordinária 2020
-date: 2020-10-11T14:34:21.723Z
-featuredpost: false
-featuredImage: ./img/cefa-blog-assembleia-geral-2020.jpg
+path: post-3
+title: Assembléia Geral Ordinária 2022
+date: 2022-06-10T14:34:21.723Z
+featuredpost: true
+featuredImage: ./img/convocacao-assembleia-2022.jpeg
 description: >-
   A Diretoria do CEFA convoca os sócios efetivos, aptos a votar, a participarem da Assembleia Geral Ordinária, que acontecera na data e formato  descrito na imagem.
 ---
