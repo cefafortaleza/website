@@ -10,23 +10,6 @@ import Container from "../components/Container";
 
 export const IndexPageTemplate = ({ slides }) => {
   const [posts, setPosts] = useState([]);
-
-  const getLatestPosts = async () => {
-    const response = await fetch(
-      "https://cefa-scrapper.herokuapp.com/cefaposts"
-    )
-      .then((results) => results.json())
-      .catch((e) => console.log(e));
-    const data = response;
-    if (Array.isArray(data?.mediaItems) && data?.mediaItems?.length > 0)
-      await setPosts(data?.mediaItems);
-
-    return console.log(data, posts);
-  };
-
-  useEffect(() => {
-    getLatestPosts();
-  }, []);
   return (
     <>
       <MainSlides slides={slides} />
