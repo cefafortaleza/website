@@ -22,18 +22,18 @@ export default function Home() {
               ],
             },
           ].map(({ url, label, subItems }) => {
+            if (Array.isArray(subItems)) {
+              return <p key={label}>{label}</p>;
+            }
+
             if (url) {
               return (
-                <Link href={url} passHref>
+                <Link href={url} passHref key={url}>
                   <span className="font-light text-xl transition hover:text-primary">
                     {label}
                   </span>
                 </Link>
               );
-            }
-
-            if (Array.isArray(subItems)) {
-              <p>{label}</p>;
             }
           })}
         </div>
@@ -116,9 +116,11 @@ export default function Home() {
         </div>
       </div>
       {/* banner - musical group */}
-      <div className="w-full min-h-32 bg-blue-200">
-        <div className="container justify-center flex items-center mx-auto flex-col gap-6 py-36">
-          <h2 className="text-3xl font-bold">Conheça o grupo musical francisco de assis</h2>
+      <div className="w-full min-h-32 bg-blue-200 mb-4">
+        <div className="container justify-center flex items-center mx-auto flex-col gap-6 py-28">
+          <h2 className="text-3xl font-bold">
+            Conheça o grupo musical francisco de assis
+          </h2>
           <Link href="#">
             <span className="rounded-sm bg-black font-bold text-white py-3 px-8">
               Clique Aqui
@@ -127,9 +129,103 @@ export default function Home() {
         </div>
       </div>
       {/* more from cefa */}
+      <div className="container mx-auto flex flex-col gap-4 mb-4">
+        {/* Section Title */}
+        <div className="flex flex-col gap-2 max-w-fit">
+          <h2 className="font-black text-3xl">Mais do CEFA</h2>
+          <span className="w-12 h-2 block bg-black" />
+        </div>
+        <div className="flex flex-col gap-2 max-w-fit">
+          <h2 className="font-black text-xl">Doações Voluntárias</h2>
+          <span className="w-8 h-1 block bg-black" />
+        </div>
+        <div className="flex flex-col gap-2 w-full">
+          <p className="font-thin text-lg">
+            O CEFA trabalha diversas atividades na Ação Social, voltadas ao
+            atendimento de pessoas em condição de vulnerabilidade. São
+            desenvolvidos quatro programas sociais: Coração Fraterno, Arte
+            Feliz, Renascer e Mão Amiga. Para que essas atividades possam
+            acontecer, a sua contribuição é muito importante.
+          </p>
+          <p className="font-thin text-lg">
+            Preferencialmente, são bem-vindas doações de alimentos não
+            perecíveis; materiais de higiene e limpeza; brinquedos; roupas;
+            acessórios e utensílios em bom estado de conservação, que possam ser
+            colocados em bazares ou para doação direta, além de roupas;
+            utensílios de enxovais e mobiliários para atender às gestantes.
+          </p>
+          <p className="font-thin text-lg">
+            Na impossibilidade desse tipo de contribuição, também é possível a
+            realização de doações financeiras, por meio de depósito na seguinte
+            Conta Poupança:
+          </p>
+          <p className="font-bold text-xl">
+            Centro Espírita Francisco de Assis
+          </p>
+          <div className="flex flex-col gap-1">
+            <p className="font-thin text-lg">CNPJ: 07.130.297/0001-59</p>
+            <p className="font-thin text-lg">Banco do Brasil (001)</p>
+            <p className="font-thin text-lg">Agência: 8076-4</p>
+            <p className="font-thin text-lg">Conta: 4520-9</p>
+            <p className="font-thin text-lg">Variação: 51</p>
+          </div>
+        </div>
+      </div>
       {/* banner - would you like to rent a book */}
+      <div className="w-full min-h-32 bg-blue-200 mb-4">
+        <div className="container justify-center flex items-center mx-auto flex-col gap-6 py-28">
+          <h2 className="text-3xl font-bold">Gostaria de alugar um livro?</h2>
+          <Link href="/biblioteca">
+            <span className="rounded-sm bg-black font-bold text-white py-3 px-8">
+              Conheça nossa biblioteca
+            </span>
+          </Link>
+        </div>
+      </div>
       {/* bookstore */}
+      <div className="container mx-auto flex flex-col gap-4 mb-4">
+        {/* Section Title */}
+
+        <div className="flex flex-col gap-2 max-w-fit">
+          <h2 className="font-black text-xl">Livraria</h2>
+          <span className="w-8 h-1 block bg-black" />
+        </div>
+        <div className="flex flex-col gap-2 w-full">
+          <p className="font-thin text-lg">
+            A Livraria Bezerra de Menezes, do Centro Espirita Francisco de Assis
+            (CEFA), tem como principal objetivo a divulgação da Doutrina
+            Espírita.
+          </p>
+          <p className="font-thin text-lg">
+            Na Livraria do CEFA podem ser encontrados à venda diversos títulos
+            da Literatura Espírita, voltados desde o público infantojuvenil até
+            o público adulto.
+          </p>
+          <p className="font-thin text-lg">
+            As vendas podem ser feitas tanto em dinheiro como no cartão (débito
+            ou crédito), com parcelamento a partir de R$ 100,00. A livraria
+            funciona diariamente, nos seguintes horários:
+          </p>
+          <Link href="/horarios">
+            <span className="text-primary text-lg transition hover:underline">
+              Clique aqui para ver os horários de funcionamento
+            </span>
+          </Link>
+        </div>
+      </div>
       {/* footer */}
+      <div className="bg-purple-400 w-full py-24 flex flex-col gap-2 justify-center items-center">
+        <span>Siga-nos nas redes sociais</span>
+        <div>
+          <h1>social icons</h1>
+        </div>
+        <div className="flex flex-col gap-2">
+          <p>
+            Centro Espírita Francisco de Assis © Todos os direitos reservados
+          </p>
+          <p>Rua Senador Catunda, 117 - Benfica - Fortaleza, CE 60015-320</p>
+        </div>
+      </div>
     </div>
   );
 }
