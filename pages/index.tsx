@@ -23,7 +23,14 @@ export default function Home() {
             },
           ].map(({ url, label, subItems }) => {
             if (Array.isArray(subItems)) {
-              return <p key={label}>{label}</p>;
+              return (
+                <p
+                  className="font-light text-xl transition hover:text-primary"
+                  key={label}
+                >
+                  {label}
+                </p>
+              );
             }
 
             if (url) {
