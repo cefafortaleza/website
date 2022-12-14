@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        bannerBiblioteca: "url(/section-background-biblioteca.png)",
+        bannerGrupoMusical: "url(/section-background-grupo-musical.png)",
+      },
       colors: {
         primary: { DEFAULT: "#04b468" },
       },

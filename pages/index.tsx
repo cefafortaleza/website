@@ -1,50 +1,10 @@
 import Link from "next/link";
 
+import Layout from "../components/Layout";
+
 export default function Home() {
   return (
-    <div className="border-4 border-red-900">
-      {/* navbar */}
-      <div className="container mx-auto flex justify-between py-8">
-        {/* Logo */}
-        <div></div>
-        {/* Navbar */}
-        <div className="flex gap-4">
-          {[
-            { label: "Sobre o Cefa", url: "/sobre" },
-            { label: "Atividades", url: "/sobre" },
-            { label: "Palestras", url: "/sobre" },
-            { label: "Contato", url: "/contato" },
-            {
-              label: "Mais",
-              subItems: [
-                { label: "Horários", url: "/horarios" },
-                { label: "Biblioteca", url: "/biblioteca" },
-              ],
-            },
-          ].map(({ url, label, subItems }) => {
-            if (Array.isArray(subItems)) {
-              return (
-                <p
-                  className="font-light text-xl transition hover:text-primary"
-                  key={label}
-                >
-                  {label}
-                </p>
-              );
-            }
-
-            if (url) {
-              return (
-                <Link href={url} passHref key={url}>
-                  <span className="font-light text-xl transition hover:text-primary">
-                    {label}
-                  </span>
-                </Link>
-              );
-            }
-          })}
-        </div>
-      </div>
+    <Layout>
       {/* slider */}
 
       {/* instagram */}
@@ -123,7 +83,7 @@ export default function Home() {
         </div>
       </div>
       {/* banner - musical group */}
-      <div className="w-full min-h-32 bg-blue-200 mb-4">
+      <div className="w-full min-h-32 bg-bannerGrupoMusical bg-cover mb-4">
         <div className="container justify-center flex items-center mx-auto flex-col gap-6 py-28">
           <h2 className="text-3xl font-bold">
             Conheça o grupo musical francisco de assis
@@ -179,7 +139,7 @@ export default function Home() {
         </div>
       </div>
       {/* banner - would you like to rent a book */}
-      <div className="w-full min-h-32 bg-blue-200 mb-4">
+      <div className="w-full min-h-32 bg-bannerBiblioteca bg-cover mb-4">
         <div className="container justify-center flex items-center mx-auto flex-col gap-6 py-28">
           <h2 className="text-3xl font-bold">Gostaria de alugar um livro?</h2>
           <Link href="/biblioteca">
@@ -220,19 +180,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      {/* footer */}
-      <div className="bg-purple-400 w-full py-24 flex flex-col gap-2 justify-center items-center">
-        <span>Siga-nos nas redes sociais</span>
-        <div>
-          <h1>social icons</h1>
-        </div>
-        <div className="flex flex-col gap-2">
-          <p>
-            Centro Espírita Francisco de Assis © Todos os direitos reservados
-          </p>
-          <p>Rua Senador Catunda, 117 - Benfica - Fortaleza, CE 60015-320</p>
-        </div>
-      </div>
-    </div>
+    </Layout>
   );
 }
