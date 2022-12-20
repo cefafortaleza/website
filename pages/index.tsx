@@ -3,25 +3,45 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 
 export default function Home() {
+  const instagramList = [
+    {
+      url: "https://www.instagram.com/p/CgC43S8OuCn/",
+      image: "/instagram-01.jpeg",
+    },
+    {
+      url: "https://www.instagram.com/p/CkdaqITr_Ng/",
+      image: "/instagram-02.jpeg",
+    },
+    {
+      url: "https://www.instagram.com/p/CSIHD3mrUX9/",
+      image: "/instagram-03.jpeg",
+    },
+    {
+      url: "https://www.instagram.com/p/CYE_P6xr3xi/",
+      image: "/instagram-04.jpeg",
+    },
+  ];
+
   return (
     <Layout>
-      {/* slider */}
+      {/* 1 - slider */}
 
-      {/* instagram */}
+      {/* 2 - instagram */}
       <div className="container mx-auto flex flex-col gap-4 mb-8">
         {/* Section Title */}
         <div className="flex flex-col gap-2 max-w-fit">
           <h2 className="font-black text-lg">Redes Sociais</h2>
           <span className="w-8 h-1 block bg-black" />
         </div>
-        <div className="grid gap-4 grid-cols-2 max-w-xl border border-blue-400">
-          <div className="w-64 h-64 block border border-red-400" />
-          <div className="w-64 h-64 block border border-red-400" />
-          <div className="w-64 h-64 block border border-red-400" />
-          <div className="w-64 h-64 block border border-red-400" />
+        <div className="grid gap-4 grid-cols-2 max-w-xl ">
+          {instagramList.map(({ url, image }) => (
+            <a href={url} target="_top" rel="noopener" key={url}>
+              <img src={image} className="w-64 h-64 block " />
+            </a>
+          ))}
         </div>
       </div>
-      {/* latest posts */}
+      {/* 3 - latest posts */}
       <div className="container mx-auto flex flex-col gap-4">
         {/* Section Title */}
         <div className="flex flex-col gap-2 max-w-fit">
@@ -82,7 +102,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* banner - musical group */}
+      {/* 4 - banner - musical group */}
       <div className="w-full min-h-32 bg-bannerGrupoMusical bg-cover mb-4">
         <div className="container justify-center flex items-center mx-auto flex-col gap-6 py-28">
           <h2 className="text-3xl font-bold">
@@ -95,7 +115,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      {/* more from cefa */}
+      {/* 5 - more from cefa */}
       <div className="container mx-auto flex flex-col gap-4 mb-4">
         {/* Section Title */}
         <div className="flex flex-col gap-2 max-w-fit">
@@ -138,7 +158,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* banner - would you like to rent a book */}
+      {/* 6 - banner - would you like to rent a book */}
       <div className="w-full min-h-32 bg-bannerBiblioteca bg-cover mb-4">
         <div className="container justify-center flex items-center mx-auto flex-col gap-6 py-28">
           <h2 className="text-3xl font-bold">Gostaria de alugar um livro?</h2>
@@ -149,7 +169,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      {/* bookstore */}
+      {/* 7 - bookstore */}
       <div className="container mx-auto flex flex-col gap-4 mb-4">
         {/* Section Title */}
 
