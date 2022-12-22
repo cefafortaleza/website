@@ -3,6 +3,8 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 
+import Navbar from "../Navbar";
+
 import type { FC, PropsWithChildren } from "react";
 
 const Layout: FC<PropsWithChildren> = ({ children }: PropsWithChildren) => {
@@ -13,156 +15,8 @@ const Layout: FC<PropsWithChildren> = ({ children }: PropsWithChildren) => {
 
   return (
     <>
-      <Head>
-        <link
-          type="image/png"
-          rel="apple-touch-icon"
-          sizes="57x57"
-          href="/apple-icon-57x57.png"
-        />
-        <link
-          type="image/png"
-          rel="apple-touch-icon"
-          sizes="60x60"
-          href="/apple-icon-60x60.png"
-        />
-        <link
-          type="image/png"
-          rel="apple-touch-icon"
-          sizes="72x72"
-          href="/apple-icon-72x72.png"
-        />
-        <link
-          type="image/png"
-          rel="apple-touch-icon"
-          sizes="76x76"
-          href="/apple-icon-76x76.png"
-        />
-        <link
-          type="image/png"
-          rel="apple-touch-icon"
-          sizes="114x114"
-          href="/apple-icon-114x114.png"
-        />
-        <link
-          type="image/png"
-          rel="apple-touch-icon"
-          sizes="120x120"
-          href="/apple-icon-120x120.png"
-        />
-        <link
-          type="image/png"
-          rel="apple-touch-icon"
-          sizes="144x144"
-          href="/apple-icon-144x144.png"
-        />
-        <link
-          type="image/png"
-          rel="apple-touch-icon"
-          sizes="152x152"
-          href="/apple-icon-152x152.png"
-        />
-        <link
-          type="image/png"
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-icon-180x180.png"
-        />
-        <link
-          type="image/png"
-          rel="icon"
-          sizes="192x192"
-          href="/android-icon-192x192.png"
-        />
-        <link
-          type="image/png"
-          rel="icon"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          type="image/png"
-          rel="icon"
-          sizes="96x96"
-          href="/favicon-96x96.png"
-        />
-        <link
-          type="image/png"
-          rel="icon"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-        <meta name="theme-color" content="#ffffff" />
-      </Head>
       <div>
-        {/* Navbar */}
-        <div className="container mx-auto flex justify-between py-8">
-          {/* Logo */}
-          <div>
-            <Link href="/" passHref>
-              <Image
-                src="/logocefa2.png"
-                alt="CEFA Logo"
-                width={80}
-                height={80}
-              />
-            </Link>
-          </div>
-          {/* Navbar */}
-          <div className="flex gap-4 items-center">
-            {[
-              { label: "Sobre o Cefa", url: "/sobre" },
-              { label: "Atividades", url: "/sobre" },
-              { label: "Palestras", url: "/sobre" },
-              { label: "Contato", url: "/contato" },
-              {
-                label: "Mais",
-                subItems: [
-                  { label: "Horários", url: "/horarios" },
-                  { label: "Biblioteca", url: "/biblioteca" },
-                ],
-              },
-            ].map(({ url, label, subItems }) => {
-              if (Array.isArray(subItems)) {
-                return (
-                  <p
-                    className="font-light text-xl transition flex gap-2 hover:text-primary cursor-pointer"
-                    key={label}
-                  >
-                    {label}
-                    <span className="pt-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        className="bi bi-chevron-down"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-                        />
-                      </svg>
-                    </span>
-                  </p>
-                );
-              }
-
-              if (url) {
-                return (
-                  <Link href={url} passHref key={url}>
-                    <span className="font-light text-xl transition hover:text-primary cursor-pointer">
-                      {label}
-                    </span>
-                  </Link>
-                );
-              }
-            })}
-          </div>
-        </div>
+        <Navbar />
         {children}
         {/* Footer */}
         {/* footer */}
