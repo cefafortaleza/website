@@ -15,7 +15,7 @@ const Layout: FC<PropsWithChildren> = ({ children }: PropsWithChildren) => {
 
   return (
     <>
-      <div>
+      <div className="flex flex-col gap-4">
         <Navbar />
         {children}
         {/* Footer */}

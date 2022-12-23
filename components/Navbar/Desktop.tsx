@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 import Logo from './Logo'
 
@@ -9,7 +8,7 @@ const Desktop = () => {
       {/* Logo */}
       <Logo />
       {/* Navbar */}
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-4 items-center relative">
         {[
           { label: "Sobre o Cefa", url: "/sobre" },
           { label: "Atividades", url: "/sobre" },
@@ -52,13 +51,17 @@ const Desktop = () => {
           if (url) {
             return (
               <Link href={url} passHref key={url}>
-                <span className="font-light text-xl transition hover:text-primary cursor-pointer">
+                <span className="font-light text-xl transition hover:text-primary cursor-pointer whitespace-nowrap">
                   {label}
                 </span>
               </Link>
             );
           }
         })}
+
+        <div className="absolute right-0 top-0 w-12 h-4 bg-primary">
+
+        </div>
       </div>
     </div>
   );

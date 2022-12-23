@@ -30,7 +30,7 @@ export default function Home() {
       <div className="container mx-auto flex flex-col gap-4 mb-8">
         {/* Section Title */}
         <div className="flex flex-col gap-2 max-w-fit">
-          <h2 className="font-black text-lg">Redes Sociais</h2>
+          <h2 className="font-[600] text-lg">Redes Sociais</h2>
           <span className="w-8 h-1 block bg-black" />
         </div>
         <div className="grid gap-4 grid-cols-2 max-w-xl ">
@@ -45,7 +45,7 @@ export default function Home() {
       <div className="container mx-auto flex flex-col gap-4">
         {/* Section Title */}
         <div className="flex flex-col gap-2 max-w-fit">
-          <h2 className="font-black text-lg">Fique ligado</h2>
+          <h2 className="font-[600] text-lg">Fique ligado</h2>
           <span className="w-8 h-1 block bg-black" />
         </div>
         {/* Posts Wrapper */}
@@ -119,11 +119,11 @@ export default function Home() {
       <div className="container mx-auto flex flex-col gap-4 mb-4">
         {/* Section Title */}
         <div className="flex flex-col gap-2 max-w-fit">
-          <h2 className="font-black text-3xl">Mais do CEFA</h2>
+          <h2 className="font-[600] text-3xl">Mais do CEFA</h2>
           <span className="w-12 h-2 block bg-black" />
         </div>
         <div className="flex flex-col gap-2 max-w-fit">
-          <h2 className="font-black text-xl">Doações Voluntárias</h2>
+          <h2 className="font-[600] text-xl">Doações Voluntárias</h2>
           <span className="w-8 h-1 block bg-black" />
         </div>
         <div className="flex flex-col gap-2 w-full">
@@ -174,7 +174,7 @@ export default function Home() {
         {/* Section Title */}
 
         <div className="flex flex-col gap-2 max-w-fit">
-          <h2 className="font-black text-xl">Livraria</h2>
+          <h2 className="font-[600] text-xl">Livraria</h2>
           <span className="w-8 h-1 block bg-black" />
         </div>
         <div className="flex flex-col gap-2 w-full">
