@@ -1,8 +1,29 @@
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import classnames from "classnames";
 
-import Logo from './Logo'
+import Logo from "./Logo";
 
 const Desktop = () => {
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+
+  const toggleSubMenu = () => setIsSubMenuOpen(!isSubMenuOpen);
+
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: { target: any; }) {
+      if (modalRef.current && !modalRef?.current?.contains(event.target) && isSubMenuOpen) {
+        toggleSubMenu();
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      // Unbind the event listener on clean up
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="container mx-auto flex justify-between py-8">
       {/* Logo */}
@@ -24,18 +45,19 @@ const Desktop = () => {
         ].map(({ url, label, subItems }) => {
           if (Array.isArray(subItems)) {
             return (
-              <p
-                className="font-light text-xl transition flex gap-2 hover:text-primary cursor-pointer"
+              <button
+                className="font-light text-xl transition flex gap-2 hover:text-primary cursor-pointer group"
+                onClick={toggleSubMenu}
                 key={label}
               >
                 {label}
-                <span className="pt-2">
+                <span className="pt-2 group-hover:color-primary">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    className="bi bi-chevron-down"
+                    className="bi bi-chevron-down group-hover:fill-primary"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -44,7 +66,7 @@ const Desktop = () => {
                     />
                   </svg>
                 </span>
-              </p>
+              </button>
             );
           }
 
@@ -59,8 +81,25 @@ const Desktop = () => {
           }
         })}
 
-        <div className="absolute right-0 top-0 w-12 h-4 bg-primary">
-
+        <div
+          className={classnames("absolute right-0 top-16", {
+            hidden: !isSubMenuOpen,
+            block: isSubMenuOpen,
+          })}
+          ref={modalRef}
+        >
+          <div className="flex flex-col gap-4 p-4 border rounded-lg bg-white">
+            <Link href={"/horarios"} passHref>
+              <span className="font-light text-xl transition hover:text-primary cursor-pointer whitespace-nowrap">
+                Horários
+              </span>
+            </Link>
+            <Link href={"/biblioteca"} passHref>
+              <span className="font-light text-xl transition hover:text-primary cursor-pointer whitespace-nowrap">
+                Biblioteca
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
