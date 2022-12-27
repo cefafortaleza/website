@@ -11,7 +11,7 @@ module.exports = {
         bannerGrupoMusical: "url(/section-background-grupo-musical.png)",
       },
       colors: {
-        primary: { DEFAULT: "#04b468" },
+        primary: { DEFAULT: "#04b468", 800: "#04b46880" },
       },
     },
   },

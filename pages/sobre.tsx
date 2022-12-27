@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import Layout from "../components/Layout";
+import Tab from "../components/Tab";
 
 export default function Home() {
   return (
@@ -98,13 +99,18 @@ export default function Home() {
         </div>
 
         {/* Board */}
-        <div className="flex flex-col gap-4" id="diretoria-conselho-coordenadorias">
+        <div
+          className="flex flex-col gap-4"
+          id="diretoria-conselho-coordenadorias"
+        >
           <div className="flex flex-col gap-2 max-w-fit">
             <h2 className="font-[600] text-lg">
               Diretoria, Conselho Consultivo Fiscal e Coordenadorias
             </h2>
             <span className="w-8 h-1 block bg-black" />
           </div>
+
+          <Tab />
         </div>
 
         {/* Estatuto */}
@@ -126,9 +132,7 @@ export default function Home() {
         {/* Localização */}
         <div className="flex flex-col gap-4" id="localizacao">
           <div className="flex flex-col gap-2 max-w-fit">
-            <h2 className="font-[600] text-lg">
-              Localização
-            </h2>
+            <h2 className="font-[600] text-lg">Localização</h2>
             <span className="w-8 h-1 block bg-black" />
           </div>
         </div>
