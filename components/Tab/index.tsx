@@ -34,10 +34,72 @@ const diretoria = [
   },
 ];
 
+const conselho = [
+  {
+    label: "Presidente",
+    name: "Hemerson Frederico Costa Lima Soares",
+    email: "president@email.com",
+  },
+  {
+    label: "Vice-presidente",
+    name: "Hemerson Frederico Costa Lima Soares",
+    email: "president@email.com",
+  },
+  {
+    label: "Secretário",
+    name: "Paulo Henrique Borges do Vale",
+    email: "president@email.com",
+  },
+  {
+    label: "Suplente",
+    name: "Leonila Silva Gurgel Nogueira",
+    email: "president@email.com",
+  },
+];
+
+const coordenadores = [
+  {
+    label: "Mediunidade",
+    name: "(vago)",
+    email: "",
+  },
+  {
+    label: "Doutrina",
+    name: "Maria do Socorro Azevedo Teixeira",
+    email: "president@email.com",
+  },
+  {
+    label: "Ação Social",
+    name: "(vago)",
+    email: "",
+  },
+  {
+    label: "Evangelização Infantojuvenil",
+    name: "Márcia Catunda",
+    email: "president@email.com",
+  },
+  {
+    label: "Comunicação e Eventos",
+    name: "Mariângela do Amaral Saboya",
+    email: "president@email.com",
+  },
+];
+
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("diretoria");
 
-  const changeTab = (newTab) => setActiveTab(newTab);
+  const changeTab = (newTab: string) => setActiveTab(newTab);
+
+  const generateListFromRoles = (roles) =>
+    roles.map((role) => (
+      <div className="flex justify-between gap-4" key={role.label}>
+        <div className="flex gap-4">
+          <p className="font-[600] text-lg">{role.label}:</p>
+          <p className="font-[200]">{role.name}</p>
+        </div>
+        <span className="font-[200]">{role.email}</span>
+      </div>
+    ));
 
   return (
     <div className="flex flex-col gap-8">
@@ -86,20 +148,20 @@ const Tabs = () => {
 
       {/* Tab Content */}
       {activeTab === "diretoria" && (
-        <div className="border w-full max-w-[70%] p-8">
-          {diretoria.map((role) => (
-            <div className="flex justify-between gap-4" key={role.label}>
-              <div className="flex gap-4">
-                <p className="min-w-">{role.label}:</p>
-                <p>{role.name}</p>
-              </div>
-              <span>{role.email}</span>
-            </div>
-          ))}
+        <div className="border w-full max-w-[100%] lg:max-w-[70%] p-8">
+          {generateListFromRoles(diretoria)}
         </div>
       )}
-      {activeTab === "conselho" && <div>Diretoria</div>}
-      {activeTab === "coordenadores" && <div>Diretoria</div>}
+      {activeTab === "conselho" && (
+        <div className="border w-full max-w-[100%] lg:max-w-[70%] p-8">
+          {generateListFromRoles(conselho)}
+        </div>
+      )}
+      {activeTab === "coordenadores" && (
+        <div className="border w-full max-w-[100%] lg:max-w-[70%] p-8">
+          {generateListFromRoles(coordenadores)}
+        </div>
+      )}
     </div>
   );
 };
