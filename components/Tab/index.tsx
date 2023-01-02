@@ -85,13 +85,20 @@ const coordenadores = [
   },
 ];
 
+type Role = {
+  label?: string;
+  name?: string;
+  email?: string;
+};
+
+
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("diretoria");
 
   const changeTab = (newTab: string) => setActiveTab(newTab);
 
-  const generateListFromRoles = (roles) =>
-    roles.map((role) => (
+  const generateListFromRoles = (roles: Role[]) =>
+    roles.map((role: Role) => (
       <div className="flex justify-between gap-4" key={role.label}>
         <div className="flex gap-4">
           <p className="font-[600] text-lg">{role.label}:</p>
@@ -148,17 +155,17 @@ const Tabs = () => {
 
       {/* Tab Content */}
       {activeTab === "diretoria" && (
-        <div className="border w-full max-w-[100%] lg:max-w-[70%] p-8">
+        <div className="border w-full max-w-[100%] lg:max-w-[70%] p-8 flex flex-col gap-4">
           {generateListFromRoles(diretoria)}
         </div>
       )}
       {activeTab === "conselho" && (
-        <div className="border w-full max-w-[100%] lg:max-w-[70%] p-8">
+        <div className="border w-full max-w-[100%] lg:max-w-[70%] p-8 flex flex-col gap-4">
           {generateListFromRoles(conselho)}
         </div>
       )}
       {activeTab === "coordenadores" && (
-        <div className="border w-full max-w-[100%] lg:max-w-[70%] p-8">
+        <div className="border w-full max-w-[100%] lg:max-w-[70%] p-8 flex flex-col gap-4">
           {generateListFromRoles(coordenadores)}
         </div>
       )}
