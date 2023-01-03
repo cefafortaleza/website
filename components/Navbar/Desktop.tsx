@@ -25,15 +25,15 @@ const Desktop = () => {
   }, []);
 
   return (
-    <div className="container mx-auto flex justify-between py-8">
+    <div className="container mx-auto flex justify-between py-4">
       {/* Logo */}
       <Logo />
       {/* Navbar */}
       <div className="flex gap-4 items-center relative">
         {[
           { label: "Sobre o Cefa", url: "/sobre" },
-          { label: "Atividades", url: "/sobre" },
-          { label: "Palestras", url: "/sobre" },
+          { label: "Atividades", url: "/atividades" },
+          { label: "Palestras", url: "/palestras" },
           { label: "Contato", url: "/contato" },
           {
             label: "Mais",
