@@ -10,7 +10,7 @@ type CustomComponentProps = {
   className?: string;
 };
 
-function CustomComponent({ children, as, className }: CustomComponentProps) {
+function CustomComponent({ children, as = 'p', className }: CustomComponentProps) {
   // Determine which HTML element to render based on the `as` prop
   switch (as) {
     case "h1":
@@ -23,7 +23,7 @@ function CustomComponent({ children, as, className }: CustomComponentProps) {
       return <h4 className={className}>{children}</h4>;
 
     default:
-      return <p>{children}</p>;
+      return <p className={className}>{children}</p>;
   }
 }
 
@@ -51,7 +51,7 @@ export default function SectionTitle({
         {children}
       </CustomComponent>
       <span
-        className={classnames("block bg-black", {
+        className={classnames("block bg-black font-[900]", {
           "w-[24px] h-[3px]": size === "small",
           "w-[32px] h-[4px]": size === "medium",
           "w-[48px] h-[5px]": size === "large",

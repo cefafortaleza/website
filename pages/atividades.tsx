@@ -10,107 +10,107 @@ export default function Atividades() {
       <div className="container mx-auto flex flex-col gap-8">
         {/* ÍNDICE */}
         <div className="flex flex-col gap-4">
-          <p className="font-[600] text-lg">Índice</p>
+          <p className="font-[600] ">Índice</p>
           {/* 1.0 Estudo da Doutrina Espírita */}
-          <p className="font-[600] text-lg">1.0 Estudo da Doutrina Espírita</p>
+          <p className="font-[600] ">1.0 Estudo da Doutrina Espírita</p>
           <div className="flex flex-col gap-2">
             <Link href="#1.1">
-              <span className="text-primary hover:text-[#333] text-sm">
+              <span className=" text-primary hover:text-[#333] text-sm">
                 1.1 Estudo Preparatório (EPE)
               </span>
             </Link>
             <Link href="#1.2">
-              <span className="text-primary hover:text-[#333] text-sm">
+              <span className=" text-primary hover:text-[#333] text-sm">
                 1.2 Estudo Sistematizado da Doutrina Espírita (ESDE)
               </span>
             </Link>
             <Link href="#1.3">
-              <span className="text-primary hover:text-[#333] text-sm">
+              <span className=" text-primary hover:text-[#333] text-sm">
                 1.3 Estudo Aprofundado da Doutrina Espírita (EADE)
               </span>
             </Link>
             <Link href="#1.4">
-              <span className="text-primary hover:text-[#333] text-sm">
+              <span className=" text-primary hover:text-[#333] text-sm">
                 1.4 Estudo de Obras Básicas e Complementares
               </span>
             </Link>
             <Link href="#1.5">
-              <span className="text-primary hover:text-[#333] text-sm">
+              <span className=" text-primary hover:text-[#333] text-sm">
                 1.5 Palestras Públicas
               </span>
             </Link>
             <Link href="#1.6">
-              <span className="text-primary hover:text-[#333] text-sm">
+              <span className=" text-primary hover:text-[#333] text-sm">
                 1.6 Estudo Sistematizado da Doutrina Espírita
               </span>
             </Link>
           </div>
 
           {/* 2.0 Atendimento Espiritual */}
-          <p className="font-[600] text-lg">2.0 Atendimento Espiritual</p>
+          <p className="font-[600] ">2.0 Atendimento Espiritual</p>
           <div className="flex flex-col gap-2">
             <Link href="#2.1">
-              <span className="text-primary hover:text-[#333] text-sm">
+              <span className=" text-primary hover:text-[#333] text-sm">
                 2.1 Orientação Fraterna
               </span>
             </Link>
             <Link href="#2.2">
-              <span className="text-primary hover:text-[#333] text-sm">
+              <span className=" text-primary hover:text-[#333] text-sm">
                 2.2 Assistência Espiritual
               </span>
             </Link>
             <Link href="#2.3">
-              <span className="text-primary hover:text-[#333] text-sm">
+              <span className=" text-primary hover:text-[#333] text-sm">
                 2.3 Passe
               </span>
             </Link>
             <Link href="#2.4">
-              <span className="text-primary hover:text-[#333] text-sm">
+              <span className=" text-primary hover:text-[#333] text-sm">
                 2.4 Mediúnicas
               </span>
             </Link>
           </div>
 
           {/* 3.0 Evengelização Infantojuvenil */}
-          <p className="font-[600] text-lg">3.0 Evengelização Infantojuvenil</p>
+          <p className="font-[600] ">3.0 Evengelização Infantojuvenil</p>
           <div className="flex flex-col gap-2">
             <Link href="#3.1">
-              <span className="text-primary hover:text-[#333] text-sm">
+              <span className=" text-primary hover:text-[#333] text-sm">
                 3.1 Grupo da Família
               </span>
             </Link>
             <Link href="#3.2">
-              <span className="text-primary hover:text-[#333] text-sm">
+              <span className=" text-primary hover:text-[#333] text-sm">
                 3.2 Grupo Musical Francisco de Assis
               </span>
             </Link>
             <Link href="#3.3">
-              <span className="text-primary hover:text-[#333] text-sm">
+              <span className=" text-primary hover:text-[#333] text-sm">
                 3.3 Eventos e Campanhas
               </span>
             </Link>
           </div>
 
           {/* 4.0 Ação Social */}
-          <p className="font-[600] text-lg">4.0 Ação Social</p>
+          <p className="font-[600] ">4.0 Ação Social</p>
           <div className="flex flex-col gap-2">
             <Link href="#4.1">
-              <span className="text-primary hover:text-[#333] text-sm">
+              <span className=" text-primary hover:text-[#333] text-sm">
                 4.1 Programa Coração Fraterno
               </span>
             </Link>
             <Link href="#4.2">
-              <span className="text-primary hover:text-[#333] text-sm">
+              <span className=" text-primary hover:text-[#333] text-sm">
                 4.2 Programa Arte Feliz
               </span>
             </Link>
             <Link href="#4.3">
-              <span className="text-primary hover:text-[#333] text-sm">
+              <span className=" text-primary hover:text-[#333] text-sm">
                 4.3 Programa Mão Amiga
               </span>
             </Link>
             <Link href="#4.4">
-              <span className="text-primary hover:text-[#333] text-sm">
+              <span className=" text-primary hover:text-[#333] text-sm">
                 4.4 Mediúnicas
               </span>
             </Link>
@@ -127,9 +127,7 @@ export default function Atividades() {
             <SectionTitle as="h3">1.1 - Estudo Preparatório (EPE)</SectionTitle>
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-4">
-                <span className="font-[900] text-[20px] line-height-[29px]">
-                  Horários
-                </span>
+                <span className="font-[900] ">Horários</span>
                 <div className="flex flex-col gap-2">
                   <p>Segunda - 19:30 às 21:00</p>
                   <p>Sábado - 17:30 às 19:00</p>
@@ -165,9 +163,7 @@ export default function Atividades() {
             </SectionTitle>
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-4">
-                <span className="font-[900] text-[20px] line-height-[29px]">
-                  Horários
-                </span>
+                <span className="font-[900] ">Horários</span>
                 <div className="flex flex-col gap-2">
                   <p>Segunda - 19:30 às 21:00</p>
                   <p>Sábado - 17:30 às 19:00</p>
@@ -203,9 +199,7 @@ export default function Atividades() {
             </SectionTitle>
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-4">
-                <span className="font-[900] text-[20px] line-height-[29px]">
-                  Horários
-                </span>
+                <span className="font-[900] ">Horários</span>
                 <div className="flex flex-col gap-2">
                   <p>Segunda - 19:30 às 21:00</p>
                   <p>Sábado - 17:30 às 19:00</p>
@@ -260,9 +254,7 @@ export default function Atividades() {
             </SectionTitle>
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-4">
-                <span className="font-[900] text-[20px] line-height-[29px]">
-                  Horários
-                </span>
+                <span className="font-[900] ">Horários</span>
                 <div className="flex flex-col gap-2">
                   <p>Segunda - 19:30 às 21:00</p>
                   <p>Sábado - 17:30 às 19:00</p>
@@ -281,9 +273,7 @@ export default function Atividades() {
             <SectionTitle as="h3">1.5 - Palestras Públicas</SectionTitle>
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-4">
-                <span className="font-[900] text-[20px] line-height-[29px]">
-                  Horários
-                </span>
+                <span className="font-[900] ">Horários</span>
                 <div className="flex flex-col gap-2">
                   <p>Quarta - 19:30 às 21:00</p>
                   <p>Sexta - 19:30 às 21:00</p>
@@ -310,9 +300,7 @@ export default function Atividades() {
             </SectionTitle>
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-4">
-                <span className="font-[900] text-[20px] line-height-[29px]">
-                  Horários
-                </span>
+                <span className="font-[900] ">Horários</span>
                 <div className="flex flex-col gap-2">
                   <p>Quarta - 19:30 às 21:00</p>
                   <p>Sexta - 19:30 às 21:00</p>
@@ -341,8 +329,513 @@ export default function Atividades() {
           </div>
         </div>
         {/* 2.0 Atendimento Espiritual */}
+        <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-4">
+            <SectionTitle size="large" as="h2">
+              2.0 - Atendimento Espiritual
+            </SectionTitle>
+            <p>
+              É o conjunto de procedimentos destinados a assistir às pessoas que
+              buscam auxílio Espiritual, tendo como base o estudo do Evangelho.
+              Inicia-se pela Orientação Fraterna, e consiste, também, de
+              Assistência Espiritual, Passe, Água Fluidificada, Irradiação e
+              Evangelho no Lar.
+            </p>
+          </div>
+
+          {/* 2.1 Orientação Fraterna */}
+          <div id="2.1" className="flex flex-col gap-4">
+            <SectionTitle as="h3">2.1 - Orientação Fraterna</SectionTitle>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <span className="font-[900] ">Horários</span>
+                <div className="flex flex-col gap-2">
+                  <p>Segunda - 19:30 às 21:00</p>
+                  <p>Sábado - 17:30 às 19:00</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p>
+                  A Orientação Fraterna consiste em uma conversa reservada com
+                  um orientador do CEFA, na qual o assistido pode expor as
+                  questões que o afligem.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 2.2 Assitência Espiritual */}
+          <div id="2.2" className="flex flex-col gap-4">
+            <SectionTitle as="h3">2.2 - Assistência Espiritual</SectionTitle>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <span className="font-[900] ">Horários</span>
+                <div className="flex flex-col gap-2">
+                  <p>Domingo - 16:30 às 19:00</p>
+                  <p>Terça - 16:30 às 19:00, 19:30 às 21:00</p>
+                  <p>Quinta - 19:30 às 21:00</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p>
+                  A assistência espiritual consiste no encontro fraterno em
+                  torno do Evangelho de Jesus, cujo propósito é nos ajudar a
+                  entender as origens de nossas aflições, angústias, dores,
+                  enfermidades, ajudando-nos a descobrir como encontrar a cura.
+                </p>
+                <p>
+                  A primeira etapa da Assistência Espiritual é a Orientação
+                  Fraterna, uma conversa reservada com um orientador fraterno do
+                  CEFA, na qual o assistido pode expor as questões que o
+                  afligem. A partir dessa entrevista, poderá ser direcionado a
+                  um dos Grupos de Estudos do Evangelho, que se reúnem em
+                  encontros de estudos semanais. Ao fim de cinco semanas, o
+                  assistido volta para uma reentrevista com um orientador
+                  fraterno, para avaliar a necessidade de continuar nos
+                  encontros semanais.
+                </p>
+                <p>
+                  O Estudo do Evangelho, feito em grupo, tem a duração de uma
+                  hora e meia e consiste na leitura e discussão de um trecho de
+                  O Evangelho Segundo o Espiritismo. Mediado por um monitor do
+                  CEFA, que estimula a reflexão sobre o tema abordado, esse
+                  estudo objetiva orientar nosso comportamento aos ensinamentos
+                  morais praticados por Jesus.
+                </p>
+                <p>
+                  A Orientação Fraterna acontece todos os dias. Já a Assistência
+                  Espiritual funciona aos domingos, às 16h30min, nas terças, às
+                  16h30 ou às 19h30min, e nas quintas-feiras, às 19h30min.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 2.3 Passe */}
+          <div id="2.3" className="flex flex-col gap-4">
+            <SectionTitle as="h3">2.3 - Passe</SectionTitle>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <span className="font-[900] ">Horários</span>
+                <div className="flex flex-col gap-2">
+                  <p>Domingo - 16:30 às 19:00</p>
+                  <p>Terça - 16:30 às 19:00, 19:30 às 21:00</p>
+                  <p>Quinta - 19:30 às 21:00</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p>
+                  A Orientação Fraterna consiste em uma conversa reservada com
+                  um orientador do CEFA, na qual o assistido pode expor as
+                  questões que o afligem.
+                </p>
+                <p>
+                  O Passe é a doação de energias benéficas aos encarnados, sendo
+                  também um complemento à Assistência Espiritual. Para melhor
+                  efeito, os passes devem ser tomados após o estudo do
+                  Evangelho.
+                </p>
+                <p>
+                  Segundo o Dicionário Houaiss da Língua Portuguesa, a palavra
+                  passe significa, entre outros conceitos, “ato de passar as
+                  mãos repetidas vezes por diante ou por cima de pessoa que se
+                  pretende magnetizar ou curar pela força mediúnica”.
+                </p>
+                <p>
+                  A Doutrina Espirita amplia este conceito e define o Passe como
+                  uma transmissão conjunta, ou mista, de fluidos magnéticos –
+                  provenientes do encarnado – e de fluidos espirituais –
+                  oriundos dos benfeitores espirituais, não devendo ser
+                  considerada uma simples transmissão de energia animal
+                  (magnetização).
+                </p>
+                <p>
+                  Ao substituir os fluidos deletérios por fluidos benéficos, o
+                  Passe torna-se aliado eficaz para sanar desarmonias físicas e
+                  psíquicas, equilibrar o funcionamento de células e tecidos
+                  lesados, e para promover a harmonização do funcionamento
+                  neurológico, que garante o estado de lucidez mental e
+                  intelectual do indivíduo.
+                </p>
+                <p>
+                  O passe é, usualmente, transmitido pelas mãos, mas também pode
+                  ser feito pelo olhar, pelo sopro ou à distância, por
+                  intermédio das irradiações mentais.
+                </p>
+                <p>
+                  A transmissão e a recepção do passe guardam relação com o
+                  poder da vontade de quem doa as energias benéficas e de quem
+                  as recebe.
+                </p>
+                <p>
+                  No contexto Espírita, o passe deve ser entendido como um
+                  auxiliar importante aos recursos terapêuticos comuns. É,
+                  portanto, um meio, e não a finalidade do Espiritismo.
+                </p>
+                <p>
+                  Muitas pessoas procuram no passe a cura ou a melhora de seus
+                  males físicos, psíquicos ou distúrbios espirituais. O passe,
+                  de fato, ajuda, mas não deve ser considerado como terapia
+                  única; a melhor terapia é o estudo e a prática do Evangelho de
+                  Jesus.
+                </p>
+                <p>
+                  O CEFA oferece, anualmente, o curso de formação para
+                  trabalhadores do passe, para o qual é exigido que o
+                  interessado tenha concluído o segundo módulo do Estudo
+                  Sistematizado da Doutrina Espírita (ESDE).
+                </p>
+                <p className="text-[13px] leading-[29px]">
+                  Fonte: Estudo sobre o passe: Passe na reunião Mediúnica, Marta
+                  Antunes Moura/FEB, 2004
+                </p>
+                <SectionTitle as="h3" size="small">
+                  Água Fluidificada
+                </SectionTitle>
+                <p>
+                  Água acrescida de fluidos espirituais, destinada à
+                  complementação da Assistência Espiritual.
+                </p>
+                <SectionTitle as="h3" size="small">
+                  Irradiação
+                </SectionTitle>
+                <p>
+                  Procedimento realizado com o auxílio dos bons espíritos, que
+                  consiste na transmissão de energias sutis, recebidas dos
+                  Espíritos benfeitores pelos médiuns na casa espirita e
+                  dirigidas aos assistidos através da vibração realizada pelo
+                  pensamento e a vontade.
+                </p>
+                <SectionTitle as="h3" size="small">
+                  Evangelho do Lar
+                </SectionTitle>
+                <p>
+                  Procedimento realizado no Lar de cada assistido ou espirita,
+                  que consiste no estudo, pelo menos semanal, de uma passagem do
+                  Evangelho, e que teve sua origem nas reuniões realizadas por
+                  Jesus na casa de Pedro, segundo o Livro Jesus no Lar, de
+                  autoria do espírito Neio Lúcio, psicografado por Francisco
+                  Cândido Xavier.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 2.4 Mediúnicas */}
+          <div id="2.1" className="flex flex-col gap-4">
+            <SectionTitle as="h3">2.4 - Mediúnicas</SectionTitle>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <span className="font-[900] ">Horários</span>
+                <div className="flex flex-col gap-2">
+                  <p>Domingo - 16:30 às 19:00</p>
+                  <p>Terça - 16:30 às 19:00, 19:30 às 21:00</p>
+                  <p>Quinta - 19:30 às 21:00</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p>
+                  A Orientação Fraterna consiste em uma conversa reservada com
+                  um orientador do CEFA, na qual o assistido pode expor as
+                  questões que o afligem.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* 3.0 Evangelização Infanto Juvenil */}
+        <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-4">
+            <SectionTitle size="large" as="h2">
+              3.0 - Evangelização Infantojuvenil
+            </SectionTitle>
+            <p>
+              A Evangelização Infantojuvenil objetiva promover a integração do
+              evangelizando consigo mesmo, com o próximo e com Deus,
+              oferecendo-lhe, assim, a oportunidade de se perceber como ser
+              integral a caminho da evolução neste planeta.
+            </p>
+            <p>
+              As atividades acontecem aos sábados, das 15h às 17h. Os
+              participantes são acompanhados por monitores, em turmas que
+              respeitam determinadas faixas etárias dos participantes, conforme
+              quadro abaixo:
+            </p>
+            <table className="table-auto max-w-md">
+              <thead>
+                <tr className="border-b">
+                  <td className="p-[2px] pl-[4px] border-r ">Turmas</td>
+                  <td className="p-[2px] pl-[4px] ">Faixa Etária</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="p-[2px] pl-[4px] border-r ">Maternalzinho</td>
+                  <td className="p-[2px] pl-[4px] ">Meses a 2 anos</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="p-[2px] pl-[4px] border-r ">Maternal</td>
+                  <td className="p-[2px] pl-[4px] ">3 e 4 anos</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="p-[2px] pl-[4px] border-r ">Jardim</td>
+                  <td className="p-[2px] pl-[4px] ">5 e 6 anos</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="p-[2px] pl-[4px] border-r ">Ciclo I</td>
+                  <td className="p-[2px] pl-[4px] ">7 e 8 anos</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="p-[2px] pl-[4px] border-r ">Ciclo II</td>
+                  <td className="p-[2px] pl-[4px] ">9 e 10 anos</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="p-[2px] pl-[4px] border-r ">Pré Juventude</td>
+                  <td className="p-[2px] pl-[4px] ">11 e 12 anos</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="p-[2px] pl-[4px] border-r ">Juventude</td>
+                  <td className="p-[2px] pl-[4px] ">13 a 21 anos</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Em todas as turmas o estudo doutrinário e evangélico é adaptado à
+              faixa etária do evangelizando, com metodologia apropriada,
+              considerando, também, o enfoque lúdico.
+            </p>
+            <p>
+              Ao final do estudo, as crianças e os familiares, ou responsáveis,
+              que o acompanham participam do passe.
+            </p>
+          </div>
+
+          {/* 3.1 - Grupo da Família */}
+          <div id="3.1" className="flex flex-col gap-4">
+            <SectionTitle as="h3">3.1 - Grupo da Família</SectionTitle>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <span className="font-[900] ">Horários</span>
+                <div className="flex flex-col gap-2">
+                  <p>Segunda - 19:30 às 21:00</p>
+                  <p>Sábado - 17:30 às 19:00</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p>
+                  Paralelamente aos estudos das crianças e dos jovens da
+                  Evangelização Infantojuvenil, os pais e responsáveis também
+                  são acompanhados por monitores no Grupo da Família,
+                  participando de estudos do Evangelho e de temas referentes à
+                  relação familiar, visando ao equilíbrio e à harmonia na
+                  família.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 3.2 - Grupo da Família */}
+          <div id="3.2" className="flex flex-col gap-4">
+            <SectionTitle as="h3">
+              3.2 - Grupo Musical Filhos de Assis
+            </SectionTitle>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <span className="font-[900] ">Horários</span>
+                <div className="flex flex-col gap-2">
+                  <p>Segunda - 19:30 às 21:00</p>
+                  <p>Sábado - 17:30 às 19:00</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p>
+                  O Grupo Musical Filhos de Assis reúne evangelizandos e
+                  convidados, que são estimulados e acompanhados por monitores
+                  no exercício musical e na convivência harmônica, tendo como
+                  base os ensinamentos de Jesus. Os ensaios acontecem antes da
+                  Evangelização, preparando o grupo para harmonizar a Hora da
+                  Prece no quinto domingo do mês.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 3.3 - Grupo da Família */}
+          <div id="3.3" className="flex flex-col gap-4">
+            <SectionTitle as="h3">3.3 - Eventos e Campanhas</SectionTitle>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <span className="font-[900] ">Horários</span>
+                <div className="flex flex-col gap-2">
+                  <p>Segunda - 19:30 às 21:00</p>
+                  <p>Sábado - 17:30 às 19:00</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p>
+                  A Coordenadoria da Evangelização Infantojuvenil promove,
+                  também, eventos que visam a integração e o aprofundamentos em
+                  temas específicos para cada grupo, além de arrecadar donativos
+                  para campanhas assistenciais, tais como:
+                </p>
+                <p className="font-[900] ">- Encontro da Família</p>
+                <p>
+                  tarde de estudos sobre temáticas referentes à família.
+                  Relaciona-se diretamente ao Grupo da Família, mas é aberto ao
+                  público. Essa atividade visa arrecadar leite para doação a
+                  instituições beneficentes.
+                </p>
+                <p className="font-[900] ">- Seminário da Juventude</p>
+                <p>
+                  Reúne a juventude espírita para estudo de temas relacionados
+                  aos interesses, necessidades e cotidiano dos jovens, à luz da
+                  Doutrina Espírita.
+                </p>
+                <p className="font-[900] ">- Festival de Artes</p>
+                <p>
+                  Os evangelizandos apresentam números artísticos, de cunho
+                  doutrinário/evangélico, e se divertem saboreando muito
+                  sorvete, contribuindo, em contrapartida, com a doação de
+                  brinquedos, que são distribuídos para crianças carentes, no
+                  Natal.
+                </p>
+                <p className="font-[900] ">- Natal Solidário</p>
+                <p>
+                  Visitas a instituições de assistência a crianças, adolescentes
+                  ou idosos, levando alimentos e brinquedos que são arrecadados.
+                </p>
+                <p className="font-[900] ">
+                  - Projeto &quot;Ouça a voz do coração&quot;
+                </p>
+                <p>
+                  Nesta atividade, os participantes do Grupo Musical Filhos de
+                  Assis, juntamente com a turma da juventude e os pais, visitam
+                  instituições beneficentes levando doações, música e suas
+                  melhores vibrações.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
         {/* 4.0 Ação Social */}
+        <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-4">
+            <SectionTitle size="large" as="h2">
+              4.0 - Ação Social
+            </SectionTitle>
+            <p>
+              As atividades de Ação Social desenvolvidas no CEFA foram agrupadas
+              em programas, por identidade de propósito:
+            </p>
+          </div>
+
+          {/* 4.1 - Grupo da Família */}
+          <div id="4.1" className="flex flex-col gap-4">
+            <SectionTitle as="h3">4.1 - Programa Coração Fraterno</SectionTitle>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <span className="font-[900] ">Horários</span>
+                <div className="flex flex-col gap-2">
+                  <p>Segunda - 19:30 às 21:00</p>
+                  <p>Sábado - 17:30 às 19:00</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p>
+                  Programa voltado ao acolhimento de idosos e população em
+                  situação de vulnerabilidade, auxiliando-os materialmente e,
+                  principalmente, espiritualmente, visando a sua promoção social
+                  e o seu crescimento moral, independente de credos.
+                </p>
+                <p>
+                  Especificamente para os idosos, é desenvolvido um programa de
+                  encontros quinzenais, nos segundos e quartos domingos de cada
+                  mês, com atividades diversas que objetivam instruir - por meio
+                  de palestras - e entreter - com atividades lúdicas e de
+                  relaxamento - os participantes.
+                </p>
+                <p>
+                  Além de lanches, os 94 idosos cadastrados recebem,
+                  mensalmente, uma cesta básica, composta a partir de doações de
+                  voluntários e frequentadores do CEFA.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 4.2 - Programa Arte Feliz */}
+          <div id="4.2" className="flex flex-col gap-4">
+            <SectionTitle as="h3">4.2 - Programa Coração Fraterno</SectionTitle>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <span className="font-[900] ">Horários</span>
+                <div className="flex flex-col gap-2">
+                  <p>Segunda - 19:30 às 21:00</p>
+                  <p>Sábado - 17:30 às 19:00</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p>
+                  Programa voltado ao desenvolvimento de atividades de arte com
+                  idosos, população em situação de vulnerabilidade e comunidades
+                  circunvizinhas.
+                </p>
+                <p>
+                  As atividades são desenvolvidas em salas de leitura, oficinas
+                  de crochê, tapeçaria, bordado, pintura, reciclagem e música.
+                </p>
+                <p>
+                  Além de lanches, os 94 idosos cadastrados recebem,
+                  mensalmente, uma cesta básica, composta a partir de doações de
+                  voluntários e frequentadores do CEFA.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 4.3 - Programa Renascer */}
+          <div id="4.3" className="flex flex-col gap-4">
+            <SectionTitle as="h3">4.3 - Programa Renascer</SectionTitle>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <span className="font-[900] ">Horários</span>
+                <div className="flex flex-col gap-2">
+                  <p>Segunda - 19:30 às 21:00</p>
+                  <p>Sábado - 17:30 às 19:00</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p>
+                  Programa voltado ao acolhimento e à orientação de gestantes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 4.4 - Programa Mão Amiga */}
+          <div id="4.4" className="flex flex-col gap-4">
+            <SectionTitle as="h3">4.4 - Programa Mão Amiga</SectionTitle>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <span className="font-[900] ">Horários</span>
+                <div className="flex flex-col gap-2">
+                  <p>Segunda - 19:30 às 21:00</p>
+                  <p>Sábado - 17:30 às 19:00</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p>
+                  Programa voltado ao desenvolvimento de atividades relacionadas
+                  a visitas a creches, casas de acolhimento de idoso, casas de
+                  recuperação. Nas visitas, são doados materiais de higiene
+                  pessoal e de limpeza, além de alimentos não perecíveis e
+                  roupas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   );

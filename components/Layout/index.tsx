@@ -101,10 +101,10 @@ const Layout: FC<PropsWithChildren> = ({ children }: PropsWithChildren) => {
             </a>
           </div>
           <div className="flex flex-col gap-2 text-center">
-            <p className="text-[#333] text-xl font-light">
+            <p className="text-[#333] font-light">
               Centro Espírita Francisco de Assis © Todos os direitos reservados
             </p>
-            <p className="text-[#333] text-xl font-light">
+            <p className="text-[#333] font-light">
               Rua Senador Catunda, 117 - Benfica - Fortaleza, CE 60015-320
             </p>
           </div>

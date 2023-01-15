@@ -12,8 +12,12 @@ const Desktop = () => {
   const modalRef = useRef(null);
 
   useEffect(() => {
-    function handleClickOutside(event: { target: any; }) {
-      if (modalRef.current && !modalRef?.current?.contains(event.target) && isSubMenuOpen) {
+    function handleClickOutside(event: { target: any }) {
+      if (
+        modalRef.current &&
+        !modalRef?.current?.contains(event.target) &&
+        isSubMenuOpen
+      ) {
         toggleSubMenu();
       }
     }
@@ -46,12 +50,12 @@ const Desktop = () => {
           if (Array.isArray(subItems)) {
             return (
               <button
-                className="font-light text-xl transition flex gap-2 hover:text-primary cursor-pointer group"
+                className="font-light text-xl transition flex gap-2 hover:text-primary cursor-pointer group items-center"
                 onClick={toggleSubMenu}
                 key={label}
               >
-                {label}
-                <span className="pt-2 group-hover:color-primary">
+                <span className="group-hover:text-primary text-[20px] leading-[29px]">{label}</span>
+                <span className="group-hover:color-primary">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -73,7 +77,7 @@ const Desktop = () => {
           if (url) {
             return (
               <Link href={url} passHref key={url}>
-                <span className="font-light text-xl transition hover:text-primary cursor-pointer whitespace-nowrap">
+                <span className="font-light transition hover:text-primary cursor-pointer whitespace-nowrap text-[20px] leading-[29px]">
                   {label}
                 </span>
               </Link>
@@ -90,12 +94,12 @@ const Desktop = () => {
         >
           <div className="flex flex-col gap-4 p-4 border rounded-lg bg-white">
             <Link href={"/horarios"} passHref>
-              <span className="font-light text-xl transition hover:text-primary cursor-pointer whitespace-nowrap">
+              <span className="font-light transition hover:text-primary cursor-pointer whitespace-nowrap text-[20px] leading-[29px]">
                 Horários
               </span>
             </Link>
             <Link href={"/biblioteca"} passHref>
-              <span className="font-light text-xl transition hover:text-primary cursor-pointer whitespace-nowrap">
+              <span className="font-light transition hover:text-primary cursor-pointer whitespace-nowrap text-[20px] leading-[29px]">
                 Biblioteca
               </span>
             </Link>

@@ -1,7 +1,8 @@
 import Link from "next/link";
 
 import Layout from "../components/Layout";
-import Tab from "../components/Tab";
+import SectionTitle from "../components/SectionTitle";
+import { SobreTab } from "../components/Tab";
 
 export default function Sobre() {
   function getCEFAMap() {
@@ -20,15 +21,14 @@ export default function Sobre() {
       {/* 1 - Table of Contents */}
       {/* Section Title */}
       <div className="container mx-auto flex flex-col gap-4 mb-4">
-        <div className="flex flex-col gap-2 max-w-fit">
-          <h2 className="font-[600] text-3xl">Sobre o CEFA</h2>
-          <span className="w-12 h-2 block bg-black" />
-        </div>
+        <SectionTitle size="large">Sobre o Cefa</SectionTitle>
 
         <div className="border p-4 flex flex-col gap-4 max-w-fit">
-          <span className="text-primary hover:text-[#333]">Índice</span>
+          <span>Índice</span>
           <Link href="#apresentacao">
-            <span className="text-primary hover:text-[#333]">1. Apresentação</span>
+            <span className="text-primary hover:text-[#333]">
+              1. Apresentação
+            </span>
           </Link>
           <Link href="#diretoria-conselho-coordenadorias">
             <span className="text-primary hover:text-[#333]">
@@ -44,16 +44,15 @@ export default function Sobre() {
             </span>
           </Link>
           <Link href="#localizacao">
-            <span className="text-primary hover:text-[#333]">5. Localização</span>
+            <span className="text-primary hover:text-[#333]">
+              5. Localização
+            </span>
           </Link>
         </div>
 
         {/* Apresentação */}
         <div className="flex flex-col gap-4" id="apresentacao">
-          <div className="flex flex-col gap-2 max-w-fit">
-            <h2 className="font-[600] text-lg">Redes Sociais</h2>
-            <span className="w-8 h-1 block bg-black" />
-          </div>
+          <SectionTitle>Apresentação</SectionTitle>
           <p>
             O Centro Espírita Francisco de Assis (CEFA) é uma instituição
             religiosa espírita de caráter cultural e filantrópico, que tem como
@@ -114,22 +113,16 @@ export default function Sobre() {
           className="flex flex-col gap-4"
           id="diretoria-conselho-coordenadorias"
         >
-          <div className="flex flex-col gap-2 max-w-fit">
-            <h2 className="font-[600] text-lg">
-              Diretoria, Conselho Consultivo Fiscal e Coordenadorias
-            </h2>
-            <span className="w-8 h-1 block bg-black" />
-          </div>
+          <SectionTitle>
+            Diretoria, Conselho Consultivo Fiscal e Coordenadorias
+          </SectionTitle>
 
-          <Tab />
+          <SobreTab />
         </div>
 
         {/* Estatuto */}
         <div className="flex flex-col gap-4" id="estatuto">
-          <div className="flex flex-col gap-2 max-w-fit">
-            <h2 className="font-[600] text-lg">Estatuto</h2>
-            <span className="w-8 h-1 block bg-black" />
-          </div>
+          <SectionTitle>Estatuto</SectionTitle>
           <a href="/ESTATUTO.pdf" download>
             <span className="text-primary hover:text-[#333] hover:underline text-lg">
               Download
@@ -139,10 +132,7 @@ export default function Sobre() {
 
         {/* Regimento Interno */}
         <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-2 max-w-fit">
-            <h2 className="font-[600] text-lg">Regimento Interno</h2>
-            <span className="w-8 h-1 block bg-black" />
-          </div>
+          <SectionTitle>Regimento Interno</SectionTitle>
 
           <a href="/REGIMENTO.docx" download>
             <span className="text-primary hover:text-[#333] hover:underline text-lg">
@@ -153,10 +143,7 @@ export default function Sobre() {
 
         {/* Localização */}
         <div className="flex flex-col gap-4" id="localizacao">
-          <div className="flex flex-col gap-2 max-w-fit">
-            <h2 className="font-[600] text-lg">Localização</h2>
-            <span className="w-8 h-1 block bg-black" />
-          </div>
+          <SectionTitle>Localização</SectionTitle>
 
           <div className="flex flex-col gap-4">
             <p className="flex gap-4">
