@@ -44,6 +44,7 @@ const Desktop = () => {
             subItems: [
               { label: "Horários", url: "/horarios" },
               { label: "Biblioteca", url: "/biblioteca" },
+              { label: "Grupo Musical", url: "/grupo-musical" },
             ],
           },
         ].map(({ url, label, subItems }) => {
@@ -101,6 +102,11 @@ const Desktop = () => {
             <Link href={"/biblioteca"} passHref>
               <span className="font-light transition hover:text-primary cursor-pointer whitespace-nowrap text-[20px] leading-[29px]">
                 Biblioteca
+              </span>
+            </Link>
+            <Link href={"/grupo-musical"} passHref>
+              <span className="font-light transition hover:text-primary cursor-pointer whitespace-nowrap text-[20px] leading-[29px]">
+                Grupo Musical
               </span>
             </Link>
           </div>

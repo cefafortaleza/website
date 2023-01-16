@@ -107,6 +107,11 @@ const Mobile = () => {
                   Biblioteca
                 </span>
               </Link>
+              <Link href="/grupo-musical">
+                <span className="text-lg font-[200] hover:text-primary">
+                  Grupo Musical
+                </span>
+              </Link>
             </div>
           </div>
         </div>
