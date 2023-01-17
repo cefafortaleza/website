@@ -9,7 +9,7 @@ const Desktop = () => {
 
   const toggleSubMenu = () => setIsSubMenuOpen(!isSubMenuOpen);
 
-  const modalRef = useRef(null);
+  const modalRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     function handleClickOutside(event: { target: any }) {

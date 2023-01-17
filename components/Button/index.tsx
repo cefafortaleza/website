@@ -2,7 +2,7 @@ import classnames from "classnames";
 import Link from "next/link";
 
 type ButtonProps = {
-  onClick?: React.MouseEvent<HTMLElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children: React.ReactNode;
   asLink?: boolean;
   href?: string;
@@ -35,7 +35,7 @@ export default function Button({
       );
     }
     return (
-      <Link href={href ?? ''}>
+      <Link href={href ?? ""}>
         <span
           className={classnames(
             "bg-black px-8 py-2 max-w-fit text-white font-[900] text-[16px] leading-[24px] rounded-sm",

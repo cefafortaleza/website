@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import Layout from "../components/Layout";
 
 import Button from '../components/Button';
@@ -10,7 +10,7 @@ export default function Contato() {
     message: "",
   });
 
-  const updateForm = (field) => (value) =>
+  const updateForm = (field: string) => (value: ChangeEvent<HTMLInputElement>) =>
     setForm({ ...form, [field]: [value] });
 
   const submit = () => {
