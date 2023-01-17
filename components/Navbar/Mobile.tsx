@@ -97,12 +97,12 @@ const Mobile = () => {
               </span>
             </div>
             <div className="w-full pl-4 flex flex-col gap-4">
-              <Link href="/contato">
+              <Link href="/horarios">
                 <span className="text-lg font-[200] hover:text-primary">
                   Horários
                 </span>
               </Link>
-              <Link href="/contato">
+              <Link href="/biblioteca">
                 <span className="text-lg font-[200] hover:text-primary">
                   Biblioteca
                 </span>

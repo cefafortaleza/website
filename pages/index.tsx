@@ -3,6 +3,7 @@ import Button from "../components/Button";
 
 import Layout from "../components/Layout";
 import SectionTitle from "../components/SectionTitle";
+import HomeCarousel from "../components/Carousel";
 
 export default function Home() {
   const instagramList = [
@@ -27,9 +28,10 @@ export default function Home() {
   return (
     <Layout>
       {/* 1 - slider */}
+      <HomeCarousel />
 
       {/* 2 - instagram */}
-      <div className="container mx-auto flex flex-col gap-4 mb-8">
+      <div className="container mx-auto flex flex-col gap-4 mb-8 px-4 lg:px-0">
         {/* Section Title */}
         <SectionTitle as="h2">Redes Sociais</SectionTitle>
         <div className="grid gap-4 grid-cols-2 max-w-xl ">
@@ -41,7 +43,7 @@ export default function Home() {
         </div>
       </div>
       {/* 3 - latest posts */}
-      <div className="container mx-auto flex flex-col gap-4">
+      <div className="container mx-auto flex flex-col gap-4 px-4 lg:px-0">
         {/* Section Title */}
         <SectionTitle as="h2">Fique Ligado</SectionTitle>
 
@@ -50,7 +52,10 @@ export default function Home() {
           {/* Post */}
           <div className="flex gap-10">
             {/* Image */}
-            <div className="w-64 h-64 bg-red-400" />
+            <img
+              src="/cefa-blog-assembleia-geral-2020.jpeg"
+              className="w-[450px] h-[450px]"
+            />
             {/* Content */}
             <div className="max-w-xs flex flex-col gap-4  justify-center">
               <div className="flex flex-col gap-2 max-w-fit">
@@ -72,7 +77,10 @@ export default function Home() {
           {/* Post */}
           <div className="flex gap-10">
             {/* Image */}
-            <div className="w-64 h-64 bg-red-400" />
+            <img
+              src="/cefa-blog-aniversario-79-anos.jpeg"
+              className="w-[450px] h-[450px]"
+            />
             {/* Content */}
             <div className="max-w-xs flex flex-col gap-4  justify-center">
               <div className="flex flex-col gap-2 max-w-fit">
@@ -99,7 +107,7 @@ export default function Home() {
       </div>
       {/* 4 - banner - musical group */}
       <div className="w-full min-h-32 bg-bannerGrupoMusical bg-cover mb-4">
-        <div className="container justify-center flex items-center mx-auto flex-col gap-6 py-28">
+        <div className="container justify-center flex items-center mx-auto flex-col gap-6 py-28 px-4 lg:px-0">
           <h2 className="text-[32px] leading-[32px] font-[900] text-black">
             Conheça o grupo musical francisco de assis
           </h2>
@@ -111,7 +119,7 @@ export default function Home() {
         </div>
       </div>
       {/* 5 - more from cefa */}
-      <div className="container mx-auto flex flex-col gap-4 mb-4">
+      <div className="container mx-auto flex flex-col gap-4 mb-4 px-4 lg:px-0">
         {/* Section Title */}
         <SectionTitle size="large">Mais do Cefa</SectionTitle>
         <SectionTitle size="small">Doações Voluntárias</SectionTitle>
@@ -159,7 +167,7 @@ export default function Home() {
         </div>
       </div>
       {/* 7 - bookstore */}
-      <div className="container mx-auto flex flex-col gap-4 mb-4">
+      <div className="container mx-auto flex flex-col gap-4 mb-4 px-4 lg:px-0">
         {/* Section Title */}
 
         <SectionTitle size="small">Livraria</SectionTitle>

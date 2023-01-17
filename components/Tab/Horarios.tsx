@@ -172,7 +172,7 @@ export default function Tabs() {
   return (
     <div className="flex flex-col gap-8">
       {/* Tabs */}
-      <div className="flex">
+      <div className="flex overflow-scroll">
         <button
           onClick={() => changeTab("dom")}
           className={classnames(

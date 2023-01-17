@@ -6,7 +6,7 @@ export default function GrupoMusical() {
   return (
     <Layout>
       <div className="bg-bannerGrupoMusical block h-[400px] bg-cover" />
-      <div className="flex flex-col gap-4 container mx-auto">
+      <div className="flex flex-col gap-4 container mx-auto px-4 lg:px-0">
         {/* Page Title */}
         <SectionTitle>Grupo Musical Francisco de Assis</SectionTitle>
         <p>

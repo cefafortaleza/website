@@ -7,7 +7,7 @@ import SectionTitle from "../components/SectionTitle";
 export default function Atividades() {
   return (
     <Layout>
-      <div className="container mx-auto flex flex-col gap-8">
+      <div className="container mx-auto flex flex-col gap-8 px-4 lg:px-0">
         {/* ÍNDICE */}
         <div className="flex flex-col gap-4">
           <p className="font-[600] ">Índice</p>

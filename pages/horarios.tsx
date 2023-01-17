@@ -8,7 +8,7 @@ import { HorariosTab } from "../components/Tab";
 export default function Horarios() {
   return (
     <Layout>
-      <div className="container mx-auto flex flex-col gap-8">
+      <div className="container mx-auto flex flex-col gap-8 px-4 lg:px-0">
         <SectionTitle as="h2">Horários</SectionTitle>
         {/* Horários */}
         <HorariosTab />

@@ -19,7 +19,7 @@ export default function Contato() {
 
   return (
     <Layout>
-      <div className="container mx-auto flex flex-col gap-4">
+      <div className="container mx-auto flex flex-col gap-4 px-4 lg:px-0">
         <div className="rounded-lg border border-[#333] shadow-lg flex flex-col gap-8 p-8">
           <p className="text-center">Entre em contato!</p>
           <div className="name flex flex-col gap-2">
