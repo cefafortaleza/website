@@ -34,7 +34,7 @@ export default function Home() {
       <div className="container mx-auto flex flex-col gap-4 mb-8 px-4 lg:px-0">
         {/* Section Title */}
         <SectionTitle as="h2">Redes Sociais</SectionTitle>
-        <div className="grid gap-4 grid-cols-2 max-w-xl ">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 max-w-xl ">
           {instagramList.map(({ url, image }) => (
             <a href={url} target="_top" rel="noopener" key={url}>
               <img src={image} className="w-64 h-64 block " />
@@ -50,7 +50,7 @@ export default function Home() {
         {/* Posts Wrapper */}
         <div className="flex flex-col gap-4 mb-8">
           {/* Post */}
-          <div className="flex gap-10">
+          <div className="flex flex-col md:flex-row gap-10">
             {/* Image */}
             <img
               src="/cefa-blog-assembleia-geral-2020.jpeg"
@@ -75,7 +75,7 @@ export default function Home() {
             </div>
           </div>
           {/* Post */}
-          <div className="flex gap-10">
+          <div className="flex flex-col md:flex-row gap-10">
             {/* Image */}
             <img
               src="/cefa-blog-aniversario-79-anos.jpeg"
@@ -155,7 +155,7 @@ export default function Home() {
       </div>
       {/* 6 - banner - would you like to rent a book */}
       <div className="w-full min-h-32 bg-bannerBiblioteca bg-cover mb-4">
-        <div className="container justify-center flex items-center mx-auto flex-col gap-6 py-28">
+        <div className="container justify-center flex items-center mx-auto flex-col gap-6 py-28 px-4 md:px-0">
           <h2 className="text-[32px] font-[900] text-white">
             Gostaria de alugar um livro?
           </h2>
