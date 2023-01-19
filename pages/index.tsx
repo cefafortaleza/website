@@ -36,8 +36,8 @@ export default function Home() {
         <SectionTitle as="h2">Redes Sociais</SectionTitle>
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2 max-w-xl ">
           {instagramList.map(({ url, image }) => (
-            <a href={url} target="_top" rel="noopener" key={url}>
-              <img src={image} className="w-64 h-64 block " />
+            <a href={url} target="_top" rel="noopener" key={url} className="block">
+              <img src={image} className="w-64 md:w-full h-64 object-cover" />
             </a>
           ))}
         </div>
@@ -48,23 +48,23 @@ export default function Home() {
         <SectionTitle as="h2">Fique Ligado</SectionTitle>
 
         {/* Posts Wrapper */}
-        <div className="flex flex-col gap-4 mb-8">
+        <div className="flex flex-col gap-8 md:gap-4 mb-8">
           {/* Post */}
-          <div className="flex flex-col md:flex-row gap-10">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-8">
             {/* Image */}
             <img
               src="/cefa-blog-assembleia-geral-2020.jpeg"
-              className="w-[450px] h-[450px]"
+              className="w-[300px] h-[300px]"
             />
             {/* Content */}
-            <div className="max-w-xs flex flex-col gap-4  justify-center">
+            <div className="md:max-w-xs flex flex-col gap-4  justify-center">
               <div className="flex flex-col gap-2 max-w-fit">
                 <h2 className="font-bold text-md">
                   Assembléia Geral Ordinária 2020
                 </h2>
                 <span className="w-4 h-1 block bg-black" />
               </div>
-              <p className="text-gray-600 font-thin text-sm mb-4">
+              <p className="text-gray-600 font-thin text-[13px] leading-[19px] mb-4">
                 A Diretoria do CEFA convoca os sócios efetivos, aptos a votar, a
                 participarem da Assembleia Geral Ordinária, que acontecera na
                 data e formato descrito na imagem.
@@ -75,21 +75,21 @@ export default function Home() {
             </div>
           </div>
           {/* Post */}
-          <div className="flex flex-col md:flex-row gap-10">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-8">
             {/* Image */}
             <img
               src="/cefa-blog-aniversario-79-anos.jpeg"
-              className="w-[450px] h-[450px]"
+              className="w-[300px] h-[300px]"
             />
             {/* Content */}
-            <div className="max-w-xs flex flex-col gap-4  justify-center">
+            <div className="md:max-w-xs flex flex-col gap-4  justify-center">
               <div className="flex flex-col gap-2 max-w-fit">
                 <h2 className="font-bold text-md">
                   Aniversário 79 Anos do CEFA
                 </h2>
                 <span className="w-4 h-1 block bg-black" />
               </div>
-              <p className="text-gray-600 font-thin text-sm mb-4">
+              <p className="text-gray-600 font-thin text-[13px] leading-[19px] mb-4">
                 Em 02.12.2020 a nossa casa Espírita comemorou 79 anos de
                 atuação, promovendo o ideal Espírita, esclarecendo por meio dos
                 estudos e consolando e acolhendo os corações que procuram Jesus.
@@ -108,7 +108,7 @@ export default function Home() {
       {/* 4 - banner - musical group */}
       <div className="w-full min-h-32 bg-bannerGrupoMusical bg-cover mb-4">
         <div className="container justify-center flex items-center mx-auto flex-col gap-6 py-28 px-4 lg:px-0">
-          <h2 className="text-[32px] leading-[32px] font-[900] text-black">
+          <h2 className="text-[24px] md:text-[32px] leading-[32px] font-[900] text-black text-center">
             Conheça o grupo musical francisco de assis
           </h2>
           <Link href="#">
@@ -156,7 +156,7 @@ export default function Home() {
       {/* 6 - banner - would you like to rent a book */}
       <div className="w-full min-h-32 bg-bannerBiblioteca bg-cover mb-4">
         <div className="container justify-center flex items-center mx-auto flex-col gap-6 py-28 px-4 md:px-0">
-          <h2 className="text-[32px] font-[900] text-white">
+          <h2 className="text-[24px] md:text-[32px] font-[900] text-white">
             Gostaria de alugar um livro?
           </h2>
           <Link href="/biblioteca">
