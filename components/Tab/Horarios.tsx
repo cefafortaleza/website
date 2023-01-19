@@ -132,7 +132,7 @@ export default function Tabs() {
   const changeTab = (newTab: DaysOfWeek) => setActiveTab(newTab);
 
   const renderTabContent = () => (
-    <div className="flex gap-4 w-full">
+    <div className="flex flex-col md:flex-row gap-4 w-full">
       <div className="w-full p-4 border border-black">
         <p className="font-[900]">Manhã</p>
         {activeTab &&

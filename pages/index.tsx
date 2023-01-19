@@ -31,7 +31,7 @@ export default function Home() {
       <HomeCarousel />
 
       {/* 2 - instagram */}
-      <div className="container mx-auto flex flex-col gap-4 mb-8 px-4 lg:px-0">
+      <div className="container mx-auto flex flex-col gap-4 mb-8 px-8 lg:px-0">
         {/* Section Title */}
         <SectionTitle as="h2">Redes Sociais</SectionTitle>
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2 max-w-xl ">
@@ -43,7 +43,7 @@ export default function Home() {
         </div>
       </div>
       {/* 3 - latest posts */}
-      <div className="container mx-auto flex flex-col gap-4 px-4 lg:px-0">
+      <div className="container mx-auto flex flex-col gap-4 px-8 lg:px-0">
         {/* Section Title */}
         <SectionTitle as="h2">Fique Ligado</SectionTitle>
 
@@ -107,7 +107,7 @@ export default function Home() {
       </div>
       {/* 4 - banner - musical group */}
       <div className="w-full min-h-32 bg-bannerGrupoMusical bg-cover mb-4">
-        <div className="container justify-center flex items-center mx-auto flex-col gap-6 py-28 px-4 lg:px-0">
+        <div className="container justify-center flex items-center mx-auto flex-col gap-6 py-28 px-8 lg:px-0">
           <h2 className="text-[24px] md:text-[32px] leading-[32px] font-[900] text-black text-center">
             Conheça o grupo musical francisco de assis
           </h2>
@@ -119,7 +119,7 @@ export default function Home() {
         </div>
       </div>
       {/* 5 - more from cefa */}
-      <div className="container mx-auto flex flex-col gap-4 mb-4 px-4 lg:px-0">
+      <div className="container mx-auto flex flex-col gap-4 mb-4 px-8 lg:px-0">
         {/* Section Title */}
         <SectionTitle size="large">Mais do Cefa</SectionTitle>
         <SectionTitle size="small">Doações Voluntárias</SectionTitle>
@@ -167,7 +167,7 @@ export default function Home() {
         </div>
       </div>
       {/* 7 - bookstore */}
-      <div className="container mx-auto flex flex-col gap-4 mb-4 px-4 lg:px-0">
+      <div className="container mx-auto flex flex-col gap-4 mb-4 px-8 lg:px-0">
         {/* Section Title */}
 
         <SectionTitle size="small">Livraria</SectionTitle>

@@ -98,8 +98,8 @@ const Tabs = () => {
 
   const generateListFromRoles = (roles: Role[]) =>
     roles.map((role: Role) => (
-      <div className="flex justify-between gap-4" key={role.label}>
-        <div className="flex gap-4">
+      <div className="flex flex-col md:flex-row justify-between gap-4" key={role.label}>
+        <div className="flex flex-col md:flex-row gap-4">
           <p className="font-[900] text-[16px]">{role.label}:</p>
           <p className="text-[16px]">{role.name}</p>
         </div>

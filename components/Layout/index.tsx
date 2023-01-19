@@ -15,12 +15,12 @@ const Layout: FC<PropsWithChildren> = ({ children }: PropsWithChildren) => {
 
   return (
     <>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col">
         <Navbar />
-        {children}
+        <div className="flex flex-col gap-8">{children}</div>
         {/* Footer */}
         {/* footer */}
-        <div className="bg-[#eee] w-full py-24 flex flex-col gap-4 justify-center items-center">
+        <div className="bg-[#eee] w-full py-24 flex flex-col gap-4 justify-center items-center mt-8">
           <span className="text-xs text-[#333]">
             Siga-nos nas redes sociais
           </span>

@@ -6,7 +6,7 @@ export default function Biblioteca() {
   return (
     <Layout>
       <div className="bg-bannerBiblioteca block h-[400px] bg-cover" />
-      <div className="flex flex-col gap-4 container mx-auto px-4 lg:px-0">
+      <div className="flex flex-col gap-4 container mx-auto px-8 lg:px-0">
         {/* Page Title */}
         <SectionTitle size="large">Biblioteca</SectionTitle>
         <p>

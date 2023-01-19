@@ -8,21 +8,25 @@ import Logo from "./Logo";
 const Mobile = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleMenu = () => {
+    return setIsOpen(!isOpen);
+  };
+
   return (
     <div className="relative w-full h-full ">
       {/* Logo / Burger Menu */}
-      <div className="flex justify-between w-full h-full items-center z-40">
+      <div className="flex justify-between w-full h-full items-center z-40 p-4">
         <Logo />
         <button
           className="flex flex-col gap-[4px] w-6 h-6 z-50 group"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={handleMenu}
         >
           <span
             className={classnames(
               "h-[2px] w-full block bg-black group-hover:bg-primary transition",
               {
-                'opacity-0': isOpen,
-                'opacity-100': !isOpen,
+                "opacity-0": isOpen,
+                "opacity-100": !isOpen,
               }
             )}
           />

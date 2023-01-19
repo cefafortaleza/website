@@ -20,7 +20,7 @@ export default function Sobre() {
     <Layout>
       {/* 1 - Table of Contents */}
       {/* Section Title */}
-      <div className="container mx-auto flex flex-col gap-4 mb-4 px-4 lg:px-0">
+      <div className="container mx-auto flex flex-col gap-4 mb-4 px-8 lg:px-0">
         <SectionTitle size="large">Sobre o Cefa</SectionTitle>
 
         <div className="border p-4 flex flex-col gap-4 max-w-fit">
