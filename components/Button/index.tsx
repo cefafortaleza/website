@@ -26,7 +26,7 @@ export default function Button({
           target="_blank"
           rel="noopener noreferrer"
           className={classnames(
-            "bg-black hover:bg-white transition px-8 py-2 max-w-fit text-white hover:text-[#333] hover:border hover:border-[#333] font-[900] text-[16px] leading-[24px] rounded-sm",
+            "bg-black hover:bg-white transition px-8 py-2 max-w-fit text-white hover:text-[#333] border hover:border-[#333] font-[900] text-[16px] leading-[24px] rounded-sm",
             className
           )}
         >
@@ -38,7 +38,7 @@ export default function Button({
       <Link href={href ?? ""}>
         <span
           className={classnames(
-            "bg-black hover:bg-white px-8 py-2 max-w-fit text-white hover:text-[#333] hover:border hover:border-[#333] transition font-[900] text-[16px] leading-[24px] rounded-sm",
+            "bg-black hover:bg-white px-8 py-2 max-w-fit text-white hover:text-[#333] border hover:border-[#333] transition font-[900] text-[16px] leading-[24px] rounded-sm",
             className
           )}
         >
@@ -50,7 +50,7 @@ export default function Button({
   return (
     <button
       className={classnames(
-        "bg-black hover:bg-white transition px-8 py-2 max-w-fit text-white hover:text-[#333] hover:border hover:border-[#333] font-[900] text-[16px] leading-[24px] rounded-sm",
+        "bg-black hover:bg-white transition px-8 py-2 max-w-fit text-white hover:text-[#333] border hover:border-[#333] font-[900] text-[16px] leading-[24px] rounded-sm",
         className
       )}
       onClick={onClick}
