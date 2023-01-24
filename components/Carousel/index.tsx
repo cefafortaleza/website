@@ -14,7 +14,7 @@ export default function HomeCarousel() {
     >
       <Slider>
         <Slide index={0}>
-          <div className="w-full h-full min-h-[300px] md:min-h-[400px] relative p-8">
+          <div className="w-full h-full min-h-[300px] md:min-h-[400px] relative p-8 z-30">
             <div className="absolute top-0 left-0 right-0 bottom-0 z-10">
               <img
                 src="/cefa-banner-principal-3.jpeg"
@@ -36,7 +36,7 @@ export default function HomeCarousel() {
           </div>
         </Slide>
         <Slide index={1}>
-          <div className="w-full h-full min-h-[300px] md:min-h-[400px] relative p-8">
+          <div className="w-full h-full min-h-[300px] md:min-h-[400px] relative p-8 z-30">
             <div className="absolute top-0 left-0 right-0 bottom-0 z-10">
               <img
                 src="/cefa-banner-principal-2.jpeg"
@@ -58,7 +58,7 @@ export default function HomeCarousel() {
           </div>
         </Slide>
         <Slide index={2}>
-          <div className="w-full h-full min-h-[300px] md:min-h-[400px] relative p-8">
+          <div className="w-full h-full min-h-[300px] md:min-h-[400px] relative p-8 z-30">
             <div className="absolute top-0 left-0 right-0 bottom-0 z-10">
               <img
                 src="/cefa-banner-principal-1.jpeg"

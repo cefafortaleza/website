@@ -89,7 +89,7 @@ const Desktop = () => {
         })}
 
         <div
-          className={classnames("absolute right-0 top-16", {
+          className={classnames("absolute right-0 top-16 z-50", {
             hidden: !isSubMenuOpen,
             block: isSubMenuOpen,
           })}

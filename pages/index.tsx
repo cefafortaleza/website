@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Button from "../components/Button";
 
+import Button from "../components/Button";
 import Layout from "../components/Layout";
 import SectionTitle from "../components/SectionTitle";
 import HomeCarousel from "../components/Carousel";
@@ -69,8 +69,8 @@ export default function Home() {
                 participarem da Assembleia Geral Ordinária, que acontecera na
                 data e formato descrito na imagem.
               </p>
-              <Button asLink href="/grupo-musical">
-                Clique aqui
+              <Button asLink href="/blog/assembleia-geral-ordinaria">
+                Saiba Mais!
               </Button>
             </div>
           </div>
@@ -96,11 +96,7 @@ export default function Home() {
                 Somos gratos, Senhor, pela oportunidade de servir! Parabéns
                 CEFA!!!
               </p>
-              <Link href="#">
-                <span className="rounded-sm bg-black font-bold text-white py-3 px-8">
-                  Saiba mais
-                </span>
-              </Link>
+              <Button asLink href="/blog/aniversario-79-anos-cefa">Saiba mais!</Button>
             </div>
           </div>
         </div>
@@ -111,11 +107,7 @@ export default function Home() {
           <h2 className="text-[24px] md:text-[32px] leading-[32px] font-[900] text-black text-center">
             Conheça o grupo musical francisco de assis
           </h2>
-          <Link href="#">
-            <span className="rounded-sm bg-black font-bold text-white py-3 px-8">
-              Clique Aqui
-            </span>
-          </Link>
+          <Button asLink href="/grupo-musical">Clique aqui!</Button>
         </div>
       </div>
       {/* 5 - more from cefa */}
@@ -159,11 +151,7 @@ export default function Home() {
           <h2 className="text-[24px] md:text-[32px] font-[900] text-white">
             Gostaria de alugar um livro?
           </h2>
-          <Link href="/biblioteca">
-            <span className="rounded-sm bg-black font-bold text-white py-3 px-8">
-              Conheça nossa biblioteca
-            </span>
-          </Link>
+          <Button asLink href="/biblioteca">Conheça nossa biblioteca!</Button>
         </div>
       </div>
       {/* 7 - bookstore */}
