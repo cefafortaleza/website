@@ -2,6 +2,7 @@ export default {
   name: 'activitiesDoc',
   title: 'Atividades do CEFA',
   type: 'document',
+  singleton: true,
   fields: [
     {
       name: 'activitiesList',
@@ -18,6 +19,16 @@ export default {
               title: 'Título da Atividade',
               type: 'string',
               validation: (Rule: {required: () => any}) => Rule.required(),
+            },
+            {
+              name: 'description',
+              title: 'Descrição',
+              type: 'array',
+              of: [
+                {
+                  type: 'block',
+                },
+              ],
             },
             {
               name: 'subActivities',
@@ -65,6 +76,17 @@ export default {
                               name: 'dayOfWeek',
                               title: 'Dia da Semana',
                               type: 'string',
+                              options: {
+                                list: [
+                                  'Segunda',
+                                  'Terça',
+                                  'Quarta',
+                                  'Quinta',
+                                  'Sexta',
+                                  'Sábado',
+                                  'Domingo',
+                                ],
+                              },
                               validation: (Rule: {required: () => any}) => Rule.required(),
                             },
                             {
