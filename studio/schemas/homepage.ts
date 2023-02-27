@@ -31,6 +31,14 @@ export default {
               type: 'image',
               validation: (Rule: {required: () => any}) => Rule.required(),
             },
+            {
+              name: 'textColor',
+              title: 'Cor do Texto',
+              type: 'string',
+              options: {
+                list: ['Preto', 'Branco'],
+              },
+            },
           ],
         },
       ],
