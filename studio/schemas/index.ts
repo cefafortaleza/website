@@ -4,4 +4,4 @@ import blogPost from './blogPost'
 import musicalGroup from './musical-group'
 import homepage from './homepage'
 
-export const schemaTypes = [atividades, about, blogPost, homepage, musicalGroup]
+export const schemaTypes = [homepage, about, musicalGroup, atividades, blogPost]
