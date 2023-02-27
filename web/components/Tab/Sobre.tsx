@@ -42,7 +42,7 @@ const conselho = [
   },
   {
     label: "Vice-presidente",
-    name: "Hemerson Frederico Costa Lima Soares",
+    name: "Lúcia Helena Araújo Bezerra",
     email: "president@email.com",
   },
   {
