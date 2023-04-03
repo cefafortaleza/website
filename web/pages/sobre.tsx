@@ -1,12 +1,15 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import Layout from "../components/Layout";
-import SectionTitle from "../components/SectionTitle";
-import { SobreTab } from "../components/Tab";
+import Layout from '../components/Layout';
+import SectionTitle from '../components/SectionTitle';
+import {SobreTab} from '../components/Tab';
+import {CustomPortableText} from '../components/PortableText';
 
-export default function Sobre() {
+export default function Sobre({aboutPageData}: any) {
+  const {presentation, board, estatuto, bylaws} = aboutPageData;
+
   function getCEFAMap() {
-    if (typeof window === "undefined") return;
+    if (typeof window === 'undefined') return;
     return window.innerWidth > 768
       ? {
           __html: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.321599622649!2d-38.5386949846855!3d-3.7399331972790297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c749059fc1cb73%3A0x62b532cbda7ba6b5!2sCEFA%20-%20Centro%20Esp%C3%ADrita%20Francisco%20de%20Assis!5e0!3m2!1spt-BR!2sbr!4v1599908404077!5m2!1spt-BR!2sbr" width="1200" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>`,
@@ -52,60 +55,8 @@ export default function Sobre() {
 
         {/* Apresentação */}
         <div className="flex flex-col gap-4" id="apresentacao">
-          <SectionTitle>Apresentação</SectionTitle>
-          <p>
-            O Centro Espírita Francisco de Assis (CEFA) é uma instituição
-            religiosa espírita de caráter cultural e filantrópico, que tem como
-            objetivos o estudo, a prática e a divulgação do Evangelho de Jesus
-            Cristo e da Doutrina Espírita, codificada por Allan Kardec
-            (1804-1869).
-          </p>
-
-          <p>
-            Foi fundado por Olívio Silva, Francisco Inácio da Ponte, Guiomar
-            Pires, Aníbal Justa, Francisco Emídio e Mafina Feitosa, em 02 de
-            dezembro de 1941, com o nome de Centro Espírita União e Caridade
-            Francisco de Assis (CEUCFA). Suas primeiras atividades aconteceram
-            em um prédio alugado no Centro de Fortaleza (CE), localizado na Rua
-            Barão do Rio Branco, 1741.{" "}
-          </p>
-
-          <p>
-            Seu primeiro Estatuto foi publicado no Diário Oficial em novembro de
-            1942 e registrado em cartório em 02 de dezembro de 1942, conferindo
-            ao Centro Espírita personalidade jurídica e descrevendo sua primeira
-            Diretoria, composta por: Presidente: Joaquim Maia de Oliveira;
-            Vice-Presidente: Antônio Rodrigues de Almeida; 1º Secretário:
-            Francisco Barbosa Serra; 2º Secretário: Almerindo Mendonça dos Reis;
-            Tesoureiro: Olívio Silva; 2º Tesoureiro: Militão Pinto Pereira; 1º
-            Orador: José Mendes Figueiredo; 2º Orador: José Sousa Lima; e,
-            Procuradores Gerais: Pedro Carlos Braga e Joventino Gomes Barbosa.{" "}
-          </p>
-
-          <p>
-            A sua legalização constitui fato de suma importância, tendo em vista
-            que as atividades filosóficas e religiosas na senda espírita sofriam
-            perseguições na época tanto do Clero Romano como do Governo. Hoje, o
-            CEFA possui uma sede própria, localizada na Rua Senador Catunda,
-            117, no Bairro Benfica, cuja escritura de compra do terreno data de
-            18 de março de 1948. Foram 7 anos de trabalho até a sua inauguração,
-            em 23 de julho de 1955. Ainda em obras, o prédio foi visitado em 24
-            de novembro de 1950 por Leopoldo Machado - uma das figuras mais
-            expressivas do Espiritismo no Brasil -, em sua Caravana da
-            Fraternidade, movimento que percorreu os estados do Norte e Nordeste
-            com o objetivo de promover uma maior aproximação entre os espíritas
-            e divulgar a Doutrina Espírita. Nas palavras do confrade, conforme
-            consta no livro “A Caravana da Fraternidade”, de sua autoria e
-            publicado pela Federação Espírita Brasileira (FEB), “Fomos visitar a
-            sede do Francisco de Assis, ainda em construção. Sede enorme. Um
-            mundo de casa, talvez, para abrigar toda Fortaleza espiritista”.
-          </p>
-
-          <p>
-            Com quase 80 anos de atividades, o CEFA tem influenciado o
-            surgimento de vários Centros Espíritas no Ceará, constituindo um
-            modelo de referência para o Movimento Espírita cearense.
-          </p>
+          <SectionTitle>{presentation?.title}</SectionTitle>
+          <CustomPortableText value={presentation?.description} />
         </div>
 
         {/* Board */}
@@ -117,13 +68,13 @@ export default function Sobre() {
             Diretoria, Conselho Consultivo Fiscal e Coordenadorias
           </SectionTitle>
 
-          <SobreTab />
+          <SobreTab board={board} />
         </div>
 
         {/* Estatuto */}
         <div className="flex flex-col gap-4" id="estatuto">
           <SectionTitle>Estatuto</SectionTitle>
-          <a href="/ESTATUTO.pdf" download>
+          <a href={`${estatuto?.url}?dl=estatuto-cefa.pdf`} download>
             <span className="text-primary hover:text-[#333] hover:underline text-lg">
               Download
             </span>
@@ -134,7 +85,7 @@ export default function Sobre() {
         <div className="flex flex-col gap-4">
           <SectionTitle>Regimento Interno</SectionTitle>
 
-          <a href="/REGIMENTO.docx" download>
+          <a href={`${estatuto?.url}?dl=regimento-interno-cefa.pdf`} download>
             <span className="text-primary hover:text-[#333] hover:underline text-lg">
               Download!
             </span>
@@ -147,9 +98,9 @@ export default function Sobre() {
 
           <div className="flex flex-col gap-4">
             <p className="flex gap-4">
-              Telefone:{" "}
+              Telefone:{' '}
               <Link href={`tel:+448432216163}`}>
-                {" "}
+                {' '}
                 <span className="text-primary hover:text-[#333] hover:underline text-lg">
                   (85) 3221 6163
                 </span>
@@ -158,7 +109,7 @@ export default function Sobre() {
           </div>
           <div className="flex flex-col gap-4">
             <p className="flex gap-4">
-              Email:{" "}
+              Email:{' '}
               <span className="text-primary hover:text-[#333] hover:underline text-lg">
                 <Link href={`mailto:contato@cefafortaleza.com.br`}>
                   contato@cefafortaleza.com.br
@@ -248,3 +199,36 @@ export default function Sobre() {
     </Layout>
   );
 }
+
+export const getServerSideProps = async () => {
+  const query = encodeURIComponent(`*[_type == "about"]{
+    ...,
+    estatuto {
+      "url": asset->url,
+      ...,
+    },
+    bylaws {
+      "url": asset->url,
+      ...
+    }
+  }`);
+  const url = `${process.env.SANITY_URL}query=${query}`;
+
+  const data = await fetch(url).then((res) => res.json());
+
+  const aboutPageData = data.result[0];
+
+  if (!aboutPageData || aboutPageData.length === 0) {
+    return {
+      props: {
+        aboutPageData: {},
+      },
+    };
+  }
+
+  return {
+    props: {
+      aboutPageData,
+    },
+  };
+};
