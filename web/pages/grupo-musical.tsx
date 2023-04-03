@@ -1,41 +1,51 @@
-import Layout from "../components/Layout";
+import urlBuilder from '@sanity/image-url';
 
-import SectionTitle from "../components/SectionTitle";
+import Layout from '../components/Layout';
+import SectionTitle from '../components/SectionTitle';
+import {CustomPortableText} from '../components/PortableText';
 
-export default function GrupoMusical() {
+import {client} from '../sanityClient';
+
+interface MusicalGroupPage {
+  _type: 'document';
+  _id: string;
+  image: {
+    _type: 'image';
+    asset: {
+      _type: 'reference';
+      _ref: string;
+    };
+  };
+  title: string;
+  content: {
+    _type: 'block';
+    children: {_type: 'span'; text: string}[];
+    markDefs: any[];
+    style: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'blockquote';
+  }[];
+}
+
+type MusicalGroupPageProps = {
+  musicalGroupPageData: MusicalGroupPage;
+};
+
+export default function GrupoMusical({
+  musicalGroupPageData,
+}: MusicalGroupPageProps) {
   return (
     <Layout>
-      <div className="bg-bannerGrupoMusical block h-[400px] bg-cover" />
-      <div className="flex flex-col gap-4 container mx-auto px-8 lg:px-0">
+      <div
+        className="block h-[400px] bg-cover"
+        style={{
+          backgroundImage: `url(${urlBuilder(client)
+            .image(musicalGroupPageData?.image)
+            .url()})`,
+        }}
+      />
+      <div className="container px-4 md:px-0 flex flex-col gap-4 container mx-auto px-8 lg:px-0">
         {/* Page Title */}
-        <SectionTitle>Grupo Musical Francisco de Assis</SectionTitle>
-        <p>
-          O Grupo Musical Francisco de Assis iniciou suas atividades como Coral
-          Francisco de Assis, em 1990, e tem como principal objetivo a
-          divulgação da Doutrina Espírita por meio das músicas. Além da
-          atividade musical, os integrantes do grupo também se dedicam a
-          diversas atividades desenvolvidas pelo CEFA como voluntários.
-        </p>
-        <p>
-          O principal compromisso do grupo consiste na harmonização do público
-          durante A Hora da Prece, evento de promoção doutrinária que acontece
-          todos os domingos no Centro Espírita Francisco de Assis. Além disso, o
-          grupo vem ampliando sua atuação, participando de vários eventos
-          espíritas realizados no Estado do Ceará.
-        </p>
-        <p>
-          Ao longo de sua trajetória, o Grupo Musical Francisco de Assis já
-          gravou dois CD’s: o primeiro deles intitulado “A Hora da Prece” (2011)
-          e o segundo, “Instrumentos da Paz” (2014). Com mais de 4.000 cópias
-          vendidas, toda a renda gerada com as vendas é destinada para os
-          trabalhos desenvolvidos pelo CEFA.
-        </p>
-        <p>
-          A atual formação do grupo completou 10 anos em 2018, com um show
-          comemorativo realizado no auditório do CEFA. Com a ajuda da
-          Espiritualidade, o grupo espera continuar sua caminhada, levando
-          consolo aos corações através de preces em forma de canções.
-        </p>
+        <SectionTitle size="large">{musicalGroupPageData?.title}</SectionTitle>
+        <CustomPortableText value={musicalGroupPageData?.content} />
         <div className="flex gap-4">
           {/* Instagram */}
           <div className="flex items-center justify-center">
@@ -112,3 +122,26 @@ export default function GrupoMusical() {
     </Layout>
   );
 }
+
+export const getServerSideProps = async () => {
+  const query = encodeURIComponent(`*[_type == "musicalGroup"]`);
+  const url = `${process.env.SANITY_URL}query=${query}`;
+
+  const data = await fetch(url).then((res) => res.json());
+
+  const musicalGroupPageData = data.result[0];
+
+  if (!musicalGroupPageData || musicalGroupPageData.length === 0) {
+    return {
+      props: {
+        musicalGroupPageData: {},
+      },
+    };
+  }
+
+  return {
+    props: {
+      musicalGroupPageData,
+    },
+  };
+};
