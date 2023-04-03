@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import Button from '../components/Button';
 import Layout from '../components/Layout';
 import SectionTitle from '../components/SectionTitle';
@@ -136,10 +134,10 @@ export default function Home({homepageData}: any) {
       <div className="w-full min-h-32 bg-bannerBiblioteca bg-cover mb-4">
         <div className="container justify-center flex items-center mx-auto flex-col gap-6 py-28 px-4 md:px-0">
           <h2 className="text-[24px] md:text-[32px] font-[900] text-white">
-            Gostaria de alugar um livro?
+            {bannerTwo?.title}
           </h2>
-          <Button asLink href="/biblioteca">
-            Conheça nossa biblioteca!
+          <Button asLink href={bannerTwo?.link}>
+            {bannerTwo?.buttonTitle}
           </Button>
         </div>
       </div>

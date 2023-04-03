@@ -1,6 +1,8 @@
 import {PortableText} from '@portabletext/react';
 import urlBuilder from '@sanity/image-url';
 
+import SectionTitle from '../SectionTitle';
+
 const ImageComponent = ({image, isInline}) => {
   return (
     <img
@@ -22,8 +24,14 @@ const components = {
   types: {
     image: ImageComponent,
   },
+  block: {
+    h1: (props) => <SectionTitle as="h3" size="large" {...props} />,
+    h2: (props) => <SectionTitle as="h3" size="medium" {...props} />,
+    h3: (props) => <SectionTitle as="h3" size="medium" {...props} />,
+    h4: (props) => <SectionTitle as="h3" size="small" {...props} />,
+  },
 };
 
-export const CustomPortableText = (props) => {
-  return <PortableText value={props.value} components={components} />;
+export const CustomPortableText = ({value}) => {
+  return <PortableText value={value} components={components} />;
 };

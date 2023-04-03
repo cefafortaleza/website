@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
-import classnames from "classnames";
+import {useState, useEffect, useRef} from 'react';
+import Link from 'next/link';
+import classnames from 'classnames';
 
-import Logo from "./Logo";
+import Logo from './Logo';
 
 const Desktop = () => {
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
@@ -12,7 +12,7 @@ const Desktop = () => {
   const modalRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    function handleClickOutside(event: { target: any }) {
+    function handleClickOutside(event: {target: any}) {
       if (
         modalRef.current &&
         !modalRef?.current?.contains(event.target) &&
@@ -21,10 +21,10 @@ const Desktop = () => {
         toggleSubMenu();
       }
     }
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
       // Unbind the event listener on clean up
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
@@ -35,19 +35,19 @@ const Desktop = () => {
       {/* Navbar */}
       <div className="flex gap-4 items-center relative">
         {[
-          { label: "Sobre o Cefa", url: "/sobre" },
-          { label: "Atividades", url: "/atividades" },
-          { label: "Palestras", url: "/palestras" },
-          { label: "Contato", url: "/contato" },
+          {label: 'Sobre o Cefa', url: '/sobre'},
+          {label: 'Atividades', url: '/atividades'},
+          {label: 'Palestras', url: '/palestras'},
+          {label: 'Contato', url: '/contato'},
           {
-            label: "Mais",
+            label: 'Mais',
             subItems: [
-              { label: "Horários", url: "/horarios" },
-              { label: "Biblioteca", url: "/biblioteca" },
-              { label: "Grupo Musical", url: "/grupo-musical" },
+              {label: 'Horários', url: '/horarios'},
+              {label: 'Biblioteca', url: '/biblioteca'},
+              {label: 'Grupo Musical', url: '/grupo-musical'},
             ],
           },
-        ].map(({ url, label, subItems }) => {
+        ].map(({url, label, subItems}) => {
           if (Array.isArray(subItems)) {
             return (
               <button
@@ -79,37 +79,45 @@ const Desktop = () => {
 
           if (url) {
             return (
-              <Link href={url} passHref key={url}>
-                <span className="font-light transition hover:text-primary cursor-pointer whitespace-nowrap text-[20px] leading-[29px]">
-                  {label}
-                </span>
+              <Link href={url} passHref key={url} legacyBehavior>
+                <a className="hover:no-underline">
+                  <span className="font-light transition hover:text-primary cursor-pointer whitespace-nowrap text-[20px] leading-[29px]">
+                    {label}
+                  </span>
+                </a>
               </Link>
             );
           }
         })}
 
         <div
-          className={classnames("absolute right-0 top-16 z-50", {
+          className={classnames('absolute right-0 top-16 z-50', {
             hidden: !isSubMenuOpen,
             block: isSubMenuOpen,
           })}
           ref={modalRef}
         >
           <div className="flex flex-col gap-4 p-4 border rounded-lg bg-white">
-            <Link href={"/horarios"} passHref>
-              <span className="font-light transition hover:text-primary cursor-pointer whitespace-nowrap text-[20px] leading-[29px]">
-                Horários
-              </span>
+            <Link href={'/horarios'} passHref legacyBehavior>
+              <a className="hover:no-underline">
+                <span className="font-light transition hover:text-primary cursor-pointer whitespace-nowrap text-[20px] leading-[29px]">
+                  Horários
+                </span>
+              </a>
             </Link>
-            <Link href={"/biblioteca"} passHref>
-              <span className="font-light transition hover:text-primary cursor-pointer whitespace-nowrap text-[20px] leading-[29px]">
-                Biblioteca
-              </span>
+            <Link href={'/biblioteca'} passHref legacyBehavior>
+              <a className="hover:no-underline">
+                <span className="font-light transition hover:text-primary cursor-pointer whitespace-nowrap text-[20px] leading-[29px]">
+                  Biblioteca
+                </span>
+              </a>
             </Link>
-            <Link href={"/grupo-musical"} passHref>
-              <span className="font-light transition hover:text-primary cursor-pointer whitespace-nowrap text-[20px] leading-[29px]">
-                Grupo Musical
-              </span>
+            <Link href={'/grupo-musical'} passHref legacyBehavior>
+              <a className="hover:no-underline">
+                <span className="font-light transition hover:text-primary cursor-pointer whitespace-nowrap text-[20px] leading-[29px]">
+                  Grupo Musical
+                </span>
+              </a>
             </Link>
           </div>
         </div>
