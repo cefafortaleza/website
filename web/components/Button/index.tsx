@@ -8,6 +8,7 @@ type ButtonProps = {
   href?: string;
   external?: boolean;
   className?: string;
+  disabled?: boolean;
 };
 
 export default function Button({
@@ -17,6 +18,7 @@ export default function Button({
   href,
   external,
   className,
+  disabled,
 }: ButtonProps) {
   if (asLink) {
     if (external) {
@@ -56,6 +58,7 @@ export default function Button({
         className
       )}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </button>
