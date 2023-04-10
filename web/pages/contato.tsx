@@ -1,4 +1,4 @@
-import {ChangeEvent, useState} from 'react';
+import {ChangeEvent, useCallback, useState} from 'react';
 import Layout from '../components/Layout';
 import Button from '../components/Button';
 import classNames from 'classnames';
@@ -10,14 +10,15 @@ export default function Contato() {
     message: '',
   });
 
-  const [sending, setSending] = useState(false); // Add sending state
+  const [sending, setSending] = useState(false);
 
   const updateForm =
-    (field: string) => (value: ChangeEvent<HTMLInputElement>) =>
+    (field: string) =>
+    (value: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) =>
       setForm({...form, [field]: value.target.value});
 
   const submit = async () => {
-    setSending(true); // Set sending state to true when button is clicked
+    setSending(true);
     try {
       const response = await fetch('/api/sendEmail', {
         method: 'POST',
@@ -35,8 +36,24 @@ export default function Contato() {
       console.error('Failed to send email:', error);
     }
 
-    setSending(false); // Set sending state back to false when message is sent
+    setSending(false);
   };
+
+  const isEmailValid = useCallback(() => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(form.email)) {
+      return false;
+    }
+    return true;
+  }, [form.email]);
+
+  const isFormValid = useCallback(() => {
+    if (!isEmailValid() || !form.name || !form.message) {
+      return false;
+    }
+    return true;
+  }, [form.name, form.message, isEmailValid]);
 
   return (
     <Layout>
@@ -71,11 +88,11 @@ export default function Contato() {
           </div>
           <Button
             onClick={submit}
-            className={classNames('mx-auto', {'opacity-50 hover:not-allowed': sending})}
-            disabled={sending}
+            className="mx-auto"
+            disabled={!isFormValid() || sending}
+            // disable button if form is invalid or sending
           >
-            {sending ? 'Enviando...' : 'Enviar mensagem!'}{' '}
-            {/*Conditional rendering based on sending state*/}
+            {sending ? 'Enviando...' : 'Enviar mensagem!'}
           </Button>
         </div>
       </div>

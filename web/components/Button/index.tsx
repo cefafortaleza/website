@@ -54,7 +54,11 @@ export default function Button({
   return (
     <button
       className={classnames(
-        'bg-black hover:bg-white transition px-8 py-2 max-w-fit text-white hover:text-[#333] border hover:border-[#333] font-[900] text-[16px] leading-[24px] rounded-sm',
+        'bg-black transition px-8 py-2 max-w-fit text-white  border  font-[900] text-[16px] leading-[24px] rounded-sm',
+        {
+          'hover:bg-white hover:text-[#333] hover:border-[#333]': !disabled,
+          'opacity-50 cursor-not-allowed': disabled,
+        },
         className
       )}
       onClick={onClick}
