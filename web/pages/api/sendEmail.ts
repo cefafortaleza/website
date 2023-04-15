@@ -18,11 +18,11 @@ export default async function handler(
   });
 
   const mailOptions = {
-    from: 'admin@cefafortaleza.org.br',
+    from: 'contato@cefafortaleza.org.br',
     to: process.env.SMTP_RECEIVER,
-    subject: 'Nova Mensagem de cefa.com.br',
+    subject: 'Nova Mensagem do site cefafortaleza.org.br',
     html: `
-      <h3>New message from My Website:</h3>
+      <h3>Nova mensagem:</h3>
       <p>Name: ${name}</p>
       <p>Email: ${email}</p>
       <p>Message: ${message}</p>

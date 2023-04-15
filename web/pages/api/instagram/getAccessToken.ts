@@ -7,10 +7,10 @@ const handler: NextApiHandler = async (req: NextApiRequest, res: NextApiResponse
   const { instagramClientId, instagramClientSecret, instagramRedirectUri } = process.env;
 
   const params = new URLSearchParams({
-    client_id: instagramClientId,
-    client_secret: instagramClientSecret,
+    client_id: instagramClientId!,
+    client_secret: instagramClientSecret!,
     grant_type: 'authorization_code',
-    redirect_uri: instagramRedirectUri,
+    redirect_uri: instagramRedirectUri!,
     code: code as string,
   });
 
@@ -23,8 +23,6 @@ const handler: NextApiHandler = async (req: NextApiRequest, res: NextApiResponse
     },
   };
 
-  const postData = params.toString();
-  
   const reqPost = https.request(options, (response) => {
     let data = '';
     response.on('data', (chunk) => {
@@ -48,7 +46,7 @@ const handler: NextApiHandler = async (req: NextApiRequest, res: NextApiResponse
     });
   });
 
-  reqPost.write(postData);
+  reqPost.write(params.toString());
   reqPost.end();
 
   reqPost.on('error', (error) => {

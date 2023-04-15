@@ -4,9 +4,23 @@ import SectionTitle from '../../components/SectionTitle';
 import {client} from '../../sanityClient';
 import imageUrlBuilder from '@sanity/image-url';
 
-const builder = imageUrlBuilder(client);
+interface BuilderType {
+  image: (source: {asset: {_ref: string}}) => {
+    url: () => string;
+  };
+}
 
-const BlogPost = ({blogPostData}) => {
+const builder: BuilderType = imageUrlBuilder(client);
+
+interface BlogPostProps {
+  blogPostData: {
+    title: string;
+    featuredImage: {asset: {_ref: string}};
+    contentBlocks: any[];
+  };
+}
+
+const BlogPost = ({blogPostData}: BlogPostProps): JSX.Element => {
   const {title, featuredImage, contentBlocks} = blogPostData;
   return (
     <Layout>
@@ -27,7 +41,11 @@ const BlogPost = ({blogPostData}) => {
   );
 };
 
-export const getServerSideProps = async ({params}) => {
+export const getServerSideProps = async ({
+  params,
+}: {
+  params: {slug: string};
+}) => {
   const {slug} = params;
   const query =
     encodeURIComponent(`*[_type == "blogPost" && slug.current == "${slug}"][0]{

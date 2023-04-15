@@ -6,19 +6,39 @@ import Link from 'next/link';
 import {HorariosTab} from '../components/Tab';
 import {ActivitiesList} from '../types';
 
+type DayOfWeek =
+  | 'Domingo'
+  | 'Segunda'
+  | 'Terça'
+  | 'Quarta'
+  | 'Quinta'
+  | 'Sexta'
+  | 'Sábado';
+
 type HorariosProps = {
   atividadesData: ActivitiesList;
 };
 
-function transformActivities(json) {
-  const daysOfWeek = {
-    Domingo: [],
-    Segunda: [],
-    Terça: [],
-    Quarta: [],
-    Quinta: [],
-    Sexta: [],
-    Sábado: [],
+type TimeOfDay = 'man' | 'tar' | 'noi';
+
+type TransformedActivities = {
+  [key in DayOfWeek]: {
+    [key in TimeOfDay]?: {
+      title: string;
+      time: string;
+    }[];
+  };
+};
+
+function transformActivities(json: ActivitiesList): TransformedActivities {
+  const daysOfWeek: TransformedActivities = {
+    Domingo: {},
+    Segunda: {},
+    Terça: {},
+    Quarta: {},
+    Quinta: {},
+    Sexta: {},
+    Sábado: {},
   };
 
   const activities = json.activitiesList;
@@ -31,23 +51,23 @@ function transformActivities(json) {
         const time = parseInt(hourValue) + parseInt(minuteValue) / 60;
 
         if (time >= 0 && time < 12) {
-          daysOfWeek[hour.dayOfWeek]['man'] =
-            daysOfWeek[hour.dayOfWeek]['man'] || [];
-          daysOfWeek[hour.dayOfWeek]['man'].push({
+          daysOfWeek[hour.dayOfWeek as DayOfWeek]['man'] =
+            daysOfWeek[hour.dayOfWeek as DayOfWeek]['man'] || [];
+          daysOfWeek[hour.dayOfWeek as DayOfWeek]['man']!.push({
             title: subActivity.title,
             time: hour.time,
           });
         } else if (time >= 12 && time < 18) {
-          daysOfWeek[hour.dayOfWeek]['tar'] =
-            daysOfWeek[hour.dayOfWeek]['tar'] || [];
-          daysOfWeek[hour.dayOfWeek]['tar'].push({
+          daysOfWeek[hour.dayOfWeek as DayOfWeek]['tar'] =
+            daysOfWeek[hour.dayOfWeek as DayOfWeek]['tar'] || [];
+          daysOfWeek[hour.dayOfWeek as DayOfWeek]['tar']!.push({
             title: subActivity.title,
             time: hour.time,
           });
         } else {
-          daysOfWeek[hour.dayOfWeek]['noi'] =
-            daysOfWeek[hour.dayOfWeek]['noi'] || [];
-          daysOfWeek[hour.dayOfWeek]['noi'].push({
+          daysOfWeek[hour.dayOfWeek as DayOfWeek]['noi'] =
+            daysOfWeek[hour.dayOfWeek as DayOfWeek]['noi'] || [];
+          daysOfWeek[hour.dayOfWeek as DayOfWeek]['noi']!.push({
             title: subActivity.title,
             time: hour.time,
           });

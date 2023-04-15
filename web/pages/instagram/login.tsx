@@ -1,6 +1,7 @@
-import {GetServerSideProps} from 'next';
+import {GetServerSideProps, GetServerSidePropsContext} from 'next';
 import {useRouter} from 'next/router';
 import {useState} from 'react';
+import {ParsedUrlQuery} from 'querystring';
 import Button from '../../components/Button';
 
 type Props = {
@@ -39,11 +40,14 @@ const LoginPage = ({instagramClientId, instagramRedirectUri}: Props) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<
+  Props,
+  ParsedUrlQuery
+> = async (context: GetServerSidePropsContext<ParsedUrlQuery>) => {
   return {
     props: {
-      instagramClientId: process.env.INSTAGRAM_CLIENT_ID,
-      instagramRedirectUri: process.env.INSTAGRAM_REDIRECT_URI,
+      instagramClientId: process.env.INSTAGRAM_CLIENT_ID || '',
+      instagramRedirectUri: process.env.INSTAGRAM_REDIRECT_URI || '',
     },
   };
 };

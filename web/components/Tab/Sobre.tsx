@@ -1,104 +1,30 @@
 import {useState} from 'react';
 import classnames from 'classnames';
 
-const diretoria = [
-  {
-    label: 'Presidente',
-    name: 'Francisco das Chagas Silveira Reis',
-    email: 'president@email.com',
-  },
-  {
-    label: 'Vice-Presidente',
-    name: 'Fernanda Maria Caetano Albuquerque',
-    email: 'president@email.com',
-  },
-  {
-    label: 'Tesoureiro',
-    name: 'José Rodrigues Xavier',
-    email: 'president@email.com',
-  },
-  {
-    label: 'Tesoureiro Adjunto',
-    name: 'Louis Pasteur Silveira Leite Esmeraldo',
-    email: 'president@email.com',
-  },
-  {
-    label: 'Secretário Geral',
-    name: 'Edilson Félix Pereira',
-    email: 'president@email.com',
-  },
-  {
-    label: 'Secretário Geral Adjunto',
-    name: 'Maria Lúcia Pereira Costa Queiroz',
-    email: 'president@email.com',
-  },
-];
-
-const conselho = [
-  {
-    label: 'Presidente',
-    name: 'Hemerson Frederico Costa Lima Soares',
-    email: 'president@email.com',
-  },
-  {
-    label: 'Vice-presidente',
-    name: 'Lúcia Helena Araújo Bezerra',
-    email: 'president@email.com',
-  },
-  {
-    label: 'Secretário',
-    name: 'Paulo Henrique Borges do Vale',
-    email: 'president@email.com',
-  },
-  {
-    label: 'Suplente',
-    name: 'Leonila Silva Gurgel Nogueira',
-    email: 'president@email.com',
-  },
-];
-
-const coordenadores = [
-  {
-    label: 'Mediunidade',
-    name: '(vago)',
-    email: '',
-  },
-  {
-    label: 'Doutrina',
-    name: 'Maria do Socorro Azevedo Teixeira',
-    email: 'president@email.com',
-  },
-  {
-    label: 'Ação Social',
-    name: '(vago)',
-    email: '',
-  },
-  {
-    label: 'Evangelização Infantojuvenil',
-    name: 'Márcia Catunda',
-    email: 'president@email.com',
-  },
-  {
-    label: 'Comunicação e Eventos',
-    name: 'Mariângela do Amaral Saboya',
-    email: 'president@email.com',
-  },
-];
-
-type Role = {
+type BoardMember = {
   label?: string;
   title?: string;
   name?: string;
   email?: string;
 };
 
-const Tabs = ({board}) => {
+type FullBoard = {
+  diretoria: BoardMember[];
+  conselho: BoardMember[];
+  coordenadores: BoardMember[];
+};
+
+type TabProps = {
+  board: FullBoard;
+};
+
+const Tabs = ({board}: TabProps) => {
   const [activeTab, setActiveTab] = useState('diretoria');
 
   const changeTab = (newTab: string) => setActiveTab(newTab);
 
-  const generateListFromRoles = (roles: Role[]) =>
-    roles.map((role: Role) => (
+  const generateListFromRoles = (roles: BoardMember[]) =>
+    roles.map((role: BoardMember) => (
       <div
         className="flex flex-col md:flex-row justify-between gap-4"
         key={role?.title ?? role.label}

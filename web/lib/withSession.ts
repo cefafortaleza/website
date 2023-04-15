@@ -1,8 +1,20 @@
-import {GetServerSideProps, GetServerSidePropsContext} from 'next';
-import {ParsedUrlQuery} from 'querystring';
+import {
+  GetServerSideProps,
+  GetServerSidePropsContext,
+  GetServerSidePropsResult,
+} from 'next';
+import { ParsedUrlQuery } from 'querystring';
+import { IncomingMessage, IncomingHttpHeaders } from 'http';
+import { Socket } from 'net';
 
-interface WithSessionProps {
-  session: {[key: string]: any} | null;
+interface WithSessionProps extends IncomingMessage {
+  session: { [key: string]: any } | null;
+}
+
+declare module 'http' {
+  interface IncomingMessage {
+    session: { [key: string]: any } | null;
+  }
 }
 
 export const withSession = <P extends WithSessionProps>(
@@ -10,9 +22,9 @@ export const withSession = <P extends WithSessionProps>(
 ) => {
   return async (
     context: GetServerSidePropsContext<ParsedUrlQuery>
-  ): Promise<P> => {
-    const {req} = context;
-    const session = req.session.get('session') || null;
+  ): Promise<GetServerSidePropsResult<P>> => {
+    const { req, res } = context;
+    const session = req.session ?? null;
 
     if (!session) {
       return {
@@ -20,9 +32,20 @@ export const withSession = <P extends WithSessionProps>(
           destination: '/login',
           permanent: false,
         },
-      } as unknown as P;
+      };
     }
 
-    return getServerSidePropsFunc({...context, props: {session}});
+    const newContext = {
+      ...context,
+      req: {
+        ...(req as any),
+        session,
+      },
+      query: context.query,
+      resolvedUrl: context.resolvedUrl,
+    };
+
+    const result = await getServerSidePropsFunc(newContext);
+    return result;
   };
 };

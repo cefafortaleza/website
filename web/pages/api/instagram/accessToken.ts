@@ -5,7 +5,7 @@ const handler: NextApiHandler = async (
   req: NextApiRequest,
   res: NextApiResponse
 ) => {
-  const {code} = req.query;
+  const {code} = req.query as {code?: string};
 
   try {
     // Exchange the code for an Access Token
@@ -17,16 +17,21 @@ const handler: NextApiHandler = async (
           'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: new URLSearchParams({
-          client_id: process.env.INSTAGRAM_CLIENT_ID,
-          client_secret: process.env.INSTAGRAM_CLIENT_SECRET,
+          client_id: process.env.INSTAGRAM_CLIENT_ID ?? '',
+          client_secret: process.env.INSTAGRAM_CLIENT_SECRET ?? '',
           grant_type: 'authorization_code',
-          redirect_uri: process.env.INSTAGRAM_REDIRECT_URI,
-          code,
+          redirect_uri: process.env.INSTAGRAM_REDIRECT_URI ?? '',
+          code: code ?? '',
         }),
       }
     );
 
-    const data = await response.json();
+    const data: {
+      access_token: string;
+      user_id: string;
+      expires_in: string;
+      error_message?: string;
+    } = await response.json() as any;
 
     if (!response.ok) {
       throw new Error(data.error_message || 'Internal Server Error');

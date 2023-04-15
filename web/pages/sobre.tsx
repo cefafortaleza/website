@@ -67,7 +67,6 @@ export default function Sobre({aboutPageData}: any) {
           <SectionTitle>
             Diretoria, Conselho Consultivo Fiscal e Coordenadorias
           </SectionTitle>
-
           <SobreTab board={board} />
         </div>
 
