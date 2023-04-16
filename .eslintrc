@@ -1,0 +1,25 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "airbnb/hooks"
+  ],
+  "rules": {
+    "comma-dangle": [
+      1,
+      "always-multiline"
+    ],
+    "quotes": [
+      1,
+      "single"
+    ],
+    "semi": [
+      1,
+      "always"
+    ],
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "import/no-anonymous-default-export": 0,
+    "react/jsx-filename-extension": 0
+  }
+}
