@@ -17,6 +17,7 @@ interface BlogPostProps {
     title: string;
     featuredImage: {asset: {_ref: string}};
     contentBlocks: any[];
+    slug: string;
   };
 }
 
