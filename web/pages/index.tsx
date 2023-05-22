@@ -22,7 +22,7 @@ interface BlogPostProps {
   slug: string;
 }
 
-export default function Home({blogPostsData, homepageData}: any) {
+export default function Home({blogPostsData, homepageData, instagramHashtag}: any) {
   const {bannerOne, bannerTwo, livraria, maisDoCefa, slides} = homepageData;
 
   return (
@@ -34,7 +34,7 @@ export default function Home({blogPostsData, homepageData}: any) {
       <div className="container mx-auto flex flex-col gap-4 mb-8 px-8 lg:px-0">
         {/* Section Title */}
         <SectionTitle as="h2">Redes Sociais</SectionTitle>
-        <InstagramFeed />
+        <InstagramFeed instagramHashtag={instagramHashtag} />
       </div>
       {/* 3 - latest posts */}
       <div className="container mx-auto flex flex-col gap-4 px-8 lg:px-0">
@@ -125,16 +125,23 @@ export const getServerSideProps = async () => {
 
   const blogPostsUrl = `${process.env.SANITY_URL}query=${blogPostsQuery}`;
 
+  const informationQuery = encodeURIComponent(`*[_type === "information"]{
+    instagramHashtag
+  }`);
+
+  const informationUrl = `${process.env.SANITY_URL}query=${informationQuery}`;
+
   const homeData = await fetch(url).then((res) => res.json());
 
   const blogPostsData = await fetch(blogPostsUrl).then((res) => res.json());
 
-  const homepageData = homeData.result[0];
+  const informationData = await fetch(informationUrl).then((res) => res.json());
 
   return {
     props: {
       blogPostsData: blogPostsData?.result ?? [],
-      homepageData: homepageData ?? {},
+      homepageData: homeData.result[0] ?? {},
+      instagramHashtag: informationData.result[0].instagramHashtag ?? {},
     },
   };
 };

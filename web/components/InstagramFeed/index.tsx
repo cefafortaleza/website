@@ -7,7 +7,11 @@ type Media = {
   permalink: string;
 };
 
-const InstagramFeed = () => {
+type InstagramFeedProps = {
+  instagramHashtag: string;
+};
+
+const InstagramFeed = ({instagramHashtag}: InstagramFeedProps) => {
   const [photos, setPhotos] = useState<Media[]>([]);
 
   useEffect(() => {
@@ -22,21 +26,23 @@ const InstagramFeed = () => {
   return (
     <div className="grid gap-4 grid-cols-1 md:grid-cols-2 max-w-xl ">
       {Array.isArray(photos) &&
-        photos.map(({media_url: mediaUrl, permalink, caption, id}) => (
-          <a
-            href={permalink}
-            target="_top"
-            rel="noopener"
-            key={id}
-            className="block cursor:pointer"
-          >
-            <img
-              src={mediaUrl}
-              alt={caption}
-              className="w-64 md:w-full h-64 object-cover"
-            />
-          </a>
-        ))}
+        photos
+          .filter((images) => images.caption.includes(`${instagramHashtag ?? '#sitecefa'}`))
+          .map(({media_url: mediaUrl, permalink, caption, id}) => (
+            <a
+              href={permalink}
+              target="_top"
+              rel="noopener"
+              key={id}
+              className="block cursor:pointer"
+            >
+              <img
+                src={mediaUrl}
+                alt={caption}
+                className="w-64 md:w-full h-64 object-cover"
+              />
+            </a>
+          ))}
     </div>
   );
 };
