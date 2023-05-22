@@ -6,7 +6,7 @@ const supabase = createClient(
   process.env.SUPABASE_API_KEY ?? ''
 );
 
-export default async function handler(_, res: NextApiResponse) {
+export default async function handler(_: any, res: NextApiResponse) {
   try {
     // Fetch the access token from Supabase
     const {data: tokenData, error: tokenError} = await supabase
