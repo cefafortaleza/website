@@ -22,7 +22,11 @@ interface BlogPostProps {
   slug: string;
 }
 
-export default function Home({blogPostsData, homepageData, instagramHashtag}: any) {
+export default function Home({
+  blogPostsData,
+  homepageData,
+  instagramHashtag,
+}: any) {
   const {bannerOne, bannerTwo, livraria, maisDoCefa, slides} = homepageData;
 
   return (
@@ -114,6 +118,7 @@ export default function Home({blogPostsData, homepageData, instagramHashtag}: an
 export const getServerSideProps = async () => {
   const query = encodeURIComponent(`*[_type == "homepage"]`);
   const url = `${process.env.SANITY_URL}query=${query}`;
+  const homeData = await fetch(url).then((res) => res.json());
 
   const blogPostsQuery = encodeURIComponent(`*[_type == "blogPost"]{
     title,
@@ -122,26 +127,20 @@ export const getServerSideProps = async () => {
     contentBlocks,
     _createdAt,
   }`);
-
   const blogPostsUrl = `${process.env.SANITY_URL}query=${blogPostsQuery}`;
-
-  const informationQuery = encodeURIComponent(`*[_type === "information"]{
-    instagramHashtag
-  }`);
-
-  const informationUrl = `${process.env.SANITY_URL}query=${informationQuery}`;
-
-  const homeData = await fetch(url).then((res) => res.json());
-
   const blogPostsData = await fetch(blogPostsUrl).then((res) => res.json());
 
+  const informationQuery = encodeURIComponent(`*[_type == "information"]{
+    instagramHashtag
+  }`);
+  const informationUrl = `${process.env.SANITY_URL}query=${informationQuery}`;
   const informationData = await fetch(informationUrl).then((res) => res.json());
 
   return {
     props: {
-      blogPostsData: blogPostsData?.result ?? [],
-      homepageData: homeData.result[0] ?? {},
-      instagramHashtag: informationData.result[0].instagramHashtag ?? {},
+      blogPostsData: blogPostsData?.result || [],
+      homepageData: homeData.result[0] || {},
+      instagramHashtag: informationData.result[0].instagramHashtag || {},
     },
   };
 };

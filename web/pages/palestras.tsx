@@ -36,6 +36,7 @@ export default function Palestras({instagramEventsHashtag}: PalestrasProps) {
               .filter((images) =>
                 images.caption.includes(instagramEventsHashtag)
               )
+              .slice(0, 4)
               .map(({media_url: mediaUrl, permalink, caption, id}) => (
                 <a
                   href={permalink}
@@ -68,7 +69,7 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
-      instagramHashtag: informationData.result[0].instagramHashtag ?? {},
+      instagramEventsHashtag: informationData.result[0].instagramEventsHashtag ?? {},
     },
   };
 };

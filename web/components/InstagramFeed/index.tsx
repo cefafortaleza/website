@@ -27,7 +27,10 @@ const InstagramFeed = ({instagramHashtag}: InstagramFeedProps) => {
     <div className="grid gap-4 grid-cols-1 md:grid-cols-2 max-w-xl ">
       {Array.isArray(photos) &&
         photos
-          .filter((images) => images.caption.includes(`${instagramHashtag ?? '#sitecefa'}`))
+          .filter((image) =>
+            image?.caption?.includes(`#${instagramHashtag ?? 'sitecefa'}`)
+          )
+          .slice(0,4)
           .map(({media_url: mediaUrl, permalink, caption, id}) => (
             <a
               href={permalink}
