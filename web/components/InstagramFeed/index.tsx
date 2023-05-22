@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
 type Media = {
   id: string;
@@ -13,7 +13,7 @@ const InstagramFeed = () => {
   useEffect(() => {
     const fetchPhotos = async () => {
       const data = await fetch('/api/instagram').then((res) => res.json());
-      setPhotos(data.data);
+      setPhotos(data.images);
     };
 
     fetchPhotos();

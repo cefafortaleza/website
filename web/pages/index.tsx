@@ -22,10 +22,8 @@ interface BlogPostProps {
   slug: string;
 }
 
-export default function Home({blogPostsData, homepageData, tokenData}: any) {
+export default function Home({blogPostsData, homepageData}: any) {
   const {bannerOne, bannerTwo, livraria, maisDoCefa, slides} = homepageData;
-
-  console.log({tokenData});
 
   return (
     <Layout>
