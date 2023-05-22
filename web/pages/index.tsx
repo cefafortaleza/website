@@ -3,6 +3,7 @@ import imageUrlBuilder from '@sanity/image-url';
 import Layout from '../components/Layout';
 import SectionTitle from '../components/SectionTitle';
 import HomeCarousel from '../components/Carousel';
+import InstagramFeed from '../components/InstagramFeed';
 import {CustomPortableText} from '../components/PortableText';
 import {client} from '../sanityClient';
 
@@ -21,27 +22,10 @@ interface BlogPostProps {
   slug: string;
 }
 
-export default function Home({homepageData, blogPostsData}: any) {
+export default function Home({blogPostsData, homepageData, tokenData}: any) {
   const {bannerOne, bannerTwo, livraria, maisDoCefa, slides} = homepageData;
 
-  const instagramList = [
-    {
-      url: 'https://www.instagram.com/p/CgC43S8OuCn/',
-      image: '/instagram-01.jpeg',
-    },
-    {
-      url: 'https://www.instagram.com/p/CkdaqITr_Ng/',
-      image: '/instagram-02.jpeg',
-    },
-    {
-      url: 'https://www.instagram.com/p/CSIHD3mrUX9/',
-      image: '/instagram-03.jpeg',
-    },
-    {
-      url: 'https://www.instagram.com/p/CYE_P6xr3xi/',
-      image: '/instagram-04.jpeg',
-    },
-  ];
+  console.log({tokenData});
 
   return (
     <Layout>
@@ -52,19 +36,7 @@ export default function Home({homepageData, blogPostsData}: any) {
       <div className="container mx-auto flex flex-col gap-4 mb-8 px-8 lg:px-0">
         {/* Section Title */}
         <SectionTitle as="h2">Redes Sociais</SectionTitle>
-        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 max-w-xl ">
-          {instagramList.map(({url, image}) => (
-            <a
-              href={url}
-              target="_top"
-              rel="noopener"
-              key={url}
-              className="block"
-            >
-              <img src={image} className="w-64 md:w-full h-64 object-cover" />
-            </a>
-          ))}
-        </div>
+        <InstagramFeed />
       </div>
       {/* 3 - latest posts */}
       <div className="container mx-auto flex flex-col gap-4 px-8 lg:px-0">
@@ -161,18 +133,10 @@ export const getServerSideProps = async () => {
 
   const homepageData = homeData.result[0];
 
-  if (!homepageData || homepageData.length === 0) {
-    return {
-      props: {
-        homepageData: {},
-      },
-    };
-  }
-
   return {
     props: {
-      homepageData,
       blogPostsData: blogPostsData?.result ?? [],
+      homepageData: homepageData ?? {},
     },
   };
 };

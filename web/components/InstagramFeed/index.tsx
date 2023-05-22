@@ -4,44 +4,39 @@ type Media = {
   id: string;
   caption: string;
   media_url: string;
+  permalink: string;
 };
 
-type InstagramFeedProps = {
-  accessToken: string;
-};
-
-const InstagramFeed = ({ accessToken }: InstagramFeedProps) => {
-  const [media, setMedia] = useState<Media[]>([]);
-  const [loading, setLoading] = useState(true);
+const InstagramFeed = () => {
+  const [photos, setPhotos] = useState<Media[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // Fetch the user's personal feed
-        const response = await fetch(`https://graph.instagram.com/me/media?fields=id,caption,media_url&access_token=${accessToken}`);
-        const data = await response.json();
-        setMedia(data.data);
-        setLoading(false);
-      } catch (error) {
-        console.error(error);
-      }
+    const fetchPhotos = async () => {
+      const data = await fetch('/api/instagram').then((res) => res.json());
+      setPhotos(data.data);
     };
 
-    fetchData();
-  }, [accessToken]);
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+    fetchPhotos();
+  }, []);
 
   return (
-    <div>
-      {media.map((m) => (
-        <div key={m.id}>
-          <img src={m.media_url} alt={m.caption} />
-          <p>{m.caption}</p>
-        </div>
-      ))}
+    <div className="grid gap-4 grid-cols-1 md:grid-cols-2 max-w-xl ">
+      {Array.isArray(photos) &&
+        photos.map(({media_url: mediaUrl, permalink, caption, id}) => (
+          <a
+            href={permalink}
+            target="_top"
+            rel="noopener"
+            key={id}
+            className="block cursor:pointer"
+          >
+            <img
+              src={mediaUrl}
+              alt={caption}
+              className="w-64 md:w-full h-64 object-cover"
+            />
+          </a>
+        ))}
     </div>
   );
 };
