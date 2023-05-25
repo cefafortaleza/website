@@ -78,5 +78,17 @@ export default {
         },
       ],
     },
+    {
+      name: 'instagramHashtag',
+      title: 'Instagram Hashtag',
+      type: 'string',
+      validation: (Rule: {required: () => any}) => Rule.required(),
+    },
+    {
+      name: 'instagramEventsHashtag',
+      title: 'Instagram Events Hashtag',
+      type: 'string',
+      validation: (Rule: {required: () => any}) => Rule.required(),
+    },
   ],
 }

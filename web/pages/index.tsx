@@ -3,6 +3,7 @@ import imageUrlBuilder from '@sanity/image-url';
 import Layout from '../components/Layout';
 import SectionTitle from '../components/SectionTitle';
 import HomeCarousel from '../components/Carousel';
+import InstagramFeed from '../components/InstagramFeed';
 import {CustomPortableText} from '../components/PortableText';
 import {client} from '../sanityClient';
 
@@ -21,27 +22,12 @@ interface BlogPostProps {
   slug: string;
 }
 
-export default function Home({homepageData, blogPostsData}: any) {
+export default function Home({
+  blogPostsData,
+  homepageData,
+  instagramHashtag,
+}: any) {
   const {bannerOne, bannerTwo, livraria, maisDoCefa, slides} = homepageData;
-
-  const instagramList = [
-    {
-      url: 'https://www.instagram.com/p/CgC43S8OuCn/',
-      image: '/instagram-01.jpeg',
-    },
-    {
-      url: 'https://www.instagram.com/p/CkdaqITr_Ng/',
-      image: '/instagram-02.jpeg',
-    },
-    {
-      url: 'https://www.instagram.com/p/CSIHD3mrUX9/',
-      image: '/instagram-03.jpeg',
-    },
-    {
-      url: 'https://www.instagram.com/p/CYE_P6xr3xi/',
-      image: '/instagram-04.jpeg',
-    },
-  ];
 
   return (
     <Layout>
@@ -52,19 +38,7 @@ export default function Home({homepageData, blogPostsData}: any) {
       <div className="container mx-auto flex flex-col gap-4 mb-8 px-8 lg:px-0">
         {/* Section Title */}
         <SectionTitle as="h2">Redes Sociais</SectionTitle>
-        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 max-w-xl ">
-          {instagramList.map(({url, image}) => (
-            <a
-              href={url}
-              target="_top"
-              rel="noopener"
-              key={url}
-              className="block"
-            >
-              <img src={image} className="w-64 md:w-full h-64 object-cover" />
-            </a>
-          ))}
-        </div>
+        <InstagramFeed instagramHashtag={instagramHashtag} />
       </div>
       {/* 3 - latest posts */}
       <div className="container mx-auto flex flex-col gap-4 px-8 lg:px-0">
@@ -144,6 +118,7 @@ export default function Home({homepageData, blogPostsData}: any) {
 export const getServerSideProps = async () => {
   const query = encodeURIComponent(`*[_type == "homepage"]`);
   const url = `${process.env.SANITY_URL}query=${query}`;
+  const homeData = await fetch(url).then((res) => res.json());
 
   const blogPostsQuery = encodeURIComponent(`*[_type == "blogPost"]{
     title,
@@ -152,27 +127,20 @@ export const getServerSideProps = async () => {
     contentBlocks,
     _createdAt,
   }`);
-
   const blogPostsUrl = `${process.env.SANITY_URL}query=${blogPostsQuery}`;
-
-  const homeData = await fetch(url).then((res) => res.json());
-
   const blogPostsData = await fetch(blogPostsUrl).then((res) => res.json());
 
-  const homepageData = homeData.result[0];
-
-  if (!homepageData || homepageData.length === 0) {
-    return {
-      props: {
-        homepageData: {},
-      },
-    };
-  }
+  const informationQuery = encodeURIComponent(`*[_type == "information"]{
+    instagramHashtag
+  }`);
+  const informationUrl = `${process.env.SANITY_URL}query=${informationQuery}`;
+  const informationData = await fetch(informationUrl).then((res) => res.json());
 
   return {
     props: {
-      homepageData,
-      blogPostsData: blogPostsData?.result ?? [],
+      blogPostsData: blogPostsData?.result || [],
+      homepageData: homeData.result[0] || {},
+      instagramHashtag: informationData.result[0].instagramHashtag || {},
     },
   };
 };
