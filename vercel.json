@@ -1,0 +1,14 @@
+{
+  "version": 2,
+
+  "buildCommand": "next build",
+  "cleanUrls": true,
+  "framework": "nextjs",
+  
+  "crons": [
+    {
+      "path": "/api/instagram/refreshToken",
+      "schedule": "0 0 */28 * *"
+    }
+  ]
+}
