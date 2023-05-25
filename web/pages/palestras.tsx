@@ -40,7 +40,8 @@ export default function Palestras({instagramEventsHashtag}: PalestrasProps) {
               photos
                 .filter(
                   (images) =>
-                    images?.caption && images.caption.includes(instagramEventsHashtag)
+                    images?.caption &&
+                    images.caption.includes(instagramEventsHashtag)
                 )
                 .slice(0, 4)
                 .map(({media_url: mediaUrl, permalink, caption, id}) => (
@@ -66,12 +67,13 @@ export default function Palestras({instagramEventsHashtag}: PalestrasProps) {
               photos
                 .filter(
                   (images) =>
-                    images?.caption && images.caption.includes(instagramEventsHashtag)
+                    images?.caption &&
+                    images.caption.includes(instagramEventsHashtag)
                 )
                 .slice(0, 4).length === 0 && (
                 <p>
-                  Não conseguimos buscar nenhuma imagem. Por favor volte mais
-                  tarde.
+                  Não conseguimos encontrar nenhuma postagem. Por favor, volte
+                  mais tarde
                 </p>
               )}
           </div>
@@ -90,7 +92,8 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
-      instagramEventsHashtag: informationData.result[0].instagramEventsHashtag ?? {},
+      instagramEventsHashtag:
+        informationData.result[0].instagramEventsHashtag ?? {},
     },
   };
 };
