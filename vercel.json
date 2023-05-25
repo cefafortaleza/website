@@ -13,6 +13,7 @@
       "dest": "web/pages/api/instagram/refreshToken.js"
     }
   ],
+  "rewrites": [{"source": "/(.*)", "destination": "/"}],
   "crons": [
     {
       "path": "/api/instagram/refreshToken",
