@@ -11,10 +11,10 @@ type Media = {
 };
 
 type PalestrasProps = {
-  instagramHashtag: string;
+  instagramEventsHashtag: string;
 };
 
-export default function Palestras({instagramHashtag}: PalestrasProps) {
+export default function Palestras({instagramEventsHashtag}: PalestrasProps) {
   const [photos, setPhotos] = useState<Media[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -40,7 +40,7 @@ export default function Palestras({instagramHashtag}: PalestrasProps) {
               photos
                 .filter(
                   (images) =>
-                    images?.caption && images.caption.includes(instagramHashtag)
+                    images?.caption && images.caption.includes(instagramEventsHashtag)
                 )
                 .slice(0, 4)
                 .map(({media_url: mediaUrl, permalink, caption, id}) => (
@@ -66,7 +66,7 @@ export default function Palestras({instagramHashtag}: PalestrasProps) {
               photos
                 .filter(
                   (images) =>
-                    images?.caption && images.caption.includes(instagramHashtag)
+                    images?.caption && images.caption.includes(instagramEventsHashtag)
                 )
                 .slice(0, 4).length === 0 && (
                 <p>
@@ -83,14 +83,14 @@ export default function Palestras({instagramHashtag}: PalestrasProps) {
 
 export const getServerSideProps = async () => {
   const informationQuery = encodeURIComponent(`*[_type == "information"]{
-    instagramHashtag
+    instagramEventsHashtag
   }`);
   const informationUrl = `${process.env.SANITY_URL}query=${informationQuery}`;
   const informationData = await fetch(informationUrl).then((res) => res.json());
 
   return {
     props: {
-      instagramHashtag: informationData.result[0].instagramHashtag ?? {},
+      instagramEventsHashtag: informationData.result[0].instagramEventsHashtag ?? {},
     },
   };
 };
