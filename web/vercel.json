@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "/web/package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/instagram/refreshToken",
+      "schedule": "0 0 */28 * *" 
+    }
+  ]
+}
