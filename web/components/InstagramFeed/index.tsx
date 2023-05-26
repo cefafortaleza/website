@@ -1,8 +1,5 @@
-import builder from '@sanity/image-url/lib/types/builder';
 import {useEffect, useState} from 'react';
 import Button from '../Button';
-import {CustomPortableText} from '../PortableText';
-import SectionTitle from '../SectionTitle';
 
 type Media = {
   id: string;
@@ -20,6 +17,7 @@ type InstagramFeedProps = {
 const InstagramFeed = ({instagramHashtag}: InstagramFeedProps) => {
   const [photos, setPhotos] = useState<Media[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [expandedCaptions, setExpandedCaptions] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchPhotos = async () => {
@@ -34,7 +32,7 @@ const InstagramFeed = ({instagramHashtag}: InstagramFeedProps) => {
 
   return (
     <>
-      <div className="flex flex-col gap-8 max-w-4xl ">
+      <div className="flex flex-col gap-8 max-w-4xl w-full">
         {isLoading ? ( // Render loading state
           <p>Carregando...</p>
         ) : (
@@ -54,7 +52,7 @@ const InstagramFeed = ({instagramHashtag}: InstagramFeedProps) => {
                 thumbnail_url: thumbnail,
               }) => (
                 <div
-                  className="flex flex-col md:flex-row gap-4 md:gap-8"
+                  className="flex flex-col md:flex-row gap-4 md:gap-8 justify-start"
                   key={id}
                 >
                   {/* Image */}
@@ -62,7 +60,7 @@ const InstagramFeed = ({instagramHashtag}: InstagramFeedProps) => {
                     href={permalink}
                     target="_top"
                     rel="noopener"
-                    className="block cursor:pointer w-full min-w-[300px]"
+                    className="block cursor:pointer w-full min-w-[300px] max-w-[300px]"
                   >
                     <img
                       src={
@@ -74,8 +72,29 @@ const InstagramFeed = ({instagramHashtag}: InstagramFeedProps) => {
                     />
                   </a>
                   {/* Content */}
-                  <div className="flex flex-col gap-4 justify-center">
-                    <p>{caption}</p>
+                  <div className="flex flex-col gap-4 justify-start items-start">
+                    <p>
+                      {caption.length > 250 && !expandedCaptions.includes(id)
+                        ? caption.slice(0, 250)
+                        : caption}
+                      {caption.length > 250 && (
+                        <span
+                          onClick={() =>
+                            setExpandedCaptions((prev) =>
+                              prev.includes(id)
+                                ? prev.filter((item) => item !== id)
+                                : [...prev, id]
+                            )
+                          }
+                          className="font-bold cursor-pointer transition hover:opacity-50"
+                        >
+                          {expandedCaptions.includes(id)
+                            ? ' ...Leia menos'
+                            : ' ...Leia mais'}
+                        </span>
+                      )}
+                    </p>
+
                     <Button asLink href={permalink}>
                       Saiba mais!
                     </Button>
