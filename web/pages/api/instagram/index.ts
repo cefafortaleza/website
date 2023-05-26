@@ -28,7 +28,7 @@ export default async function handler(req: any, res: NextApiResponse) {
 
     const data = await response.json();
     const images = data.data.filter(
-      (item: {media_type: string}) => item.media_type === 'IMAGE'
+      (item: {media_type: string}) => item.media_type !== 'VIDEO'
     );
 
     res.status(200).json({
