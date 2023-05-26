@@ -3,7 +3,6 @@ import Layout from '../components/Layout';
 import SectionTitle from '../components/SectionTitle';
 import Link from 'next/link';
 
-import {HorariosTab} from '../components/Tab';
 import {ActivitiesList} from '../types';
 
 type DayOfWeek =
@@ -30,54 +29,7 @@ type TransformedActivities = {
   };
 };
 
-function transformActivities(json: ActivitiesList): TransformedActivities {
-  const daysOfWeek: TransformedActivities = {
-    Domingo: {},
-    Segunda: {},
-    Terça: {},
-    Quarta: {},
-    Quinta: {},
-    Sexta: {},
-    Sábado: {},
-  };
 
-  const activities = json.activitiesList;
-  activities.forEach((activity) => {
-    const subActivities = activity.subActivities;
-    subActivities.forEach((subActivity) => {
-      const hours = subActivity.hours;
-      hours.forEach((hour) => {
-        const [hourValue, minuteValue] = hour.time.split(':');
-        const time = parseInt(hourValue) + parseInt(minuteValue) / 60;
-
-        if (time >= 0 && time < 12) {
-          daysOfWeek[hour.dayOfWeek as DayOfWeek]['man'] =
-            daysOfWeek[hour.dayOfWeek as DayOfWeek]['man'] || [];
-          daysOfWeek[hour.dayOfWeek as DayOfWeek]['man']!.push({
-            title: subActivity.title,
-            time: hour.time,
-          });
-        } else if (time >= 12 && time < 18) {
-          daysOfWeek[hour.dayOfWeek as DayOfWeek]['tar'] =
-            daysOfWeek[hour.dayOfWeek as DayOfWeek]['tar'] || [];
-          daysOfWeek[hour.dayOfWeek as DayOfWeek]['tar']!.push({
-            title: subActivity.title,
-            time: hour.time,
-          });
-        } else {
-          daysOfWeek[hour.dayOfWeek as DayOfWeek]['noi'] =
-            daysOfWeek[hour.dayOfWeek as DayOfWeek]['noi'] || [];
-          daysOfWeek[hour.dayOfWeek as DayOfWeek]['noi']!.push({
-            title: subActivity.title,
-            time: hour.time,
-          });
-        }
-      });
-    });
-  });
-
-  return daysOfWeek;
-}
 
 export default function Horarios({atividadesData}: HorariosProps) {
   const {activitiesList} = atividadesData;
@@ -87,7 +39,8 @@ export default function Horarios({atividadesData}: HorariosProps) {
       <div className="container mx-auto flex flex-col gap-8 px-8 lg:px-0">
         <SectionTitle as="h2">Horários</SectionTitle>
         {/* Horários */}
-        <HorariosTab weeklyActivities={transformActivities(atividadesData)} />
+        {/* There should be an image here: */}
+
         {/* Atividades */}
         <SectionTitle as="h2" size="large">
           Atividades
@@ -107,13 +60,6 @@ export default function Horarios({atividadesData}: HorariosProps) {
                         {activityIndex + 1}.{subActivityIndex + 1} -{' '}
                         {subActivity.title}
                       </SectionTitle>
-                      <div className="flex flex-col gap-2">
-                        {subActivity?.hours?.map(({dayOfWeek, time}) => (
-                          <p>
-                            {dayOfWeek} - {time}
-                          </p>
-                        ))}
-                      </div>
                     </div>
                   ))}
               </div>
