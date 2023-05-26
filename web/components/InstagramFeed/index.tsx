@@ -1,9 +1,15 @@
+import builder from '@sanity/image-url/lib/types/builder';
 import {useEffect, useState} from 'react';
+import Button from '../Button';
+import {CustomPortableText} from '../PortableText';
+import SectionTitle from '../SectionTitle';
 
 type Media = {
   id: string;
   caption: string;
   media_url: string;
+  thumbnail_url: string;
+  media_type: string;
   permalink: string;
 };
 
@@ -18,6 +24,7 @@ const InstagramFeed = ({instagramHashtag}: InstagramFeedProps) => {
   useEffect(() => {
     const fetchPhotos = async () => {
       const data = await fetch('/api/instagram').then((res) => res.json());
+      console.log({instagramData: data});
       setPhotos(data.images);
       setIsLoading(false);
     };
@@ -27,7 +34,7 @@ const InstagramFeed = ({instagramHashtag}: InstagramFeedProps) => {
 
   return (
     <>
-      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 max-w-xl ">
+      <div className="flex flex-col gap-8 max-w-4xl ">
         {isLoading ? ( // Render loading state
           <p>Carregando...</p>
         ) : (
@@ -37,21 +44,45 @@ const InstagramFeed = ({instagramHashtag}: InstagramFeedProps) => {
               image?.caption?.includes(`#${instagramHashtag ?? 'sitecefa'}`)
             )
             .slice(0, 4)
-            .map(({media_url: mediaUrl, permalink, caption, id}) => (
-              <a
-                href={permalink}
-                target="_top"
-                rel="noopener"
-                key={id}
-                className="block cursor:pointer"
-              >
-                <img
-                  src={mediaUrl}
-                  alt={caption}
-                  className="w-64 md:w-full h-64 object-cover"
-                />
-              </a>
-            ))
+            .map(
+              ({
+                media_type: mediaType,
+                media_url: mediaUrl,
+                permalink,
+                caption,
+                id,
+                thumbnail_url: thumbnail,
+              }) => (
+                <div
+                  className="flex flex-col md:flex-row gap-4 md:gap-8"
+                  key={id}
+                >
+                  {/* Image */}
+                  <a
+                    href={permalink}
+                    target="_top"
+                    rel="noopener"
+                    className="block cursor:pointer w-full min-w-[300px]"
+                  >
+                    <img
+                      src={
+                        mediaType.toLowerCase() === 'video'
+                          ? thumbnail
+                          : mediaUrl
+                      }
+                      className="w-[300px] h-[300px]"
+                    />
+                  </a>
+                  {/* Content */}
+                  <div className="flex flex-col gap-4 justify-center">
+                    <p>{caption}</p>
+                    <Button asLink href={permalink}>
+                      Saiba mais!
+                    </Button>
+                  </div>
+                </div>
+              )
+            )
         )}
       </div>
       <div className="max-w-xl ">

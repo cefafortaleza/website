@@ -8,6 +8,7 @@ type Media = {
   caption: string;
   media_url: string;
   permalink: string;
+  timestamp: string;
 };
 
 type PalestrasProps = {
@@ -35,15 +36,21 @@ export default function Palestras({instagramEventsHashtag}: PalestrasProps) {
         {isLoading ? ( // Render loading state
           <p>Carregando...</p>
         ) : (
-          <div className="flex flex-col gap-4 max-w-fit">
+          <div className="grid gap-4 grid-cols-1 md:grid-cols-2 max-w-xl ">
             {Array.isArray(photos) &&
               photos
-                .filter(
-                  (images) =>
-                    images?.caption &&
-                    images.caption.includes(instagramEventsHashtag)
-                )
-                .slice(0, 4)
+                .filter(({caption, timestamp}) => {
+                  if (!caption || !timestamp) return false;
+
+                  const currentMonth = new Date().getMonth() + 1;
+                  const timestampMonth = new Date(timestamp).getMonth() + 1;
+
+                  return (
+                    caption.includes(instagramEventsHashtag) &&
+                    currentMonth === timestampMonth
+                  );
+                })
+                .slice(0, 5)
                 .map(({media_url: mediaUrl, permalink, caption, id}) => (
                   <a
                     href={permalink}
@@ -52,14 +59,11 @@ export default function Palestras({instagramEventsHashtag}: PalestrasProps) {
                     key={id}
                     className="block cursor:pointer min-w-[300px]"
                   >
-                    <div className="flex flex-col md:flex-row gap-4">
-                      <img
-                        src={mediaUrl}
-                        alt={caption}
-                        className="w-[300px] h-[300px]"
-                      />
-                      <p>{caption}</p>
-                    </div>
+                    <img
+                      src={mediaUrl}
+                      alt={caption}
+                      className="w-[300px] h-[300px]"
+                    />
                   </a>
                 ))}
             {!isLoading &&
