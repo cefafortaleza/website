@@ -73,27 +73,51 @@ const InstagramFeed = ({instagramHashtag}: InstagramFeedProps) => {
                   </a>
                   {/* Content */}
                   <div className="flex flex-col gap-4 justify-start items-start">
-                    <p>
-                      {caption.length > 250 && !expandedCaptions.includes(id)
-                        ? caption.slice(0, 250)
-                        : caption}
-                      {caption.length > 250 && (
-                        <span
-                          onClick={() =>
-                            setExpandedCaptions((prev) =>
-                              prev.includes(id)
-                                ? prev.filter((item) => item !== id)
-                                : [...prev, id]
-                            )
-                          }
-                          className="font-bold cursor-pointer transition hover:opacity-50"
-                        >
-                          {expandedCaptions.includes(id)
-                            ? ' ...Leia menos'
-                            : ' ...Leia mais'}
-                        </span>
-                      )}
-                    </p>
+                    <div className="flex flex-col gap-2">
+                      <p>
+                        {caption.length > 250 && !expandedCaptions.includes(id)
+                          ? `${caption.slice(0, 250)}...`
+                          : caption}
+                        {caption.length > 250 && (
+                          <span
+                            onClick={() =>
+                              setExpandedCaptions((prev) =>
+                                prev.includes(id)
+                                  ? prev.filter((item) => item !== id)
+                                  : [...prev, id]
+                              )
+                            }
+                            className="font-bold cursor-pointer transition hover:opacity-50 h-[24px] w-[24px] inline-block mb-[-6px]"
+                          >
+                            {expandedCaptions.includes(id) ? (
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              >
+                                <path d="M18 15l-6-6-6 6" />
+                              </svg>
+                            ) : (
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              >
+                                <path d="M6 9l6 6 6-6" />
+                              </svg>
+                            )}
+                          </span>
+                        )}
+                      </p>
+                    </div>
 
                     <Button asLink href={permalink}>
                       Saiba mais!
