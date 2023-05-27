@@ -1,70 +1,43 @@
-import Layout from '../components/Layout';
-
-import SectionTitle from '../components/SectionTitle';
 import Link from 'next/link';
+import imageUrlBuilder from '@sanity/image-url';
+
+
+import Layout from '../components/Layout';
+import SectionTitle from '../components/SectionTitle';
 
 import {ActivitiesList} from '../types';
+import {client} from '../sanityClient';
 
-type DayOfWeek =
-  | 'Domingo'
-  | 'Segunda'
-  | 'Terça'
-  | 'Quarta'
-  | 'Quinta'
-  | 'Sexta'
-  | 'Sábado';
+
+interface BuilderType {
+  image: (source: {asset: {_ref: string}}) => {
+    url: () => string;
+  };
+}
+
+const builder: BuilderType = imageUrlBuilder(client);
+
 
 type HorariosProps = {
   atividadesData: ActivitiesList;
 };
 
-type TimeOfDay = 'man' | 'tar' | 'noi';
-
-type TransformedActivities = {
-  [key in DayOfWeek]: {
-    [key in TimeOfDay]?: {
-      title: string;
-      time: string;
-    }[];
-  };
-};
 
 
 
 export default function Horarios({atividadesData}: HorariosProps) {
-  const {activitiesList} = atividadesData;
+  const {activitiesMobileImage, activitiesDesktopImage} = atividadesData;
 
   return (
     <Layout>
       <div className="container mx-auto flex flex-col gap-8 px-8 lg:px-0">
-        <SectionTitle as="h2">Horários</SectionTitle>
+        <SectionTitle as="h2" size='large'>Horários</SectionTitle>
         {/* Horários */}
         {/* There should be an image here: */}
-
-        {/* Atividades */}
-        <SectionTitle as="h2" size="large">
-          Atividades
-        </SectionTitle>
-
-        {Array.isArray(activitiesList) &&
-          activitiesList.map(({title, subActivities}, activityIndex) => (
-            <>
-              <SectionTitle as="h3">
-                {activityIndex + 1} - {title}
-              </SectionTitle>
-              <div className="grid grid-cols-1 md:grid-cols-2 md:max-w-fit gap-4">
-                {Array.isArray(subActivities) &&
-                  subActivities.map((subActivity, subActivityIndex) => (
-                    <div className="p-4 flex flex-col gap-4 border border-black md:max-w-[350px]">
-                      <SectionTitle as="h4" size="small">
-                        {activityIndex + 1}.{subActivityIndex + 1} -{' '}
-                        {subActivity.title}
-                      </SectionTitle>
-                    </div>
-                  ))}
-              </div>
-            </>
-          ))}
+        <div>
+          <img src={builder.image(activitiesDesktopImage).url()} alt="" className='w-full h-full object-cover  max-w-[768px] hidden md:block' />
+          <img src={builder.image(activitiesMobileImage).url()} alt="" className='w-full h-full object-cover max-w-[300px] block md:hidden' />
+          </div>
 
         {/* Livraria */}
         <SectionTitle size="large">Livraria</SectionTitle>

@@ -62,43 +62,6 @@ export default {
                       ],
                       validation: (Rule: {required: () => any}) => Rule.required(),
                     },
-                    {
-                      name: 'hours',
-                      title: 'Horários',
-                      type: 'array',
-                      of: [
-                        {
-                          name: 'horario',
-                          title: 'Horário',
-                          type: 'object',
-                          fields: [
-                            {
-                              name: 'dayOfWeek',
-                              title: 'Dia da Semana',
-                              type: 'string',
-                              options: {
-                                list: [
-                                  'Segunda',
-                                  'Terça',
-                                  'Quarta',
-                                  'Quinta',
-                                  'Sexta',
-                                  'Sábado',
-                                  'Domingo',
-                                ],
-                              },
-                              validation: (Rule: {required: () => any}) => Rule.required(),
-                            },
-                            {
-                              name: 'time',
-                              title: 'Hora',
-                              type: 'string',
-                              validation: (Rule: {required: () => any}) => Rule.required(),
-                            },
-                          ],
-                        },
-                      ],
-                    },
                   ],
                 },
               ],
@@ -106,6 +69,17 @@ export default {
           ],
         },
       ],
+    },
+    {
+      name: 'activitiesMobileImage',
+      title: 'Imagem das Atividades Vertical (Celulares)',
+      type: 'image',
+      validation: (Rule: {required: () => any}) => Rule.required(),
+    },{
+      name: 'activitiesDesktopImage',
+      title: 'Imagem das Atividades Horizontal (Computador)',
+      type: 'image',
+      validation: (Rule: {required: () => any}) => Rule.required(),
     },
   ],
 }
