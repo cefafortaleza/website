@@ -5,11 +5,11 @@ import SectionTitle from '../components/SectionTitle';
 
 type Boletim = {
   title: string;
-  file: any;
+  url: any;
 };
 
 type Boletins = {
-  reports: Boletim[];
+  reports?: Boletim[];
 };
 
 type BoletinsPageProps = {
@@ -25,13 +25,17 @@ const BoletinsPage = ({boletinsPageData}: BoletinsPageProps) => {
           Boletins CEFA
         </SectionTitle>
         <div className="flex flex-col gap-2 ">
-          {reports.map(({title, url}) => (
-            <a href={`${url}?dl=estatuto-cefa.pdf`} download>
-              <span className="text-primary hover:text-[#333] hover:underline text-lg">
-                {title}
-              </span>
-            </a>
-          ))}
+          {Array.isArray(reports) &&
+            reports.map(({title, url}) => (
+              <a href={`${url}?dl=estatuto-cefa.pdf`} download>
+                <span className="text-primary hover:text-[#333] hover:underline text-lg">
+                  {title}
+                </span>
+              </a>
+            ))}
+          {Array.isArray(reports) && reports.length === 0 && (
+            <p>Não encontramos nenhum boletim. Por favor volte mais tarde.</p>
+          )}
         </div>
       </div>
     </Layout>
