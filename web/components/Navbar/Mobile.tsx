@@ -111,6 +111,11 @@ const Mobile = () => {
                   Biblioteca
                 </span>
               </Link>
+              <Link href="/boletins">
+                <span className="text-lg font-[200] hover:text-primary">
+                  Boletins CEFA
+                </span>
+              </Link>
               <Link href="/grupo-musical">
                 <span className="text-lg font-[200] hover:text-primary">
                   Grupo Musical

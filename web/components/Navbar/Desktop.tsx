@@ -44,6 +44,7 @@ const Desktop = () => {
             subItems: [
               {label: 'Horários', url: '/horarios'},
               {label: 'Biblioteca', url: '/biblioteca'},
+              {label: 'Boletins CEFA', url: '/boletins'},
               {label: 'Grupo Musical', url: '/grupo-musical'},
             ],
           },
@@ -109,6 +110,13 @@ const Desktop = () => {
               <a className="hover:no-underline">
                 <span className="font-light transition hover:text-primary cursor-pointer whitespace-nowrap text-[20px] leading-[29px]">
                   Biblioteca
+                </span>
+              </a>
+            </Link>
+            <Link href={'/boletins'} passHref legacyBehavior>
+              <a className="hover:no-underline">
+                <span className="font-light transition hover:text-primary cursor-pointer whitespace-nowrap text-[20px] leading-[29px]">
+                  Boletins CEFA
                 </span>
               </a>
             </Link>
