@@ -4,6 +4,7 @@ import musicalGroup from './musical-group'
 import library from './library'
 import homepage from './homepage'
 import information from './information'
+import reports from './reports'
 
 export const schemaTypes = [
   homepage,
@@ -11,5 +12,6 @@ export const schemaTypes = [
   musicalGroup,
   library,
   activities,
+  reports,
   information,
 ]
