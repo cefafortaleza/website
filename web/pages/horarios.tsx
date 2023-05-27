@@ -1,124 +1,43 @@
-import Layout from '../components/Layout';
-
-import SectionTitle from '../components/SectionTitle';
 import Link from 'next/link';
+import imageUrlBuilder from '@sanity/image-url';
 
-import {HorariosTab} from '../components/Tab';
+
+import Layout from '../components/Layout';
+import SectionTitle from '../components/SectionTitle';
+
 import {ActivitiesList} from '../types';
+import {client} from '../sanityClient';
 
-type DayOfWeek =
-  | 'Domingo'
-  | 'Segunda'
-  | 'Terça'
-  | 'Quarta'
-  | 'Quinta'
-  | 'Sexta'
-  | 'Sábado';
+
+interface BuilderType {
+  image: (source: {asset: {_ref: string}}) => {
+    url: () => string;
+  };
+}
+
+const builder: BuilderType = imageUrlBuilder(client);
+
 
 type HorariosProps = {
   atividadesData: ActivitiesList;
 };
 
-type TimeOfDay = 'man' | 'tar' | 'noi';
 
-type TransformedActivities = {
-  [key in DayOfWeek]: {
-    [key in TimeOfDay]?: {
-      title: string;
-      time: string;
-    }[];
-  };
-};
 
-function transformActivities(json: ActivitiesList): TransformedActivities {
-  const daysOfWeek: TransformedActivities = {
-    Domingo: {},
-    Segunda: {},
-    Terça: {},
-    Quarta: {},
-    Quinta: {},
-    Sexta: {},
-    Sábado: {},
-  };
-
-  const activities = json.activitiesList;
-  activities.forEach((activity) => {
-    const subActivities = activity.subActivities;
-    subActivities.forEach((subActivity) => {
-      const hours = subActivity.hours;
-      hours.forEach((hour) => {
-        const [hourValue, minuteValue] = hour.time.split(':');
-        const time = parseInt(hourValue) + parseInt(minuteValue) / 60;
-
-        if (time >= 0 && time < 12) {
-          daysOfWeek[hour.dayOfWeek as DayOfWeek]['man'] =
-            daysOfWeek[hour.dayOfWeek as DayOfWeek]['man'] || [];
-          daysOfWeek[hour.dayOfWeek as DayOfWeek]['man']!.push({
-            title: subActivity.title,
-            time: hour.time,
-          });
-        } else if (time >= 12 && time < 18) {
-          daysOfWeek[hour.dayOfWeek as DayOfWeek]['tar'] =
-            daysOfWeek[hour.dayOfWeek as DayOfWeek]['tar'] || [];
-          daysOfWeek[hour.dayOfWeek as DayOfWeek]['tar']!.push({
-            title: subActivity.title,
-            time: hour.time,
-          });
-        } else {
-          daysOfWeek[hour.dayOfWeek as DayOfWeek]['noi'] =
-            daysOfWeek[hour.dayOfWeek as DayOfWeek]['noi'] || [];
-          daysOfWeek[hour.dayOfWeek as DayOfWeek]['noi']!.push({
-            title: subActivity.title,
-            time: hour.time,
-          });
-        }
-      });
-    });
-  });
-
-  return daysOfWeek;
-}
 
 export default function Horarios({atividadesData}: HorariosProps) {
-  const {activitiesList} = atividadesData;
+  const {activitiesMobileImage, activitiesDesktopImage} = atividadesData;
 
   return (
     <Layout>
       <div className="container mx-auto flex flex-col gap-8 px-8 lg:px-0">
-        <SectionTitle as="h2">Horários</SectionTitle>
+        <SectionTitle as="h2" size='large'>Horários</SectionTitle>
         {/* Horários */}
-        <HorariosTab weeklyActivities={transformActivities(atividadesData)} />
-        {/* Atividades */}
-        <SectionTitle as="h2" size="large">
-          Atividades
-        </SectionTitle>
-
-        {Array.isArray(activitiesList) &&
-          activitiesList.map(({title, subActivities}, activityIndex) => (
-            <>
-              <SectionTitle as="h3">
-                {activityIndex + 1} - {title}
-              </SectionTitle>
-              <div className="grid grid-cols-1 md:grid-cols-2 md:max-w-fit gap-4">
-                {Array.isArray(subActivities) &&
-                  subActivities.map((subActivity, subActivityIndex) => (
-                    <div className="p-4 flex flex-col gap-4 border border-black md:max-w-[350px]">
-                      <SectionTitle as="h4" size="small">
-                        {activityIndex + 1}.{subActivityIndex + 1} -{' '}
-                        {subActivity.title}
-                      </SectionTitle>
-                      <div className="flex flex-col gap-2">
-                        {subActivity?.hours?.map(({dayOfWeek, time}) => (
-                          <p>
-                            {dayOfWeek} - {time}
-                          </p>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-              </div>
-            </>
-          ))}
+        {/* There should be an image here: */}
+        <div>
+          <img src={builder.image(activitiesDesktopImage).url()} alt="" className='w-full h-full object-cover  max-w-[768px] hidden md:block' />
+          <img src={builder.image(activitiesMobileImage).url()} alt="" className='w-full h-full object-cover max-w-[300px] block md:hidden' />
+          </div>
 
         {/* Livraria */}
         <SectionTitle size="large">Livraria</SectionTitle>

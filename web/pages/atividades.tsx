@@ -62,20 +62,11 @@ export default function Atividades({atividadesData}: AtividadesProps) {
                           {`${activityIndex + 1}.${subActivityIndex + 1}`} -{' '}
                           {subActivity.title}
                         </SectionTitle>
-                        <div className="flex flex-col gap-4">
-                          <span className="font-[900] ">Horários</span>
-                          <div className="flex flex-col gap-2">
-                            {subActivity?.hours?.map(({dayOfWeek, time}) => (
-                              <p>
-                                {dayOfWeek} - {time}
-                              </p>
-                            ))}
-                          </div>
-                          <div className="flex flex-col gap-2">
-                            <CustomPortableText
-                              value={subActivity?.description}
-                            />
-                          </div>
+
+                        <div className="flex flex-col gap-2">
+                          <CustomPortableText
+                            value={subActivity?.description}
+                          />
                         </div>
                       </div>
                     );

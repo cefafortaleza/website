@@ -1,5 +1,7 @@
 export interface ActivitiesList {
   activitiesList: Activity[];
+  activitiesMobileImage: any;
+  activitiesDesktopImage: any;
 }
 
 export interface Activity {

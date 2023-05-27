@@ -1,29 +1,11 @@
 import Button from '../components/Button';
-import imageUrlBuilder from '@sanity/image-url';
 import Layout from '../components/Layout';
 import SectionTitle from '../components/SectionTitle';
 import HomeCarousel from '../components/Carousel';
 import InstagramFeed from '../components/InstagramFeed';
 import {CustomPortableText} from '../components/PortableText';
-import {client} from '../sanityClient';
-
-interface BuilderType {
-  image: (source: {asset: {_ref: string}}) => {
-    url: () => string;
-  };
-}
-
-const builder: BuilderType = imageUrlBuilder(client);
-
-interface BlogPostProps {
-  title: string;
-  featuredImage: {asset: {_ref: string}};
-  contentBlocks: any[];
-  slug: string;
-}
 
 export default function Home({
-  blogPostsData,
   homepageData,
   instagramHashtag,
 }: any) {

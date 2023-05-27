@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import Layout from '../components/Layout';
 import SectionTitle from '../components/SectionTitle';
-import {SobreTab} from '../components/Tab';
+import SobreTab from '../components/SobreTab';
 import {CustomPortableText} from '../components/PortableText';
 
 export default function Sobre({aboutPageData}: any) {
