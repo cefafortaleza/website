@@ -79,7 +79,7 @@ const BoletinsPage = ({boletinsPageData}: BoletinsPageProps) => {
                   <div className="flex flex-col gap-2">
                     {Array.isArray(reports) &&
                       reports.map(({url, title}) => (
-                        <a href={`${url}?dl=${title}.pdf`} download key={title}>
+                        <a href={`${url}?dl=Boletim-Cefa-${title}-${year}.pdf`} download key={title}>
                           <span className="text-primary hover:text-[#333] hover:underline text-lg cursor-pointer  ">
                             {title}
                           </span>
