@@ -4,24 +4,43 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'reports',
-      title: 'Boletins',
+      name: 'year',
+      title: 'Ano',
       type: 'array',
       of: [
         {
           type: 'object',
-          title: 'Boletim',
-          name: 'report',
+          name: 'yearlyReports',
+          title: 'Boletins Anuais',
           fields: [
             {
-              name: 'title',
-              title: 'Título',
+              name: 'year',
+              title: 'Year',
               type: 'string',
             },
             {
-              name: 'file',
-              title: 'Arquivo',
-              type: 'file',
+              name: 'reports',
+              title: 'Boletins',
+              type: 'array',
+              of: [
+                {
+                  type: 'object',
+                  name: 'report',
+                  title: 'Boletim',
+                  fields: [
+                    {
+                      name: 'title',
+                      title: 'Título',
+                      type: 'string',
+                    },
+                    {
+                      name: 'file',
+                      title: 'Boletim',
+                      type: 'file',
+                    },
+                  ],
+                },
+              ],
             },
           ],
         },
