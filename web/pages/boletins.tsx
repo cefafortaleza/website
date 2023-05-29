@@ -18,9 +18,9 @@ type BoletinsPageProps = {
 };
 
 const BoletinsPage = ({boletinsPageData}: BoletinsPageProps) => {
-  const [openYears, setOpenYears] = useState<number[]>([
-    boletinsPageData[0].year,
-  ]);
+  const [openYears, setOpenYears] = useState<number[]>(
+    Array.isArray(boletinsPageData) ? [boletinsPageData[0]?.year] : []
+  );
 
   const toggleYear = (year: number) => {
     if (openYears.includes(year)) {
