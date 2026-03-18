@@ -207,8 +207,8 @@ const PrivacyPolicy = () => {
         <SectionTitle as="h2">As finalidades do processamento</SectionTitle>
         <p>
           Para obter informações específicas sobre os Dados Pessoais utilizados
-          para cada finalidade, o Usuário poderá consultar a seção "Informações
-          detalhadas sobre o processamento de Dados Pessoais".
+          para cada finalidade, o Usuário poderá consultar a seção &ldquo;Informações
+          detalhadas sobre o processamento de Dados Pessoais&rdquo;.
         </p>
         <hr />
         <SectionTitle as="h2">
