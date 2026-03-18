@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@portabletext/react": "^2.0.1",
+    "@portabletext/react": "^3.2.4",
     "@sanity/client": "^5.2.2",
     "@sanity/image-url": "^1.0.2",
     "@supabase/supabase-js": "^2.22.0",

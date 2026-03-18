@@ -22,7 +22,7 @@ export default function Atividades({atividadesData}: AtividadesProps) {
           <p className="font-[600] ">Índice</p>
           {Array.isArray(activitiesList) &&
             activitiesList.map(({title, subActivities}, activityIndex) => (
-              <>
+              <div key={activityIndex}>
                 <p className="font-[600] ">
                   {activityIndex + 1} - {title}
                 </p>
@@ -30,6 +30,7 @@ export default function Atividades({atividadesData}: AtividadesProps) {
                   {Array.isArray(subActivities) &&
                     subActivities.map((subActivity, subActivityIndex) => (
                       <Link
+                        key={`${activityIndex}-${subActivityIndex}`}
                         href={`#${activityIndex + 1}.${subActivityIndex + 1}`}
                       >
                         <span className=" text-primary hover:text-[#333] text-sm">
@@ -39,7 +40,7 @@ export default function Atividades({atividadesData}: AtividadesProps) {
                       </Link>
                     ))}
                 </div>
-              </>
+              </div>
             ))}
         </div>
 
@@ -47,7 +48,7 @@ export default function Atividades({atividadesData}: AtividadesProps) {
           activitiesList.map(
             ({description, title, subActivities}, activityIndex) => {
               return (
-                <div className="flex flex-col gap-8">
+                <div key={activityIndex} className="flex flex-col gap-8">
                   <SectionTitle size="large" as="h2">
                     {activityIndex + 1} - {title}
                   </SectionTitle>
@@ -55,6 +56,7 @@ export default function Atividades({atividadesData}: AtividadesProps) {
                   {subActivities.map((subActivity, subActivityIndex) => {
                     return (
                       <div
+                        key={`${activityIndex}-${subActivityIndex}`}
                         id={`${activityIndex + 1}.${subActivityIndex + 1}`}
                         className="flex flex-col gap-4"
                       >

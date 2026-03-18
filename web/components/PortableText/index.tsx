@@ -53,8 +53,6 @@ type CustomPortableTextProps = {
   value: any;
 };
 
-type PortableTextTypeComponent<P = any> = React.FunctionComponent<P & { key?: string }> | React.ComponentClass<P & { key?: string }>;
-
 export const CustomPortableText = ({ value }: CustomPortableTextProps) => {
-  return <PortableText value={value} components={components as unknown as Record<string, PortableTextTypeComponent<ImageComponentProps> | undefined>} />;
+  return <PortableText value={value} components={components as any} />;
 };
